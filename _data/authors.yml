@@ -1,0 +1,14 @@
+Kush Bhatnagar:
+  name: Kush Bhatnagar
+  bio: I am a lifelong learner
+  avatar: /assets/images/Kush.jpg
+  links:
+    - label: Email
+      icon: fas fa-fw fa-envelope-square
+      url: 'mailto:kushbhatnagar86@gmail.com'
+    - label: Website
+      icon: fas fa-fw fa-link
+      url: 'https://notesbykush.github.io.com'
+    - label: Twitter
+      icon: fab fa-fw fa-twitter-square
+      url: 'https://twitter.com/bhatnagarkush'

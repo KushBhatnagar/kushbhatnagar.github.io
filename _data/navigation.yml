@@ -1,0 +1,10 @@
+# main links
+main:
+   - title: "About"
+     url: /about/
+   - title: "Blogs"
+     url: /
+   - title: "ML Comics"
+     url: /ml-comics/
+  # - title: "Sitemap"
+  #   url: /sitemap/
