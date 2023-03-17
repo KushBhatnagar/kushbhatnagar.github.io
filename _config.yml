@@ -79,7 +79,7 @@ analytics:
     anonymize_ip: null
 author:
   name: Kush Bhatnagar
-  avatar: "/assets/images/kush.png"
+  avatar: /assets/images/kush.png
   bio: My sole objective is to reduce **complexities** by writing on simple things.
   location: Bangalore
   email: null
