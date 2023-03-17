@@ -6,9 +6,9 @@ subtitle: Blogs on ML and Life's philosphy
 name: Kush Bhatnagar
 description: An amazing website.
 #url: 'https://localhost:4000'
-url: 'https://kushbhatnagar.github.io'
+url: https://kushbhatnagar.github.io
 #baseurl: null
-baseurl: /kushbhatnagar.github.io/
+baseurl: "/"
 repository: null
 teaser: /assets/images/unsplash-image-8.jpg
 logo: /assets/images/logo-kb-2.png
