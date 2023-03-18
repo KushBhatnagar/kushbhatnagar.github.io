@@ -2,9 +2,16 @@
 main:
    - title: "About"
      url: /about/
-   - title: "Blogs"
+     description : "Click here if you are intrested in me"
+   - title: "Posts"
      url: /
+     description : "Click here if you are want to read my blogs"
    - title: "ML Comics"
      url: /ml-comics/
+   - title: "Tags"
+     url: /tags/
+     description : "Click here if you are want to search specific blogs or posts"
+   - title: "Terms &amp; Privacy Policy"
+     url: /terms/
   # - title: "Sitemap"
   #   url: /sitemap/

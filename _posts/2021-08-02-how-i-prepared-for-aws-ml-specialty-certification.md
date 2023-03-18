@@ -5,13 +5,15 @@ date: '2021-08-02 10:19:25 +0530'
 toc: true
 tags:
 - aws
-- certification
-- machinelearning
+- machine learning
+#classes : wide
 ---
 
 **My Objective and Preparation Strategy to clear this Specialty Exam**
 
-![]({{ '/assets/images/aws-certified-machine-learning-specialty.png' | relative_url }})
+<figure>
+	<a><img src="/assets/images/aws-certified-machine-learning-specialty.png"></a>
+</figure>
 
 # Introduction
 Last week I had cleared AWS Certified Machine Learning Specialty Exam and after that, I am getting a lot of questions about exams and how did I prepare for this exam. In this post, I am sharing my objective of taking this exam, preparation strategy, and resources I have referred. I hope it will be helpful to someone who is planning to take this certification.
@@ -37,11 +39,15 @@ I have put in close to **185** hours in the span of **4** months to prepare for 
 
 Along with the above content, I have referred to some generic available articles/blog posts to understand the concept and prepared notes in this [Trello board](https://trello.com/b/Sx6lJzy8). These notes are distributed in four Lists, each list represents one domain of the exam. Each note is labelled with priority along with resources links, screenshots. This board becomes a Kanban board which helped me to stay on top of my learning.
 
-![]({{ '/assets/images/trello_board-snapshot.png' | relative_url }})
-													*Trello Board Snapshot*
+<figure>
+	<a><img src="/assets/images/trello_board-snapshot.png"></a>
+	<figcaption>Trello Board</figcaption>
+</figure>
 
-![]({{ '/assets/images/trello_sample_card.png' | relative_url }})
-																		*Sample Card from Trello board*
+<figure>
+	<a><img src="/assets/images/trello_sample_card.png"></a>
+	<figcaption>Sample Card</figcaption>
+</figure>
 
 >**Tip**: As there is so much to learn, it is easy to get overwhelmed and lose track of what you have already learned and what needs to be covered next. In this case, your notes will come to the rescue. I will recommend preparing notes for this exam, it will also help you in last-minute revision
 

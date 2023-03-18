@@ -15,9 +15,9 @@ logo: /assets/images/logo-kb-2.png
 masthead_title: null
 words_per_minute: 200
 comments:
-  provider: null
+  provider: "disqus"
   disqus:
-    shortname: null
+    shortname: "blogsbykush"
   discourse:
     server: null
   facebook:
