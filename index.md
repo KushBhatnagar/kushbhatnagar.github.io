@@ -2,5 +2,6 @@
 layout: home
 author_profile: true
 ---
-
-![]({{ 'assets/images/unsplash-image-2.png' | relative_url }})
+<figure style="width: 830px" class="align-center">
+	<a><img src="assets/images/unsplash-image-2.png"></a>
+</figure>

@@ -1,4 +1,4 @@
-minimal_mistakes_skin: contrast
+minimal_mistakes_skin:  dark #contrast
 locale: en-US
 title: Blogs by Kush
 title_separator: '-'
@@ -10,7 +10,7 @@ url: https://kushbhatnagar.github.io
 #baseurl: null
 baseurl: "/"
 repository: null
-teaser: /assets/images/unsplash-image-8.jpg
+teaser: /assets/images/unsplash-image-3.jpg
 logo: /assets/images/logo-kb-2.png
 masthead_title: null
 words_per_minute: 200

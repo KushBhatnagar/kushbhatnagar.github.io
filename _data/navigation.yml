@@ -2,16 +2,17 @@
 main:
    - title: "About"
      url: /about/
-     description : "Click here if you are intrested in me"
+     description : "You can find out more about me by clicking here"
    - title: "Posts"
-     url: /
-     description : "Click here if you are want to read my blogs"
+     url: /year-archive/
+     description : "If you are interested in reading my posts, click here"
    - title: "ML Comics"
      url: /ml-comics/
+     description : "Here's an explanation of machine learning for 5 year olds"
    - title: "Tags"
      url: /tags/
-     description : "Click here if you are want to search specific blogs or posts"
-   - title: "Terms &amp; Privacy Policy"
-     url: /terms/
+     description : "To search specific posts, click here"
+   # - title: "Terms &amp; Privacy Policy"
+   # url: /terms/
   # - title: "Sitemap"
   #   url: /sitemap/
