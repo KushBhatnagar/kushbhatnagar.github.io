@@ -1,4 +1,4 @@
-minimal_mistakes_skin:  dark #contrast
+minimal_mistakes_skin:  contrast #contrast #dark
 locale: en-US
 title: Blogs by Kush
 title_separator: '-'
@@ -79,7 +79,7 @@ analytics:
     anonymize_ip: null
 author:
   name: Kush Bhatnagar
-  avatar: /assets/images/kush.png
+  avatar: /assets/images/bio-photo.jpg
   bio: My sole objective is to reduce **complexities** by writing on simple things.
   location: Bangalore
   email: null
