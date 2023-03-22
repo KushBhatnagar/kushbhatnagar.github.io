@@ -2,16 +2,16 @@
 main:
    - title: "About"
      url: /about/
-     description : "You can find out more about me by clicking here"
-   - title: "Posts"
+     description : "Want to know the person behind all this awesomeness? Click here and let's get personal!"
+   - title: "Blogs"
      url: /year-archive/
-     description : "If you are interested in reading my posts, click here"
-   - title: "ML Comics"
-     url: /ml-comics/
-     description : "Here's an explanation of machine learning for 5 year olds"
+     description : "Ready for some mind-blowing content? Click here and join the party"
+   - title: "ML Made Easy"
+     url: /ml-made-easy/
+     description : "For a simple explanation of ML concepts, click here"
    - title: "Tags"
      url: /tags/
-     description : "To search specific posts, click here"
+     description : "Feeling lost in the sea of content? Click here to search for a specific post"
    # - title: "Terms &amp; Privacy Policy"
    # url: /terms/
   # - title: "Sitemap"

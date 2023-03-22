@@ -2,7 +2,7 @@ minimal_mistakes_skin:  contrast #contrast #dark
 locale: en-US
 title: Blogs by Kush
 title_separator: '-'
-subtitle: Blogs on ML and Life's philosphy
+subtitle: Insights from my learning...
 name: Kush Bhatnagar
 description: An amazing website.
 #url: 'https://localhost:4000'
@@ -80,13 +80,13 @@ analytics:
 author:
   name: Kush Bhatnagar
   avatar: /assets/images/kush-toon.jpg
-  bio: My sole objective is to reduce **complexities** by writing on simple things.
+  bio: I'm just another **nerdy**, **curious**, **lifelong learner** who believes in the power of simplicity
   location: Bangalore
   email: null
   links:
     - label: Email
       icon: fas fa-fw fa-envelope-square
-      url: kushbhatnagar86@gmail.com
+      url: "mailto:kushbhatnagar86@gmail.com"
     - label: Website
       icon: fas fa-fw fa-link
     - label: Twitter
@@ -102,7 +102,7 @@ footer:
   links:
     - label: Email
       icon: fas fa-fw fa-envelope-square
-      url: kushbhatnagar86@gmail.com
+      url: "mailto:kushbhatnagar86@gmail.com"
     - label: Website
       icon: fas fa-fw fa-link
     - label: Twitter

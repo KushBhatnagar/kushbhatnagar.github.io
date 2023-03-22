@@ -1,8 +1,8 @@
 ---
 permalink: /about/
-layout : categories
-title: "About"
+layout : category
+title: "What I'm all about"
 ---
 
-I am an **amazing** person
+I am an **amazing** person and this page is **work in progress**, Stay tune !!
 

@@ -1,9 +1,7 @@
 ---
 title: What is Model
 layout : single
-tags:
-- machine learning
-- ml comics
+categories: ml-made-easy
 ---
 
 <figure>
