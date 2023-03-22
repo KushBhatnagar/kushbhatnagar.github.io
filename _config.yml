@@ -41,7 +41,7 @@ reCaptcha:
   siteKey: null
   secret: null
 atom_feed:
-  path: null
+  path: https://feeds.feedburner.com/blogsbykush/FHnsXGqWjwo
   hide: null
 search: true
 search_full_content: null
@@ -100,11 +100,11 @@ author:
       url: 'https://www.linkedin.com/in/kushbhatnagar/'
 footer:
   links:
-    - label: Email
-      icon: fas fa-fw fa-envelope-square
-      url: "mailto:kushbhatnagar86@gmail.com"
-    - label: Website
-      icon: fas fa-fw fa-link
+    #- label: Email
+    #  icon: fas fa-fw fa-envelope-square
+    #  url: "mailto:kushbhatnagar86@gmail.com"
+    #- label: Website
+    #  icon: fas fa-fw fa-link
     - label: Twitter
       icon: fab fa-fw fa-twitter-square
       url: 'https://twitter.com/bhatnagarkush'
