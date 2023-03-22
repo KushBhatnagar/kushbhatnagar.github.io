@@ -54,9 +54,9 @@ algolia:
   search_only_api_key: null
   powered_by: null
 google:
-  search_engine_id: null
+  search_engine_id: 577c5e665d6bd4349
   instant_search: null
-google_site_verification: null
+google_site_verification: BKwv8d9RamS8UFYapYrQ8ppq348YsIXUDc9E2bWdaYM
 bing_site_verification: null
 naver_site_verification: null
 yandex_site_verification: null

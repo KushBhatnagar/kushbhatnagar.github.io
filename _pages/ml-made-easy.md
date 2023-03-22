@@ -4,7 +4,7 @@ layout : category
 title: "ML Made Easy!!"
 ---
 
-In **ML Made Easy** series, I'll be breaking down key Machine Learning concepts and illustrating them in a fun and engaging way, through comics and conversations.
+In this series, I'll be breaking down key Machine Learning concepts and illustrating them in a fun and engaging way, through comics and conversations.
 
 
 {% for post in site.categories.ml-made-easy %}
