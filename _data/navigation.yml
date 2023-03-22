@@ -3,18 +3,18 @@ main:
    - title: "About"
      url: /about/
      description : "Want to know the person behind all this awesomeness? Click here and let's get personal!"
-   - title: "Blogs"
-     url: /year-archive/
-     description : "Ready for some mind-blowing content? Click here and join the party"
    - title: "ML Made Easy"
      url: /ml-made-easy/
      description : "For a simple explanation of ML concepts, click here"
    - title: "My Bookshelf Chronicles"
      url: /my-bookshelf-chronicles/
      description : "Click here to learn about books that resonate with me"
-   - title: "Tags"
+   - title: "Tag Index"
      url: /tags/
      description : "Feeling lost in the sea of content? Click here to search for a specific post"
+   - title: "Archives"
+     url: /year-archive/
+     description : "Click here to step into our time machine and journey through the archives"
    # - title: "Terms &amp; Privacy Policy"
    # url: /terms/
   # - title: "Sitemap"

@@ -1,5 +1,5 @@
 ---
-title: "Tags"
+title: "Tag Index"
 permalink: /tags/
 layout: tags
 author_profile: true

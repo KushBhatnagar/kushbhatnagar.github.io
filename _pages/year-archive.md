@@ -1,5 +1,5 @@
 ---
-title: "Blogs"
+title: "Archives"
 permalink: /year-archive/
 layout: posts
 author_profile: true
