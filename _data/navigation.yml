@@ -2,10 +2,10 @@
 main:
    - title: "About"
      url: /about/
-     description : "Want to know the person behind all this awesomeness? Click here and let's get personal!"
+     description : "Want to know the person behind all this awesomeness? Click here!!"
    - title: "ML Made Easy"
      url: /ml-made-easy/
-     description : "For a simple explanation of ML concepts, click here"
+     description : "For a simple explanation of ML concepts, Click here!!"
    - title: "My Bookshelf Chronicles"
      url: /my-bookshelf-chronicles/
      description : "Click here to learn about books that resonate with me"
@@ -14,7 +14,7 @@ main:
      description : "Feeling lost in the sea of content? Click here to search for a specific post"
    - title: "Archives"
      url: /year-archive/
-     description : "Click here to step into our time machine and journey through the archives"
+     description : "Click here to step into my time machine and journey through the archives"
    # - title: "Terms &amp; Privacy Policy"
    # url: /terms/
   # - title: "Sitemap"
