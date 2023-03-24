@@ -16,9 +16,9 @@ I believe that **learning** is a continuous loop, and in order to truly learn so
 
 **Writing** is one of the most powerful but often underrated skills that humans have developed. It empowers us to express ourselves and articulate complex topics in a concise and effective manner.
 
-We know **simplicity** reduces complexity. With this blog series, I am taking on the challenge of exploring complex subjects and transforming my learnings into simple and digestible concepts for my readers
+We know **simplicity** reduces complexity. With this blog series, I am taking on the challenge of exploring complex subjects and transforming my learnings into simple and digestible concepts for my readers.
 
-If you're interested in my professional details, please check out [my CV][my-cv]
+If you're interested in my professional details, please check out [my CV][my-cv].
 
 [medium-blog]:https://medium.com/accelerated-intelligence/memory-learning-breakthrough-it-turns-out-that-the-ancients-were-right-7bbd3090d9cc
 [my-cv]:/assets/cv/my-cv.md
