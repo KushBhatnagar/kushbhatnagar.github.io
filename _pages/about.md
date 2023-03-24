@@ -5,7 +5,8 @@ title: "Behind the Scenes"
 ---
 
 Hello, I'm Kush Bhatnagar, an engineer who strongly believes in continuous 
-> **Self-learning**, the power of **Writing**, and the value of **Simplicity**
+
+> continuous **Self-learning**, the power of **Writing**, and the value of **Simplicity**
 
 Learning is a continuous loop, and I believe we must transform our knowledge through continuous experimentation. The following pictures will help explain better.
 
