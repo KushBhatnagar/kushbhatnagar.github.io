@@ -6,6 +6,7 @@ tags:
 - machine learning
 ---
 
+# Introduction
 Regression testing is the common task of retesting software that has been changed or extended by new features during software development and most of the time retesting the whole program is not feasible with reasonable time and cost, and to overcome only a subset of all test cases is executed for regression testing, e.g., by executing test cases according to test case prioritization.
 
 There are a vast amount of methods for test case selection exist but mostly it is a based on domain expertise of Test Engineers/Subject Matter Expert.As obvious, this manual process is time consuming, iterative and largely depends upon the engineer's skills which mean there are high chances of missing some relevant test cases.
@@ -25,9 +26,11 @@ This is an authorization microservice it is based on Oauth2 standard which is wi
 
 Before going forward let's understand how currently test selection process is happening in HP Cloud Print Platform
 
-> **Note**: Below image is specific to a particular organization but across the industry, the process is somewhat similar to this
 
-<img src="/assets/images/TCSelectionProcess.png">
+<figure>
+<a><img src="/assets/images/TCSelectionProcess.png"></a>
+<figcaption>This image is specific to a particular organization but across the industry, the process is somewhat similar to this</figcaption>
+</figure>
 
                                               
 **Release Manifest:** It is collection of versioned stuff that is being deployed, configuration settings, and issues/stories/artifacts description which are going to be deployed in particular release.
@@ -53,6 +56,8 @@ Let's understand the process step by step
 **Step 4:** Based on the impacted functionality list from above two steps SME will now navigate to Test Rail to search relevant test cases
 
 **Step 5:** With the help of domain knowledge and data collected from above steps SME will select the list of test cases from Test Rail
+
+Let’s take a quick look at test data which consists of regression test cases across four release cycles
 
 <img src="/assets/images/sample-data-set.png">
 
@@ -178,10 +183,8 @@ All **Sanity** and **Integration** type of test cases are selected in all four r
 
 Now we will check **Automation Status** feature , will try to understand that how test cases are selected across releases based on automation status
 
-*Total Number of Automated Test Cases are 236*
-
-
-*Total number of selected test cases which are automated 139*
+- Total Number of Automated Test Cases are **236**
+- Total number of selected test cases which are automated **139**
 
     
 <img src="/assets/images/output_26_2.svg">
@@ -200,6 +203,9 @@ Highest number of automated selected test cases i.e **42%** , **41%** are in **R
 
 With this it's evident that **Automation Test Cases** feature played a role in test case selection specially when we have lot to test.
 
+*Above EDA looks obvious to many but the intent is to establish a relationship between features and target variable, so that classifier can learn the same pattern*
+{: .notice}
+
 With this we are done with analysis of all categorical data columns present in our data set and all of them looks related to our Target Variable , we will keep all of them in our further analysis.
 
 Let's start with Textual columns , we have following Text columns
@@ -216,12 +222,12 @@ From above features list we can remove 'JIRA Bug ID' from our analysis because t
 
 Also , in our data set 'GIT commit Message' is very inconsistent and most of the commit messages are of bug fixing and for these fixes commit messages are either bug ID or bug description which is kind of duplicate of data present in feature 'Bug Description'. We can drop  GIT commit message column also.
 
-> It’s recommended that ‘Commit Messages’ should be there for test cases selection but for this relevant messages should enter at the time of commit and same has to be captured properly in Release Manifest for each releases
+*It’s recommended that ‘Commit Messages’ should be there for test cases selection but for this relevant messages should enter at the time of commit and same has to be captured properly in Release Manifest for each releases*
+{: .notice--warning}
 
 Let's start looking at 'Test Case Title' and 'Test Case Description'
 
-<img src = "/assets/images/output_31_0.svg">
-    
+<img src = "/assets/images/output_31_0.svg">    
 
 
 There are no empty records in Test Case Title but same is not true for Description , majority of the description is empty. 
@@ -467,8 +473,8 @@ Let's create Corpus from 'TestCaseTitle' , **Corpus** is a simplified version of
 To create Corpus we have to perform the following actions
 
 <ol>
-    <li><b>Remove unwanted words</b>: Removal of unwanted words such as <a>special characters</a> and <a>numbers</a> to get only pure text. We will do it by specify our pattern using re library</li>
-    <li><b>Transform words to lowercase</b>: Transform words to lowercase because upper and lower case have diffirent <a>ASCII</a> codes</li>
+    <li><b>Remove unwanted words</b>: Removal of unwanted words such as special characters and numbers to get only pure text. We will do it by specify our pattern using re library</li>
+    <li><b>Transform words to lowercase</b>: Transform words to lowercase because upper and lower case have diffirent ASCII codes</li>
     <li><b>Remove stopwords</b>:Stop words are usually the most common words in a language and they will be irrelevant in determining the nature</li>
     <li><b>Stemming words</b>:Stemming is the process of reducing words to their word stem, base or root form. We use stemming to reduce Bag of Words dimensionality</li>
 </ol>
@@ -510,7 +516,7 @@ This is called Bag of Word because any information about the order or structure 
 
 For Example : 
 
-<img src="images/BagOfWord.png">
+<img src="/assets/images/BagOfWord.png">
 
 
 
@@ -570,169 +576,42 @@ If we have large data set we can use following models but for current data set w
 * Gradient Boosting Model
 * K - Nearest Neighbors Model
 
+After building models we will evaluate our model based on confusion matrix , which is formed from the four outcomes produced as a result of binary classification
 
-```python
-# Splitting the dataset into the Training set and Test set
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
-```
-
-## Logistic Regression Model
-
-
-```python
-# Fitting Logistic Regression to the Training set
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-classifier_lr = LogisticRegression(solver='liblinear')
-classifier_lr.fit(X_train,y_train)
-# Predicting the Test set results
-y_pred_lr = classifier_lr.predict(X_test)
-# Making the Confusion Matrix
-cm_lr = confusion_matrix(y_test, y_pred_lr)
-```
-
-## Gaussian Naive Bayes Model
-
-
-```python
-from sklearn.naive_bayes import GaussianNB
-
-from sklearn.metrics import f1_score
-
-# Fitting Gausian to the Training set
-classifier_gnb = GaussianNB()
-classifier_gnb.fit(X_train, y_train)
-# Predicting the Test set results
-y_pred_gnb = classifier_gnb.predict(X_test)
-# Making the Confusion Matrix
-cm_gnb = confusion_matrix(y_test, y_pred_gnb)
-```
-
-## Multinomial Naive Bayes Model
-
-
-```python
-from sklearn.naive_bayes import MultinomialNB
-# Fitting Naive Bayes to the Training set
-classifier_nb = MultinomialNB(alpha=0.1)
-classifier_nb.fit(X_train, y_train)
-# Predicting the Test set results
-y_pred_nb = classifier_gnb.predict(X_test)
-# Making the Confusion Matrix
-cm_nb = confusion_matrix(y_test, y_pred_nb)
-```
-
-## Model Evaluation
-
-We will evaluate model based on confusion matrix , which is formed from the four outcomes produced as a result of binary classification
-
-A binary classifier predicts all data instances of a test dataset as either positive or negative. This classification (or prediction) produces four outcomes – true positive, true negative, false positive and false negative.
+A binary classifier predicts all data instances of a test dataset as either positive or negative. This classification (or prediction) produces four outcomes — true positive, true negative, false positive and false negative.
 
 * True positive (TP): correct positive prediction
 * False positive (FP): incorrect positive prediction
 * True negative (TN): correct negative prediction
 * False negative (FN): incorrect negative prediction
 
-<img src="images/ConfusionMatrix.png">
+<img src="/assets/images/ConfusionMatrix.png">
 
-## Confusion matrix
-A confusion matrix of binary classification is a two by two table formed by counting of the number of the four outcomes of a binary classifier. We usually denote them as TP, FP, TN, and FN instead of “the number of true positives”, and so on
+A **confusion matrix** of binary classification is a two by two table formed by counting of the number of the four outcomes of a binary classifier. We usually denote them as TP, FP, TN, and FN instead of “the number of true positives”, and so on
 
-<img src="images/ConfusionMatrixTable.png">
+<img src="/assets/images/ConfusionMatrixTable.png">
 
-## Error Rate
+**Error rate (ERR)** is calculated as the number of all incorrect predictions divided by the total number of the dataset. The best error rate is 0.0, whereas the worst is 1.0
 
-Error rate (ERR) is calculated as the number of all incorrect predictions divided by the total number of the dataset. The best error rate is 0.0, whereas the worst is 1.0
+<img src="/assets/images/ErrorRate.png">
 
-<img src="images/ErrorRate.png">
+**Accuracy (ACC)** is calculated as the number of all correct predictions divided by the total number of the dataset. The best accuracy is 1.0, whereas the worst is 0.0. It can also be calculated by 1 – ERR
 
-## Accuracy
-Accuracy (ACC) is calculated as the number of all correct predictions divided by the total number of the dataset. The best accuracy is 1.0, whereas the worst is 0.0. It can also be calculated by 1 – ERR
+<img src="/assets/images/AccuracyRate.png">
 
-<img src="images/AccuracyRate.png">
+**F1 Score**
 
-## F1 Score
-
-<img src="images/F1Score.png">
+<img src="/assets/images/F1Score.png">
 
 
-```python
-#Calculating Model Accuracy
-printmd('**Regression Classifier Accuracy Score is {} for Train Data Set**'.format(classifier_lr.score(X_train, y_train)))
-printmd('**Regression Classifier Accuracy Score is {} for Test Data Set**'.format(classifier_lr.score(X_test, y_test)))
-printmd('**Regression Classifier F1 Score is {}**'.format(f1_score(y_test, y_pred_lr)))
-printmd('**Confusion Matrix for Regression Classifer {}**'.format(cm_lr))
-printmd('**--------------------------------------------------------------------------------**')
-printmd('**GaussianNB Classifier Accuracy Score is {} for Train Data Set**'.format(classifier_gnb.score(X_train, y_train)))
-printmd('**GaussianNB Classifier Accuracy Score is {} for Test Data Set**'.format(classifier_gnb.score(X_test, y_test)))
-printmd('**GaussianNB Classifier F1 Score is {}**'.format(f1_score(y_test, y_pred_gnb)))
-printmd('**Confusion Matrix for GaussianNB Classifer {}**'.format(cm_gnb))
-printmd('**--------------------------------------------------------------------------------**')
-printmd('**MultinomialNB Classifier Accuracy Score is {} for Train Data Set**'.format(classifier_nb.score(X_train, y_train)))
-printmd('**MultinomialNB Classifier Accuracy Score is {} for Test Data Set**'.format(classifier_nb.score(X_test, y_test)))
-printmd('**MultinomialNB Classifier F1 Score is {}**'.format(f1_score(y_test, y_pred_nb)))
-printmd('**Confusion Matrix for MultinomialNB Classifer {}**'.format(cm_nb))
+Based on above formulas we can evaluate our models in Train and Test data set
 
-```
-
-
-**Regression Classifier Accuracy Score is 0.9020715630885122 for Train Data Set**
-
-
-
-**Regression Classifier Accuracy Score is 0.8421052631578947 for Test Data Set**
-
-
-
-**Regression Classifier F1 Score is 0.6865671641791046**
-
-
-
-**Confusion Matrix for Regression Classifer [[89 10]
- [11 23]]**
-
-
-
-**--------------------------------------------------------------------------------**
-
-
-
-**GaussianNB Classifier Accuracy Score is 0.8041431261770244 for Train Data Set**
-
-
-
-**GaussianNB Classifier Accuracy Score is 0.7819548872180451 for Test Data Set**
-
-
-
-**GaussianNB Classifier F1 Score is 0.7010309278350516**
-
-
-
-**Confusion Matrix for GaussianNB Classifer [[70 29]
- [ 0 34]]**
-
-
-
-**--------------------------------------------------------------------------------**
-
-
-
-**MultinomialNB Classifier Accuracy Score is 0.8757062146892656 for Train Data Set**
-
-
-
-**MultinomialNB Classifier Accuracy Score is 0.8421052631578947 for Test Data Set**
-
-
-
-**MultinomialNB Classifier F1 Score is 0.7010309278350516**
-
-
-
-**Confusion Matrix for MultinomialNB Classifer [[70 29]
- [ 0 34]]**
+<ol>
+    <li>Regression Classifier F1 Score is <b>68.6</b> </li>
+    <li>MultinomialNB Classifier F1 Score is <b>70.1</b> </li>
+    <li>GaussianNB Classifier F1 Score is <b>70.1</b> </li>
+</ol>
+{: .notice--success}
 
 
 # Last Word !!
@@ -740,4 +619,8 @@ printmd('**Confusion Matrix for MultinomialNB Classifer {}**'.format(cm_nb))
 * Prediction could be improved if we have large data set , becuase then we can apply models like **Decision Tree Model ,Gradient Boosting Model** and **K-Nearest Neighbors Model** . We have checked these models for larger data set and prediction was pretty good
 * Training data can be increase by adding more releases data
 * Above approach can be used as a reference for similar problem statement
-> **To convert this code into utility for test case selection in upcoming releases , data has to be captured in above format i.e. all mentioned fetaures has to be there along with test cases**
+
+**Note** : I have captured very less code snippet for this blog , if interested in actual work then refer this [notebook][notebook-link]
+{: .notice--info}
+
+[notebook-link]:https://github.com/KushBhatnagar/TestCaseSelectionFromML/blob/master/Regression%20Test%20Case%20Selection%20Using%20ML.ipynb
