@@ -4,12 +4,12 @@ title: Blogs by Kush
 title_separator: '-'
 subtitle: Insights from my learning...
 name: Kush Bhatnagar
-description: An amazing website.
+description: Blogs on MLOPS, AWS , Machine Learning and lot more
 #url: 'https://localhost:4000'
 url: https://kushbhatnagar.github.io
 #baseurl: null
 baseurl: "/"
-repository: null
+repository: kushbhatnagar/kushbhatnagar.github.io
 teaser: /assets/images/unsplash-image-3.jpg
 logo: /assets/images/logo-kb-2-air.png
 masthead_title: null
