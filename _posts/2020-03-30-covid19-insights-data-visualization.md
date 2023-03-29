@@ -156,7 +156,7 @@ Let's check what happened in South Korea
 <img src ="/assets/images/southkorea_status_covidinsights.png">
 
 <ol>
-  <li> <b>Confirmed cases have increased from 31 to 602 within 5 days i.e between February 19 and February 24, this may be because of Patient#31 of South Korea (refer to this <a href="https://graphics.reuters.com/CHINA-HEALTH-SOUTHKOREA-CLUSTERS/0100B5G33SB/index.html">article</a>to read about this)</b> </li>
+  <li> <b>Confirmed cases have increased from 31 to 602 within 5 days i.e between February 19 and February 24, this may be because of Patient#31 of South Korea (refer to this <a href="https://graphics.reuters.com/CHINA-HEALTH-SOUTHKOREA-CLUSTERS/0100B5G33SB/index.html">article</a> to read about this)</b> </li>
   <li> <b>From 15th March rate of confirmation is kind of stable and not increased much as compared to previous weeks</b> </li>
   <li> <b>After 15th March rate of recovery has increased drastically and the number of deaths is less as compared to confirmed cases</b> </li>
 </ol>
@@ -237,5 +237,5 @@ Also, there was a significant amount of time between the initial cases and the s
 
 As of now, fortunately, this is not happening for India as numbers are still less and if Indians follow 21 days of complete lockdown (starting from 24 March till 14th April) rigorously then the situation could be better, hope for the best.
 
-**Thoughts and Prayers with all who are fighting COVID-19**
+**Thoughts and Prayers with all who are fighting COVID-19 !!**
 {: .notice}
