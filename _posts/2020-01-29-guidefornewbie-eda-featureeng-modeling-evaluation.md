@@ -4,6 +4,7 @@ layout: single
 toc: true
 tags:
 - machine learning
+- EDA
 ---
 
 # Introduction
