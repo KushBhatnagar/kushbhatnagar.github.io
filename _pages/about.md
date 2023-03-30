@@ -25,4 +25,4 @@ If you're interested in my professional details, please check out [**my CV**][my
 {: .notice--info}
 
 [medium-blog]:https://medium.com/accelerated-intelligence/memory-learning-breakthrough-it-turns-out-that-the-ancients-were-right-7bbd3090d9cc
-[my-cv]:/assets/cv/my-cv.md
+[my-cv]:/assets/cv/KushBhatnagar_Resume.pdf
