@@ -3,8 +3,7 @@ permalink: /about/
 layout : category
 title: "Behind the Scenes"
 ---
-
-Hello, if you are here, I assume you are interested in knowing who I am and why I started this blog series. As an engineer, I value **writing, learning, and simplicity**. 
+Hello, if you are here, I assume you are interested in knowing who I am and why I started this blog. Let me give you an idea behind this - I am an engineer by profession and have a strong value for **learning, writing, and simplicity**. I consider these qualities a component of a versatile skillset since they can be applied in a variety of situations.
 
 **Writing** is one of the most powerful but often underrated skills that humans have developed. It empowers us to express ourselves and articulate complex topics in a concise and effective manner.
 
