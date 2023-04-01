@@ -1,5 +1,5 @@
 ---
-title: COVID-19-Insights with Data Visualization!!
+title: COVID-19-Insights with Data Visualization
 layout: single
 toc: true
 tags:
