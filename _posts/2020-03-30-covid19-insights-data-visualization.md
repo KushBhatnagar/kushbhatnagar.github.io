@@ -239,3 +239,6 @@ As of now, fortunately, this is not happening for India as numbers are still les
 
 **Thoughts and Prayers with all who are fighting COVID-19 !!**
 {: .notice}
+
+ *Disclaimer: Just to let you know, this blog post was originally published on Medium. If you'd like to check out the original, you can find it at this [link](https://medium.com/analytics-vidhya/covid-19-insights-with-data-visualization-ba2b52d06eac).*
+ {: .notice}

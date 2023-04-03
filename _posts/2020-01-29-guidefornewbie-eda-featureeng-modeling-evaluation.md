@@ -275,5 +275,7 @@ We can see that by just visualizing the relation between a few variables we got 
 
 Refer to [Kaggle Kernel](https://www.kaggle.com/kushbhatnagar/guide-for-newbie-titanic-eda-feature-eng-modeling/notebook) or [Juypter Notebook](https://github.com/KushBhatnagar/CompetitionsNotebooks/tree/master/TitanicSurvivalPrediction) for whole analysis and data modeling
 
+ *Disclaimer: Just to let you know, this blog post was originally published on Medium. If you'd like to check out the original, you can find it at this [link](https://medium.com/analytics-vidhya/beginners-guide-to-exploratory-data-analysis-and-feature-engineering-ec0ded88cff6).*
+ {: .notice--info}
 
 

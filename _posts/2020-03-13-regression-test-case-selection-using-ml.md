@@ -614,7 +614,7 @@ Based on above formulas we can evaluate our models in Train and Test data set
 {: .notice--success}
 
 
-# Last Word !!
+# Last Word
 
 * Prediction could be improved if we have large data set , becuase then we can apply models like **Decision Tree Model ,Gradient Boosting Model** and **K-Nearest Neighbors Model** . We have checked these models for larger data set and prediction was pretty good
 * Training data can be increase by adding more releases data
@@ -622,5 +622,8 @@ Based on above formulas we can evaluate our models in Train and Test data set
 
 **Note** : I have captured very less code snippet for this blog , if interested in actual work then refer this [notebook][notebook-link]
 {: .notice--info}
+
+ *Disclaimer: Just to let you know, this blog post was originally published on Medium. If you'd like to check out the original, you can find it at this [link](https://medium.com/analytics-vidhya/regression-test-case-selection-using-machine-learning-241ded86f559).*
+ {: .notice--info}
 
 [notebook-link]:https://github.com/KushBhatnagar/TestCaseSelectionFromML/blob/master/Regression%20Test%20Case%20Selection%20Using%20ML.ipynb

@@ -66,5 +66,9 @@ Apart from above-mentioned resources, I have referred following blogs which help
 * Similar [blog post](https://simpledataflow.com/machine-learning-specialty-exam/) by Simple Data flow
 * I have also referred book [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.co.uk/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646) to understand some core concepts
 
-# Last word !!
+# Last word
 Along with lengthy and difficult certification to achieve this one is expensive also, so be clear in your objective —**why you want to take this exam**. As mentioned, my objective was to have structured learning to fill the gap in my knowledge and understanding to build reliable and effective machine learning architecture in the cloud, make sure you have your valid reason and objective before committing for this specialist certification.
+
+ *Disclaimer: Just to let you know, this blog post was originally published on Medium. If you'd like to check out the original, you can find it at this [link](https://towardsaws.com/how-i-prepared-for-aws-ml-specialty-certification-c05b97c4fd5).*
+ {: .notice--info}
+
