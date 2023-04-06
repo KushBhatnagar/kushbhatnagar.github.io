@@ -1,5 +1,5 @@
 ---
-title: Models-What are they
+title: Models - What are they
 layout : single
 categories: ml-made-easy
 ---
