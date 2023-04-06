@@ -73,10 +73,10 @@ social:
   name: null
   links: null
 analytics:
-  provider: false
+  provider: "google-gtag"
   google:
-    tracking_id: null
-    anonymize_ip: null
+    tracking_id: "G-QWTLYBWXCL"
+    anonymize_ip: false
 author:
   name: Kush Bhatnagar
   avatar: /assets/images/kush-toon.jpg
