@@ -17,11 +17,11 @@ How can small changes in our routine impact our long-term goals? In order to und
 
 "Atomic Habits" is a practical guide on how to form and maintain good habits and break bad ones. The author draws on the latest research in psychology, neuroscience, and behavioral economics to explain why habits are so powerful and how we can use this knowledge to make positive changes in our lives.
 
-It begins by examining why tiny changes make a big difference, the intent behind atomic habits is :
+It begins by examining why tiny changes make a big difference, the intent behind the name - 'Atomic Habits' is :
 
 > **Habits are like the atoms of our lives.Each one is a fundamental unit that contributes to your overall improvement**
 
-The author discussed how incremental changes are often underestimated when we focus on big goals.Examples were provided that illustrated how habits can compound and work against you.
+The author discussed how incremental changes are often underestimated when we focus on big goals. Examples were provided that illustrated how habits can compound and work against you.
 
 The author argues that our habits are often a reflection of our identity. In other words, if we want to change our habits, we need to change our sense of self. For example, instead of saying “I want to lose weight,” say “I am the type of person who makes healthy choices.”
 
@@ -29,7 +29,7 @@ One of the interesting things I have learned is **The science of habit formation
 
 <ol>
     <li><b>Cue:</b> This is the trigger that prompts the habit. Cues can be anything that your brain associates with a particular behavior or activity. For example, seeing a donut might be a cue for you to eat it, or hearing your phone buzz might be a cue for you to check your messages.</li>
-    <li><b>Craving:</b> They are the motivational force behind every habit. Without some level of motivation or desire, we have no reason to act. What you carve is not the habit itself but the change in state it delivers. For example, you do not crave smoking a cigarette, you crave the feeling of relief it provides.</li>
+    <li><b>Craving:</b> They are the motivational force behind every habit. Without some level of motivation or desire, we have no reason to act. What you crave is not the habit itself but the change in state it delivers. For example, you do not crave smoking a cigarette, you crave the feeling of relief it provides.</li>
     <li><b>Response:</b> This is the actual habit you perform which can take the form of a thought, or an action.</li>
     <li><b>Reward:</b> This is the positive outcome that you get from engaging in the habit. Rewards can be physical, emotional, or psychological. For example, the reward for eating a donut might be the taste and feeling of satisfaction that comes from eating something sweet and indulgent.</li>
 </ol>
