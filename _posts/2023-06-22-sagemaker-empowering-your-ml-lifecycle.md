@@ -7,7 +7,7 @@ tags:
 - mlops tools
 categories: mlops
 ---
-In this post, I explore AWS Sagemaker's features and use cases in ML. I am focusing on its capabilities that enable early deployment of ML models, significantly reducing time to production
+In this post, I explore AWS Sagemaker's features and use cases in Machine Learning. I am focusing on its capabilities that enable early deployment of Machine Learning models, significantly reducing time to production.
 
 ## Introduction 
 Amazon SageMaker is a fully managed machine learning service that empowers data scientists and developers to swiftly build, train, and deploy machine learning models. With SageMaker, the process of building and training models becomes effortless as it eliminates the need for server setup or infrastructure management. The service provides an easy-to-use Jupyter notebook for seamless data exploration and analysis, capable of efficiently handling massive datasets.
