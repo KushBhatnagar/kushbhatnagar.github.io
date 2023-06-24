@@ -95,6 +95,9 @@ author:
     - label: GitHub
       icon: fab fa-fw fa-github
       url: 'https://github.com/KushBhatnagar'
+    - label: Medium
+      icon: fab fa-medium
+      url: 'https://medium.com/@kushbhatnagar86'
     - label: Linkedin
       icon: fab fa-linkedin-in
       url: 'https://www.linkedin.com/in/kushbhatnagar/'
