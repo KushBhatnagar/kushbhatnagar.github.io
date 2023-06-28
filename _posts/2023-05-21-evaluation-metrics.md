@@ -9,8 +9,8 @@ categories: ml-made-easy
   <div class="row justify-content-center">
     <div class="col-md-8">
       <figure class="text-center">
-        <img src="/assets/images/EvaluationMetrics-1.png" class="img-fluid">
-		<img src="/assets/images/EvaluationMetrics-2.png" class="img-fluid">
+        <img src="/assets/images/ml-made-easy/EvaluationMetrics-1.png" class="img-fluid">
+		<img src="/assets/images/ml-made-easy/EvaluationMetrics-2.png" class="img-fluid">
       </figure>
     </div>
   </div>

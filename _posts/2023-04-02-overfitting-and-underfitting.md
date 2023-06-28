@@ -8,8 +8,8 @@ categories: ml-made-easy
   <div class="row justify-content-center">
     <div class="col-md-8">
       <figure class="text-center">
-        <img src="/assets/images/Overfitting.png" class="img-fluid">
-		<img src="/assets/images/Underfitting.png" class="img-fluid">
+        <img src="/assets/images/ml-made-easy/Overfitting.png" class="img-fluid">
+		<img src="/assets/images/ml-made-easy/Underfitting.png" class="img-fluid">
       </figure>
     </div>
   </div>
