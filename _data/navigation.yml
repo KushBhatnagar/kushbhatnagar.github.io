@@ -18,7 +18,7 @@ main:
    - title: "Archives"
      url: /year-archive/
      description : "Click here to step into my time machine and journey through the archives"
-   # - title: "Terms &amp; Privacy Policy"
-   # url: /terms/
+   - title: "Terms &amp; Privacy Policy"
+     url: /terms/
   # - title: "Sitemap"
   #   url: /sitemap/
