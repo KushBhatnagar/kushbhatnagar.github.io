@@ -4,13 +4,8 @@ layout : single
 categories: ml-made-easy
 ---
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <figure class="text-center">
-        <img src="/assets/images/ml-made-easy/Overfitting.png" class="img-fluid">
-		<img src="/assets/images/ml-made-easy/Underfitting.png" class="img-fluid">
-      </figure>
-    </div>
-  </div>
-</div>
+
+![Overfitting]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/Overfitting.png){: .align-center}
+
+![Underfitting]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/Underfitting.png){: .align-center}
+
