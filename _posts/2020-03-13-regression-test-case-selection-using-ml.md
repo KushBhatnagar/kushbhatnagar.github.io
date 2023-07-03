@@ -4,6 +4,9 @@ layout : single
 toc: true
 tags:
 - machine learning
+excerpt: "Regression testing plays a crucial role in software development, but retesting the entire program after making changes or adding new features is often impractical. To address this, a subset of test cases is executed for regression testing. In this blog post, we explore a proof of concept (POC) that uses a Classification Learning model to assist in the selection of manual regression test cases. By considering metadata and natural language descriptions of test cases, the model predicts which test cases should be selected. The post also covers data collection and preparation, as well as exploratory data analysis to understand the relationship between various features and test case selection" 
+seo_title: "Regression Test Case Selection Using Machine Learning"
+seo_description: "In this blog post, we present a proof of concept (POC) for automating the selection of manual regression test cases using a Classification Learning model. By leveraging metadata and natural language descriptions of test cases, the model predicts the optimal test case selection for regression testing during software development. The post provides insights into data collection, preparation, and exploratory data analysis, demonstrating the importance of various features in determining test case selection. Discover how this approach can improve the efficiency and effectiveness of regression testing in software development."
 ---
 
 # Introduction

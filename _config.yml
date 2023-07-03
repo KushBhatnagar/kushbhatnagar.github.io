@@ -187,6 +187,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
 category_archive:
   type: liquid
   path: /categories/

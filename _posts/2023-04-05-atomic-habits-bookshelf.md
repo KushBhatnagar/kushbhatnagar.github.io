@@ -2,6 +2,9 @@
 title: Atomic Habits - My Views
 layout : single
 categories: bookshelf
+excerpt: "Discover the valuable lessons learned from reading "Atomic Habits" by James Clear. Explore the author's evidence-based approach to habit formation and how small changes can lead to remarkable results. Learn about the science of habit formation, the habit loop, and the four laws of behavior change. Find out how to make habits obvious, attractive, easy, and satisfying, and develop a better daily routine. Improve your health, productivity, and relationships with actionable advice from this essential book" 
+seo_title: "My views and Learning from the book - Atomic Habits by James Clear"
+seo_description: "Unlock the valuable lessons from "Atomic Habits" by James Clear. Understand the power of small changes and habit formation to achieve remarkable results. Learn about the science behind habits, the habit loop, and the four laws of behavior change. Discover practical strategies to make habits obvious, attractive, easy, and satisfying, and improve your daily routine. Enhance your health, productivity, and relationships with this actionable guide for lasting positive change"
 ---
 My reasons for reading this book, and the valuable lessons I learned 
 

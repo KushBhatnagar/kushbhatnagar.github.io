@@ -6,7 +6,9 @@ toc: true
 tags:
 - aws
 - machine learning
-#classes : wide
+excerpt: "Discover my objective and preparation strategy for clearing the AWS Certified Machine Learning Specialty Exam. Learn about the structure of the exam, its domains, and the importance of real-time experience in the machine learning field. Find out the online resources and courses I referred to during my preparation, including AWS resources, Udemy courses, SageMaker documentation, and additional articles. Explore the practice exams I took and how they helped me identify my weak areas. Gain insights into the tips and techniques I used during the real exam to pass with a high score. Get advice on preparing notes and staying organized throughout the learning process" 
+seo_title: "How I Prepared for AWS ML Specialty Certification"
+seo_description: "Learn about the objective and preparation strategy for clearing the AWS Certified Machine Learning Specialty Exam. Explore the structure of the exam, its domains, and the importance of real-time experience. Discover the online resources, courses, and practice exams used for preparation. Gain insights into tips and techniques for the real exam. Get advice on preparing notes and staying organized throughout the learning process. Achieve success in the AWS Certified Machine Learning Specialty Exam with this comprehensive guide"
 ---
 
 **My Objective and Preparation Strategy to clear this Specialty Exam**
