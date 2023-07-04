@@ -3,8 +3,8 @@ title: COVID-19-Insights with Data Visualization
 layout: single
 toc: true
 tags:
-- machine learning
 - EDA
+- Data Visualization
 excerpt: "In this post, the author explores the impact of COVID-19 on different countries using data visualization techniques. The focus is on countries like China, South Korea, Italy, the USA, and India. The analysis highlights trends in confirmed cases, active cases, recoveries, and deaths, shedding light on the effectiveness of measures taken by each country. The post emphasizes the importance of early action and proper containment strategies in controlling the spread of the virus" 
 seo_title: "Exploratory Data Analysis to generate COVID-19 insights in the form of Data Visualization"
 seo_description: "Discover insights from the COVID-19 data in this informative post. The author analyzes the situations in China, South Korea, Italy, the USA, and India, using data visualization to highlight key trends in confirmed cases, active cases, recoveries, and deaths. Learn about the effectiveness of different countries' strategies in managing the pandemic and the crucial role of early action in mitigating its impact"

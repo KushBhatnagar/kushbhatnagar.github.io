@@ -3,8 +3,11 @@ title: Beginner's Guide to Exploratory Data Analysis and Feature Engineering
 layout: single
 toc: true
 tags:
-- machine learning
 - EDA
+- Data Visualization
+excerpt: "In this blog post, the author provides a beginner's guide to exploratory data analysis (EDA) and feature engineering using the Titanic disaster dataset. They explain the importance of EDA in understanding data and its impact on data modeling and predictions. The post includes code snippets and visualizations to analyze various features such as age, gender, passenger class, fare, and embarked port. The author also discusses correlations between different variables and demonstrates the process of feature engineering by creating a new variable called Family Size. The post concludes by emphasizing the significance of EDA in gaining insights and improving data modeling"
+seo_title: "Beginner's Guide to Exploratory Data Analysis and Feature Engineering"
+seo_description: "Learn the basics of exploratory data analysis (EDA) and feature engineering using the Titanic disaster dataset. Understand the importance of EDA in data modeling and predictions. Analyze features such as age, gender, passenger class, fare, and embarked port through code snippets and visualizations. Discover correlations between variables and learn how to create new features. Enhance your understanding of EDA and its impact on data analysis and modeling"
 ---
 
 # Introduction
