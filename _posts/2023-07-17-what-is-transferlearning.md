@@ -14,3 +14,5 @@ seo_description: "Learn about transfer learning, a technique in machine learning
 ![WhatIsTransferLearningII]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/WhatIsTransferLearning-II.png){: .align-center}
 
 
+> A conversation explaining transfer learning, a technique in machine learning that reuses knowledge from one problem to improve performance on related problems. Explore real-world examples and a relatable analogy to understand the concept easily
+{: .notice--info}

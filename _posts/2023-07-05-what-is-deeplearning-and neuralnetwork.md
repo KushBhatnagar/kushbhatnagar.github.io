@@ -14,3 +14,5 @@ seo_description: "Uncover the power of deep learning and neural networks in this
 ![WhatIsNeuralNetwork]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/WhatIsNeuralNetwork.png){: .align-center}
 
 
+> In this conversation, we explore the about deep learning and neural networks. Through a conversation between a teacher and a student, we uncover the essence of deep learning and its advanced capabilities. Discover how deep learning uses deep neural networks to automatically learn complex patterns from data, and how neural networks, inspired by the human brain, process information and make predictions. Dive into the analogy of working in a team and the game of 'Chinese Whispers' to gain a deeper understanding of these concepts
+{: .notice--info}

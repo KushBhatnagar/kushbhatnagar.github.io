@@ -12,3 +12,6 @@ seo_description: "Understand the concept of evaluation metrics in machine learni
 
 ![EvaluationMetrics-1]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/EvaluationMetrics-1.png){: .align-center}
 ![EvaluationMetrics-2]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/EvaluationMetrics-2.png){: .align-center}
+
+> In this classroom discussion, the teacher introduces the topic of evaluation metrics, and a student provides an explanation. They discuss different evaluation metrics used in machine learning, such as accuracy, precision, and recall. The student then simplifies the concept using an analogy of sorting crayons into different piles with the help of a friend, relating accuracy, precision, and recall to the friend's performance in the task
+{: .notice--info}

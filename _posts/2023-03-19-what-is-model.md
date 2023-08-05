@@ -11,5 +11,8 @@ seo_description: "Understand the concept of a model in machine learning through 
 ---
 ![whatIsModel]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/WhatIsModel.png){: .align-center}
 
+> In this classroom discussion, the teacher asks the students to explain what a model is in the context of machine learning. One student describes a model as an abstract representation of a process that uses known information to predict responses in different situations. Another student provides a simpler explanation, comparing a model to a robot that learns from examples to recognize objects. The teacher acknowledges the students' explanations and adds that our minds also rely on mental models to predict real-time situations and guide decision-making
+{: .notice--info}
+
 
 

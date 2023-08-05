@@ -12,3 +12,6 @@ seo_description: "Dive into the conversation about different types of Machine Le
 
 ![TypesOfML-I]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/TypesOfML-I.png){: .align-center}
 ![TypesOfML-II]({{ site.url }}{{ site.baseurl }}/assets/images/ml-made-easy/TypesOfML-II.png){: .align-center}
+
+> In this conversation, the teacher and student discuss different types of Machine Learning. The student explains supervised learning, unsupervised learning, and reinforcement learning, providing simple examples and analogies to illustrate each type. The teacher acknowledges the student's clear and concise explanations.
+{: .notice--info}
