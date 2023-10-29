@@ -11,6 +11,11 @@ seo_description: "Explore the learning journey of a beginner in machine learning
 ---
 
 # Introduction
+<figure>
+	<a><img src="/assets/images/learn_ml.jpg"></a>
+  <figcaption><a href="https://www.istockphoto.com/photos/machine-learning">Originally posted on istockphoto</a>.</figcaption>
+</figure>
+
 Before you start reading this post, I'd like to offer a *disclaimer: I'm not an expert in this field*. I'm here to share my learning journey with the hope that it might help others embarking on this fascinating and sometimes daunting path.
 
 About five years ago, I set out to learn machine learning on my own. At the time, like many others, I was intrigued by buzzwords like **Machine learning** and **Data Science**. I wanted to explore something new, something beyond my daily work routine as a software engineer. However, I had no prior experience in the field of machine learning, which left me wondering if this path was right for me. To kickstart my journey, I enrolled in online courses, taking a few from platforms like Udemy and Coursera. These courses equipped me with the fundamentals, giving me the initial confidence that I could venture into this exciting domain.
