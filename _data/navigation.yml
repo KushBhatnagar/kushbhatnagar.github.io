@@ -6,12 +6,12 @@ main:
    - title: "ML Made Easy"
      url: /ml-made-easy/
      description : "For a simple explanation of ML concepts, Click here!!"
-   - title: "MLOps Playground"
-     url: /mlops-playground/
-     description : "Click here to discover about MLOps tools, various cloud services, and model deployment practises for streamlined ML"
    - title: "My Bookshelf Chronicles"
      url: /my-bookshelf-chronicles/
      description : "Click here to learn about books that resonate with me"
+   - title: "MLOps Playground"
+     url: /mlops-playground/
+     description : "Click here to discover about MLOps tools, various cloud services, and model deployment practises for streamlined ML"
    - title: "Tag Index"
      url: /tags/
      description : "Feeling lost in the sea of content? Click here to search for a specific post"
