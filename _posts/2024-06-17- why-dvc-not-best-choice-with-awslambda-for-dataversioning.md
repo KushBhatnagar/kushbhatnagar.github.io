@@ -86,43 +86,39 @@ Next, I copied the following Python code, which serves as the main Lambda functi
 import json
 import boto3
 import os
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
-    # Specify the S3 bucket and file name
-    bucket_name = 'mytestdata-dvc'
-    file_name = 'mytextfile.txt'
-    
-    # Create an S3 client
-    s3 = boto3.client('s3')
-    
-    # Read the file from S3
-    response = s3.get_object(Bucket=bucket_name, Key=file_name)
-    file_content = response['Body'].read().decode('utf-8')
-    print("File contents before writing:")
-    print(file_content)
-    
-    # Modify the file content
-    new_content = file_content + "\nThis is new text added by Lambda."
-    
-    # Save the modified content back to the file
-    s3.put_object(Bucket=bucket_name, Key=file_name, Body=new_content.encode('utf-8'))
-    
-    # Read the updated file content
-    response = s3.get_object(Bucket=bucket_name, Key=file_name)
-    updated_content = response['Body'].read().decode('utf-8')
+    source_bucket ='mytestdata-upload'
 
-    
-    #clone the git repo and checkin and push the file
-    os.makedirs('/tmp/dvc-repo', exist_ok=True)
-    os.chdir('/tmp/dvc-repo')
-    # download the file
+    logger.info("New files uploaded to the source bucket.")     
+    key = event['Records'][0]['s3']['object']['key']
+
+    logger.info("Copying cloned GIT repo under the temp directory")
+    os.system("cp -r /var/task/dvc-aws-lambda-s3-dataversioning-repo/ /tmp/")
+
     try:
-        s3.download_file(bucket_name,file_name,'/tmp/dvc-repo/mytextfile.txt')
-    except Error as e:
-        print("<--Error:-->",e)
+        logger.info("Changing directory to download file from S3 bucket")
+        os.chdir("/tmp/dvc-aws-lambda-s3-dataversioning-repo")        
+        s3.Bucket(source_bucket).download_file(key, key)
 
-    os.system("git clone <repo-name>")
-    os.system("dvc init")    
+        logger.info("Running dvc add command to create hashed file")
+        os.system("dvc add "+ key)
+
+        logger.info("Running git commands to add .dvc file to the GIT repo")
+        os.system("git add .gitignore")
+        os.system("git add *.dvc")
+        os.system('git commit -m "adding data from AWS Lambda"')
+        os.system("git push")
+        
+        logger.info("Running dvc push commands to pushed hashed file to the remote storage")
+        os.system("dvc push")    
+        
+    except botocore.exceptions.ClientError as error:
+        logger.error("There was an error in versioning process")
+        print('Error Message: {}'.format(error))
     
     return {
         'statusCode': 200,
@@ -164,7 +160,8 @@ $ aws lambda create-function \
 # 7. Test the lambda function
 $ aws lambda invoke --function-name dvc-lambda response.json
 ```
-I am not able to execute `dvc add` command from the above mentioned `lambda_handler` function, I am covering the reason in the next section.
+> In the above mentioned steps, the Docker image creation and Lambda function are created successfully, but on invoking the Lambda function, the step that is executing the `dvc add` command is giving an error. I am covering the reason in the next section.
+{: .notice--warning}
 
 
 # Learnings
@@ -177,8 +174,7 @@ During the implementation of this use case, I encountered several interesting ch
     1. **Write to the `/tmp` Path:** AWS Lambda's file system is read-only except for the `/tmp` path. If you need to write to the file system in a Lambda function, ensure your code writes to a path inside the `/tmp` directory.
     2. **Read-only Error with DVC Commands:** Another issue I encountered was a read-only error when executing DVC commands in Lambda. The container image I used was `public.ecr.aws/lambda/python:3.11`, where the default directory is `/var/task/`. The `lambda_handler.py` function was copied to this directory when building the Docker image. After cloning the Git repo, I tried running the `dvc add` command, which created a corresponding DVC folder under `/var/tmp/`, containing some cache and files. This directory is crucial for running DVC operations. However, since all directories except `/tmp` are read-only, I encountered the following error during `dvc add`: `ERROR: unexpected error - [Errno 30] Read-only file system: /var/tmp/dvc`. To resolve this, I overrode the default path with a path inside the `/tmp` directory by running the command `$ dvc config core.site_cache_dir .dvc/site_cache_dir`.
     3. **User Permissions and Directory Access:** While debugging the Lambda function error, I discovered that the default directory `/var/tasks/` is associated with the `root` user. However, directories created under `/tmp` are associated with the user `sbx_user1051`, belonging to group `990` (Docker usage group). Further investigation revealed that AWS Lambda functions have multiple `sbx_users` ranging from `sbx_user1051` to `sbx_user1176`.
-    4. **DVC Add Command Timeout:** The `dvc add` command was timing out. Despite multiple attempts, I could not identify the exact reason. Based on my inspection of folder permissions and access in AWS Lambda, I suspect this issue is related to user permissions. The `site_cache_dir`, which should be created during the `dvc add` execution, was not being created, likely due to permission issues. The `/tmp` directory in AWS Lambda is created with the user `sbx_user1051`, while in Docker, it is usually the `root` user. I could run DVC commands as the root user in Docker, but in Lambda, where I executed all commands, everything was under the user `sbx_user1051`. This discrepancy likely caused the `dvc add` command to fail, and the `site_cache_dir` was not created. To investigate, I created a non-root user with the following commands in the Dockerfile. However, after creating an image from this Dockerfile and logging into the container, I was unable to run DVC commands from the created `sbx_user`. DVC needs to be executed as the root user within the container.
-
+    4. **DVC Add Command Timeout:** The `dvc add` command was timing out. Despite multiple attempts, I could not identify the exact reason. Based on my inspection of folder permissions and access in AWS Lambda, I suspect this issue is related to user permissions. The `site_cache_dir`, which should be created during the `dvc add` execution, was not being created, likely due to permission issues. The `/tmp` directory in AWS Lambda is created with the user `sbx_user1051`, while in Docker, it is usually the `root` user. I could run DVC commands as the root user in Docker, but in Lambda, where I executed all commands, everything was under the user `sbx_user1051`. This discrepancy likely caused the `dvc add` command to fail, and the `site_cache_dir` was not created. To investigate, I created a non-root user with the following commands in the Dockerfile. However, after creating an image from this Dockerfile and logging into the container, I was unable to run DVC commands from the created `sbx_user`. DVC needs to be executed as the root user within the container. I'm not sure how to resolve this step yet.
 
 
 # Last Word
