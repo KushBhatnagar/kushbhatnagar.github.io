@@ -1,5 +1,5 @@
 ---
-title: What is Bias and Variance
+title: What is Clustering
 layout : single
 categories: ml-made-easy
 tag:
