@@ -1,5 +1,5 @@
 ---
-title: Statistics in Machine Learning
+title: statistics in ml
 layout : single
 categories: ml-made-easy
 tag:
