@@ -1,5 +1,5 @@
 ---
-title: statistics in ml
+title: Statistics in ML
 layout : single
 categories: ml-made-easy
 tag:
