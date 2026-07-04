@@ -1,0 +1,17 @@
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+
+<div class="post-content">
+  {{ .Content }}
+
+  <ul class="category-post-list">
+    {{- $cat := .Params.category_filter }}
+    {{- $posts := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice $cat) }}
+    {{- range $posts.ByDate.Reverse }}
+    <li><span>{{ .Date.Format "January 2, 2006" }}</span> &nbsp; <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ul>
+</div>
+{{- end }}

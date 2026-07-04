@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout *)",
+      "Bash(git submodule *)",
+      "Bash(git -C themes/PaperMod log --oneline -1)",
+      "WebFetch(domain:blogsbykush.com)",
+      "Bash(python3 *)",
+      "Bash(awk 'NR<=40' content/posts/data-leakage.md)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:1313/)",
+      "Bash(curl -s -o /dev/null -w \"data-lekage: HTTP %{http_code}\\\\n\" http://localhost:1313/ml-made-easy/data-lekage/)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

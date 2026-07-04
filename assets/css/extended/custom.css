@@ -1,0 +1,65 @@
+/* ---- Newsletter signup (Mailchimp) ---- */
+.newsletter-signup {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+}
+.newsletter-signup h3 {
+    margin: 0 0 0.75rem;
+}
+.newsletter-signup form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.newsletter-signup input[type="email"] {
+    flex: 1 1 220px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--theme);
+    color: var(--primary);
+}
+.newsletter-signup input[type="submit"] {
+    padding: 0.5rem 1.1rem;
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: var(--theme);
+    cursor: pointer;
+}
+
+/* ---- Category landing post lists ---- */
+.category-post-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+.category-post-list li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+}
+.category-post-list li span {
+    color: var(--secondary);
+    font-size: 0.85rem;
+}
+
+/* ---- Blockquotes (previously Jekyll .notice callouts) ---- */
+.post-content blockquote {
+    border-inline-start: 4px solid var(--tertiary);
+    background: var(--entry);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+}
+
+/* Center images inside posts (previously {: .align-center}) */
+.post-content img {
+    margin-inline: auto;
+}
+
+/* Disqus spacing */
+.disqus-comments {
+    margin-top: 2rem;
+}

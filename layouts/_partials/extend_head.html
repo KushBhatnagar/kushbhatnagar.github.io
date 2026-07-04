@@ -1,0 +1,16 @@
+{{- /* Analytics + AdSense — production builds only (HUGO_ENVIRONMENT=production) */ -}}
+{{- if eq hugo.Environment "production" }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWTLYBWXCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QWTLYBWXCL');
+</script>
+
+{{- if site.Params.adsense }}
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896166132316701" crossorigin="anonymous"></script>
+{{- end }}
+{{- end }}

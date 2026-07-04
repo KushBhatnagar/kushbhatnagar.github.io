@@ -1,0 +1,124 @@
+baseURL = "https://blogsbykush.com/"
+title = "Blogs by Kush"
+theme = "PaperMod"
+pagination.pagerSize = 5
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableInlineShortcodes = true
+
+# Post/page URLs are frozen via an explicit `url:` in each file's front matter,
+# so every live URL stays identical to the current Jekyll sitemap.
+
+# /tags/ list is provided by the tags taxonomy (matches current site).
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  env = "production"
+  title = "Blogs by Kush"
+  description = "Simplifying the complexities of MLOps, AWS, Machine Learning, and a lot more"
+  keywords = ["Machine Learning", "MLOps", "AWS", "Blog"]
+  author = "Kush Bhatnagar"
+  DateFormat = "January 2, 2006"
+  defaultTheme = "auto"          # dark/light toggle
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowToc = true
+  TocOpen = false
+  comments = true
+  adsense = true                 # gated to production in the adsense partial
+
+  [params.assets]
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Kush 👋"
+    Content = """
+I'm just another **nerdy**, **curious**, **lifelong learner** who believes in the power of simplicity. I write about Machine Learning, MLOps, AWS, and the books that inspire me.
+"""
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/bhatnagarkush"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/KushBhatnagar"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/kushbhatnagar/"
+  [[params.socialIcons]]
+    name = "medium"
+    url = "https://medium.com/@kushbhatnagar86"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:kushbhatnagar86@gmail.com"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  [params.analytics.google]
+    SiteVerificationTag = "BKwv8d9RamS8UFYapYrQ8ppq348YsIXUDc9E2bWdaYM"
+
+# Top navigation — URLs match the current Jekyll site exactly.
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 10
+[[menu.main]]
+  identifier = "ml-made-easy"
+  name = "ML Made Easy"
+  url = "/ml-made-easy/"
+  weight = 20
+[[menu.main]]
+  identifier = "mlops"
+  name = "MLOps Playground"
+  url = "/mlops-playground/"
+  weight = 30
+[[menu.main]]
+  identifier = "bookshelf"
+  name = "Bookshelf Chronicles"
+  url = "/my-bookshelf-chronicles/"
+  weight = 40
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 50
+[[menu.main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "/year-archive/"
+  weight = 60
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 70
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]   # JSON drives the search index
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "monokai"
+  [markup.goldmark.renderer]
+    unsafe = true                  # raw HTML in existing posts
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
