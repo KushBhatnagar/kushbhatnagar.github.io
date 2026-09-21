@@ -45,6 +45,8 @@ enableInlineShortcodes = true
 
   [params.homeInfoParams]
     Title = "Hi, I'm Kush 👋"
+    imageUrl = "/assets/images/kush-toon.jpg"
+    imageTitle = "Kush Bhatnagar"
     Content = """
 I'm just another **nerdy**, **curious**, **lifelong learner** who believes in the power of simplicity. I write about Machine Learning, MLOps, AWS, and the books that inspire me.
 """

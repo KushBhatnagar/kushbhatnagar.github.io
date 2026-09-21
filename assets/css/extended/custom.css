@@ -1,3 +1,28 @@
+/* ---- Homepage intro photo ---- */
+.home-info-flex {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.home-avatar {
+    flex: 0 0 auto;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+}
+.home-info-text .entry-header h1 {
+    margin-bottom: 0.4rem;
+}
+@media (max-width: 640px) {
+    .home-info-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
 /* ---- Newsletter signup (Mailchimp) ---- */
 .newsletter-signup {
     margin: 2rem 0;

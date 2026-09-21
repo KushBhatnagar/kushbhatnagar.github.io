@@ -9,7 +9,10 @@
       "Bash(awk 'NR<=40' content/posts/data-leakage.md)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:1313/)",
       "Bash(curl -s -o /dev/null -w \"data-lekage: HTTP %{http_code}\\\\n\" http://localhost:1313/ml-made-easy/data-lekage/)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(grep -iA1 \"home-info-flex\" public/index.html)",
+      "Bash(pkill -x hugo)",
+      "Bash(curl -s -o /dev/null -w \"port 1313: HTTP %{http_code}\\\\n\" --max-time 3 http://localhost:1313/)"
     ]
   }
 }

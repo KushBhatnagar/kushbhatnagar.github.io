@@ -65,6 +65,16 @@ Format: `HH:MM [Phase N] change — detail`
 - Removed the trial themes (`themes/stack`, `themes/blowfish`, `themes/congo`) and `_preview/`.
 - Added **`CLAUDE.md`** so future Claude Code sessions load project context automatically.
 
+### Homepage photo
+- PaperMod's `homeInfoParams` mode is text-only (no avatar), so the author photo from the old
+  Jekyll home was missing. (Post/about images were fine — they render wherever embedded; the
+  homepage and category listings are just text-only by PaperMod design.)
+- Kept the intro + recent-posts homepage and added a round avatar beside the intro:
+  overrode `layouts/_partials/home_info.html`, added `imageUrl`/`imageTitle` to
+  `homeInfoParams` in `hugo.toml` (`/assets/images/kush-toon.jpg`), and styled `.home-avatar` /
+  `.home-info-flex` in `assets/css/extended/custom.css` (responsive: stacks on mobile).
+- Decided **not** to add `cover:` thumbnails to post lists — kept clean text listings.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
