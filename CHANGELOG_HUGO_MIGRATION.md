@@ -65,7 +65,7 @@ Format: `HH:MM [Phase N] change — detail`
 - Removed the trial themes (`themes/stack`, `themes/blowfish`, `themes/congo`) and `_preview/`.
 - Added **`CLAUDE.md`** so future Claude Code sessions load project context automatically.
 
-### Homepage photo
+### Homepage photo (2026-09-21)
 - PaperMod's `homeInfoParams` mode is text-only (no avatar), so the author photo from the old
   Jekyll home was missing. (Post/about images were fine — they render wherever embedded; the
   homepage and category listings are just text-only by PaperMod design.)
@@ -74,6 +74,43 @@ Format: `HH:MM [Phase N] change — detail`
   `homeInfoParams` in `hugo.toml` (`/assets/images/kush-toon.jpg`), and styled `.home-avatar` /
   `.home-info-flex` in `assets/css/extended/custom.css` (responsive: stacks on mobile).
 - Decided **not** to add `cover:` thumbnails to post lists — kept clean text listings.
+
+## 2026-09-30 — Site refresh, phases 0–2 (see `PLAN_SITE_REFRESH.md`)
+
+### Phase 0 — Migration hygiene
+- RSS output renamed to **`/feed.xml`** (the Jekyll path; `/index.xml` no longer produced). Social RSS icon updated.
+- AdSense: restored the Jekyll site's ad unit (slot `5967806966`) at the end of posts (production only) —
+  the Hugo build previously loaded only the script, so no ads rendered unless Auto ads was on.
+  Added **`static/ads.txt`** (never existed on the Jekyll site either).
+- Untracked `.claude/settings.local.json`; README rewritten for Hugo.
+
+### Phase 1 — Structure, homepage, brand
+- **ML Made Easy → Concept Breakdown** (`_migration/concept_breakdown.py`): 20 posts moved to
+  `/concept-breakdown/<slug>/` (typo slug fixed: `data-lekage` → `data-leakage`), `aliases` redirect every old
+  URL, `disqus_identifier` keeps comment threads, `images:` set for previews/thumbnails; write-ups that lived only
+  in `summary:` (never shown on the post page) copied into bodies; summaries shortened to one-line teasers; stray
+  `n` removed from Statistics post. `/ml-made-easy/` landing redirects to `/concept-breakdown/`.
+- Nav: Concept Breakdown · Tech Digest · Build Log · Archive · Search · About (MLOps Playground, Bookshelf
+  Chronicles, Tags off-nav; pages still live).
+- New pages: `/build-log/` (empty state), `/tech-digest/` (placeholder), `/subscribe/`.
+- Homepage rewritten: "Learn. Build. Explain." tagline, proof line, Subscribe/LinkedIn CTAs, three pillars,
+  latest 4 Concept Breakdown cards, then recent posts.
+- Brand layer: comic palette, Fredoka headings, pill buttons, thumbnail card grid (WebP thumbnails generated
+  by Hugo via a module mount of `static/assets/images`), mobile nav wraps, default social image
+  `og-default.png`. Newsletter form extracted to one partial (provider swap = one file).
+
+### Phase 2 — Concept Breakdown system
+- `scripts/new_breakdown.py`: PDF → cropped 1080×1350 WebP slides, clean PDF, 1200×630 cover, draft bundle.
+- `carousel` shortcode: scroll-snap swipe, arrows, keyboard, counter, dots, lazy/srcset, Download PDF.
+- `/breakdown-post` skill for transcript + SEO write-up + LinkedIn copy.
+- Pilot post **How LLMs Think** (`draft: true`, transcript read from slides — to be verified by Kush).
+
+### Phase 2 — review feedback (Kush)
+- Concept Breakdown posts made lean: comic carousel + "The concept in plain words" only. Removed TOC,
+  "Why this matters for PMs", takeaways, FAQ and related links.
+- Transcript kept but collapsed via new `transcript` shortcode ("Read this comic as text"), so the page
+  stays lean while search engines and screen readers get the dialogue.
+- `scripts/new_breakdown.py` template and `/breakdown-post` skill updated to the lean format.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
