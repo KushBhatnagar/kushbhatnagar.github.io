@@ -38,6 +38,7 @@ goes live when merged into `main`.
 
 ## Phase 0 — Migration hygiene
 - [x] Serve RSS at `/feed.xml` (same path as Jekyll; Feedburner/subscribers keep working)
+- [x] Restore AdSense ad unit on posts + add `ads.txt`
 - [x] Move ML Made Easy write-ups from `summary:` (list-only) into the post body; fix stray `n` in Statistics post
 - [x] Untrack `.claude/settings.local.json`; refresh `README.md`
 

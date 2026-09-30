@@ -242,3 +242,60 @@
 .disqus-comments {
     margin-top: 2rem;
 }
+
+/* ---- Carousel (Concept Breakdown slides) ---- */
+.carousel { margin: 1.5rem 0 2rem; }
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    border-radius: var(--radius);
+    background: #dadada;
+    scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track:focus-visible { outline: 3px solid var(--brand-blue); outline-offset: 3px; }
+.carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.post-content .carousel-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+}
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+}
+.carousel-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background: var(--theme);
+    color: var(--primary);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.carousel-btn:disabled { opacity: 0.3; cursor: default; }
+.carousel-dots { display: flex; gap: 0.4rem; }
+.carousel-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--tertiary);
+    transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot.is-active { background: var(--brand-orange); transform: scale(1.3); }
+.carousel-count { font-size: 0.85rem; color: var(--secondary); min-width: 3rem; text-align: center; }
+.carousel-caption { margin-top: 0.4rem; text-align: center; font-size: 0.85rem; }
