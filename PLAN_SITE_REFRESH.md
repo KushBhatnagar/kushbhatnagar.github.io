@@ -58,6 +58,12 @@ goes live when merged into `main`.
 - [x] Pilot: *How LLMs Think* (transcript drafted from the comic — Kush to verify)
 - [ ] Ideas backlog: series numbering + prev/next, FAQ structured data, backfill old 20 posts (~2/week)
 
+## Parked (Kush, 2026-09-30)
+- **Tech Digest publishing:** Kush runs the digest manually today; likely a GitHub Action in the newsletter repo
+  later. Waiting on the issue HTML template (re-attach; first upload didn't arrive).
+- **Newsletter provider choice:** revisit later (current lean: Buttondown for API sending; verify pricing).
+- **Subscriber cleanup:** Kush will share the Mailchimp export later; ~268 subscribers, suspected mostly spam.
+
 ## Phase 3 — Tech Digest (needs a sample issue HTML)
 - [ ] `static/tech-digest/<date>/index.html` (issue kept byte-for-byte) + metadata page per issue
 - [ ] `scripts/add_digest.py issue.html` — copy, extract title/date/summary, inject slim site bar + GA + canonical
