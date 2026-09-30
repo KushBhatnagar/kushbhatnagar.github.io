@@ -10,3 +10,6 @@ _backlog
 /.hugo_build.lock
 hugo_stats.json
 
+
+# Claude Code local settings
+.claude/settings.local.json

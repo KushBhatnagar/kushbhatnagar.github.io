@@ -1,0 +1,24 @@
+{{- /* Returns a listing thumbnail for a page as dict {src, width, height}, or nothing.
+       Source order: page-bundle resource "thumb*" / "slide-01*", then first entry of
+       `images:`, then the first <img> in the content. Images are resized to WebP when
+       they are Hugo resources (page bundles, or /assets/images via the module mount). */ -}}
+{{- $img := false }}
+{{- $src := "" }}
+{{- with .Resources.GetMatch "{thumb*,slide-01*}" }}{{ $img = . }}{{ end }}
+{{- if not $img }}
+  {{- with .Params.images }}{{ $src = index . 0 }}{{ end }}
+  {{- if not $src }}
+    {{- with findRESubmatch `<img[^>]+src="([^"]+)"` .Content 1 }}{{ $src = index (index . 0) 1 }}{{ end }}
+  {{- end }}
+  {{- with $src }}
+    {{- $img = or ($.Resources.GetMatch .) (resources.Get (strings.TrimPrefix "/" .)) }}
+  {{- end }}
+{{- end }}
+{{- $out := dict }}
+{{- if $img }}
+  {{- $t := $img.Fill "600x480 Top webp q80" }}
+  {{- $out = dict "src" $t.RelPermalink "width" $t.Width "height" $t.Height }}
+{{- else if $src }}
+  {{- $out = dict "src" ($src | relURL) "width" 600 "height" 480 }}
+{{- end }}
+{{- return $out }}
