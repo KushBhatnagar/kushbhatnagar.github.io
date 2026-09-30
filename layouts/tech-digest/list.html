@@ -1,0 +1,41 @@
+{{- /* /tech-digest/ — archive of Digital Dhaba issues, newest first. Cards use each issue's digest.json. */ -}}
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.tagline }}<div class="post-description">{{ . | markdownify }}</div>{{ end }}
+</header>
+
+<div class="post-content">{{ .Content }}</div>
+
+{{- $issues := .Pages.ByDate.Reverse }}
+{{- if not $issues }}
+<div class="empty-state">
+  {{ .Params.empty_message | markdownify }}
+  {{- partial "newsletter_form.html" (dict "heading" "Get it in your inbox") }}
+</div>
+{{- else }}
+<div class="digest-list">
+  {{- range $i, $p := $issues }}
+  {{- $d := dict }}
+  {{- with $p.Resources.Get "digest.json" }}{{ $d = . | transform.Unmarshal }}{{ end }}
+  <a class="digest-card{{ if eq $i 0 }} digest-card--latest{{ end }}" href="{{ $p.RelPermalink }}">
+    {{- if eq $i 0 }}
+    {{- with $p.Resources.GetMatch "hero.*" }}
+    {{- $t := .Resize "720x webp q80" }}
+    <img class="digest-hero" src="{{ $t.RelPermalink }}" width="{{ $t.Width }}" height="{{ $t.Height }}" alt="">
+    {{- end }}
+    {{- end }}
+    <span class="digest-meta">{{ if eq $i 0 }}<b>Latest</b> · {{ end }}{{ $p.Date.Format "January 2, 2006" }}{{ with $p.Params.story_count }} · {{ . }}{{ end }}</span>
+    <span class="digest-title">{{ with $d.issue }}{{ .dek }}{{ else }}{{ $p.Title }}{{ end }}</span>
+    {{- with $d.topStories }}
+    <ol class="digest-top">
+      {{- range first 3 . }}<li>{{ .title }}</li>{{ end }}
+    </ol>
+    {{- end }}
+    <span class="digest-read">Read the issue →</span>
+  </a>
+  {{- end }}
+</div>
+{{- partial "newsletter_form.html" (dict "heading" "Get Digital Dhaba in your inbox every week") }}
+{{- end }}
+{{- end }}

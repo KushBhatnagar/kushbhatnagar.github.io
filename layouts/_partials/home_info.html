@@ -45,6 +45,15 @@
 </section>
 {{- end }}
 
+{{- with first 1 (where site.RegularPages "Section" "tech-digest").ByDate.Reverse }}
+{{- range . }}
+<a class="home-digest" href="{{ .RelPermalink }}">
+    <span class="home-digest-label">New Tech Digest</span>
+    <span class="home-digest-text">{{ .Date.Format "Jan 2" }} · {{ .Summary | plainify }} →</span>
+</a>
+{{- end }}
+{{- end }}
+
 {{- $breakdowns := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice "concept-breakdown") }}
 {{- with $breakdowns }}
 <section class="home-section">
