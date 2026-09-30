@@ -12,12 +12,20 @@ writing for PMs, PM aspirants and non-technical folks in tech. Sections follow t
 formerly "ML Made Easy"). Older series `mlops` and `bookshelf` stay live but are off the nav.
 Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
+## ▶ Start here (new session)
+
+Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
+and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
+Snapshot (2026-09-30): Phases 0–3 merged into `hugo-migration`; **not live yet**; Phase 4 (newsletter
+provider + subscriber cleanup) parked by Kush; Kush wants a few more changes before go-live (PR #2).
+
 ## Current state: mid-migration Jekyll → Hugo
 
 The site is being migrated from **Jekyll (Minimal Mistakes)** to **Hugo (PaperMod)**.
 
 - **`main` branch** = the live Jekyll site (untouched during migration).
-- **`hugo-migration` branch** = the new Hugo site. Feature work goes on branches merged into it via PR.
+- **`hugo-migration` branch** = the new Hugo site (staging). Feature work goes on branches merged into it via PR.
+  Go-live = PR #2 (`hugo-migration` → `main`), after switching Pages to GitHub Actions.
 - Both stacks currently coexist in the tree on `hugo-migration`; Jekyll's underscore dirs
   (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`) are
   ignored by Hugo and will be deleted once the migration is verified and merged.
@@ -125,12 +133,8 @@ _migration/*.py                   # one-off converters (kept for audit)
 
 ## Remaining steps to finish the migration
 
-1. Final visual review via `hugo server`.
-2. GitHub repo **Settings → Pages** → switch source to **GitHub Actions** (before merging).
-3. Merge `hugo-migration` → `main` to trigger deploy.
-4. Delete the old Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`,
-   `_sass/`, `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`) and `_migration/`.
-5. Confirm Disqus threads still resolve (identifiers use `RelPermalink`, matching old paths).
+See the **go-live checklist** in `PLAN_SITE_REFRESH.md` (Pages → GitHub Actions *before* merging PR #2,
+switch the Digital-Dhaba workflow to `BLOG_BRANCH: main`, post-launch checks, then delete the Jekyll files).
 
 ## Brand
 

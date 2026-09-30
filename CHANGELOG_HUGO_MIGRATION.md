@@ -122,6 +122,11 @@ Format: `HH:MM [Phase N] change — detail`
 - `layouts/tech-digest/list.html`: archive with latest-issue hero card; homepage "New Tech Digest" strip.
 - First issue imported (2026-09-27). Auto-publish workflow for Digital-Dhaba in `docs/tech-digest/`.
 
+### Status snapshot (2026-09-30, end of session)
+- PRs #1 and #3 merged into `hugo-migration`; Digital-Dhaba auto-publish verified (issue 2026-09-30).
+- Not live: go-live (PR #2) waits on Kush's extra pre-launch changes. Phase 4 parked.
+- "Where we left off" now lives at the top of `PLAN_SITE_REFRESH.md`; CLAUDE.md points new sessions there.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

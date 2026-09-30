@@ -4,6 +4,37 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch and is merged into `hugo-migration` via PR; `hugo-migration`
 goes live when merged into `main`.
 
+## ▶ STATUS — where we left off (updated 2026-09-30)
+
+**Phases 0–3 are built and merged into `hugo-migration` (PRs #1, #3). Nothing is live yet:**
+`main` / blogsbykush.com is still the old Jekyll site. Go-live = PR #2 (`hugo-migration` → `main`).
+Kush previewed everything locally and wants **a few more changes before go-live** (not yet specified).
+
+| Area | State |
+|---|---|
+| Phase 0 — migration hygiene | ✅ Done |
+| Phase 1 — structure, homepage, brand | ✅ Done, reviewed by Kush |
+| Phase 2 — Concept Breakdown system | ✅ Done (lean format). Pilot *How LLMs Think* is still `draft: true` |
+| Phase 3 — Tech Digest (Digital Dhaba) | ✅ Done. Auto-publish **verified**: Digital-Dhaba workflow pushed issue 2026-09-30 to `hugo-migration` |
+| Phase 4 — Subscribers / newsletter | ⏸ **Parked by Kush** — not started (see Phase 4 below) |
+| Go-live | ⏳ Waiting on Kush's extra changes, then the go-live checklist below |
+
+**Open items for the next session**
+1. Ask Kush for the "few more changes" he wants before go-live; do them on a branch → PR into `hugo-migration`.
+2. *How LLMs Think*: Kush to verify transcript wording, then set `draft: false` (decide if it ships at launch).
+3. PR #2's description is outdated (mentions "ML Made Easy", wrongly says images moved to `/images/`) —
+   rewrite it if Kush agrees (it's his PR).
+4. Phase 4 when Kush un-parks it: provider choice + Mailchimp CSV export.
+
+## Go-live checklist (in this order)
+1. [ ] Kush's pre-launch changes merged into `hugo-migration`; local preview OK (`hugo server -D`)
+2. [ ] Blog repo **Settings → Pages → Source → GitHub Actions** (must be BEFORE step 3)
+3. [ ] Merge PR #2 (`hugo-migration` → `main`); watch Actions → "Deploy Hugo site to Pages" goes green
+4. [ ] In Digital-Dhaba `.github/workflows/publish-to-blog.yml`: `BLOG_BRANCH: hugo-migration` → `main`
+5. [ ] Post-launch checks (bottom of this file)
+6. [ ] Delete old Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`,
+       `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`) in a follow-up PR
+
 ## Brand direction
 
 - **Who:** Kush Bhatnagar — Technical Product Manager, 17+ years in tech, last 5+ on AI/GenAI
@@ -26,7 +57,7 @@ goes live when merged into `main`.
 
 | Topic | Decision |
 |---|---|
-| Launch order | Phase 0–2 ship with the Hugo launch; Phases 3–4 follow on the live site |
+| Launch order | Phases 0–3 ship with the Hugo launch (plus Kush's extra changes); Phase 4 follows on the live site |
 | ML Made Easy → Concept Breakdown | Posts move to `/concept-breakdown/<slug>/`; old URLs kept as redirects (`aliases`); Disqus threads pinned to old identifiers |
 | Concept Breakdown scope | ML, GenAI, Cloud, Product Management, occasional life lessons |
 | Nav | Concept Breakdown · Tech Digest · Build Log · Archive · Search · About (MLOps Playground, Bookshelf Chronicles, Tags removed from nav only — pages stay live) |
@@ -48,7 +79,7 @@ goes live when merged into `main`.
 - [x] `/subscribe/` page — the one link to share on LinkedIn (provider can change behind it)
 - [x] Homepage: intro + proof line + CTAs, Learn/Build/Explain pillars, latest breakdown thumbnails
 - [x] Brand layer: colours, heading font, comic thumbnail grid, default social-preview image
-- [ ] Kush reviews working copy (`hugo server`)
+- [x] Kush reviewed working copy (`hugo server`)
 
 ## Phase 2 — Concept Breakdown system
 - [x] `scripts/new_breakdown.py` — PDF → slides → page bundle with pre-filled `index.md`
@@ -57,11 +88,17 @@ goes live when merged into `main`.
       LinkedIn post + first comment
 - [x] Lean format after Kush's review: comic + "concept in plain words" only; transcript collapsed
       ("Read this comic as text"); no TOC / PM section / takeaways / FAQ
-- [x] Pilot: *How LLMs Think* (transcript drafted from the comic — Kush to verify)
+- [x] Pilot: *How LLMs Think* — still `draft: true`; transcript read from slides, Kush to verify
 - [ ] Ideas backlog: series numbering + prev/next, backfill transcripts for the old 20 posts (~2/week)
 
 ## Parked (Kush, 2026-09-30)
-- **Tech Digest (Digital Dhaba) decisions, 2026-09-30:**
+- **Newsletter provider choice:** revisit later (current lean: Buttondown for API sending of the HTML
+  issue; Kit is the alternative; verify current pricing; budget ≤ ~$12/mo; must be fully automated).
+- **Subscriber cleanup:** Kush will share the Mailchimp export later; ~268 subscribers, suspected mostly spam.
+  The CSV contains personal data: the audit script should be run by Kush locally.
+
+## Phase 3 — Tech Digest (Digital Dhaba)
+Decisions (2026-09-30):
   - Source: private repo `KushBhatnagar/Digital-Dhaba`; `run_digest.sh` writes
     `issues/YYYY-MM-DD/{newsletter.html, digest.json, digest-*.md}` (self-contained HTML, hero embedded).
   - Naming: nav stays **"Tech Digest"**; page title **"Digital Dhaba · Tech Digest"**.
@@ -70,25 +107,25 @@ goes live when merged into `main`.
   - The web copy fixes the `{{VIEW_IN_BROWSER_URL}}` / `{{FORWARD_URL}}` / `{{UNSUBSCRIBE_URL}}` placeholders;
     the site hosts the hero image for the email version; archive cards are built from `digest.json`.
   - Idea: `research/` explainers → "Deep Dive" blog posts linked from each digest.
-- **Newsletter provider choice:** revisit later (current lean: Buttondown for API sending; verify pricing).
-- **Subscriber cleanup:** Kush will share the Mailchimp export later; ~268 subscribers, suspected mostly spam.
 
-## Phase 3 — Tech Digest (Digital Dhaba)
 - [x] Issue bundles `content/tech-digest/<date>/` via `scripts/add_digest.py` (HTML kept byte-for-byte)
 - [x] Issue page: original design + site bar, canonical/SEO/social tags, GA, web-safe placeholder links
 - [x] `/tech-digest/` archive (cards from `digest.json`), homepage "New Tech Digest" strip, section RSS
-- [x] First issue imported: 2026-09-27
+- [x] Issues on the site: 2026-09-27 (manual import), 2026-09-30 (auto-published)
 - [x] Auto-publish workflow for Digital-Dhaba: `docs/tech-digest/publish-to-blog.yml` (+ `docs/TECH_DIGEST.md`)
-- [ ] Kush: create `BLOG_REPO_TOKEN`, add the workflow to Digital-Dhaba, test run (see docs)
+- [x] Kush: created `BLOG_REPO_TOKEN`, added the workflow to Digital-Dhaba (`BLOG_BRANCH: hugo-migration`
+      for now); first automatic publish worked (issue 2026-09-30, commit `9517175`)
 - [ ] Emailing the issue from the same workflow → Phase 4 (provider choice parked)
 
-## Phase 4 — Subscribers
+## Phase 4 — Subscribers & emailing the digest  ⏸ PARKED (not started)
 - [ ] Pick provider (shortlist: Kit, Buttondown) against "fully automated" + API sending of HTML issue
 - [ ] Double opt-in + CAPTCHA (Turnstile or provider built-in); tag signups by source (LinkedIn/blog/digest)
 - [ ] `scripts/audit_subscribers.py` — run locally on Mailchimp CSV export; flags junk (random local parts,
       no MX / disposable domains, burst signups, never-opened)
 - [ ] Re-permission email to survivors; import only confirmed humans
-- [ ] Swap `/subscribe/` + post footer form to new provider; retire Mailchimp
+- [ ] Swap `/subscribe/` + post footer form to new provider (only `layouts/_partials/newsletter_form.html`); retire Mailchimp
+- [ ] Extend the Digital-Dhaba workflow to send each issue via the provider API (hero from `/tech-digest/<date>/hero.jpg`,
+      provider merge tags for `{{VIEW_IN_BROWSER_URL}}` / `{{FORWARD_URL}}` / `{{UNSUBSCRIBE_URL}}`)
 
 ## Post-launch checks
 - [ ] AdSense serving (site approved? `ads.txt` present? auto-ads enabled in AdSense console?)
