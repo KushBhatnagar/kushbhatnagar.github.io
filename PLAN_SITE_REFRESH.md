@@ -59,8 +59,15 @@ goes live when merged into `main`.
 - [ ] Ideas backlog: series numbering + prev/next, FAQ structured data, backfill old 20 posts (~2/week)
 
 ## Parked (Kush, 2026-09-30)
-- **Tech Digest publishing:** Kush runs the digest manually today; likely a GitHub Action in the newsletter repo
-  later. Waiting on the issue HTML template (re-attach; first upload didn't arrive).
+- **Tech Digest (Digital Dhaba) decisions, 2026-09-30:**
+  - Source: private repo `KushBhatnagar/Digital-Dhaba`; `run_digest.sh` writes
+    `issues/YYYY-MM-DD/{newsletter.html, digest.json, digest-*.md}` (self-contained HTML, hero embedded).
+  - Naming: nav stays **"Tech Digest"**; page title **"Digital Dhaba · Tech Digest"**.
+  - Publishing: **auto-publish**. A GitHub Action in Digital-Dhaba (on push to `issues/**`) copies the issue
+    into this repo with a fine-grained token (repo is private, so the blog can't pull on its own).
+  - The web copy fixes the `{{VIEW_IN_BROWSER_URL}}` / `{{FORWARD_URL}}` / `{{UNSUBSCRIBE_URL}}` placeholders;
+    the site hosts the hero image for the email version; archive cards are built from `digest.json`.
+  - Idea: `research/` explainers → "Deep Dive" blog posts linked from each digest.
 - **Newsletter provider choice:** revisit later (current lean: Buttondown for API sending; verify pricing).
 - **Subscriber cleanup:** Kush will share the Mailchimp export later; ~268 subscribers, suspected mostly spam.
 
