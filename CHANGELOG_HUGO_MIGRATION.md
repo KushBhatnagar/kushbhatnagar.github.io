@@ -112,6 +112,16 @@ Format: `HH:MM [Phase N] change — detail`
   stays lean while search engines and screen readers get the dialogue.
 - `scripts/new_breakdown.py` template and `/breakdown-post` skill updated to the lean format.
 
+### Phase 3 — Tech Digest / Digital Dhaba (2026-09-30)
+- `content/tech-digest.md` placeholder replaced by the `tech-digest` section (`_index.md`, title
+  "Digital Dhaba · Tech Digest"; nav label stays "Tech Digest").
+- `scripts/add_digest.py`: imports an issue folder from Digital-Dhaba into a page bundle (HTML stored as
+  `newsletter.txt`, `digest.json`, extracted `hero.jpg`, generated `index.md` with top stories).
+- `layouts/tech-digest/single.html`: standalone issue page, original design untouched; build-time site bar,
+  SEO/Open Graph, GA (prod), `{{VIEW_IN_BROWSER_URL}}`/`{{UNSUBSCRIBE_URL}}` removed, `{{FORWARD_URL}}` → mailto.
+- `layouts/tech-digest/list.html`: archive with latest-issue hero card; homepage "New Tech Digest" strip.
+- First issue imported (2026-09-27). Auto-publish workflow for Digital-Dhaba in `docs/tech-digest/`.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

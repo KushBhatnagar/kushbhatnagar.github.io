@@ -73,12 +73,14 @@ goes live when merged into `main`.
 - **Newsletter provider choice:** revisit later (current lean: Buttondown for API sending; verify pricing).
 - **Subscriber cleanup:** Kush will share the Mailchimp export later; ~268 subscribers, suspected mostly spam.
 
-## Phase 3 — Tech Digest (needs a sample issue HTML)
-- [ ] `static/tech-digest/<date>/index.html` (issue kept byte-for-byte) + metadata page per issue
-- [ ] `scripts/add_digest.py issue.html` — copy, extract title/date/summary, inject slim site bar + GA + canonical
-- [ ] `/tech-digest/` archive (issue cards), homepage card, own RSS feed
-- [ ] Automation: newsletter repo's GitHub Action opens a PR here each week (optionally auto-merge)
-- [ ] Same Action sends the issue via the newsletter provider's API
+## Phase 3 — Tech Digest (Digital Dhaba)
+- [x] Issue bundles `content/tech-digest/<date>/` via `scripts/add_digest.py` (HTML kept byte-for-byte)
+- [x] Issue page: original design + site bar, canonical/SEO/social tags, GA, web-safe placeholder links
+- [x] `/tech-digest/` archive (cards from `digest.json`), homepage "New Tech Digest" strip, section RSS
+- [x] First issue imported: 2026-09-27
+- [x] Auto-publish workflow for Digital-Dhaba: `docs/tech-digest/publish-to-blog.yml` (+ `docs/TECH_DIGEST.md`)
+- [ ] Kush: create `BLOG_REPO_TOKEN`, add the workflow to Digital-Dhaba, test run (see docs)
+- [ ] Emailing the issue from the same workflow → Phase 4 (provider choice parked)
 
 ## Phase 4 — Subscribers
 - [ ] Pick provider (shortlist: Kit, Buttondown) against "fully automated" + API sending of HTML issue

@@ -69,6 +69,15 @@ HUGO_ENVIRONMENT=production hugo --gc --minify   # production build → public/
    **Keep these pages lean** (Kush's call): comic + plain-words section only, no TOC/FAQ/extra sections.
 3. Kush reviews, sets `draft: false`. (`linkedin.txt` / `transcript.txt` are in `ignoreFiles`, never published.)
 
+## Tech Digest (Digital Dhaba) issues
+
+Generated in the private repo `KushBhatnagar/Digital-Dhaba`; a GitHub Action there runs
+`scripts/add_digest.py issues/<date>` and pushes to this repo (auto-publish). Each issue is a bundle in
+`content/tech-digest/<date>/` (`newsletter.txt` = issue HTML byte-for-byte, `digest.json`, `hero.*`,
+generated `index.md` with `build.publishResources: false`). `layouts/tech-digest/single.html` serves
+the HTML standalone with site bar / SEO / GA / fixed placeholders; `list.html` is the archive.
+Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TECH_DIGEST.md`.
+
 ## Layout of the Hugo site
 
 ```
@@ -77,7 +86,9 @@ content/
   posts/*.md                      # older posts (section "posts")
   posts/<slug>/index.md           # page bundles: comic posts with slide-*.webp, <slug>.pdf, cover.jpg
   concept-breakdown.md            # category landings at custom URLs, backed by
-  build-log.md tech-digest.md     #   layouts/category-landing.html (grid: true → thumbnail cards)
+  build-log.md                    #   layouts/category-landing.html (grid: true → thumbnail cards)
+  tech-digest/_index.md           # Tech Digest archive (layouts/tech-digest/list.html)
+  tech-digest/<date>/             # one bundle per Digital Dhaba issue (layouts/tech-digest/single.html)
   mlops-playground.md my-bookshelf-chronicles.md   # live, off-nav
   subscribe.md                    # /subscribe/ — the link shared on LinkedIn
   about.md terms.md year-archive.md archive.md search.md
@@ -97,6 +108,9 @@ assets/css/extended/custom.css    # brand layer (colours from the comics), cards
 static/assets/{images,cv}/        # assets (URLs preserved); mounted into assets/ for thumbnails
 static/ads.txt                    # AdSense authorised seller
 scripts/new_breakdown.py          # PDF → Concept Breakdown page bundle
+scripts/add_digest.py             # Digital Dhaba issue folder → content/tech-digest/<date>/
+docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
+docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
 .claude/skills/breakdown-post/    # writes the post body + LinkedIn copy
 .github/workflows/hugo.yml        # deploy to GitHub Pages via Actions (prod build)
 _migration/*.py                   # one-off converters (kept for audit)

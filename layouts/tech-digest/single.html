@@ -1,0 +1,46 @@
+{{- /* A Digital Dhaba issue page: the newsletter HTML exactly as designed (bundle resource
+       newsletter.txt), served standalone (no theme wrapper) with a few build-time additions:
+         - <head>: canonical, description, Open Graph/Twitter tags (hero image), favicon, GA (prod)
+         - a slim "Blogs by Kush · All issues · Subscribe" bar at the top of <body>
+         - email placeholders fixed for the web: "View in browser" and "Unsubscribe" removed,
+           "Forward to a friend" becomes a mailto share link, any other {{…_URL}} → this page */ -}}
+{{- $html := "" }}
+{{- with .Resources.Get "newsletter.txt" }}{{ $html = .Content }}{{ end }}
+{{- $hero := .Resources.GetMatch "hero.*" }}
+
+{{- /* Placeholders */ -}}
+{{- $html = replaceRE `<a href="\{\{VIEW_IN_BROWSER_URL\}\}"[^>]*>[^<]*</a>\s*·\s*` "" $html }}
+{{- $html = replaceRE `\s*·\s*<a href="\{\{UNSUBSCRIBE_URL\}\}"[^>]*>[^<]*</a>` "" $html }}
+{{- $mailto := printf "mailto:?subject=%s&body=%s" (.Title | urlquery) (.Permalink | urlquery) }}
+{{- $html = replace $html "{{FORWARD_URL}}" $mailto }}
+{{- $html = replaceRE `\{\{[A-Z_]+_URL\}\}` .Permalink $html }}
+
+{{- /* <head> additions */ -}}
+{{- $desc := .Description | default .Summary | plainify }}
+{{- $head := slice
+  (printf `<link rel="canonical" href="%s">` .Permalink)
+  (printf `<meta name="description" content="%s">` $desc)
+  `<meta property="og:type" content="article">`
+  (printf `<meta property="og:site_name" content="%s">` site.Title)
+  (printf `<meta property="og:title" content="%s">` .Title)
+  (printf `<meta property="og:description" content="%s">` $desc)
+  (printf `<meta property="og:url" content="%s">` .Permalink)
+  `<meta name="twitter:card" content="summary_large_image">`
+  (printf `<link rel="icon" href="%s">` ("favicon.ico" | absURL))
+  (printf `<link rel="alternate" type="application/rss+xml" title="Tech Digest" href="%s">` ("tech-digest/feed.xml" | absURL))
+  `<style>.bbk-bar{font:500 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#131313;color:#fff6d1;padding:10px 16px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.bbk-bar a{color:#fff6d1;text-decoration:none}.bbk-bar a:hover{color:#f4a33a}.bbk-bar .bbk-home{color:#11a8cc;font-weight:700}</style>`
+}}
+{{- with $hero }}
+  {{- $head = $head | append (printf `<meta property="og:image" content="%s">` .Permalink) }}
+{{- end }}
+{{- if hugo.IsProduction }}
+  {{- $head = $head | append `<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWTLYBWXCL"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QWTLYBWXCL');</script>` }}
+{{- end }}
+{{- $html = replace $html "</head>" (printf "%s\n</head>" (delimit $head "\n")) }}
+
+{{- /* Site bar */ -}}
+{{- $bar := printf `<nav class="bbk-bar" aria-label="Blogs by Kush"><a class="bbk-home" href="%s">← Blogs by Kush</a><a href="%s">All issues</a><a href="%s">Subscribe</a></nav>`
+    ("" | relURL) ("tech-digest/" | relURL) ("subscribe/" | relURL) }}
+{{- $html = replaceRE `(<body[^>]*>)` (print "${1}" $bar) $html 1 }}
+
+{{- $html | safeHTML -}}

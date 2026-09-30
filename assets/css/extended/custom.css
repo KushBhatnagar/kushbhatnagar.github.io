@@ -315,3 +315,54 @@
 }
 .post-content .transcript[open] summary { border-bottom: 1px solid var(--border); }
 .post-content .transcript-body { padding: 0.5rem 1rem 0.25rem; font-size: 0.95rem; }
+
+/* ---- Tech Digest archive ---- */
+.digest-list { display: grid; gap: 1rem; margin: 1.5rem 0 2rem; }
+.digest-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius);
+    background: var(--entry);
+    border: 1px solid var(--border);
+    transition: transform 0.1s, border-color 0.1s;
+}
+.digest-card:hover { transform: translateY(-2px); border-color: var(--brand-blue); }
+.digest-hero {
+    width: calc(100% + 2.4rem);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    margin: -1rem -1.2rem 0.5rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+.digest-meta { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--secondary); }
+.digest-meta b { color: #b8660b; }
+[data-theme="dark"] .digest-meta b { color: var(--brand-orange); }
+.digest-title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--primary); }
+.digest-top { margin: 0.2rem 0 0; padding-inline-start: 1.2rem; color: var(--content); font-size: 0.95rem; line-height: 1.5; }
+.digest-read { margin-top: 0.3rem; color: var(--brand-link); font-weight: 600; font-size: 0.9rem; }
+
+/* Homepage: latest issue strip */
+.home-digest {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin: 0 0 var(--gap);
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius);
+    background: var(--brand-ink);
+    color: var(--brand-cream);
+}
+.home-digest:hover { color: var(--brand-orange); }
+.home-digest-label {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-orange);
+}
+.home-digest-text { flex: 1 1 auto; font-size: 0.95rem; }
