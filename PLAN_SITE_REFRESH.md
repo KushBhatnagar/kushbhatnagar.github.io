@@ -117,7 +117,20 @@ Decisions (2026-09-30):
       for now); first automatic publish worked (issue 2026-09-30, commit `9517175`)
 - [ ] Emailing the issue from the same workflow → Phase 4 (provider choice parked)
 
-## Phase 4 — Subscribers & emailing the digest  ⏸ PARKED (not started)
+## Phase 4 — Subscribers & emailing the digest  ⏸ PARKED (not started; Kush plans to start 2026-10-01)
+
+**What Kush brings to kick off Phase 4**
+1. Decision (or "help me decide"): **Buttondown** (recommended: Markdown/HTML-native, API sends the generated
+   issue as-is) vs **Kit**; budget ≤ ~$12/mo. Kush checks current pricing on both sites.
+2. A free account on the chosen provider (paid plan can wait until the first real send), plus its **API key**,
+   saved as secret `NEWSLETTER_API_KEY` in Digital-Dhaba (never pasted in chat).
+3. **Sender identity:** from-name (e.g. "Kush from Blogs by Kush") and from-address on blogsbykush.com, plus
+   access to the domain's DNS (where blogsbykush.com is registered) to add SPF/DKIM records.
+4. **Mailchimp export:** Audience → All contacts → Export as CSV (keep it local; the audit script runs on
+   Kush's machine) and, if easy, the open/click activity report.
+5. **Send schedule:** day/time for the weekly email (the digest signoff says Saturday).
+6. Double opt-in wording: one line for the confirmation email, e.g. "Confirm to get Digital Dhaba every Saturday".
+
 - [ ] Pick provider (shortlist: Kit, Buttondown) against "fully automated" + API sending of HTML issue
 - [ ] Double opt-in + CAPTCHA (Turnstile or provider built-in); tag signups by source (LinkedIn/blog/digest)
 - [ ] `scripts/audit_subscribers.py` — run locally on Mailchimp CSV export; flags junk (random local parts,
