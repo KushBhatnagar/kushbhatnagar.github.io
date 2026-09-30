@@ -299,3 +299,19 @@
 .carousel-dot.is-active { background: var(--brand-orange); transform: scale(1.3); }
 .carousel-count { font-size: 0.85rem; color: var(--secondary); min-width: 3rem; text-align: center; }
 .carousel-caption { margin-top: 0.4rem; text-align: center; font-size: 0.85rem; }
+
+/* ---- Collapsed comic transcript ---- */
+.post-content .transcript {
+    margin: 0 0 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+}
+.post-content .transcript summary {
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--brand-link);
+}
+.post-content .transcript[open] summary { border-bottom: 1px solid var(--border); }
+.post-content .transcript-body { padding: 0.5rem 1rem 0.25rem; font-size: 0.95rem; }

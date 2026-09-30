@@ -105,6 +105,13 @@ Format: `HH:MM [Phase N] change — detail`
 - `/breakdown-post` skill for transcript + SEO write-up + LinkedIn copy.
 - Pilot post **How LLMs Think** (`draft: true`, transcript read from slides — to be verified by Kush).
 
+### Phase 2 — review feedback (Kush)
+- Concept Breakdown posts made lean: comic carousel + "The concept in plain words" only. Removed TOC,
+  "Why this matters for PMs", takeaways, FAQ and related links.
+- Transcript kept but collapsed via new `transcript` shortcode ("Read this comic as text"), so the page
+  stays lean while search engines and screen readers get the dialogue.
+- `scripts/new_breakdown.py` template and `/breakdown-post` skill updated to the lean format.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

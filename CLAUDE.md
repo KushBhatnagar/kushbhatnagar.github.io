@@ -64,8 +64,9 @@ HUGO_ENVIRONMENT=production hugo --gc --minify   # production build → public/
 
 1. `python3 scripts/new_breakdown.py Comic.pdf --title "How LLMs Think" [--transcript convo.txt]`
    → page bundle `content/posts/<slug>/` (4:5 WebP slides, clean PDF, cover.jpg, `draft: true`).
-2. Run the **`/breakdown-post`** skill (`.claude/skills/breakdown-post/SKILL.md`) → transcript, plain-words
-   concept, "Why this matters for PMs", takeaways, FAQ, SEO fields, slide alt text, `linkedin.txt`.
+2. Run the **`/breakdown-post`** skill (`.claude/skills/breakdown-post/SKILL.md`) → collapsed transcript
+   (`transcript` shortcode), "The concept in plain words", SEO fields, slide alt text, `linkedin.txt`.
+   **Keep these pages lean** (Kush's call): comic + plain-words section only, no TOC/FAQ/extra sections.
 3. Kush reviews, sets `draft: false`. (`linkedin.txt` / `transcript.txt` are in `ignoreFiles`, never published.)
 
 ## Layout of the Hugo site
@@ -83,6 +84,7 @@ content/
 layouts/
   category-landing.html           # custom: lists/grids posts of one category, empty state
   _shortcodes/carousel.html       # LinkedIn-style slide carousel (bundle slide-* resources)
+  _shortcodes/transcript.html     # collapsed "Read this comic as text" block (SEO + accessibility)
   _shortcodes/subscribe.html      # newsletter form inside content
   _partials/
     home_info.html                # homepage intro, CTAs, pillars, latest breakdown cards

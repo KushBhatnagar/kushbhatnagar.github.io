@@ -10,7 +10,7 @@ Creates the page bundle content/posts/<slug>/ containing:
     <slug>.pdf                     clean re-export of the slides (the "Download PDF" link)
     cover.jpg                      1200x630 social-preview image (first + last slide)
     transcript.txt                 copy of --transcript, if given (input for /breakdown-post)
-    index.md                       front matter + {{< carousel >}} + section skeleton, draft: true
+    index.md                       front matter + carousel + collapsed transcript + plain-words section, draft: true
 
 Then run the /breakdown-post skill in Claude Code to write the body, and set draft: false.
 Requires: pip install pymupdf pillow
@@ -78,20 +78,16 @@ summary: ""        # one-line teaser for list pages
 description: ""    # ~150-char SEO meta description
 url: /concept-breakdown/{slug}/
 images: ["cover.jpg"]
+ShowToc: false
 slide_alt: []      # one alt text per slide, in order
 ---
 
 {{{{< carousel >}}}}
 
-## What's happening in this comic
+{{{{< transcript >}}}}
+{{{{< /transcript >}}}}
 
 ## The concept in plain words
-
-## Why this matters for PMs
-
-## Key takeaways
-
-## FAQ
 """
 
 

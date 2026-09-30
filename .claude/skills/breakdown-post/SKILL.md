@@ -19,8 +19,6 @@ bundle whose `index.md` still has `draft: true` and empty sections.
    You need them to map lines to slides, write alt text, and catch anything the text is missing.
    With no transcript.txt, transcribe the speech bubbles from the slides, and add
    `<!-- CHECK: transcribed from slides -->` at the top of the transcript section.
-4. List the existing Concept Breakdowns (`grep -l 'concept-breakdown' content/posts/*.md content/posts/*/index.md`)
-   and read their titles and `url:` values. You'll link 2–3 related ones.
 
 ## 2. Who it's for and how it should sound
 
@@ -32,47 +30,46 @@ bundle whose `index.md` still has `draft: true` and empty sections.
 - **Accuracy beats flourish.** Don't add technical claims the comic doesn't support unless they're
   standard and correct. If you're unsure about something, keep it and add `<!-- CHECK: ... -->` for Kush.
 
-## 3. Write the body (target 500–800 words, excluding the transcript)
+## 3. Write the body (lean: comic + one short section)
 
-Keep `{{< carousel >}}` as the first line of the body. Fill the skeleton headings:
+Kush wants these pages lean: **the comic and the concept in plain words, nothing else.** Don't add
+"Why this matters", takeaways, FAQ, related links or a table of contents (`ShowToc: false` stays in the
+front matter).
 
-### `## What's happening in this comic`
-The transcript, grouped by slide, so it reads cleanly and Google can index the dialogue:
+The body is exactly:
 
 ```markdown
+{{< carousel >}}
+
+{{< transcript >}}
 **Slide 1: <short scene title>**
 
-**Teacher:** Remember playing Antakshari at family functions? …
+**Teacher:** Remember playing Antakshari at family functions? …  
 **Student:** Ha, yes! …
+{{< /transcript >}}
+
+## The concept in plain words
+
+<120–170 words>
 ```
-- Speaker labels: `Teacher`, `Student` (use `Student 2` when two different students speak in one
-  scene). Use names only once the cast has names.
+
+### Transcript (collapsed by default, "Read this comic as text")
+Readers don't see it unless they open it, but Google and screen readers read every line. This is where
+the page gets most of its indexable text, so include all of the dialogue.
+- Group lines by slide, with a short scene title for each slide.
+- Speaker labels: `Teacher`, `Student` (`Student 2` when a different student speaks in the same scene).
+  Use names only once the cast has names.
 - Fix typos and punctuation only; don't reword what the characters say.
-- End each line with two trailing spaces, or put a blank line between lines, so they don't merge
-  into one paragraph.
+- End each line with two trailing spaces so lines within a slide stay separate.
 - Include text in captions or boxes (e.g. a "Takeaway" box) as `**Takeaway:** …`.
+- If you transcribed from the slides, put `<!-- CHECK: transcript read from the slides -->` on the line
+  above `{{< transcript >}}`.
 
-### `## The concept in plain words` (150–250 words)
-Define the concept in one plain sentence, then build on the comic's analogy: where it fits, and where
-it breaks down. Include one concrete, real-world example. Bold the key term the first time it appears.
-
-### `## Why this matters for PMs` (100–180 words)
-Why a product person should care, with 3–4 bullets, each a concrete implication for how they build,
-scope, test or talk about products. (For example, for LLMs: why outputs vary, why prompts and context
-matter, why "hallucination" happens, what that means for evals and UX.)
-
-### `## Key takeaways`
-Exactly 3 bullets, one line each.
-
-### `## FAQ`
-2–3 questions that people actually type into Google (e.g. "Do LLMs think before they answer?"). Each
-question is an `###` heading; each answer is 40–80 plain words.
-
-Finish with a related-reading line:
-
-```markdown
-**Related breakdowns:** [Title A](/concept-breakdown/a/) · [Title B](/concept-breakdown/b/)
-```
+### `## The concept in plain words` (120–170 words, 3–4 short paragraphs)
+1. Define the concept in one plain sentence. Bold the key term the first time it appears.
+2. Explain how it works using the comic's analogy.
+3. Add one line on where the analogy stops working, or one practical point, when that helps.
+4. Don't add new technical claims beyond the comic unless they're standard and correct.
 
 ## 4. Front matter
 
@@ -109,5 +106,6 @@ LinkedIn shows posts with links in the body to fewer people, so links go only in
 
 - Run `hugo --quiet --buildDrafts -d /tmp/bd-check` (Hugo may be at `~/bin/hugo`). It must build
   without errors.
-- Check that `/tmp/bd-check/concept-breakdown/<slug>/index.html` contains the transcript and the carousel.
-- Report back to Kush with: the word count, any `CHECK` comments, and a reminder to set `draft: false`.
+- Check that `/tmp/bd-check/concept-breakdown/<slug>/index.html` contains the carousel, the `<details class="transcript">`
+  block and the plain-words section, and has no table of contents.
+- Report back to Kush with: any `CHECK` comments, and a reminder to set `draft: false`.

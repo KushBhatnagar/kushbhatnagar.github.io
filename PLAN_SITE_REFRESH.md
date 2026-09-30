@@ -53,10 +53,12 @@ goes live when merged into `main`.
 ## Phase 2 — Concept Breakdown system
 - [x] `scripts/new_breakdown.py` — PDF → slides → page bundle with pre-filled `index.md`
 - [x] `carousel` shortcode (swipe, arrows, keyboard, counter, dots, lazy-load, PDF download)
-- [x] `/breakdown-post` Claude Code skill — transcript, plain-words concept, "Why this matters for PMs",
-      takeaways, FAQ, SEO fields, alt text, LinkedIn post + first comment
+- [x] `/breakdown-post` Claude Code skill — collapsed transcript, plain-words concept, SEO fields, alt text,
+      LinkedIn post + first comment
+- [x] Lean format after Kush's review: comic + "concept in plain words" only; transcript collapsed
+      ("Read this comic as text"); no TOC / PM section / takeaways / FAQ
 - [x] Pilot: *How LLMs Think* (transcript drafted from the comic — Kush to verify)
-- [ ] Ideas backlog: series numbering + prev/next, FAQ structured data, backfill old 20 posts (~2/week)
+- [ ] Ideas backlog: series numbering + prev/next, backfill transcripts for the old 20 posts (~2/week)
 
 ## Parked (Kush, 2026-09-30)
 - **Tech Digest (Digital Dhaba) decisions, 2026-09-30:**
