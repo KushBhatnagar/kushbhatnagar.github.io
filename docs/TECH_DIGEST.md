@@ -42,6 +42,14 @@ link). The homepage shows a "New Tech Digest" strip for the latest issue.
 4. **Test**: Digital-Dhaba → Actions → "Publish issue to blogsbykush.com" → Run workflow
    (leave the issue blank to publish the latest).
 
+## Emailing the issue (Kit)
+
+The same workflow then runs `scripts/kit_send_digest.py`, which schedules the issue as a Kit broadcast for
+**Saturday 08:00 IST** (or sends right away if run on Saturday after 08:00). It swaps the embedded hero for
+`https://blogsbykush.com/tech-digest/<date>/hero.jpg` and maps the placeholders to Kit's unsubscribe tag,
+the web issue URL and an email-a-friend link. Off until `KIT_DIGEST_ENABLED` is set; setup, test mode and
+dry run: `docs/NEWSLETTER.md`.
+
 ## Weekly routine
 
 Run `./run_digest.sh`, commit and push `issues/<date>/` to Digital-Dhaba. That's it: the Action

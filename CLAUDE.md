@@ -16,8 +16,9 @@ Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
 and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
-Snapshot (2026-09-30): Phases 0–3 merged into `hugo-migration`; **not live yet**; Phase 4 (newsletter
-provider + subscriber cleanup) parked by Kush; Kush wants a few more changes before go-live (PR #2).
+Snapshot (2026-10-01): Phases 0–3 merged into `hugo-migration`; **not live yet**; Phase 4 (Kit newsletter)
+code built (4a/4b) in a PR into `hugo-migration`, Kush's Kit/DNS setup (4c) pending; Kush wants a few
+more changes before go-live (PR #2).
 
 ## Current state: mid-migration Jekyll → Hugo
 
@@ -86,6 +87,15 @@ generated `index.md` with `build.publishResources: false`). `layouts/tech-digest
 the HTML standalone with site bar / SEO / GA / fixed placeholders; `list.html` is the archive.
 Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TECH_DIGEST.md`.
 
+## Newsletter (Kit) — Phase 4
+
+Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form per
+source: blog / linkedin / mailchimp; IDs in `hugo.toml` → `params.kit.forms`; empty ID → legacy Mailchimp
+form). Emails via Kit API v4 from GitHub Actions, never Kit RSS: new posts → `hugo.yml` `notify` job
+(`scripts/kit_notify_posts.py`, diffs live vs new `/posts.json`); Digital Dhaba → Digital-Dhaba workflow
+(`scripts/kit_send_digest.py`, scheduled Sat 08:00 IST). Switches are repo variables (`KIT_POSTS_ENABLED`,
+`KIT_DIGEST_ENABLED`, `KIT_SEND`, `KIT_TEST_TAG_ID` = test mode). Setup + Mailchimp re-permission: `docs/NEWSLETTER.md`.
+
 ## Layout of the Hugo site
 
 ```
@@ -98,7 +108,8 @@ content/
   tech-digest/_index.md           # Tech Digest archive (layouts/tech-digest/list.html)
   tech-digest/<date>/             # one bundle per Digital Dhaba issue (layouts/tech-digest/single.html)
   mlops-playground.md my-bookshelf-chronicles.md   # live, off-nav
-  subscribe.md                    # /subscribe/ — the link shared on LinkedIn
+  subscribe.md                    # /subscribe/ — the link shared on LinkedIn (Kit "LinkedIn" form)
+  stay-subscribed.md              # /stay-subscribed/ — Mailchimp re-permission target (noindex)
   about.md terms.md year-archive.md archive.md search.md
 layouts/
   category-landing.html           # custom: lists/grids posts of one category, empty state
@@ -108,7 +119,7 @@ layouts/
   _partials/
     home_info.html                # homepage intro, CTAs, pillars, latest breakdown cards
     post_card.html thumbnail.html # thumbnail cards (WebP via Hugo image processing)
-    newsletter_form.html          # ONLY place with newsletter-provider markup
+    newsletter_form.html          # ONLY place with newsletter-provider markup (Kit forms per source)
     extend_head.html              # Fredoka font, GA gtag + AdSense loader (prod only)
     extend_post_content.html      # AdSense unit (prod) + newsletter — posts only
     comments.html                 # Disqus — posts only; honours disqus_identifier
@@ -117,6 +128,12 @@ static/assets/{images,cv}/        # assets (URLs preserved); mounted into assets
 static/ads.txt                    # AdSense authorised seller
 scripts/new_breakdown.py          # PDF → Concept Breakdown page bundle
 scripts/add_digest.py             # Digital Dhaba issue folder → content/tech-digest/<date>/
+scripts/kit_api.py                # Kit API v4 client (stdlib): dry run / test mode / dedupe
+scripts/kit_notify_posts.py       # new-post emails (plan before deploy, send after)
+scripts/kit_send_digest.py        # Digital Dhaba email, scheduled for Saturday
+layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest) for new-post detection
+docs/NEWSLETTER.md                # Kit setup, switches, Mailchimp re-permission email
+docs/kit/email-template.html      # minimal Kit email template
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
 docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
 .claude/skills/breakdown-post/    # writes the post body + LinkedIn copy
@@ -129,7 +146,8 @@ _migration/*.py                   # one-off converters (kept for audit)
 - Google Analytics (gtag): `G-QWTLYBWXCL`
 - Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
 - Disqus shortname: `blogsbykush`
-- Mailchimp: `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
+- Kit (newsletter, Phase 4): form IDs in `hugo.toml` `params.kit.forms`; API key = secret `KIT_API_KEY` in both repos
+- Mailchimp (legacy, being retired): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
 ## Remaining steps to finish the migration
 

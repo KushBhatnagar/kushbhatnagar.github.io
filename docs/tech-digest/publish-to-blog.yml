@@ -3,7 +3,14 @@
 #
 # When a new issue (issues/YYYY-MM-DD/newsletter.html + digest.json) is pushed to Digital-Dhaba,
 # this imports it into blogsbykush.com with scripts/add_digest.py and pushes to the blog's
-# branch, which triggers the site deploy. Fully automatic: no PR, no manual step.
+# branch, which triggers the site deploy. Then it schedules the email to Kit subscribers for
+# Saturday 08:00 IST (scripts/kit_send_digest.py). Fully automatic: no PR, no manual step.
+#
+# Email settings (Digital-Dhaba → Settings → Secrets and variables → Actions):
+#   secret   KIT_API_KEY
+#   variable KIT_DIGEST_ENABLED = true    (email step is skipped until this is set)
+#   variable KIT_SEND = true              (otherwise dry run: logs the email instead of creating it)
+#   variable KIT_EMAIL_TEMPLATE_ID, KIT_TEST_TAG_ID (test mode while set), KIT_FROM_EMAIL (optional)
 name: Publish issue to blogsbykush.com
 
 on:
@@ -86,3 +93,17 @@ jobs:
           fi
           git commit -m "Tech Digest: publish $(echo $LIST | sed 's#issues/##g')"
           git push origin "HEAD:$BLOG_BRANCH"
+
+      - name: Email the issue via Kit (scheduled for Saturday)
+        if: vars.KIT_DIGEST_ENABLED == 'true'
+        env:
+          LIST: ${{ steps.issues.outputs.list }}
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_EMAIL_TEMPLATE_ID: ${{ vars.KIT_EMAIL_TEMPLATE_ID }}
+          KIT_TEST_TAG_ID: ${{ vars.KIT_TEST_TAG_ID }}
+          KIT_FROM_EMAIL: ${{ vars.KIT_FROM_EMAIL }}
+          KIT_SEND: ${{ vars.KIT_SEND }}
+        run: |
+          for dir in $LIST; do
+            python3 blog/scripts/kit_send_digest.py "dhaba/$dir"
+          done

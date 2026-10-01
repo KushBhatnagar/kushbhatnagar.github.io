@@ -138,6 +138,20 @@ Format: `HH:MM [Phase N] change — detail`
   verified sending domain, no auto-tag-by-form → one form per source).
 - Build plan proposed in `PLAN_SITE_REFRESH.md` → Phase 4; awaiting approval.
 
+## 2026-10-01 — Phase 4 build (4a/4b)
+- Forms: `newsletter_form.html` posts to Kit (one form per source: blog / linkedin / mailchimp; IDs in
+  `hugo.toml` `params.kit.forms`, empty → legacy Mailchimp form). `/subscribe/` uses the LinkedIn form; new
+  `/stay-subscribed/` (noindex, not in sitemap) for the Mailchimp re-permission email.
+- `/posts.json` (posts only, no Tech Digest) via a `postsjson` output format.
+- New-post emails: `scripts/kit_notify_posts.py` (plan before deploy by diffing live vs new `/posts.json`, send
+  after deploy) + `notify` job in `hugo.yml`. Guards: no live `posts.json` → nothing sent (covers go-live),
+  ≤3 per deploy, ≤14 days old.
+- Digest emails: `scripts/kit_send_digest.py` (hero → hosted URL, placeholders → Kit tag / web URL / mailto,
+  scheduled Sat 08:00 IST, dedupe by subject) + email step in `docs/tech-digest/publish-to-blog.yml`.
+- `scripts/kit_api.py`: stdlib Kit API v4 client with dry run (`KIT_SEND`), test mode (`KIT_TEST_TAG_ID`).
+- Docs: `docs/NEWSLETTER.md` (setup, switches, re-permission email), `docs/kit/email-template.html`.
+- Tested against a mock Kit API; real Kit API details to confirm on Kush's first test send.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

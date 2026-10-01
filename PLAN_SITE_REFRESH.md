@@ -16,7 +16,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Phase 1 — structure, homepage, brand | ✅ Done, reviewed by Kush |
 | Phase 2 — Concept Breakdown system | ✅ Done (lean format). Pilot *How LLMs Think* is still `draft: true` |
 | Phase 3 — Tech Digest (Digital Dhaba) | ✅ Done. Auto-publish **verified**: Digital-Dhaba workflow pushed issue 2026-09-30 to `hugo-migration` |
-| Phase 4 — Subscribers / newsletter | 📝 Decisions made 2026-10-01 (Kit Free, separate emails, re-permission, Actions→Kit API). Build plan proposed, **awaiting Kush's approval** |
+| Phase 4 — Subscribers / newsletter | 🔨 Code built 2026-10-01 (forms, `/posts.json`, post + digest emails, docs), PR into `hugo-migration`. **Kush's Kit/DNS setup pending** |
 | Go-live | ⏳ Waiting on Kush's extra changes, then the go-live checklist below |
 
 **Open items for the next session**
@@ -24,7 +24,9 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 2. *How LLMs Think*: Kush to verify transcript wording, then set `draft: false` (decide if it ships at launch).
 3. PR #2's description is outdated (mentions "ML Made Easy", wrongly says images moved to `/images/`) —
    rewrite it if Kush agrees (it's his PR).
-4. Phase 4: get Kush's approval/answers on the build plan (Phase 4 section), then build 4a/4b; Kush does 4c.
+4. Phase 4: 4a/4b code is in a PR into `hugo-migration` (review + merge). Kush does 4c (Kit account, DNS,
+   template, forms → IDs into `hugo.toml`, secrets/variables, test sends) following `docs/NEWSLETTER.md`;
+   the first test send verifies the Kit API assumptions listed in Phase 4.
 
 ## Go-live checklist (in this order)
 1. [ ] Kush's pre-launch changes merged into `hugo-migration`; local preview OK (`hugo server -D`)
@@ -119,7 +121,7 @@ Decisions (2026-09-30):
       for now); first automatic publish worked (issue 2026-09-30, commit `9517175`)
 - [ ] Emailing the issue from the same workflow → Phase 4 (provider choice parked)
 
-## Phase 4 — Subscribers & email (Kit)  📝 PLANNED 2026-10-01, awaiting Kush's approval of the build plan
+## Phase 4 — Subscribers & email (Kit)  🔨 4a/4b BUILT 2026-10-01 (PR into `hugo-migration`); 4c = Kush's setup
 
 ### Kit Free Plan facts (confirmed with Kit's support bot, 2026-10-01)
 - Up to 10,000 subscribers, unlimited broadcasts, no monthly send limit.
@@ -137,35 +139,50 @@ Decisions (2026-09-30):
 - Tags exist on Free, but **auto-tag by form is paid** → one Kit form per signup source instead.
 - Free plan overview: https://help.kit.com/en/articles/16627071-the-kit-free-plan
 
-### Proposed build plan (see "Phase 4 plan" in the 2026-10-01 session; build only after approval)
+### Build plan (approved 2026-10-01 with defaults: everyone gets both emails; post emails right after deploy; digest Sat 08:00 IST)
 **4a: Blog repo (PR into `hugo-migration`, ships with go-live)**
-- [ ] `newsletter_form.html` → plain HTML form posting to Kit's form endpoint (keeps current styling,
+- [x] `newsletter_form.html` → plain HTML form posting to Kit's form endpoint (keeps current styling,
       no Kit JS); form ID chosen per placement (`source`: blog / linkedin / mailchimp), IDs in `hugo.toml`
       `params.kit`. Honeypot field kept; double opt-in does the real bot filtering.
-- [ ] `/subscribe/` uses the **LinkedIn** form; posts/Build Log/Tech Digest use the **Blog** form;
-      `/subscribe/?from=mailchimp` (or a separate page) uses the **Mailchimp-move** form.
-- [ ] Posts-only JSON output (`/posts.json`: url, title, summary, image, date, section) excluding `tech-digest`.
-- [ ] `scripts/kit_notify_posts.py`: diff live `posts.json` (before deploy) vs new build → new posts →
+- [x] `/subscribe/` uses the **LinkedIn** form; posts/Build Log/Tech Digest use the **Blog** form;
+      `/stay-subscribed/` (noindex) uses the **Mailchimp-move** form.
+- [x] Posts-only JSON output (`/posts.json`: url, title, summary, image, date, section) excluding `tech-digest`.
+- [x] `scripts/kit_notify_posts.py`: diff live `posts.json` (before deploy) vs new build → new posts →
       Kit broadcast per post (title, summary, image, "Read it" link). Guards: skip when live `posts.json`
       is missing (go-live deploy / first run), cap at 3 new posts per run, only posts dated in the last
       14 days, dry-run unless `KIT_SEND=true`.
-- [ ] `hugo.yml`: `notify` job after `deploy` (needs `KIT_API_KEY`, `KIT_TEMPLATE_ID`), test mode
-      (`KIT_TEST_TAG_ID` → send only to a "test" tag) until Kush flips it.
+- [x] `hugo.yml`: `notify` job after `deploy`; switches are repo variables (`KIT_POSTS_ENABLED`, `KIT_SEND`,
+      `KIT_TEST_TAG_ID` = test mode, `KIT_EMAIL_TEMPLATE_ID`, `KIT_FROM_EMAIL`); secret `KIT_API_KEY`.
+- [x] `docs/NEWSLETTER.md` (setup, switches, Mailchimp re-permission email copy) + `docs/kit/email-template.html`
 **4b: Digital-Dhaba workflow (file delivered for Kush to commit, as in Phase 3)**
-- [ ] `scripts/kit_send_digest.py` (lives in the blog repo, run by the Digital-Dhaba workflow after
+- [x] `scripts/kit_send_digest.py` (lives in the blog repo, run by the Digital-Dhaba workflow after
       publishing): newsletter.html → hero data-URI swapped for `https://blogsbykush.com/tech-digest/<date>/hero.jpg`,
       placeholders mapped (unsubscribe → Kit tag, view-in-browser → web issue URL, forward → mailto share),
       body extracted; **scheduled** for the next Saturday send time (immediate if that time has passed);
       skip if a broadcast with the same subject already exists (no duplicates on re-runs); test mode as above.
+- [x] Updated `docs/tech-digest/publish-to-blog.yml` (email step, off until `KIT_DIGEST_ENABLED`) — Kush copies it
+      into Digital-Dhaba
+- [x] Tested locally against a mock Kit API: request shape, test-mode filter, dry run, duplicate skip,
+      Saturday scheduling, go-live guard (no live `posts.json` → nothing sent), email rendering
 **4c: Kush (accounts, DNS, content)**
 - [ ] Kit account; API key saved as `KIT_API_KEY` secret in **both** repos (never in chat)
 - [ ] Sending domain blogsbykush.com verified (Kit CNAMEs + DMARC TXT); From `kush@blogsbykush.com`
-- [ ] Minimal custom email template; 3 forms (Blog, LinkedIn, Mailchimp-move); a "test" tag with Kush only
+- [ ] Minimal custom email template (paste `docs/kit/email-template.html`); 3 forms (Blog, LinkedIn,
+      Mailchimp move) → IDs into `hugo.toml`; a "test" tag with Kush only; repo variables per `docs/NEWSLETTER.md`
 - [ ] Postal address for Kit's footer; Saturday send time; confirmation-email line
-- [ ] Mailchimp re-permission email (Claude drafts copy) → wait ~2 weeks → archive Mailchimp audience
+- [ ] After go-live: Mailchimp re-permission email (copy in `docs/NEWSLETTER.md`) → wait ~2 weeks → archive Mailchimp
 - [ ] Google Postmaster Tools for blogsbykush.com
 
-### To verify in Kit's docs during the build (docs sites blocked from the Claude cloud session)
+### To verify against Kit during Kush's first test (docs sites were blocked from the Claude cloud session)
+Assumptions in the code, each easy to adjust if Kit says otherwise:
+- API: base `https://api.kit.com/v4`, header `X-Kit-Api-Key`; `POST /broadcasts` with `subject`, `content`,
+  `preview_text`, `description`, `public`, `send_at` (ISO 8601 UTC), `email_template_id`, `email_address`,
+  `subscriber_filter: [{"all": [{"type": "tag", "ids": [<id>]}]}]`; `GET /broadcasts?per_page=100` with
+  `pagination.has_next_page/end_cursor` (all in `scripts/kit_api.py`).
+- Unsubscribe merge tag `{{ unsubscribe_url }}` (env `KIT_UNSUBSCRIBE_TAG` overrides) and template tags
+  `{{ message_content }}` / `{{ address }}` (Kit's template editor flags missing required tags).
+- Plain HTML form endpoint `https://app.kit.com/forms/<id>/subscriptions`, field `email_address`
+  (`hugo.toml` `params.kit.formAction`).
 - Kit merge-tag syntax for unsubscribe / subscriber preferences / web version inside broadcast `content`
   and which tags the custom template must contain.
 - Form submission endpoint + field names for a plain HTML form (no JS embed).

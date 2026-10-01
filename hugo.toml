@@ -15,6 +15,14 @@ ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
 [outputFormats.rss]
   baseName = "feed"
 
+# /posts.json: blog posts only (no Tech Digest issues). The deploy workflow diffs it against the
+# live copy to detect newly published posts and email them via Kit (scripts/kit_notify_posts.py).
+[outputFormats.postsjson]
+  mediaType = "application/json"
+  baseName = "posts"
+  isPlainText = true
+  notAlternative = true
+
 # Post/page URLs are frozen via an explicit `url:` in each file's front matter,
 # so every live URL stays identical to the current Jekyll sitemap.
 
@@ -45,6 +53,15 @@ ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
   adsenseClient = "ca-pub-4896166132316701"
   adsenseSlot = "5967806966"     # "blogsbykush-adunit" — same unit the Jekyll site used
   images = ["/assets/images/og-default.png"]   # default social-preview image
+
+  # Newsletter (Kit). Form IDs come from Kit → Grow → Landing Pages & Forms → (form) → Embed.
+  # While a form ID is empty, that placement falls back to the legacy Mailchimp form.
+  [params.kit]
+    formAction = "https://app.kit.com/forms/%s/subscriptions"
+    [params.kit.forms]
+      blog = ""        # posts, Build Log, Tech Digest
+      linkedin = ""    # /subscribe/ (the link shared on LinkedIn)
+      mailchimp = ""   # /stay-subscribed/ (re-permission link in the last Mailchimp email)
 
   [params.assets]
     favicon = "/favicon.ico"
@@ -142,7 +159,7 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
   weight = 60
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]   # JSON drives the search index
+  home = ["HTML", "RSS", "JSON", "postsjson"]   # JSON drives the search index; postsjson → /posts.json
 
 [markup]
   [markup.highlight]
