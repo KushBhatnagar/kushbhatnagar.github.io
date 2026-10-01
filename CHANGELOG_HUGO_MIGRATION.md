@@ -127,6 +127,17 @@ Format: `HH:MM [Phase N] change — detail`
 - Not live: go-live (PR #2) waits on Kush's extra pre-launch changes. Phase 4 parked.
 - "Where we left off" now lives at the top of `PLAN_SITE_REFRESH.md`; CLAUDE.md points new sessions there.
 
+## 2026-10-01 — Phase 4 kickoff (decisions only, nothing built yet)
+- Provider: **Kit Free Plan** replaces Mailchimp ("Built with Kit" badge accepted).
+- Email model: one automatic email per new blog post + the full Digital Dhaba HTML every Saturday.
+- Mailchimp list: re-permission via one final Mailchimp email → Kit double opt-in form; no bulk import
+  (imported contacts would count as confirmed). Subscriber audit script now optional.
+- Sending: GitHub Actions → Kit API v4 (not RSS-to-email); per-post detection excludes Tech Digest;
+  digest send added to the Digital-Dhaba workflow.
+- Kit Free facts recorded in `PLAN_SITE_REFRESH.md` (API v4, custom template required, double opt-in,
+  verified sending domain, no auto-tag-by-form → one form per source).
+- Build plan proposed in `PLAN_SITE_REFRESH.md` → Phase 4; awaiting approval.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
