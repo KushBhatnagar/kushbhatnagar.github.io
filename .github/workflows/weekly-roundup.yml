@@ -1,0 +1,28 @@
+# The weekly letter: one email to Kit subscribers with everything published on the blog in the last
+# 7 days (Concept Breakdowns, Build Log, Learning Notes). Digital Dhaba goes out separately on Thursdays.
+# Setup and switches: docs/NEWSLETTER.md. Scheduled workflows only run from the default branch (main).
+name: Weekly letter (Kit)
+
+on:
+  schedule:
+    - cron: "30 3 * * 0"   # Sunday 03:30 UTC = 09:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  roundup:
+    runs-on: ubuntu-latest
+    if: vars.KIT_ROUNDUP_ENABLED == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Send this week's letter via Kit
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_EMAIL_TEMPLATE_ID: ${{ vars.KIT_EMAIL_TEMPLATE_ID }}
+          KIT_TEST_TAG_ID: ${{ vars.KIT_TEST_TAG_ID }}
+          KIT_FROM_EMAIL: ${{ vars.KIT_FROM_EMAIL }}
+          KIT_SEND: ${{ vars.KIT_SEND }}
+        run: python3 scripts/kit_weekly_roundup.py

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+  Minimal Kit email template for Blogs by Kush (Kit → Send → Email Templates → New → "HTML" / code editor).
+  Every broadcast created by scripts/kit_api.py uses this template (repository variable KIT_EMAIL_TEMPLATE_ID).
+  It adds almost nothing: the email body is already fully designed (per-post card, or the Digital Dhaba issue).
+
+  Liquid tags: {{ message_content }} = the broadcast HTML; {{ address }} = your postal address from
+  Kit's settings; {{ unsubscribe_url }} = the subscriber's unsubscribe link. Kit's editor tells you if a
+  required tag is missing: if it asks for a differently named tag, use Kit's name.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title></title>
+</head>
+<body style="margin:0;padding:0;background:#efece6;">
+  {{ message_content }}
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#efece6;">
+    <tr>
+      <td align="center" style="padding:8px 16px 32px;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#6c6c6c;">
+        You're getting this because you subscribed at <a href="https://blogsbykush.com/" style="color:#0a7a96;">blogsbykush.com</a>.<br>
+        <a href="{{ unsubscribe_url }}" style="color:#6c6c6c;">Unsubscribe</a> · {{ address }}
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
