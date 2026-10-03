@@ -1,0 +1,722 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "October 3, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "37 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "Gemini 4 Argon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "summary": "Google's new frontier model drew the week's biggest AI thread (1,688 HN points), though access is limited to government users and trusted cyber defenders for now."
+    },
+    {
+      "title": "GPT 6.1 Sol",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "summary": "OpenAI says it delivers near-Astra intelligence at a fifth of the price, extending the model price war."
+    },
+    {
+      "title": "Claude Sonnet 5.5",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "summary": "Anthropic says it runs 30%+ faster and costs up to 30% less for most work, at the same price as Sonnet 5."
+    },
+    {
+      "title": "When did Google get so weird?",
+      "url": "https://sancho.bearblog.dev/google-weird/",
+      "summary": "This was the most-discussed non-AI post of the week (2,009 HN points, 1,116 comments)."
+    },
+    {
+      "title": "Hacks of 2 federal agencies in a month have spilled a bonanza of sensitive data",
+      "url": "https://arstechnica.com/security/2026/10/hacks-of-2-federal-agencies-in-a-month-have-spilled-a-bonanza-of-sensitive-data/",
+      "summary": "The Pentagon is notifying more than 2 million current and former service members that their personnel records were stolen."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Gemini 4 Argon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "source": "blog.google",
+          "body": [
+            {
+              "type": "p",
+              "text": "Google DeepMind released Gemini 4 Argon. Latent Space frames it as Google's answer to OpenAI's Astra and Anthropic's Fable, with 1M output. It isn't generally available yet: access is limited to government users and trusted cyber defenders in the Fairwind Program. The Rundown AI says it aims to return Google to the frontier."
+            }
+          ],
+          "hn": {
+            "points": "1,688",
+            "url": "https://news.ycombinator.com/item?id=49913571",
+            "comments": "1,174"
+          },
+          "alsoIn": [
+            "The Neuron"
+          ]
+        },
+        {
+          "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
+          "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+          "source": "openai.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "OpenAI launched GPT 6.1 Sol at DevDay. A Latent Space recap lists pricing at $2/$10 per million input/output tokens, against $10/$50 for Astra. DevDay also brought an \"ultrafast\" mode and a batch of platform updates. Cheaper near-frontier capability keeps pressure on every lab's pricing."
+            }
+          ],
+          "hn": {
+            "points": "1,063",
+            "url": "https://news.ycombinator.com/item?id=49896586",
+            "comments": "952"
+          },
+          "alsoIn": [
+            "Simon Willison",
+            "OpenAI News"
+          ]
+        },
+        {
+          "title": "Sonnet 5.5",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5",
+          "source": "anthropic.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Anthropic says Sonnet 5.5 \"runs 30%+ faster, and costs up to 30% less for most work.\" It is priced the same as Sonnet 5 but appears to beat it on every benchmark. Simon Willison noted a bug it shares with Opus 5.5: at \"max\" thinking effort, it burned 128,000 tokens ($1.28) and failed to produce an SVG."
+            }
+          ],
+          "hn": {
+            "points": "883",
+            "url": "https://news.ycombinator.com/item?id=49881850",
+            "comments": "614"
+          },
+          "alsoIn": [
+            "Simon Willison"
+          ]
+        },
+        {
+          "title": "Dots: Always-on agents",
+          "url": "https://openai.com/index/introducing-dots/",
+          "source": "openai.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Dots are OpenAI's proactive assistants that keep working across complex projects and everyday tasks while you stay in control. They were the centerpiece of this week's DevDay and signal a push from chat toward agents that run in the background."
+            }
+          ],
+          "hn": {
+            "points": "764",
+            "url": "https://news.ycombinator.com/item?id=49896604",
+            "comments": "645"
+          },
+          "alsoIn": [
+            "OpenAI News"
+          ]
+        },
+        {
+          "title": "Clef: Open-weight decision models, and new RL fine-tuning platform",
+          "url": "https://blog.cloudflare.com/clef-decision-models/",
+          "source": "blog.cloudflare.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Cloudflare introduced Clef and Clef-flash, open-source decision models hosted on Workers AI for high-speed classification and agentic workflows. It also launched a reinforcement-learning platform for fine-tuning decision models on your own data. Decision models, which return structured choices instead of prose, are becoming a distinct category this month."
+            }
+          ],
+          "hn": {
+            "points": "622",
+            "url": "https://news.ycombinator.com/item?id=49923692",
+            "comments": "215"
+          },
+          "alsoIn": [
+            "Cloudflare Blog"
+          ]
+        },
+        {
+          "title": "Unsealed Briefs in Authors' Case v. Microsoft/OpenAI",
+          "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
+          "source": "authorsguild.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Authors Guild published newly unsealed briefs from its case against Microsoft and OpenAI. Its headline claims they show top executives knew mass book piracy was illegal. The case is one to watch for how courts treat training data."
+            }
+          ],
+          "hn": {
+            "points": "630",
+            "url": "https://news.ycombinator.com/item?id=49863864",
+            "comments": "624"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "Raven: The Harness of Harnesses for Composable Agentic Intelligence",
+          "url": "https://huggingface.co/papers/2609.33439",
+          "source": "EverMind",
+          "body": [],
+          "upvotes": "517",
+          "arxiv": "https://arxiv.org/abs/2609.33439",
+          "code": "https://github.com/EverMind-AI/Raven",
+          "stars": "5,100",
+          "inShort": "An open-source multi-agent system that automatically builds and evolves modular \"harnesses\" for specific models and domains. Each model-plus-harness pair becomes a composable unit, and a Host Agent splits goals across them.",
+          "whyItMatters": "Hand-designing harnesses doesn't scale as agents take on long, cross-domain work. This tries to automate that step."
+        },
+        {
+          "title": "False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents",
+          "url": "https://huggingface.co/papers/2609.39102",
+          "source": "Rutgers University",
+          "body": [],
+          "upvotes": "336",
+          "arxiv": "https://arxiv.org/abs/2609.39102",
+          "inShort": "When a question-proposing model and a solving model train each other, they increasingly agree on shared errors (\"co-cheating\"). The authors add multi-sample verification, which queries the model three times with the source and three without to admit tasks and replace unreliable labels.",
+          "whyItMatters": "Training rewards can climb while real correctness stagnates. The fix reduces false agreement only partially."
+        },
+        {
+          "title": "Scaling Properties of Same-Family On-Policy Distillation",
+          "url": "https://huggingface.co/papers/2609.32722",
+          "source": "Zhejiang University",
+          "body": [],
+          "upvotes": "310",
+          "arxiv": "https://arxiv.org/abs/2609.32722",
+          "inShort": "The paper studies how much RL-induced reasoning transfers between model sizes via on-policy distillation. Early on, held-out accuracy rises roughly linearly with the square root of the KL divergence from the student's starting point.",
+          "whyItMatters": "In every weak-to-strong pair observed, the student's peak score beat its teacher's, so a compact RL-trained expert can lift a much larger model."
+        },
+        {
+          "title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
+          "url": "https://huggingface.co/papers/2609.29233",
+          "source": "Peking University",
+          "body": [],
+          "upvotes": "271",
+          "arxiv": "https://arxiv.org/abs/2609.29233",
+          "code": "https://github.com/myboker/ATD",
+          "stars": "17",
+          "inShort": "\"Active Taskless Distillation\" transfers a capability using only a single word from the teacher per prompt, with no target-task examples, logits or parameters. The main experiment was coding with Qwen2.5-1.5B.",
+          "whyItMatters": "It shows capabilities can leak through task-unrelated text, a concern for hidden model-to-model influence."
+        },
+        {
+          "title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+          "url": "https://huggingface.co/papers/2609.33757",
+          "source": "Multimodal Art Projection",
+          "body": [],
+          "upvotes": "241",
+          "arxiv": "https://arxiv.org/abs/2609.33757",
+          "code": "https://github.com/multimodal-art-projection/YuE",
+          "stars": "10,754",
+          "inShort": "One model first writes a readable score (melody and harmony), expands it into semantic music tokens, then renders full-song audio.",
+          "whyItMatters": "Experts preferred the planned output (49.3% of overall preferences vs. 34.6% without planning), and it scored 6.73 on SongBench Global Avg, ahead of all evaluated public baselines."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Several vulnerabilities have been discovered in the Linux kernel",
+          "url": "https://lwn.net/Articles/1097401/",
+          "source": "lwn.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "LWN posted a notice about multiple newly discovered Linux kernel vulnerabilities, and the thread drew heavy discussion. The details are in the LWN item."
+            }
+          ],
+          "hn": {
+            "points": "562",
+            "url": "https://news.ycombinator.com/item?id=49928121",
+            "comments": "403"
+          }
+        },
+        {
+          "title": "Git 3.0's upcoming SHA-256 default will be a costly mistake",
+          "url": "https://blog.gitbutler.com/git-3-sha-256",
+          "source": "blog.gitbutler.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "GitButler argues that making SHA-256 the default hash in Git 3.0 will be costly. The near-even ratio of comments to points suggests the community is split."
+            }
+          ],
+          "hn": {
+            "points": "552",
+            "url": "https://news.ycombinator.com/item?id=49924179",
+            "comments": "528"
+          }
+        },
+        {
+          "title": "RIP, vector database",
+          "url": "https://turbopuffer.com/blog/rip-vector-database",
+          "source": "turbopuffer.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "turbopuffer's post declares the vector database dead. It is a vendor's take, so read it with that in mind."
+            }
+          ],
+          "hn": {
+            "points": "382",
+            "url": "https://news.ycombinator.com/item?id=49923466",
+            "comments": "113"
+          }
+        },
+        {
+          "title": "Don't couple your Go code to GitHub",
+          "url": "https://iain.rocks/blog/dont-couple-your-go-code-to-github",
+          "source": "iain.rocks",
+          "body": [
+            {
+              "type": "p",
+              "text": "A Go developer makes the case against tying your code and module paths to GitHub."
+            }
+          ],
+          "hn": {
+            "points": "325",
+            "url": "https://news.ycombinator.com/item?id=49868404",
+            "comments": "177"
+          }
+        },
+        {
+          "title": "How to speed up the Rust compiler in September 2026",
+          "url": "https://nnethercote.github.io/2026/09/30/how-to-speed-up-the-rust-compiler-in-september-2026.html",
+          "source": "nnethercote.github.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "Nicholas Nethercote's regular update on Rust compiler performance work."
+            }
+          ],
+          "hn": {
+            "points": "274",
+            "url": "https://news.ycombinator.com/item?id=49920896",
+            "comments": "163"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Owed a billion dollars in Nvidia stock",
+          "url": "https://colo.to/nvidia-stock-narrative.html",
+          "source": "colo.to",
+          "body": [
+            {
+              "type": "p",
+              "text": "A personal narrative about being owed a billion dollars' worth of Nvidia stock became one of the week's most-upvoted posts."
+            }
+          ],
+          "hn": {
+            "points": "1,090",
+            "url": "https://news.ycombinator.com/item?id=49872723",
+            "comments": "458"
+          }
+        },
+        {
+          "title": "Amazon Aurora PostgreSQL now supports direct querying of Apache Iceberg and Parquet data in your data lake",
+          "url": "https://aws.amazon.com/blogs/aws/amazon-aurora-postgresql-now-supports-direct-querying-of-apache-iceberg-and-parquet-data-in-your-data-lake/",
+          "source": "AWS News Blog",
+          "body": [
+            {
+              "type": "p",
+              "text": "Aurora PostgreSQL can now query Iceberg and Parquet data in your data lake alongside live operational data, with no ETL pipelines. It uses DuckDB embedded in Aurora and supports AWS Glue Data Catalog, S3 and S3 Tables. A single query can join transactional and historical data in familiar PostgreSQL syntax."
+            }
+          ]
+        },
+        {
+          "title": "OpenDLSS: A Vulkan Reimplementation of Nvidia's DLSS 5 Neural Rendering Network",
+          "url": "https://github.com/maanHimself/OpenDLSS-NR",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "An open-source Vulkan reimplementation of Nvidia's DLSS 5 neural rendering network."
+            }
+          ],
+          "hn": {
+            "points": "269",
+            "url": "https://news.ycombinator.com/item?id=49906100",
+            "comments": "123"
+          }
+        },
+        {
+          "title": "Big Tech ruined the cloud, so we're renaming ours",
+          "url": "https://www.home-assistant.io/blog/2026/10/02/big-tech-ruined-the-cloud-so-were-renaming-ours/",
+          "source": "home-assistant.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "Home Assistant announced it is renaming its cloud offering, citing how Big Tech has soured the word."
+            }
+          ],
+          "hn": {
+            "points": "209",
+            "url": "https://news.ycombinator.com/item?id=49934228",
+            "comments": "103"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Hacks of 2 federal agencies in a month have spilled a bonanza of sensitive data",
+          "url": "https://arstechnica.com/security/2026/10/hacks-of-2-federal-agencies-in-a-month-have-spilled-a-bonanza-of-sensitive-data/",
+          "source": "Ars Technica",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Pentagon is notifying more than 2 million current and former military members that personnel records were stolen in a monthslong network compromise. The records included Social Security numbers, names, addresses, sex, race and occupational specialty. The last could be valuable to foreign intelligence agencies. It is the second recent breach to expose sensitive government information."
+            }
+          ]
+        },
+        {
+          "title": "Attackers have been exploiting critical Zimbra flaw to steal emails",
+          "url": "https://arstechnica.com/security/2026/09/attackers-have-been-exploiting-critical-zimbra-flaw-to-steal-emails/",
+          "source": "Ars Technica",
+          "body": [
+            {
+              "type": "p",
+              "text": "Microsoft warned that attackers are exploiting CVE-2026-73570, a critical Zimbra Collaboration Suite flaw that allows unauthenticated remote OS commands, to grab email backups and credentials. Synacor patched it on July 20 but didn't disclose it for over three weeks. Shadowserver found 274 vulnerable instances last week."
+            }
+          ]
+        },
+        {
+          "title": "Dutch Police Arrest 'Reformed' Hacker in Shiny Hunters Investigation",
+          "url": "https://krebsonsecurity.com/2026/09/dutch-police-arrest-reformed-hacker-in-shiny-hunters-investigation/",
+          "source": "Krebs on Security",
+          "body": [
+            {
+              "type": "p",
+              "text": "Dutch authorities arrested a 23-year-old convicted cybercriminal on suspicion of aiding ShinyHunters data thefts and extortions. After the arrest, the remaining members escalated, stealing sensitive data from the FBI and extorting the Russian ransomware group Cl0p."
+            }
+          ]
+        },
+        {
+          "title": "PS5 Relapse Exploit",
+          "url": "https://github.com/ntfargo/Relapse-Exploit",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A GitHub repository publishing an exploit for the PlayStation 5 drew a large discussion."
+            }
+          ],
+          "hn": {
+            "points": "349",
+            "url": "https://news.ycombinator.com/item?id=49895304",
+            "comments": "254"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "When did Google get so weird?",
+          "url": "https://sancho.bearblog.dev/google-weird/",
+          "source": "sancho.bearblog.dev",
+          "body": [
+            {
+              "type": "p",
+              "text": "A blog post asking when Google got so weird was the week's top Hacker News story by points. The sheer volume of discussion suggests it struck a nerve."
+            }
+          ],
+          "hn": {
+            "points": "2,009",
+            "url": "https://news.ycombinator.com/item?id=49870367",
+            "comments": "1,116"
+          }
+        },
+        {
+          "title": "Pi 1.0",
+          "url": "https://earendil.com/posts/pi-1-0/",
+          "source": "earendil.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Earendil shipped Pi 1.0, alongside a related \"Pi Durable\" release. Latent Space lists native Codemode support (MCP, Jev, image models), extension support for virtual models and deferred tool loading."
+            }
+          ],
+          "hn": {
+            "points": "1,663",
+            "url": "https://news.ycombinator.com/item?id=49926069",
+            "comments": "582"
+          }
+        },
+        {
+          "title": "Livenerf: Has Opus 5.5 been nerfed yet?",
+          "url": "https://github.com/ninjahawk/livenerf",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A GitHub project that tracks whether Claude Opus 5.5 has been \"nerfed\" since launch. It reflects users' persistent suspicion that hosted models quietly degrade."
+            }
+          ],
+          "hn": {
+            "points": "920",
+            "url": "https://news.ycombinator.com/item?id=49901736",
+            "comments": "390"
+          }
+        },
+        {
+          "title": "Court agrees with EFF: Utah's VPN law demands a technical impossibility",
+          "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
+          "source": "eff.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "A court agreed with the EFF that Utah's VPN law demands something technically impossible."
+            }
+          ],
+          "hn": {
+            "points": "693",
+            "url": "https://news.ycombinator.com/item?id=49927754",
+            "comments": "329"
+          }
+        },
+        {
+          "title": "How Delhi cut electricity loss from 50 to 5 percent",
+          "url": "https://spectrum.ieee.org/delhi-electricity-loss",
+          "source": "spectrum.ieee.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "IEEE Spectrum looks at how Delhi cut electricity losses from 50% to 5%."
+            }
+          ],
+          "hn": {
+            "points": "592",
+            "url": "https://news.ycombinator.com/item?id=49892245",
+            "comments": "334"
+          }
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "Anthropic IPO",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-01/anthropic-said-to-target-mega-ipo-before-thanksgiving-holiday",
+      "summary": "Anthropic reportedly targets a mid-November IPO, with marketing possibly starting the week of November 9.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human"
+      }
+    },
+    {
+      "title": "OpenAI nears $70B run rate",
+      "url": "https://www.axios.com/2026/09/29/scoop-openais-annual-recurring-revenue-nears-70b",
+      "summary": "Axios reports more than 70% growth since the start of Q3, with a planned $30B raise at a $1.4 trillion valuation.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-launched-dots-20-more-tools"
+      }
+    },
+    {
+      "title": "AMD to buy World Labs",
+      "url": "https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html",
+      "summary": "AMD agreed to acquire Fei-Fei Li's World Labs for about $8.2B in stock.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/meta-wants-to-own-your-ai-front-door"
+      }
+    },
+    {
+      "title": "arXiv caps submissions",
+      "url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+      "summary": "arXiv now limits submitters to two papers per calendar month after monthly submissions quadrupled over a decade.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human"
+      }
+    },
+    {
+      "title": "Florida AG seeks OpenAI injunction",
+      "url": "https://www.axios.com/2026/09/28/florida-openai-chatgpt-injunction-uthmeier",
+      "summary": "Florida's attorney general asked a state court to restrict OpenAI from developing new models without independent safety safeguards.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/meta-wants-to-own-your-ai-front-door"
+      }
+    },
+    {
+      "title": "Rogue agents probe government sites",
+      "url": "https://transluce.org/us-canada-gov",
+      "summary": "Transluce reported AI agents sent 200,000+ requests to the U.S. Education Department's civil-rights site, among other U.S. and Canadian government sites.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human"
+      }
+    },
+    {
+      "title": "Reported vulnerabilities double",
+      "url": "https://therecord.media/google-vulnerabilities-cyberattacks-ai",
+      "summary": "Google said publicly reported software security holes doubled to 10,740 in August as hackers use AI to turn newly patched flaws into attacks.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/trump-renamed-ai-super-intelligence"
+      }
+    },
+    {
+      "title": "Devin passes $1B run rate",
+      "url": "https://cognition.com/blog/1b-run-rate",
+      "summary": "Cognition said Devin crossed a $1B annualized revenue run rate less than two years after general availability.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/tens-of-thousands-of-ai-incidents"
+      }
+    }
+  ],
+  "tips": [
+    {
+      "title": "Make AI interview you before it writes",
+      "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Talk or type out your whole rough idea first, then have the AI question you before it drafts anything. Use this when you have a half-formed idea and don't want a generic first draft."
+        },
+        {
+          "type": "prompt",
+          "text": "I'm going to talk through a rough idea. Don't write the draft yet. 1. Capture my claims, examples, questions, and assumptions. 2. When I'm done, interview me one question at a time to find gaps, contradictions, missing evidence, and weak logic. 3. Only after the interview, turn everything into a structured outline using my wording wherever possible."
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "The AI acts as an editor surfacing what's missing from your own thinking, rather than guessing what you believe."
+        }
+      ],
+      "byline": "Corey · via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "Intro to Large Language Models",
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A general-audience introduction to the models behind ChatGPT, Claude and Gemini: what they are, where they're heading, and the new security problems they bring. It's one of the clearest non-technical explanations of what's inside a chatbot."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Thinking of an LLM as the core of a new \"operating system\" helps explain where AI products are going."
+        }
+      ],
+      "byline": "Andrej Karpathy · Video · 1 hr · 2023"
+    },
+    {
+      "title": "15 Times to use AI, and 5 Not to",
+      "url": "https://www.oneusefulthing.org/p/15-times-to-use-ai-and-5-not-to",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A practical guide to when AI helps and when it hurts. Use it when you need volume, can check the result yourself, or want to rewrite something for a different audience. Avoid it when the point is to learn or accuracy is critical."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Use AI where you can easily judge the quality of what it gives you."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Don't hand AI the thinking you need to do yourself to actually learn something."
+        }
+      ],
+      "byline": "Ethan Mollick · Essay · 10 min read · 2024"
+    },
+    {
+      "title": "You and Your Research",
+      "url": "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A famous talk by the Bell Labs mathematician on why some people do important work and others don't. His advice: work on important problems, keep your door open, have courage and learn to communicate your work."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Keep a list of the important problems in your field and ask why you aren't working on them."
+        }
+      ],
+      "byline": "Richard Hamming · Talk · 45 min read (transcript) · 1986"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "Latent Space",
+      "title": "Academia is for Ambition — Alex Zhang, MIT",
+      "url": "https://www.latent.space/p/rlm",
+      "note": "RLM first author on PhD life and the future of harnesses"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "The Pulse: Firebase's global outage & poor response",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-firebases-global-outage",
+      "note": "the outage, plus OpenAI's AWS-like platform play and open-model adoption"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "Why has Shopify dropped React Native?",
+      "url": "https://newsletter.pragmaticengineer.com/p/shopify-native-mobile",
+      "note": "a reversal within a year, and AI is the reason"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "Distributed databases with Peter Mattis",
+      "url": "https://newsletter.pragmaticengineer.com/p/distributed-databases-with-peter",
+      "note": "Cockroach Labs' co-founder on reliable systems and writing more code with AI"
+    },
+    {
+      "publication": "Last Week in AI",
+      "title": "#345 - 5 new models, 9 misalignment incidents, some Dots",
+      "url": "https://lastweekin.ai/p/last-week-in-ai-345-5-new-models",
+      "note": "Anthropic and OpenAI race on smarter, cheaper models, and OpenAI discloses nine misalignment incidents"
+    },
+    {
+      "publication": "The Neuron",
+      "title": "48% thought Tavus's AI was human",
+      "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human",
+      "note": "Tavus's Griffin video model, in a company-run study"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "Apple's 'no-video' security camera",
+      "url": "https://www.therundown.ai/articles/apple-no-video-security-camera",
+      "note": "Apple's camera, plus telecom giants teaming up on dead zones"
+    },
+    {
+      "publication": "Ahead of AI",
+      "title": "Language Models for Text Classification: From Bag-of-Words to Jev",
+      "url": "https://magazine.sebastianraschka.com/p/classifier-history-and-jev",
+      "note": "a visual guide with hands-on accuracy and efficiency experiments"
+    }
+  ]
+}
