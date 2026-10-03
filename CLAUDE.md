@@ -17,9 +17,9 @@ Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
 and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
-Snapshot (2026-10-01): Phases 0–3 merged into `hugo-migration`; **not live yet**; Phase 4 (Kit newsletter)
-code built (4a/4b) in a PR into `hugo-migration`, Kush's Kit/DNS setup (4c) pending; Kush wants a few
-more changes before go-live (PR #2).
+Snapshot (2026-10-03): Phases 0–3 merged into `hugo-migration`; **not live yet**. PR #5 (open) adds Phase 4
+(Kit: Thursday digest + Sunday weekly letter), Learning Notes and the three writing skills. Kush's Kit/DNS
+setup (4c) pending; Kush wants a few more changes before go-live (PR #2).
 
 ## Current state: mid-migration Jekyll → Hugo
 
@@ -75,9 +75,18 @@ HUGO_ENVIRONMENT=production hugo --gc --minify   # production build → public/
 1. `python3 scripts/new_breakdown.py Comic.pdf --title "How LLMs Think" [--transcript convo.txt]`
    → page bundle `content/posts/<slug>/` (4:5 WebP slides, clean PDF, cover.jpg, `draft: true`).
 2. Run the **`/breakdown-post`** skill (`.claude/skills/breakdown-post/SKILL.md`) → collapsed transcript
-   (`transcript` shortcode), "The concept in plain words", SEO fields, slide alt text, `linkedin.txt`.
+   (`transcript` shortcode), "The concept in plain words", SEO fields, slide alt text.
    **Keep these pages lean** (Kush's call): comic + plain-words section only, no TOC/FAQ/extra sections.
-3. Kush reviews, sets `draft: false`. (`linkedin.txt` / `transcript.txt` are in `ignoreFiles`, never published.)
+3. Kush reviews, sets `draft: false`. (`transcript.txt` is in `ignoreFiles`, never published.)
+
+## Writing skills (Kush, 2026-10-03)
+
+Three skills, one per post type, all bound by **`.claude/BLOG_WRITING_RULES.md`**:
+`/breakdown-post` (comic PDF + conversation), `/learning-note` (Kush's notes + source link),
+`/build-log-entry` (Kush's build notes). They **assemble Kush's words into the template**; they never write
+his takeaway / "one thing", never invent numbers, treat Claude-written research files as reference only,
+leave `draft: true`, and run `scripts/check_links.py` + a build. **No LinkedIn copy anywhere**: LinkedIn
+posts are generated in Sahayak from the finished post.
 
 ## Tech Digest (Digital Dhaba) issues
 
@@ -141,7 +150,11 @@ docs/NEWSLETTER.md                # Kit setup, switches, Mailchimp re-permission
 docs/kit/email-template.html      # minimal Kit email template
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
 docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
-.claude/skills/breakdown-post/    # writes the post body + LinkedIn copy
+.claude/BLOG_WRITING_RULES.md      # shared rules for the three writing skills
+.claude/skills/breakdown-post/    # Concept Breakdown body (comic PDF + conversation)
+.claude/skills/learning-note/     # Learning Note from Kush's notes + source
+.claude/skills/build-log-entry/   # Build Log entry from Kush's build notes
+scripts/check_links.py            # link checker used by the skills
 .github/workflows/hugo.yml        # deploy to GitHub Pages via Actions (prod build)
 _migration/*.py                   # one-off converters (kept for audit)
 ```

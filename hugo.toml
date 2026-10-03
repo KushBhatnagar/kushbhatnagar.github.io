@@ -9,7 +9,7 @@ buildFuture = false
 buildExpired = false
 enableInlineShortcodes = true
 # Working files kept inside Concept Breakdown bundles, never published.
-ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
+ignoreFiles = ["transcript\\.txt$"]
 
 # Keep the Jekyll-era feed path (/feed.xml) so Feedburner and existing subscribers keep working.
 [outputFormats.rss]

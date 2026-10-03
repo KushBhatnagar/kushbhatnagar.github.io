@@ -163,6 +163,14 @@ Format: `HH:MM [Phase N] change — detail`
 - Tech Digest page copy now says Claude curates the issue.
 - `kit_api.py`: clear error when Kit can't be reached.
 
+### 2026-10-03 — Writing skills
+- New skills `/learning-note` and `/build-log-entry`; `/breakdown-post` now reads the same shared rules
+  (`.claude/BLOG_WRITING_RULES.md`): assemble Kush's own words into the templates, never write the core
+  takeaway, never invent numbers, research files only for metadata/links, `draft: true`, link check + build.
+- LinkedIn copy removed from `/breakdown-post`; `content/posts/how-llms-think/linkedin.txt` deleted;
+  `ignoreFiles` now only excludes `transcript.txt`. LinkedIn posts come from Sahayak.
+- `scripts/check_links.py`: link checker that distinguishes broken links from unreachable ones.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

@@ -18,6 +18,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Phase 3 — Tech Digest (Digital Dhaba) | ✅ Done. Auto-publish **verified**: Digital-Dhaba workflow pushed issue 2026-09-30 to `hugo-migration` |
 | Phase 4 — Subscribers / newsletter | 🔨 Code built (forms, `/posts.json`, Thursday digest email, Sunday weekly letter, docs) in PR #5. **Kush's Kit/DNS setup pending** |
 | Learning Notes | ✅ Section built 2026-10-03 (PR #5) with one **placeholder** note that Kush must rewrite/verify before go-live |
+| Writing skills | ✅ `/learning-note`, `/build-log-entry`, `/breakdown-post` (2026-10-03, PR #5); no LinkedIn copy (Sahayak) |
 | Go-live | ⏳ Waiting on Kush's extra changes, then the go-live checklist below |
 
 **Open items for the next session**
@@ -98,8 +99,8 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 ## Phase 2 — Concept Breakdown system
 - [x] `scripts/new_breakdown.py` — PDF → slides → page bundle with pre-filled `index.md`
 - [x] `carousel` shortcode (swipe, arrows, keyboard, counter, dots, lazy-load, PDF download)
-- [x] `/breakdown-post` Claude Code skill — collapsed transcript, plain-words concept, SEO fields, alt text,
-      LinkedIn post + first comment
+- [x] `/breakdown-post` Claude Code skill — collapsed transcript, plain-words concept, SEO fields, alt text
+      (LinkedIn copy removed 2026-10-03: Sahayak writes LinkedIn posts)
 - [x] Lean format after Kush's review: comic + "concept in plain words" only; transcript collapsed
       ("Read this comic as text"); no TOC / PM section / takeaways / FAQ
 - [x] Pilot: *How LLMs Think* — still `draft: true`; transcript read from slides, Kush to verify
@@ -205,8 +206,10 @@ Assumptions in the code, each easy to adjust if Kit says otherwise:
 - [x] `archetypes/learning-note.md` and `archetypes/build-log.md` (templates from Sahayak's plans):
       `hugo new --kind learning-note content/posts/<slug>.md`
 - [x] Tech Digest copy fixed: says Claude curates it (Kush's honesty point)
-- [ ] Optional later: a "My notes this week" block in the Digital Dhaba email; a `/learning-note` skill that runs
-      the checklist (never writes "What I took from it")
+- [x] Writing skills (2026-10-03): `/learning-note`, `/build-log-entry` (+ `/breakdown-post`), shared rules in
+      `.claude/BLOG_WRITING_RULES.md`: assemble Kush's words, never write the takeaway / "one thing", real numbers
+      only, research files = reference only, `draft: true`, link check (`scripts/check_links.py`) + build. No LinkedIn copy.
+- [ ] Optional later: a "My notes this week" block in the Digital Dhaba email
 
 ## Post-launch checks
 - [ ] AdSense serving (site approved? `ads.txt` present? auto-ads enabled in AdSense console?)
