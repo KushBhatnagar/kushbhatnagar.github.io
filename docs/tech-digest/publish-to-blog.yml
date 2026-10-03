@@ -37,8 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BLOG_REPO: KushBhatnagar/kushbhatnagar.github.io
-      # Use hugo-migration until the Hugo site is live on main, then switch to main.
-      BLOG_BRANCH: main
+      # Keep hugo-migration until the Hugo site is live on main (go-live checklist), then switch to main.
+      # Copying this file with `main` before go-live would push issues to the live Jekyll site.
+      BLOG_BRANCH: hugo-migration
     steps:
       - name: Checkout Digital-Dhaba
         uses: actions/checkout@v4

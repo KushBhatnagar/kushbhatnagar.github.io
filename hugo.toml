@@ -62,7 +62,6 @@ ignoreFiles = ["transcript\\.txt$"]
     [params.kit.forms]
       blog = ""        # posts, Build Log, Tech Digest
       linkedin = ""    # /subscribe/ (the link shared on LinkedIn)
-      mailchimp = ""   # /stay-subscribed/ (re-permission link in the last Mailchimp email)
 
   [params.footer]
     text = "[Archive](/year-archive/) · [Subscribe](/subscribe/) · [Terms](/terms/)"

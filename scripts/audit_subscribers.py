@@ -15,7 +15,7 @@ Why these rules (from the 2026-10 audit of the real list):
   country and IP, random-looking addresses, plus throwaway and "marketing agency" domains.
 - Before that, signups were few and came from India, the US and Canada with name-like addresses.
 A real-looking Gmail address isn't proof of a real subscriber: list-bombing bots often use other people's
-real addresses. That's why the final filter is still re-permission (docs/NEWSLETTER.md).
+real addresses, so review the keep list by eye before uploading it to Kit (docs/NEWSLETTER.md).
 """
 import argparse, csv, os, sys
 

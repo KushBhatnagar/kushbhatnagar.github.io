@@ -1,7 +1,7 @@
-{{- /* Newsletter signup form. Used on posts, /subscribe/, /stay-subscribed/, Build Log and Tech Digest.
+{{- /* Newsletter signup form. Used on posts, /subscribe/, Build Log and Tech Digest.
        Provider-specific markup lives only here.
 
-       Params (dict): heading, text, source ("blog" | "linkedin" | "mailchimp"; default "blog").
+       Params (dict): heading, text, source ("blog" | "linkedin"; default "blog").
        Each source posts to its own Kit form (IDs in hugo.toml → params.kit.forms), so signups per
        source can be compared in Kit (auto-tagging by form is a paid feature). Kit's double opt-in
        is the bot filter: an address only joins after its owner clicks the confirmation email.

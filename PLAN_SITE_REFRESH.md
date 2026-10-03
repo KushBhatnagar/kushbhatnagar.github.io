@@ -35,7 +35,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 1. [ ] Kush's pre-launch changes merged into `hugo-migration`; local preview OK (`hugo server -D`)
    - [ ] Placeholder Learning Note (`content/posts/training-an-ai-for-one-skill-changes-its-other-answers.md`)
          rewritten in Kush's words and checked (claims vs the paper, every link opened); remove its PLACEHOLDER comment
-   - [ ] Digital-Dhaba: change the signoff "Chai's on us next Saturday" → Thursday (`newsletter/digest.json`)
+   - [x] Digital-Dhaba: signoff now "Chai's on us next week." (seen 2026-10-03)
    - [ ] Sahayak docs: `LEARNING-NOTES-PLAN.md` says "Monday issue" → Thursday; `BUILD-IN-PUBLIC-PLAN.md`
          says both forms feed Mailchimp → Kit
 2. [ ] Blog repo **Settings → Pages → Source → GitHub Actions** (must be BEFORE step 3)
@@ -78,7 +78,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Email model (revised 2026-10-03) | **Two emails only**: **Digital Dhaba**, Thursday 07:00 IST (issue published early Thursday), and a **weekly letter**, Sunday 09:00 IST, with every post from the last 7 days (Concept Breakdown, Build Log, Learning Notes). No per-post emails. Supersedes the 2026-10-01 per-post model |
 | Learning Notes (2026-10-03) | New section `/learning-notes/`, separate from Build Log (proof of building) and Tech Digest (Claude-curated). Template + rules: Sahayak `content/LEARNING-NOTES-PLAN.md`. In the menu; **Archive moved to the footer** |
 | Digital Dhaba day (2026-10-03) | Published **Thursday early morning IST** by a GitHub Action in Digital-Dhaba |
-| Mailchimp list (2026-10-01) | **Re-permission, not import**: one final Mailchimp email → Kit form with double opt-in; only confirmers join. Audit (2026-10-03, `scripts/audit_subscribers.py`): 267 → keep 19 / review 15 / junk 233; email only keep + approved review |
+| Mailchimp list (2026-10-01, revised 2026-10-03) | **Direct upload of the audited list** (was: re-permission). Audit (`scripts/audit_subscribers.py`): 267 → keep 19 / review 15 / junk 233. Kush uploads the real ~15 to Kit (tag `from-mailchimp`), then closes Mailchimp after go-live. `/stay-subscribed/` and the Mailchimp-move form removed |
 | Sending mechanism (2026-10-01) | **GitHub Actions → Kit API v4** (not Kit RSS-to-email). Weekly letter: scheduled workflow reading the live posts-only `/posts.json`. Digest: extra step in Digital-Dhaba `publish-to-blog.yml` |
 | Signup source tracking | Separate Kit forms per source (auto-tag-by-form is paid); compare form subscriber counts |
 | AdSense | Keep; verify it actually serves after launch |
@@ -155,7 +155,7 @@ Decisions (2026-09-30):
       no Kit JS); form ID chosen per placement (`source`: blog / linkedin / mailchimp), IDs in `hugo.toml`
       `params.kit`. Honeypot field kept; double opt-in does the real bot filtering.
 - [x] `/subscribe/` uses the **LinkedIn** form; posts/Build Log/Tech Digest use the **Blog** form;
-      `/stay-subscribed/` (noindex) uses the **Mailchimp-move** form.
+      ~~`/stay-subscribed/` (Mailchimp-move form)~~ removed 2026-10-03 (direct upload instead).
 - [x] Posts-only JSON output (`/posts.json`: url, title, summary, image, date, categories) excluding `tech-digest`.
 - [x] **Revised 2026-10-03:** per-post emails replaced by the **weekly letter** (`scripts/kit_weekly_roundup.py`,
       `.github/workflows/weekly-roundup.yml`, Sunday 09:00 IST, switch `KIT_ROUNDUP_ENABLED`); the items below
@@ -180,10 +180,11 @@ Decisions (2026-09-30):
 **4c: Kush (accounts, DNS, content)**
 - [ ] Kit account; API key saved as `KIT_API_KEY` secret in **both** repos (never in chat)
 - [ ] Sending domain blogsbykush.com verified (Kit CNAMEs + DMARC TXT); From `kush@blogsbykush.com`
-- [ ] Minimal custom email template (paste `docs/kit/email-template.html`); 3 forms (Blog, LinkedIn,
-      Mailchimp move) → IDs into `hugo.toml`; a "test" tag with Kush only; repo variables per `docs/NEWSLETTER.md`
+- [ ] Minimal custom email template (paste `docs/kit/email-template.html`); 2 forms (Blog, LinkedIn)
+      → IDs into `hugo.toml`; a "test" tag with Kush only; repo variables per `docs/NEWSLETTER.md`
 - [ ] Postal address for Kit's footer; confirmation-email line (Thursday digest + Sunday letter)
-- [ ] After go-live: Mailchimp re-permission email (copy in `docs/NEWSLETTER.md`) → wait ~2 weeks → archive Mailchimp
+- [ ] After go-live + Kit form IDs in `hugo.toml`: upload the audited list to Kit (tag `from-mailchimp`), final
+      Mailchimp export kept locally, close Mailchimp (`docs/NEWSLETTER.md`)
 - [ ] Google Postmaster Tools for blogsbykush.com
 
 ### To verify against Kit during Kush's first test (docs sites were blocked from the Claude cloud session)

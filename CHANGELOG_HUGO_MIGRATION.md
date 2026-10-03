@@ -198,6 +198,13 @@ Format: `HH:MM [Phase N] change — detail`
 - `docs/NEWSLETTER.md`: re-permission email now goes only to the audited keep (+ approved review) segment.
 - `.gitignore`: Mailchimp exports and audit output can't be committed.
 
+- **Revised same day (Kush): direct upload instead of re-permission.** Kush uploads the audited real
+  subscribers (~15) to Kit with tag `from-mailchimp`, then closes Mailchimp after go-live. Removed
+  `/stay-subscribed/` and the `mailchimp` form slot; `docs/NEWSLETTER.md` rewritten for the upload.
+- `docs/tech-digest/publish-to-blog.yml`: `BLOG_BRANCH` back to `hugo-migration` (the copy said `main`, which
+  would have pushed issues to the live Jekyll site if copied before go-live).
+- Merged `hugo-migration` (auto-published Tech Digest 2026-10-03) into the feature branch.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

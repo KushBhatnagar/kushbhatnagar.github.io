@@ -17,7 +17,6 @@ so you can compare where subscribers come from:
 |---|---|---|
 | **Blog** | end of every post, Build Log, Tech Digest | `params.kit.forms.blog` |
 | **LinkedIn** | `/subscribe/` (the link you share on LinkedIn) | `params.kit.forms.linkedin` |
-| **Mailchimp move** | `/stay-subscribed/` (link in the last Mailchimp email) | `params.kit.forms.mailchimp` |
 
 Every form uses **double opt-in**: nobody is added until they click the confirmation email, which also
 keeps bots and fake addresses out.
@@ -62,14 +61,13 @@ Kit → **Send → Email Templates → New template** → choose the HTML/code o
 `docs/kit/email-template.html` → save. Open it again and copy the **template ID** from the URL.
 
 ### 4. Forms
-Create three forms (Kit → **Grow → Landing Pages & Forms → Create new → Form**, any style): **Blog**,
-**LinkedIn**, **Mailchimp move**. For each, open it → **Embed** → copy the number from the embed code
+Create two forms (Kit → **Grow → Landing Pages & Forms → Create new → Form**, any style): **Blog** and
+**LinkedIn**. For each, open it → **Embed** → copy the number from the embed code
 (the form ID), then put the IDs into `hugo.toml`:
 ```toml
 [params.kit.forms]
   blog = "1234567"
   linkedin = "2345678"
-  mailchimp = "3456789"
 ```
 (Or send the IDs to Claude.) In each form's settings, set the **success redirect** to
 `https://blogsbykush.com/` or leave Kit's default "check your email" page.
@@ -104,39 +102,26 @@ Delete `KIT_TEST_TAG_ID` in both repos. From then on, emails go to all confirmed
 
 ---
 
-## Moving the Mailchimp list (re-permission)
+## Moving the Mailchimp list (direct upload of the audited list)
 
-Don't import the Mailchimp list into Kit: imported contacts count as confirmed and can't be asked to
-re-confirm. Instead, after go-live (so `/stay-subscribed/` exists):
+Decision (Kush, 2026-10-03): upload only the audited real subscribers to Kit, then close Mailchimp. No
+re-permission email. The list is small (about 15 real people out of 267; the rest are bot signups), and these
+people did sign up for this newsletter.
 
-1. **Audit first** (on your machine; the CSVs never go into git):
+1. **Audit** (on your machine; the CSVs never go into git):
    `python3 scripts/audit_subscribers.py <mailchimp-export>.csv` → `keep.csv`, `review.csv`, `junk.csv`.
-   Open `review.csv` and move anyone you recognise to keep; the rest stay out. The 2026-10 audit of the
-   real list gave 267 → keep 19, review 15, junk 233 (bot signups since late 2024).
-   In Mailchimp, tag the keep (+ approved review) addresses, e.g. Audience → Add contacts → Import
-   contacts → upload, choose "Update any existing contacts", add the tag `move-to-kit`
-   (menu names not verified; Mailchimp's help covers tagging via import).
-   **Don't email the junk group**: many are bot-made or other people's real addresses (list bombing), and
-   mailing them invites spam complaints.
-2. In Mailchimp, send one last email to the `move-to-kit` segment only:
-
-   > **Subject:** Digital Dhaba is moving (one click to stay)
-   >
-   > Hi,
-   >
-   > A while ago you subscribed to Blogs by Kush. Thank you for that!
-   >
-   > The newsletter is getting a new home and a better format: **Digital Dhaba**, a short weekly roundup
-   > of what's happening in AI and tech and why it matters, every Thursday, plus a short Sunday letter
-   > with what I published that week (comic-style Concept Breakdowns, Build Log, Learning Notes).
-   >
-   > I'm not moving anyone without asking. If you'd like to keep getting it, click below and confirm:
-   >
-   > **[Yes, keep me subscribed →](https://blogsbykush.com/stay-subscribed/)**
-   >
-   > If you don't click, this is the last email you'll get from this list. No hard feelings.
-   >
-   > — Kush
-
-3. Wait about two weeks, then archive or delete the Mailchimp audience and close the account.
-4. People who confirm show up in Kit under the **Mailchimp move** form.
+   - From `keep.csv`, remove your own and test addresses.
+   - From `review.csv`, add only people you recognise. When in doubt, leave them out: Kit treats imported
+     subscribers as confirmed, so a wrong address can't be filtered later.
+   - Never upload or email anyone in `junk.csv` (bot-made or other people's real addresses).
+2. **Upload to Kit** (after the Kit setup above; ideally right after go-live): Kit → **Subscribers → Import**
+   (Add subscribers → import a CSV) → upload a CSV with the `email` column of your final list → add the tag
+   `from-mailchimp`. (Menu names not verified from the Claude session; Kit's help covers CSV import.)
+3. **Tell them once.** The first email they get (the next Digital Dhaba) should say in one line that the
+   newsletter moved and they can unsubscribe with one click, e.g. at the top of the issue for the
+   `from-mailchimp` tag, or a short one-off broadcast to that tag:
+   > Blogs by Kush has a new home and a new format: Digital Dhaba every Thursday and a short Sunday letter
+   > with what I published. You signed up on the old list; if this isn't for you anymore, unsubscribe below.
+4. **Close Mailchimp only after go-live and after the Kit form IDs are in `hugo.toml`.** Until then the live
+   Jekyll site's form and the Hugo fallback form still post to Mailchimp. Before closing, download a final
+   full export and keep it on your machine as the record of who signed up and when.
