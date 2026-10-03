@@ -78,7 +78,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Email model (revised 2026-10-03) | **Two emails only**: **Digital Dhaba**, Thursday 07:00 IST (issue published early Thursday), and a **weekly letter**, Sunday 09:00 IST, with every post from the last 7 days (Concept Breakdown, Build Log, Learning Notes). No per-post emails. Supersedes the 2026-10-01 per-post model |
 | Learning Notes (2026-10-03) | New section `/learning-notes/`, separate from Build Log (proof of building) and Tech Digest (Claude-curated). Template + rules: Sahayak `content/LEARNING-NOTES-PLAN.md`. In the menu; **Archive moved to the footer** |
 | Digital Dhaba day (2026-10-03) | Published **Thursday early morning IST** by a GitHub Action in Digital-Dhaba |
-| Mailchimp list (2026-10-01) | **Re-permission, not import**: one final Mailchimp email → Kit form with double opt-in; only confirmers join. Audit script optional |
+| Mailchimp list (2026-10-01) | **Re-permission, not import**: one final Mailchimp email → Kit form with double opt-in; only confirmers join. Audit (2026-10-03, `scripts/audit_subscribers.py`): 267 → keep 19 / review 15 / junk 233; email only keep + approved review |
 | Sending mechanism (2026-10-01) | **GitHub Actions → Kit API v4** (not Kit RSS-to-email). Weekly letter: scheduled workflow reading the live posts-only `/posts.json`. Digest: extra step in Digital-Dhaba `publish-to-blog.yml` |
 | Signup source tracking | Separate Kit forms per source (auto-tag-by-form is paid); compare form subscriber counts |
 | AdSense | Keep; verify it actually serves after launch |

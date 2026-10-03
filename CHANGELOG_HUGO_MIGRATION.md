@@ -192,6 +192,12 @@ Format: `HH:MM [Phase N] change — detail`
 - Social icon Twitter bird → X logo (`x.com/bhatnagarkush`); About "Get in touch" shows the same icon row
   via the new `{{< social-icons >}}` shortcode (`layouts/_shortcodes/social-icons.html`).
 
+### 2026-10-03 — Mailchimp subscriber audit
+- `scripts/audit_subscribers.py`: sorts a Mailchimp export into keep / review / junk (bot name fields,
+  throwaway domains, the late-2024 onward bot wave); prints counts only. Kush's list: 267 → 19 / 15 / 233.
+- `docs/NEWSLETTER.md`: re-permission email now goes only to the audited keep (+ approved review) segment.
+- `.gitignore`: Mailchimp exports and audit output can't be committed.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

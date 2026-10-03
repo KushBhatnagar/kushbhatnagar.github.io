@@ -109,7 +109,16 @@ Delete `KIT_TEST_TAG_ID` in both repos. From then on, emails go to all confirmed
 Don't import the Mailchimp list into Kit: imported contacts count as confirmed and can't be asked to
 re-confirm. Instead, after go-live (so `/stay-subscribed/` exists):
 
-1. In Mailchimp, send one last email to the whole audience:
+1. **Audit first** (on your machine; the CSVs never go into git):
+   `python3 scripts/audit_subscribers.py <mailchimp-export>.csv` → `keep.csv`, `review.csv`, `junk.csv`.
+   Open `review.csv` and move anyone you recognise to keep; the rest stay out. The 2026-10 audit of the
+   real list gave 267 → keep 19, review 15, junk 233 (bot signups since late 2024).
+   In Mailchimp, tag the keep (+ approved review) addresses, e.g. Audience → Add contacts → Import
+   contacts → upload, choose "Update any existing contacts", add the tag `move-to-kit`
+   (menu names not verified; Mailchimp's help covers tagging via import).
+   **Don't email the junk group**: many are bot-made or other people's real addresses (list bombing), and
+   mailing them invites spam complaints.
+2. In Mailchimp, send one last email to the `move-to-kit` segment only:
 
    > **Subject:** Digital Dhaba is moving (one click to stay)
    >
@@ -129,5 +138,5 @@ re-confirm. Instead, after go-live (so `/stay-subscribed/` exists):
    >
    > — Kush
 
-2. Wait about two weeks, then archive or delete the Mailchimp audience and close the account.
-3. People who confirm show up in Kit under the **Mailchimp move** form.
+3. Wait about two weeks, then archive or delete the Mailchimp audience and close the account.
+4. People who confirm show up in Kit under the **Mailchimp move** form.
