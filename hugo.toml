@@ -42,6 +42,7 @@ ignoreFiles = ["transcript\\.txt$"]
   disableThemeToggle = false
   ShowReadingTime = true
   ShowShareButtons = true
+  ShareButtons = ["x", "linkedin", "facebook"]   # Kush: no Reddit, WhatsApp, Telegram, Hacker News
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true

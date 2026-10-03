@@ -5,6 +5,7 @@ description: "Kush Bhatnagar is a Technical Product Manager who leads an enterpr
 ShowToc: false
 ShowReadingTime: false
 disableShare: true
+hideDescription: true   # the intro already says it; description stays as the search snippet
 ---
 
 <img class="about-photo" src="/assets/images/kush-avatar.jpg" alt="Kush Bhatnagar" width="180" height="180">
@@ -17,14 +18,12 @@ and non-technical folks in tech.
 
 ## What I work on
 
-- **An AI platform.** I own the product vision for an internal AI platform that gives 10+ teams access to
-  public and proprietary LLMs through one API, with the access controls, usage tracking and governance
-  that make AI safe to use at enterprise scale.
-- **AI agents for product work.** I build agents that cover the product lifecycle, from market research and
-  business case to PRD, specification and Jira epics, with human review at every stage. Each stage went
-  from weeks to about 2–3 days.
-- **Helping others build theirs.** Through workshops and office hours I've reached 100+ colleagues, and 5+
-  PMs in other teams now build and use their own agents.
+I own the product vision for an internal AI platform that gives 10+ teams access to public and proprietary
+LLMs through one API, with the access controls, usage tracking and governance that make AI safe to use at
+enterprise scale. I also build AI agents for product work, covering the lifecycle from market research and
+business case to PRD, specification and Jira epics, with human review at every stage, which took each stage
+from weeks to about 2–3 days. Through workshops and office hours I've helped 100+ colleagues get started,
+and 5+ PMs in other teams now build and use their own agents.
 
 ## What I'm building
 
@@ -35,7 +34,8 @@ the [Build Log](/build-log/).
 ## How this blog works
 
 I believe learning is a continuous loop: to truly learn something, you have to experiment with it and
-transform it into something of your own. This site is that loop, in public.
+transform it into something of your own. This site is that loop, in public, built on three things I value:
+**learning, writing and simplicity**.
 
 - **Learn:** [Tech Digest](/tech-digest/), Digital Dhaba, my weekly AI digest every Thursday, and
   [Learning Notes](/learning-notes/), my own notes on what I read.
@@ -48,14 +48,8 @@ transform it into something of your own. This site is that loop, in public.
     <figcaption>The learning loop, from <a href="https://medium.com/accelerated-intelligence/memory-learning-breakthrough-it-turns-out-that-the-ancients-were-right-7bbd3090d9cc">Michael Simmons</a>.</figcaption>
 </figure>
 
-## The path here
-
-I started in 2009 as a software tester. From there I moved into test automation, then cloud platform
-engineering, then machine learning delivery, and in 2021 into product management, where I now work on AI.
-Along the way I've kept the same three values: **learning, writing and simplicity**.
-
 ## Get in touch
 
 - [LinkedIn](https://www.linkedin.com/in/kushbhatnagar/) is the best place to reach me.
-- [GitHub](https://github.com/KushBhatnagar) · [Email](mailto:kushbhatnagar86@gmail.com) · [My CV](/assets/cv/KushBhatnagar_Resume.pdf)
+- [X (Twitter)](https://twitter.com/bhatnagarkush) · [Medium](https://medium.com/@kushbhatnagar86) · [GitHub](https://github.com/KushBhatnagar) · [Email](mailto:kushbhatnagar86@gmail.com)
 - Get Digital Dhaba and my weekly letter by email: [subscribe](/subscribe/).
