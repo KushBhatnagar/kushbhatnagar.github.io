@@ -4,8 +4,8 @@ categories: ["concept-breakdown"]
 tags:
 - machine learning
 - classroom conversation
-summary: "Discover the essentials of Regularization in our latest classroom conversation."
-description: "Discover the essentials of Regularization in our latest classroom conversation."
+summary: "Discover the essentials of Regularization in a classroom comic."
+description: "Discover the essentials of Regularization in a classroom comic."
 date: 2025-08-14
 url: /concept-breakdown/what-is-regularization/
 aliases: [/ml-made-easy/what-is-regularization/]

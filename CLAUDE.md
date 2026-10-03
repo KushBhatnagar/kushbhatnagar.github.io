@@ -18,7 +18,8 @@ Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
 and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
 Snapshot (2026-10-03): Phases 0–3 merged into `hugo-migration`; **not live yet**. PR #5 (open) adds Phase 4
-(Kit: Thursday digest + Sunday weekly letter), Learning Notes and the three writing skills. Kush's Kit/DNS
+(Kit: Thursday digest + Sunday weekly letter), Learning Notes, the three writing skills and the
+homepage/About refresh (no employer name, no consulting mention, projects kept generic until Kush names them). Kush's Kit/DNS
 setup (4c) pending; Kush wants a few more changes before go-live (PR #2).
 
 ## Current state: mid-migration Jekyll → Hugo

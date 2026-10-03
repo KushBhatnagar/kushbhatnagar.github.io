@@ -19,6 +19,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Phase 4 — Subscribers / newsletter | 🔨 Code built (forms, `/posts.json`, Thursday digest email, Sunday weekly letter, docs) in PR #5. **Kush's Kit/DNS setup pending** |
 | Learning Notes | ✅ Section built 2026-10-03 (PR #5) with one **placeholder** note that Kush must rewrite/verify before go-live |
 | Writing skills | ✅ `/learning-note`, `/build-log-entry`, `/breakdown-post` (2026-10-03, PR #5); no LinkedIn copy (Sahayak) |
+| Homepage + About + photo + CV | ✅ Brand review done 2026-10-03 (PR #5): real photo, new About page, current CV without phone |
 | Go-live | ⏳ Waiting on Kush's extra changes, then the go-live checklist below |
 
 **Open items for the next session**

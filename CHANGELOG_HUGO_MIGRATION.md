@@ -171,6 +171,20 @@ Format: `HH:MM [Phase N] change — detail`
   `ignoreFiles` now only excludes `transcript.txt`. LinkedIn posts come from Sahayak.
 - `scripts/check_links.py`: link checker that distinguishes broken links from unreachable ones.
 
+### 2026-10-03 — Homepage, About page, photo, CV (brand review)
+- Photo: `kush-toon.jpg` (ToonMe watermark, ghost artefact) → `static/assets/images/kush-avatar.jpg`, made from
+  Kush's own `Kush.png` (white background swapped for light brand blue, square 400px). Used on homepage + About.
+- Homepage (`hugo.toml`): proof line no longer claims "5+ years building AI/GenAI & cloud"; intro leads with
+  "I lead an enterprise AI platform by day and build my own AI products after hours". Site description and
+  keywords drop MLOps/AWS (past skills). Employer not named, no consulting / "open to roles" (Kush's call).
+- `layouts/home.html` (copy of PaperMod `list.html`): "Recent posts" skips the 4 breakdowns already shown as cards.
+- About page rewritten (`content/about.md`, URL unchanged): who, what I work on (resume facts, no employer),
+  what I'm building (generic, no project names), how the blog works, the path, get in touch. One small
+  learning-loop image instead of two large ones; share bar off.
+- CV (`/assets/cv/KushBhatnagar_Resume.pdf`, URL unchanged): replaced the 2023 CV with Job-Hunting's
+  master resume, re-rendered without the phone number (Job-Hunting repo untouched).
+- Four old comic summaries: "in our latest classroom conversation." → "in a classroom comic.", missing spaces fixed.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

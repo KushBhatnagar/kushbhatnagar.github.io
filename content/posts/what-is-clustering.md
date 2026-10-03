@@ -4,8 +4,8 @@ categories: ["concept-breakdown"]
 tags:
 - machine learning
 - classroom conversation
-summary: "Discover the essentials of Clustering in our latest classroom conversation.Clustering - where data points find their natural friend groups!"
-description: "Discover the essentials of Clustering in our latest classroom conversation.Clustering - where data points find their natural friend groups!"
+summary: "Discover the essentials of Clustering in a classroom comic. Clustering - where data points find their natural friend groups!"
+description: "Discover the essentials of Clustering in a classroom comic. Clustering - where data points find their natural friend groups!"
 date: 2025-09-01
 url: /concept-breakdown/what-is-clustering/
 aliases: [/ml-made-easy/what-is-clustering/]

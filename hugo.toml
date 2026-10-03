@@ -34,8 +34,8 @@ ignoreFiles = ["transcript\\.txt$"]
 [params]
   env = "production"
   title = "Blogs by Kush"
-  description = "Simplifying the complexities of MLOps, AWS, Machine Learning, and a lot more"
-  keywords = ["Machine Learning", "MLOps", "AWS", "Blog"]
+  description = "Kush Bhatnagar, Technical PM, learns, builds and explains AI in plain words: a weekly AI digest, a build log and comic-style concept breakdowns."
+  keywords = ["AI product management", "Generative AI", "AI agents", "Machine Learning", "Product Management"]
   author = "Kush Bhatnagar"
   DateFormat = "January 2, 2006"
   defaultTheme = "auto"          # dark/light toggle
@@ -75,12 +75,12 @@ ignoreFiles = ["transcript\\.txt$"]
   # Homepage intro — rendered by layouts/_partials/home_info.html
   [params.homeInfoParams]
     Title = "Hi, I'm Kush 👋"
-    imageUrl = "/assets/images/kush-toon.jpg"
+    imageUrl = "/assets/images/kush-avatar.jpg"
     imageTitle = "Kush Bhatnagar"
     Tagline = "Learn. Build. Explain."
-    Proof = "Technical Product Manager · 17+ years in tech · 5+ years building AI/GenAI & cloud platforms"
+    Proof = "Technical Product Manager · 17+ years in tech · 5+ years in product · leading an enterprise AI platform"
     Content = """
-I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of simplicity. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI, cloud and product concepts without the jargon.
+I lead an enterprise AI platform by day and build my own AI products after hours. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI and product concepts without the jargon.
 """
     [[params.homeInfoParams.ctas]]
       name = "Subscribe"
