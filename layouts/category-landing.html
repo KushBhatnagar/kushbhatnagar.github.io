@@ -1,0 +1,34 @@
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.tagline }}
+  <div class="post-description">{{ . | markdownify }}</div>
+  {{- end }}
+</header>
+
+<div class="post-content">
+  {{ .Content }}
+</div>
+
+{{- $cat := .Params.category_filter }}
+{{- $posts := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice $cat) }}
+
+{{- if not $posts }}
+<div class="empty-state">
+  {{ .Params.empty_message | default "First post coming soon." | markdownify }}
+  {{- partial "newsletter_form.html" (dict "heading" "Get notified when it's live") }}
+</div>
+{{- else if .Params.grid }}
+<div class="card-grid">
+  {{- range $posts.ByDate.Reverse }}
+  {{- partial "post_card.html" . }}
+  {{- end }}
+</div>
+{{- else }}
+<ul class="category-post-list">
+  {{- range $posts.ByDate.Reverse }}
+  <li><span>{{ .Date.Format "January 2, 2006" }}</span> &nbsp; <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{- end }}
+</ul>
+{{- end }}
+{{- end }}

@@ -1,0 +1,14 @@
+{{- /* Blog posts only: AdSense unit (production) + newsletter signup */ -}}
+{{- if eq .Section "posts" }}
+{{- if and (eq hugo.Environment "production") site.Params.adsense site.Params.adsenseSlot }}
+<!-- blogsbykush-adunit -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{{ site.Params.adsenseClient }}"
+     data-ad-slot="{{ site.Params.adsenseSlot }}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{{- end }}
+{{- partial "newsletter_form.html" dict }}
+{{- end }}

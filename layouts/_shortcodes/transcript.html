@@ -1,0 +1,9 @@
+{{- /* {{< transcript >}} …markdown dialogue… {{< /transcript >}}
+       The comic's dialogue as text, collapsed by default: readers see a lean page,
+       while search engines and screen readers still get every line. */ -}}
+<details class="transcript">
+  <summary>{{ .Get "label" | default "Read this comic as text" }}</summary>
+  <div class="transcript-body">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+</details>

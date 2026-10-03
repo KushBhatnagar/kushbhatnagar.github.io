@@ -4,3 +4,12 @@ _site
 .jekyll-metadata
 _backlog
 
+# Hugo
+/public/
+/resources/_gen/
+/.hugo_build.lock
+hugo_stats.json
+
+
+# Claude Code local settings
+.claude/settings.local.json

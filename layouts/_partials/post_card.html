@@ -1,0 +1,15 @@
+{{- /* Thumbnail card for grid listings (Concept Breakdown landing, homepage) */ -}}
+{{- $thumb := partial "thumbnail.html" . }}
+<article class="card">
+  <a class="card-link" href="{{ .RelPermalink }}" aria-label="{{ .Title | plainify }}">
+    {{- with $thumb.src }}
+    <img class="card-thumb" src="{{ . }}" alt="" width="{{ $thumb.width }}" height="{{ $thumb.height }}" loading="lazy" decoding="async">
+    {{- else }}
+    <span class="card-thumb card-thumb--empty" aria-hidden="true"></span>
+    {{- end }}
+    <span class="card-body">
+      <span class="card-title">{{ .Title }}</span>
+      <span class="card-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+    </span>
+  </a>
+</article>

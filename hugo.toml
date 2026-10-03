@@ -1,0 +1,171 @@
+baseURL = "https://blogsbykush.com/"
+title = "Blogs by Kush"
+theme = "PaperMod"
+pagination.pagerSize = 5
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableInlineShortcodes = true
+# Working files kept inside Concept Breakdown bundles, never published.
+ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
+
+# Keep the Jekyll-era feed path (/feed.xml) so Feedburner and existing subscribers keep working.
+[outputFormats.rss]
+  baseName = "feed"
+
+# Post/page URLs are frozen via an explicit `url:` in each file's front matter,
+# so every live URL stays identical to the current Jekyll sitemap.
+
+# /tags/ list is provided by the tags taxonomy (matches current site).
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  env = "production"
+  title = "Blogs by Kush"
+  description = "Simplifying the complexities of MLOps, AWS, Machine Learning, and a lot more"
+  keywords = ["Machine Learning", "MLOps", "AWS", "Blog"]
+  author = "Kush Bhatnagar"
+  DateFormat = "January 2, 2006"
+  defaultTheme = "auto"          # dark/light toggle
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowToc = true
+  TocOpen = false
+  comments = true
+  adsense = true                 # gated to production in extend_head / extend_post_content
+  adsenseClient = "ca-pub-4896166132316701"
+  adsenseSlot = "5967806966"     # "blogsbykush-adunit" — same unit the Jekyll site used
+  images = ["/assets/images/og-default.png"]   # default social-preview image
+
+  [params.assets]
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
+
+  # Homepage intro — rendered by layouts/_partials/home_info.html
+  [params.homeInfoParams]
+    Title = "Hi, I'm Kush 👋"
+    imageUrl = "/assets/images/kush-toon.jpg"
+    imageTitle = "Kush Bhatnagar"
+    Tagline = "Learn. Build. Explain."
+    Proof = "Technical Product Manager · 17+ years in tech · 5+ years building AI/GenAI & cloud platforms"
+    Content = """
+I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of simplicity. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI, cloud and product concepts without the jargon.
+"""
+    [[params.homeInfoParams.ctas]]
+      name = "Subscribe"
+      url = "/subscribe/"
+      primary = true
+    [[params.homeInfoParams.ctas]]
+      name = "Connect on LinkedIn"
+      url = "https://www.linkedin.com/in/kushbhatnagar/"
+
+    [[params.homeInfoParams.pillars]]
+      step = "Learn"
+      name = "Tech Digest"
+      url = "/tech-digest/"
+      text = "A weekly, hand-picked digest of what's happening in AI and tech, and why it matters."
+    [[params.homeInfoParams.pillars]]
+      step = "Build"
+      name = "Build Log"
+      url = "/build-log/"
+      text = "Products I'm building in public: the decisions, the mistakes and the lessons."
+    [[params.homeInfoParams.pillars]]
+      step = "Explain"
+      name = "Concept Breakdown"
+      url = "/concept-breakdown/"
+      text = "Comic-style breakdowns of ML, GenAI, cloud and product concepts. No jargon."
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/bhatnagarkush"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/KushBhatnagar"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/kushbhatnagar/"
+  [[params.socialIcons]]
+    name = "medium"
+    url = "https://medium.com/@kushbhatnagar86"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:kushbhatnagar86@gmail.com"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/feed.xml"
+
+  [params.analytics.google]
+    SiteVerificationTag = "BKwv8d9RamS8UFYapYrQ8ppq348YsIXUDc9E2bWdaYM"
+
+# Top navigation — Learn (Tech Digest) · Build (Build Log) · Explain (Concept Breakdown).
+# MLOps Playground, Bookshelf Chronicles and Tags are intentionally off the menu; their pages stay live.
+[[menu.main]]
+  identifier = "concept-breakdown"
+  name = "Concept Breakdown"
+  url = "/concept-breakdown/"
+  weight = 10
+[[menu.main]]
+  identifier = "tech-digest"
+  name = "Tech Digest"
+  url = "/tech-digest/"
+  weight = 20
+[[menu.main]]
+  identifier = "build-log"
+  name = "Build Log"
+  url = "/build-log/"
+  weight = 30
+[[menu.main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "/year-archive/"
+  weight = 40
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 50
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 60
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]   # JSON drives the search index
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "monokai"
+  [markup.goldmark.renderer]
+    unsafe = true                  # raw HTML in existing posts
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+# Expose the static comic images to Hugo's image pipeline so listings can use small
+# WebP thumbnails instead of the 2000px originals. (Declaring any mount replaces the
+# default for that target, so the defaults are re-declared.)
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "static/assets/images"
+    target = "assets/assets/images"

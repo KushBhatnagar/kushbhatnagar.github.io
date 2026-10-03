@@ -1,0 +1,73 @@
+{{- /* Homepage intro (overrides PaperMod). Content is configured in hugo.toml → params.homeInfoParams.
+       PaperMod renders the "recent posts" list directly after this partial. */ -}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <div class="home-info-flex">
+        {{- with .imageUrl }}
+        <img class="home-avatar" src="{{ . | relURL }}"
+             alt="{{ $.Site.Params.homeInfoParams.imageTitle | default `Kush Bhatnagar` }}"
+             width="130" height="130" loading="eager">
+        {{- end }}
+        <div class="home-info-text">
+            {{- with .Tagline }}<p class="home-tagline">{{ . }}</p>{{ end }}
+            <header class="entry-header">
+                <h1>{{ .Title | markdownify }}</h1>
+            </header>
+            {{- with .Proof }}<p class="home-proof">{{ . }}</p>{{ end }}
+            <div class="entry-content md-content">
+                {{ $opts := dict "display" "block" }}
+                {{ .Content | $.Page.RenderString $opts }}
+            </div>
+            {{- with .ctas }}
+            <div class="home-ctas">
+                {{- range . }}
+                <a class="btn{{ if .primary }} btn-primary{{ end }}" href="{{ .url | relURL }}"
+                   {{- if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
+                {{- end }}
+            </div>
+            {{- end }}
+        </div>
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+
+{{- with .pillars }}
+<section class="pillars" aria-label="Learn, build, explain">
+    {{- range . }}
+    <a class="pillar" href="{{ .url | relURL }}">
+        <span class="pillar-step">{{ .step }}</span>
+        <span class="pillar-name">{{ .name }}</span>
+        <span class="pillar-text">{{ .text }}</span>
+    </a>
+    {{- end }}
+</section>
+{{- end }}
+
+{{- with first 1 (where site.RegularPages "Section" "tech-digest").ByDate.Reverse }}
+{{- range . }}
+<a class="home-digest" href="{{ .RelPermalink }}">
+    <span class="home-digest-label">New Tech Digest</span>
+    <span class="home-digest-text">{{ .Date.Format "Jan 2" }} · {{ .Summary | plainify }} →</span>
+</a>
+{{- end }}
+{{- end }}
+
+{{- $breakdowns := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice "concept-breakdown") }}
+{{- with $breakdowns }}
+<section class="home-section">
+    <div class="home-section-head">
+        <h2>Latest Concept Breakdowns</h2>
+        <a href="{{ "concept-breakdown/" | relURL }}">All breakdowns →</a>
+    </div>
+    <div class="card-grid card-grid--home">
+        {{- range first 4 .ByDate.Reverse }}
+        {{- partial "post_card.html" . }}
+        {{- end }}
+    </div>
+</section>
+{{- end }}
+
+<h2 class="home-recent">Recent posts</h2>
+{{- end -}}
