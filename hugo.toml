@@ -63,6 +63,9 @@ ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
       linkedin = ""    # /subscribe/ (the link shared on LinkedIn)
       mailchimp = ""   # /stay-subscribed/ (re-permission link in the last Mailchimp email)
 
+  [params.footer]
+    text = "[Archive](/year-archive/) · [Subscribe](/subscribe/) · [Terms](/terms/)"
+
   [params.assets]
     favicon = "/favicon.ico"
     favicon16x16 = "/favicon-16x16.png"
@@ -91,7 +94,7 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
       step = "Learn"
       name = "Tech Digest"
       url = "/tech-digest/"
-      text = "A weekly, hand-picked digest of what's happening in AI and tech, and why it matters."
+      text = "Digital Dhaba every Thursday, plus Learning Notes: my own notes on what I read."
     [[params.homeInfoParams.pillars]]
       step = "Build"
       name = "Build Log"
@@ -126,6 +129,7 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
     SiteVerificationTag = "BKwv8d9RamS8UFYapYrQ8ppq348YsIXUDc9E2bWdaYM"
 
 # Top navigation — Learn (Tech Digest) · Build (Build Log) · Explain (Concept Breakdown).
+# Learning Notes sit with Learn. Archive lives in the footer (params.footer.text) to keep the menu short.
 # MLOps Playground, Bookshelf Chronicles and Tags are intentionally off the menu; their pages stay live.
 [[menu.main]]
   identifier = "concept-breakdown"
@@ -143,9 +147,9 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
   url = "/build-log/"
   weight = 30
 [[menu.main]]
-  identifier = "archive"
-  name = "Archive"
-  url = "/year-archive/"
+  identifier = "learning-notes"
+  name = "Learning Notes"
+  url = "/learning-notes/"
   weight = 40
 [[menu.main]]
   identifier = "search"

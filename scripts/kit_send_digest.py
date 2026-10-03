@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Email a Digital Dhaba issue to Kit subscribers, scheduled for Saturday morning.
+Email a Digital Dhaba issue to Kit subscribers, scheduled for Thursday morning.
 
     python3 scripts/kit_send_digest.py ../Digital-Dhaba/issues/2026-09-27
 
@@ -13,12 +13,13 @@ Run by the Digital-Dhaba workflow right after the issue is published to the blog
        - {{VIEW_IN_BROWSER_URL}} → the issue's page on the blog
        - {{FORWARD_URL}}         → a mailto: "forward to a friend" link with the issue URL
        - keeps the <style> block and the <body> contents (Kit's template provides the outer HTML)
-  2. schedules the broadcast for the next send slot (default Saturday 08:00 IST). If the run happens on
-     the send day after the send time, it sends in ~2 minutes, after checking the hero image is live.
+  2. schedules the broadcast for the next send slot (default Thursday 07:00 IST). The issue is published
+     early on Thursday, so normally it goes out at 07:00; if the run happens on Thursday after 07:00, it
+     sends in ~2 minutes, after checking the hero image is live.
   3. skips if a broadcast with the same subject already exists (safe to re-run).
 
 Env: see scripts/kit_api.py (dry run unless KIT_SEND=true; test mode while KIT_TEST_TAG_ID is set), plus
-    DIGEST_SEND_WEEKDAY  0=Mon … 5=Sat (default 5)     DIGEST_SEND_TIME  HH:MM in IST (default 08:00)
+    DIGEST_SEND_WEEKDAY  0=Mon … 3=Thu … 6=Sun (default 3)   DIGEST_SEND_TIME  HH:MM in IST (default 07:00)
     KIT_UNSUBSCRIBE_TAG  default "{{ unsubscribe_url }}"   SITE_URL  default https://blogsbykush.com
 """
 import datetime, json, os, pathlib, re, sys, time, urllib.error, urllib.parse, urllib.request
@@ -33,8 +34,8 @@ IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 def next_slot(now=None):
     """Next send slot (aware datetime). If we're past today's slot on the send day, send now."""
     now = now or datetime.datetime.now(IST)
-    weekday = int(os.environ.get("DIGEST_SEND_WEEKDAY", "5"))
-    hh, mm = (int(x) for x in os.environ.get("DIGEST_SEND_TIME", "08:00").split(":"))
+    weekday = int(os.environ.get("DIGEST_SEND_WEEKDAY", "3"))
+    hh, mm = (int(x) for x in os.environ.get("DIGEST_SEND_TIME", "07:00").split(":"))
     days = (weekday - now.weekday()) % 7
     slot = (now + datetime.timedelta(days=days)).replace(hour=hh, minute=mm, second=0, microsecond=0)
     if slot <= now:  # send day, after the send time

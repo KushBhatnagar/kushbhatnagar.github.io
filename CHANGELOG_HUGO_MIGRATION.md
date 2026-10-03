@@ -152,6 +152,17 @@ Format: `HH:MM [Phase N] change — detail`
 - Docs: `docs/NEWSLETTER.md` (setup, switches, re-permission email), `docs/kit/email-template.html`.
 - Tested against a mock Kit API; real Kit API details to confirm on Kush's first test send.
 
+## 2026-10-03 — Learning Notes, two-email model, Thursday digest
+- New **Learning Notes** section (`/learning-notes/`), separate from Build Log; in the menu, Archive moved to the
+  footer (with Subscribe and Terms). Placeholder note "Training an AI for one skill quietly changes its other
+  answers" (to be rewritten/verified by Kush). Archetypes for Learning Notes and Build Log entries.
+- Email model changed to **two emails**: Digital Dhaba (Thursday 07:00 IST) + weekly letter (Sunday 09:00 IST,
+  all posts from the last 7 days). Removed per-post emails (`kit_notify_posts.py`, `hugo.yml` notify job);
+  added `scripts/kit_weekly_roundup.py` + `.github/workflows/weekly-roundup.yml`.
+- Digest default send slot Saturday 08:00 → **Thursday 07:00 IST**; site copy and docs updated.
+- Tech Digest page copy now says Claude curates the issue.
+- `kit_api.py`: clear error when Kit can't be reached.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

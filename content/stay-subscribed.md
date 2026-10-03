@@ -14,7 +14,7 @@ robotsNoIndex: true
 
 You're here because you subscribed to Blogs by Kush a while ago. Thank you!
 
-The newsletter is moving to a new home and getting better: **Digital Dhaba**, a weekly roundup of AI and tech news for product people, lands every Saturday, plus new **Concept Breakdowns** and **Build Log** posts when they go live.
+The newsletter is moving to a new home and getting better: **Digital Dhaba**, a weekly roundup of AI and tech news for product people, lands every Thursday, and a short Sunday letter rounds up what I published that week: **Concept Breakdowns**, **Build Log** and **Learning Notes**.
 
 To keep getting it, enter your email below and **click the confirmation link** we send you. If you don't confirm, you won't hear from us again. No hard feelings.
 

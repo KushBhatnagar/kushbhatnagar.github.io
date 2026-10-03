@@ -45,7 +45,7 @@ link). The homepage shows a "New Tech Digest" strip for the latest issue.
 ## Emailing the issue (Kit)
 
 The same workflow then runs `scripts/kit_send_digest.py`, which schedules the issue as a Kit broadcast for
-**Saturday 08:00 IST** (or sends right away if run on Saturday after 08:00). It swaps the embedded hero for
+**Thursday 07:00 IST** (or sends right away if run on Thursday after 07:00). It swaps the embedded hero for
 `https://blogsbykush.com/tech-digest/<date>/hero.jpg` and maps the placeholders to Kit's unsubscribe tag,
 the web issue URL and an email-a-friend link. Off until `KIT_DIGEST_ENABLED` is set; setup, test mode and
 dry run: `docs/NEWSLETTER.md`.

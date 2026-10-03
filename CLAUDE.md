@@ -8,8 +8,9 @@ The source for **https://blogsbykush.com** (GitHub Pages repo `kushbhatnagar.git
 personal blog by Kush Bhatnagar about Machine Learning, MLOps, AWS, and books.
 Positioning: **"Learn. Build. Explain."**. Kush is a Technical PM (17+ yrs, 5+ on AI/GenAI and cloud)
 writing for PMs, PM aspirants and non-technical folks in tech. Sections follow the loop:
-**Tech Digest** (learn, weekly), **Build Log** (build in public), **Concept Breakdown** (explain, comics;
-formerly "ML Made Easy"). Older series `mlops` and `bookshelf` stay live but are off the nav.
+**Tech Digest** (learn, weekly, Claude-curated) + **Learning Notes** (learn, Kush's own notes on sources),
+**Build Log** (build in public), **Concept Breakdown** (explain, comics; formerly "ML Made Easy").
+Learning Notes and Build Log entries start from `archetypes/` (templates from Sahayak `content/*-PLAN.md`). Older series `mlops` and `bookshelf` stay live but are off the nav.
 Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 ## ▶ Start here (new session)
@@ -91,10 +92,12 @@ Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TE
 
 Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form per
 source: blog / linkedin / mailchimp; IDs in `hugo.toml` → `params.kit.forms`; empty ID → legacy Mailchimp
-form). Emails via Kit API v4 from GitHub Actions, never Kit RSS: new posts → `hugo.yml` `notify` job
-(`scripts/kit_notify_posts.py`, diffs live vs new `/posts.json`); Digital Dhaba → Digital-Dhaba workflow
-(`scripts/kit_send_digest.py`, scheduled Sat 08:00 IST). Switches are repo variables (`KIT_POSTS_ENABLED`,
-`KIT_DIGEST_ENABLED`, `KIT_SEND`, `KIT_TEST_TAG_ID` = test mode). Setup + Mailchimp re-permission: `docs/NEWSLETTER.md`.
+form). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
+1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`).
+2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
+   every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
+No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
+`KIT_TEST_TAG_ID` = test mode). Setup + Mailchimp re-permission: `docs/NEWSLETTER.md`.
 
 ## Layout of the Hugo site
 
@@ -104,7 +107,7 @@ content/
   posts/*.md                      # older posts (section "posts")
   posts/<slug>/index.md           # page bundles: comic posts with slide-*.webp, <slug>.pdf, cover.jpg
   concept-breakdown.md            # category landings at custom URLs, backed by
-  build-log.md                    #   layouts/category-landing.html (grid: true → thumbnail cards)
+  build-log.md learning-notes.md  #   layouts/category-landing.html (grid: true → thumbnail cards)
   tech-digest/_index.md           # Tech Digest archive (layouts/tech-digest/list.html)
   tech-digest/<date>/             # one bundle per Digital Dhaba issue (layouts/tech-digest/single.html)
   mlops-playground.md my-bookshelf-chronicles.md   # live, off-nav
@@ -129,9 +132,11 @@ static/ads.txt                    # AdSense authorised seller
 scripts/new_breakdown.py          # PDF → Concept Breakdown page bundle
 scripts/add_digest.py             # Digital Dhaba issue folder → content/tech-digest/<date>/
 scripts/kit_api.py                # Kit API v4 client (stdlib): dry run / test mode / dedupe
-scripts/kit_notify_posts.py       # new-post emails (plan before deploy, send after)
-scripts/kit_send_digest.py        # Digital Dhaba email, scheduled for Saturday
-layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest) for new-post detection
+scripts/kit_send_digest.py        # Digital Dhaba email, Thursday 07:00 IST
+scripts/kit_weekly_roundup.py     # Sunday weekly letter: all posts from the last 7 days
+.github/workflows/weekly-roundup.yml  # cron for the weekly letter (Sun 09:00 IST)
+layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest), read by the weekly letter
+archetypes/learning-note.md build-log.md  # `hugo new --kind learning-note content/posts/<slug>.md`
 docs/NEWSLETTER.md                # Kit setup, switches, Mailchimp re-permission email
 docs/kit/email-template.html      # minimal Kit email template
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup

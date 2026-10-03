@@ -4,7 +4,7 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch and is merged into `hugo-migration` via PR; `hugo-migration`
 goes live when merged into `main`.
 
-## ▶ STATUS — where we left off (updated 2026-10-01)
+## ▶ STATUS — where we left off (updated 2026-10-03)
 
 **Phases 0–3 are built and merged into `hugo-migration` (PRs #1, #3). Nothing is live yet:**
 `main` / blogsbykush.com is still the old Jekyll site. Go-live = PR #2 (`hugo-migration` → `main`).
@@ -16,7 +16,8 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Phase 1 — structure, homepage, brand | ✅ Done, reviewed by Kush |
 | Phase 2 — Concept Breakdown system | ✅ Done (lean format). Pilot *How LLMs Think* is still `draft: true` |
 | Phase 3 — Tech Digest (Digital Dhaba) | ✅ Done. Auto-publish **verified**: Digital-Dhaba workflow pushed issue 2026-09-30 to `hugo-migration` |
-| Phase 4 — Subscribers / newsletter | 🔨 Code built 2026-10-01 (forms, `/posts.json`, post + digest emails, docs), PR into `hugo-migration`. **Kush's Kit/DNS setup pending** |
+| Phase 4 — Subscribers / newsletter | 🔨 Code built (forms, `/posts.json`, Thursday digest email, Sunday weekly letter, docs) in PR #5. **Kush's Kit/DNS setup pending** |
+| Learning Notes | ✅ Section built 2026-10-03 (PR #5) with one **placeholder** note that Kush must rewrite/verify before go-live |
 | Go-live | ⏳ Waiting on Kush's extra changes, then the go-live checklist below |
 
 **Open items for the next session**
@@ -24,12 +25,17 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 2. *How LLMs Think*: Kush to verify transcript wording, then set `draft: false` (decide if it ships at launch).
 3. PR #2's description is outdated (mentions "ML Made Easy", wrongly says images moved to `/images/`) —
    rewrite it if Kush agrees (it's his PR).
-4. Phase 4: 4a/4b code is in a PR into `hugo-migration` (review + merge). Kush does 4c (Kit account, DNS,
+4. Phase 4 + Learning Notes: code is in PR #5 into `hugo-migration` (review + merge). Kush does 4c (Kit account, DNS,
    template, forms → IDs into `hugo.toml`, secrets/variables, test sends) following `docs/NEWSLETTER.md`;
    the first test send verifies the Kit API assumptions listed in Phase 4.
 
 ## Go-live checklist (in this order)
 1. [ ] Kush's pre-launch changes merged into `hugo-migration`; local preview OK (`hugo server -D`)
+   - [ ] Placeholder Learning Note (`content/posts/training-an-ai-for-one-skill-changes-its-other-answers.md`)
+         rewritten in Kush's words and checked (claims vs the paper, every link opened); remove its PLACEHOLDER comment
+   - [ ] Digital-Dhaba: change the signoff "Chai's on us next Saturday" → Thursday (`newsletter/digest.json`)
+   - [ ] Sahayak docs: `LEARNING-NOTES-PLAN.md` says "Monday issue" → Thursday; `BUILD-IN-PUBLIC-PLAN.md`
+         says both forms feed Mailchimp → Kit
 2. [ ] Blog repo **Settings → Pages → Source → GitHub Actions** (must be BEFORE step 3)
 3. [ ] Merge PR #2 (`hugo-migration` → `main`); watch Actions → "Deploy Hugo site to Pages" goes green
 4. [ ] In Digital-Dhaba `.github/workflows/publish-to-blog.yml`: `BLOG_BRANCH: hugo-migration` → `main`
@@ -67,9 +73,11 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Transcript source | Kush's conversation text (source of truth); PDF read to map lines to slides and write alt text |
 | Tech Digest | Self-contained HTML per issue, archived on site **and emailed** weekly |
 | Newsletter provider (2026-10-01) | **Kit (ConvertKit), Free Plan**, replacing Mailchimp. "Built with Kit" footer badge accepted |
-| Email model (2026-10-01) | Separate emails: **one email per new blog post** (automatic) + **full Digital Dhaba HTML every Saturday** (automatic) |
+| Email model (revised 2026-10-03) | **Two emails only**: **Digital Dhaba**, Thursday 07:00 IST (issue published early Thursday), and a **weekly letter**, Sunday 09:00 IST, with every post from the last 7 days (Concept Breakdown, Build Log, Learning Notes). No per-post emails. Supersedes the 2026-10-01 per-post model |
+| Learning Notes (2026-10-03) | New section `/learning-notes/`, separate from Build Log (proof of building) and Tech Digest (Claude-curated). Template + rules: Sahayak `content/LEARNING-NOTES-PLAN.md`. In the menu; **Archive moved to the footer** |
+| Digital Dhaba day (2026-10-03) | Published **Thursday early morning IST** by a GitHub Action in Digital-Dhaba |
 | Mailchimp list (2026-10-01) | **Re-permission, not import**: one final Mailchimp email → Kit form with double opt-in; only confirmers join. Audit script optional |
-| Sending mechanism (2026-10-01) | **GitHub Actions → Kit API v4** (not Kit RSS-to-email). Per-post: on deploy, posts-only detection (excludes Tech Digest). Digest: extra step in Digital-Dhaba `publish-to-blog.yml` |
+| Sending mechanism (2026-10-01) | **GitHub Actions → Kit API v4** (not Kit RSS-to-email). Weekly letter: scheduled workflow reading the live posts-only `/posts.json`. Digest: extra step in Digital-Dhaba `publish-to-blog.yml` |
 | Signup source tracking | Separate Kit forms per source (auto-tag-by-form is paid); compare form subscriber counts |
 | AdSense | Keep; verify it actually serves after launch |
 
@@ -146,7 +154,10 @@ Decisions (2026-09-30):
       `params.kit`. Honeypot field kept; double opt-in does the real bot filtering.
 - [x] `/subscribe/` uses the **LinkedIn** form; posts/Build Log/Tech Digest use the **Blog** form;
       `/stay-subscribed/` (noindex) uses the **Mailchimp-move** form.
-- [x] Posts-only JSON output (`/posts.json`: url, title, summary, image, date, section) excluding `tech-digest`.
+- [x] Posts-only JSON output (`/posts.json`: url, title, summary, image, date, categories) excluding `tech-digest`.
+- [x] **Revised 2026-10-03:** per-post emails replaced by the **weekly letter** (`scripts/kit_weekly_roundup.py`,
+      `.github/workflows/weekly-roundup.yml`, Sunday 09:00 IST, switch `KIT_ROUNDUP_ENABLED`); the items below
+      about per-post detection (`kit_notify_posts.py`, `hugo.yml` notify job) were removed again.
 - [x] `scripts/kit_notify_posts.py`: diff live `posts.json` (before deploy) vs new build → new posts →
       Kit broadcast per post (title, summary, image, "Read it" link). Guards: skip when live `posts.json`
       is missing (go-live deploy / first run), cap at 3 new posts per run, only posts dated in the last
@@ -158,18 +169,18 @@ Decisions (2026-09-30):
 - [x] `scripts/kit_send_digest.py` (lives in the blog repo, run by the Digital-Dhaba workflow after
       publishing): newsletter.html → hero data-URI swapped for `https://blogsbykush.com/tech-digest/<date>/hero.jpg`,
       placeholders mapped (unsubscribe → Kit tag, view-in-browser → web issue URL, forward → mailto share),
-      body extracted; **scheduled** for the next Saturday send time (immediate if that time has passed);
+      body extracted; **scheduled** for Thursday 07:00 IST (revised 2026-10-03; immediate if that time has passed);
       skip if a broadcast with the same subject already exists (no duplicates on re-runs); test mode as above.
 - [x] Updated `docs/tech-digest/publish-to-blog.yml` (email step, off until `KIT_DIGEST_ENABLED`) — Kush copies it
       into Digital-Dhaba
 - [x] Tested locally against a mock Kit API: request shape, test-mode filter, dry run, duplicate skip,
-      Saturday scheduling, go-live guard (no live `posts.json` → nothing sent), email rendering
+      Thursday scheduling, weekly-letter selection (7-day window, none → no email), email rendering
 **4c: Kush (accounts, DNS, content)**
 - [ ] Kit account; API key saved as `KIT_API_KEY` secret in **both** repos (never in chat)
 - [ ] Sending domain blogsbykush.com verified (Kit CNAMEs + DMARC TXT); From `kush@blogsbykush.com`
 - [ ] Minimal custom email template (paste `docs/kit/email-template.html`); 3 forms (Blog, LinkedIn,
       Mailchimp move) → IDs into `hugo.toml`; a "test" tag with Kush only; repo variables per `docs/NEWSLETTER.md`
-- [ ] Postal address for Kit's footer; Saturday send time; confirmation-email line
+- [ ] Postal address for Kit's footer; confirmation-email line (Thursday digest + Sunday letter)
 - [ ] After go-live: Mailchimp re-permission email (copy in `docs/NEWSLETTER.md`) → wait ~2 weeks → archive Mailchimp
 - [ ] Google Postmaster Tools for blogsbykush.com
 
@@ -187,6 +198,15 @@ Assumptions in the code, each easy to adjust if Kit says otherwise:
   and which tags the custom template must contain.
 - Form submission endpoint + field names for a plain HTML form (no JS embed).
 - `send_at` format and `subscriber_filter` shape (tag filter) for test sends.
+
+## Learning Notes (added 2026-10-03)
+- [x] `/learning-notes/` landing (category `learning-notes`), menu item; Archive moved to the footer
+- [x] Placeholder note from the plan's example (Kush's lines + source details from the Digital-Dhaba research file)
+- [x] `archetypes/learning-note.md` and `archetypes/build-log.md` (templates from Sahayak's plans):
+      `hugo new --kind learning-note content/posts/<slug>.md`
+- [x] Tech Digest copy fixed: says Claude curates it (Kush's honesty point)
+- [ ] Optional later: a "My notes this week" block in the Digital Dhaba email; a `/learning-note` skill that runs
+      the checklist (never writes "What I took from it")
 
 ## Post-launch checks
 - [ ] AdSense serving (site approved? `ads.txt` present? auto-ads enabled in AdSense console?)

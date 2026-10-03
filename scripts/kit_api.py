@@ -39,6 +39,8 @@ def _request(method, path, body=None):
             return json.loads(raw) if raw else {}
     except urllib.error.HTTPError as e:
         sys.exit(f"Kit API {method} {path} failed: HTTP {e.code}: {e.read().decode(errors='replace')[:500]}")
+    except urllib.error.URLError as e:
+        sys.exit(f"Kit API {method} {path} failed: could not reach {API_BASE} ({e.reason})")
 
 
 def existing_subjects(max_pages=5):

@@ -1,11 +1,14 @@
 # Newsletter (Kit) — setup and how it works
 
-Subscribers live in **Kit (Free Plan)**. Two kinds of email go out, both automatically:
+Subscribers live in **Kit (Free Plan)**. Subscribers get **at most two emails a week**, both automatic:
 
-| Email | Trigger | Sent by |
+| Email | When | Sent by |
 |---|---|---|
-| **New post** (Concept Breakdown, Build Log, …): cover image, title, summary, "Read it" button | a deploy of the blog publishes a post that wasn't live before | `.github/workflows/hugo.yml` → `notify` job → `scripts/kit_notify_posts.py` |
-| **Digital Dhaba** (the full newsletter) | a new issue is pushed to Digital-Dhaba | Digital-Dhaba workflow → `scripts/kit_send_digest.py`, **scheduled for Saturday 08:00 IST** |
+| **Digital Dhaba** (the full newsletter) | **Thursday 07:00 IST**, after the issue is published early Thursday | Digital-Dhaba workflow → `scripts/kit_send_digest.py` |
+| **Weekly letter**: every post from the last 7 days (Concept Breakdown, Build Log, Learning Notes) with image, summary and "Read it" button | **Sunday 09:00 IST**, only if something was published | `.github/workflows/weekly-roundup.yml` → `scripts/kit_weekly_roundup.py` |
+
+There are no per-post emails. The weekly letter picks posts by their front-matter `date`, so when a draft
+finally goes live, set `date` to the publishing day.
 
 Signups come from the site's forms (all in `layouts/_partials/newsletter_form.html`), one Kit form per source
 so you can compare where subscribers come from:
@@ -23,14 +26,15 @@ keeps bots and fake addresses out.
 
 | Variable | Effect |
 |---|---|
-| `KIT_POSTS_ENABLED` (blog repo) / `KIT_DIGEST_ENABLED` (Digital-Dhaba) | `true` turns that email on. Unset = the step doesn't run |
+| `KIT_ROUNDUP_ENABLED` (blog repo) / `KIT_DIGEST_ENABLED` (Digital-Dhaba) | `true` turns that email on. Unset = the step doesn't run |
 | `KIT_SEND` | `true` = really create broadcasts. Anything else = **dry run** (the workflow log shows the email it would send) |
 | `KIT_TEST_TAG_ID` | While set, emails go **only to subscribers with that tag** (just you) and subjects start with `[TEST]`. Delete it to send to everyone |
 | `KIT_EMAIL_TEMPLATE_ID` | The minimal template below |
 | `KIT_FROM_EMAIL` | Optional sender, e.g. `kush@blogsbykush.com` (must be verified in Kit) |
 
-Built-in guards: duplicate subjects are skipped (safe to re-run); the go-live deploy sends nothing (the old
-site has no `/posts.json`); max 3 post emails per deploy; only posts dated in the last 14 days.
+Built-in guards: duplicate subjects are skipped (safe to re-run); no new posts → no weekly letter; the digest
+waits for its hero image to be live before an immediate send. The weekly letter's schedule only runs from
+`main`, so it starts after go-live (or run it by hand: Actions → "Weekly letter (Kit)" → Run workflow).
 
 ---
 
@@ -41,7 +45,7 @@ site has no `/posts.json`); max 3 post emails per deploy; only posts dated in th
 2. **Settings → General / Account**: your name and **postal address** (Kit puts it in every email footer;
    a PO box or virtual mailbox address is fine).
 3. **Settings → Email → Confirmation email** (double opt-in): keep **Auto-confirm unchecked**. Confirmation line:
-   *"Confirm to get Digital Dhaba every Saturday, plus new Concept Breakdowns."*
+   *"Confirm to get Digital Dhaba every Thursday, plus a short Sunday letter with my new posts."*
 
 ### 2. Sending domain and From address
 1. Kit → **Settings → Email → Sending domain** (wording may differ) → add `blogsbykush.com`.
@@ -81,7 +85,7 @@ ID (open the tag → number in the URL).
    - **Secrets** tab → `KIT_API_KEY` = the key.
    - **Variables** tab → `KIT_EMAIL_TEMPLATE_ID` = template ID, `KIT_TEST_TAG_ID` = test tag ID,
      `KIT_FROM_EMAIL` = `kush@blogsbykush.com`.
-3. Blog repo variable `KIT_POSTS_ENABLED` = `true`; Digital-Dhaba variable `KIT_DIGEST_ENABLED` = `true`.
+3. Blog repo variable `KIT_ROUNDUP_ENABLED` = `true`; Digital-Dhaba variable `KIT_DIGEST_ENABLED` = `true`.
 4. Copy the updated `docs/tech-digest/publish-to-blog.yml` into Digital-Dhaba
    (`.github/workflows/publish-to-blog.yml`), keeping your `BLOG_BRANCH` value.
 
@@ -89,10 +93,11 @@ ID (open the tag → number in the URL).
 1. Re-run the Digital-Dhaba workflow (Actions → Run workflow). The "Email the issue" step should log
    `DRY RUN (TEST (tag … only))` with the subject and send time.
 2. Set variable `KIT_SEND` = `true` in Digital-Dhaba and re-run: a `[TEST]` broadcast appears in Kit →
-   Broadcasts, scheduled for Saturday. Open it in Kit and **send a preview to yourself** to check it in
-   Gmail. Delete the scheduled test broadcast if you don't want it on Saturday.
-3. After go-live, the same for a post: set `KIT_SEND` = `true` in the blog repo; the next post you publish
-   sends a `[TEST]` email to you only.
+   Broadcasts, scheduled for Thursday 07:00 IST. Open it in Kit and **send a preview to yourself** to check
+   it in Gmail. Delete the scheduled test broadcast if you don't want it to go out.
+3. Weekly letter: blog repo → Actions → "Weekly letter (Kit)" → Run workflow. With `KIT_SEND` unset it logs
+   the email (dry run); with `KIT_SEND` = `true` and the test tag set, it sends a `[TEST]` letter to you
+   (needs at least one post dated in the last 7 days on the live site).
 
 ### 8. Go fully live
 Delete `KIT_TEST_TAG_ID` in both repos. From then on, emails go to all confirmed subscribers.
@@ -113,8 +118,8 @@ re-confirm. Instead, after go-live (so `/stay-subscribed/` exists):
    > A while ago you subscribed to Blogs by Kush. Thank you for that!
    >
    > The newsletter is getting a new home and a better format: **Digital Dhaba**, a short weekly roundup
-   > of what's happening in AI and tech and why it matters, every Saturday, plus new Concept Breakdowns
-   > (comic-style explainers) when they go live.
+   > of what's happening in AI and tech and why it matters, every Thursday, plus a short Sunday letter
+   > with what I published that week (comic-style Concept Breakdowns, Build Log, Learning Notes).
    >
    > I'm not moving anyone without asking. If you'd like to keep getting it, click below and confirm:
    >
