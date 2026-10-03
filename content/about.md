@@ -50,6 +50,8 @@ transform it into something of your own. This site is that loop, in public, buil
 
 ## Get in touch
 
-- [LinkedIn](https://www.linkedin.com/in/kushbhatnagar/) is the best place to reach me.
-- [X (Twitter)](https://twitter.com/bhatnagarkush) · [Medium](https://medium.com/@kushbhatnagar86) · [GitHub](https://github.com/KushBhatnagar) · [Email](mailto:kushbhatnagar86@gmail.com)
-- Get Digital Dhaba and my weekly letter by email: [subscribe](/subscribe/).
+[LinkedIn](https://www.linkedin.com/in/kushbhatnagar/) is the best place to reach me, or find me here:
+
+{{< social-icons >}}
+
+Get Digital Dhaba and my weekly letter by email: [subscribe](/subscribe/).

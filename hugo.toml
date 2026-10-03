@@ -42,7 +42,7 @@ ignoreFiles = ["transcript\\.txt$"]
   disableThemeToggle = false
   ShowReadingTime = true
   ShowShareButtons = true
-  ShareButtons = ["x", "linkedin", "facebook"]   # Kush: no Reddit, WhatsApp, Telegram, Hacker News
+  ShareButtons = ["x", "linkedin"]   # Kush: X and LinkedIn only
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
@@ -108,8 +108,9 @@ I lead an enterprise AI platform by day and build my own AI products after hours
       text = "Comic-style breakdowns of ML, GenAI, cloud and product concepts. No jargon."
 
   [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/bhatnagarkush"
+    name = "x"
+    title = "X"
+    url = "https://x.com/bhatnagarkush"
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/KushBhatnagar"

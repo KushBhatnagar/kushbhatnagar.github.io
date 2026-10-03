@@ -383,3 +383,5 @@
 @media (max-width: 600px) {
     .post-content img.about-photo { float: none; display: block; margin: 0 auto 1.25rem; width: 150px; height: 150px; }
 }
+.about-social .social-icons { padding: 0.25rem 0 0.5rem; }
+.about-social .social-icons a { box-shadow: none; }

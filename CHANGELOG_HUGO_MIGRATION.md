@@ -188,7 +188,9 @@ Format: `HH:MM [Phase N] change — detail`
 - Kush's feedback on About: description no longer repeated under the title (`hideDescription: true`, handled in
   `extend_head.html`; meta description kept), "What I work on" is one paragraph, "The path here" removed (values
   line moved into "How this blog works"), CV link removed, X and Medium added to "Get in touch".
-- Share buttons on posts: X, LinkedIn, Facebook only (`ShareButtons` in `hugo.toml`).
+- Share buttons on posts: X and LinkedIn only (`ShareButtons` in `hugo.toml`).
+- Social icon Twitter bird → X logo (`x.com/bhatnagarkush`); About "Get in touch" shows the same icon row
+  via the new `{{< social-icons >}}` shortcode (`layouts/_shortcodes/social-icons.html`).
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
