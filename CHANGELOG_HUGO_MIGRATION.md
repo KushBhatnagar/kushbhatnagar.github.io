@@ -231,6 +231,7 @@ Format: `HH:MM [Phase N] change — detail`
 - Published (Kush): *How LLMs Think* and the Learning Note (dates set to 2026-10-04 so the Sunday letter picks them up).
 - First Build Log entry drafted with `/build-log-entry` from Kush's notes:
   `content/posts/digital-dhaba-ai-newsletter-that-cannot-make-up-news.md`; Kush confirmed the CHECK items → published.
+- CLAUDE.md rewritten for the live state (branch workflow = PR into `main`; publishing checklist; cleanup list).
 - Weekly letter subject now plain: "Blogs by Kush — week of <date>"; first letter sent by a manual run (Kush's choice).
 
 ## Known deviations from the original MIGRATION_PLAN.md

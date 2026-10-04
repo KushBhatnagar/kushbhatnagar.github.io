@@ -5,7 +5,7 @@ Context for Claude Code sessions on this repo.
 ## What this repo is
 
 The source for **https://blogsbykush.com** (GitHub Pages repo `kushbhatnagar.github.io`), a
-personal blog by Kush Bhatnagar about Machine Learning, MLOps, AWS, and books.
+personal blog by Kush Bhatnagar about AI, ML and product (older MLOps/AWS/book posts stay live).
 Positioning: **"Learn. Build. Explain."**. Kush is a Technical PM (17+ yrs, 5+ on AI/GenAI and cloud)
 writing for PMs, PM aspirants and non-technical folks in tech. Sections follow the loop:
 **Tech Digest** (learn, weekly, Claude-curated) + **Learning Notes** (learn, Kush's own notes on sources),
@@ -15,25 +15,24 @@ Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 ## ▶ Start here (new session)
 
-Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
-and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
-Snapshot (2026-10-04): **LIVE** — PR #2 merged, blogsbykush.com deploys from `main` via GitHub Actions; Digital-Dhaba publishes to `main`. PR #5 added Phase 4
-(Kit: Thursday digest + Sunday weekly letter), Learning Notes, the three writing skills and the
-homepage/About refresh (no employer name, no consulting mention, projects kept generic until Kush names them). Kit account/domain/form/API key done 2026-10-04 (email test after go-live); Kush wants a few more changes before go-live (PR #2).
+Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: current state and open items.
+Update that STATUS section (and the changelog) at the end of every session.
+Snapshot (2026-10-04): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
+first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
+Open: Kush → Google Search Console (sitemap + request indexing); after ~1 stable week: delete Jekyll files,
+delete branch `hugo-migration`, Kush closes Mailchimp.
 
-## Current state: mid-migration Jekyll → Hugo
+## Current state: live on Hugo (since 2026-10-04)
 
-The site is being migrated from **Jekyll (Minimal Mistakes)** to **Hugo (PaperMod)**.
-
-- **`main` branch** = the live Jekyll site (untouched during migration).
-- **`hugo-migration` branch** = the new Hugo site (staging). Feature work goes on branches merged into it via PR.
-  Go-live = PR #2 (`hugo-migration` → `main`), after switching Pages to GitHub Actions.
-- Both stacks currently coexist in the tree on `hugo-migration`; Jekyll's underscore dirs
-  (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`) are
-  ignored by Hugo and will be deleted once the migration is verified and merged.
-- Full step-by-step record of every change: **`CHANGELOG_HUGO_MIGRATION.md`**.
-- Original migration analysis: **`MIGRATION_PLAN.md`** (deleted from working tree; recover with
-  `git show 8c40350:MIGRATION_PLAN.md`).
+- **`main`** = the live site. GitHub Pages builds from **GitHub Actions** (`.github/workflows/hugo.yml`) on every push
+  to `main`. Work goes on a feature branch → PR into `main` → merge = deploy (~2 min).
+- **`hugo-migration`** = the old staging branch, fully merged; delete it in the planned cleanup after
+  a stable week (confirm with Kush first). PRs #1–#9 hold the history.
+- The Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`, Gemfile etc.)
+  are still in the tree but ignored by Hugo; delete them in the cleanup PR (check nothing in `static/` or `content/`
+  references them first).
+- Full record of every change: **`CHANGELOG_HUGO_MIGRATION.md`**. Original migration analysis:
+  `git show 8c40350:MIGRATION_PLAN.md`.
 
 ## Hugo setup
 
@@ -166,10 +165,18 @@ _migration/*.py                   # one-off converters (kept for audit)
 - Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
 - Mailchimp (legacy, being retired): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
-## Remaining steps to finish the migration
+## Publishing a post (Kush's checklist)
 
-See the **go-live checklist** in `PLAN_SITE_REFRESH.md` (Pages → GitHub Actions *before* merging PR #2,
-switch the Digital-Dhaba workflow to `BLOG_BRANCH: main`, post-launch checks, then delete the Jekyll files).
+In the post's `.md` file, front matter at the top:
+- `draft: true` → `draft: false` (or delete the line) when it's ready.
+- `date: YYYY-MM-DD` = **the day you publish** (not the day you started). The Sunday letter emails every post dated in
+  the last 7 days; an old date means it's never emailed. The writing skills set this; re-set it if a draft waited.
+- Commit on a branch → PR into `main` → merge. Live in ~2 minutes; in the next Sunday letter automatically.
+
+## Cleanup still to do (after ~1 stable week)
+
+Delete Jekyll files (one PR), delete branch `hugo-migration` (ask Kush first), Kush closes Mailchimp (keep a final
+export locally). Optional later: update the stale `Gemfile`/Jekyll mentions in docs.
 
 ## Brand
 
