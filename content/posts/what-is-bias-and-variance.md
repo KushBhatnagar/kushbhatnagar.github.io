@@ -4,8 +4,8 @@ categories: ["concept-breakdown"]
 tags:
 - machine learning
 - classroom conversation
-summary: "Discover the essentials of Bias & Variance in our latest classroom conversation.Good predictions need to be both accurate (hit the target) and consistent (hit the same spot)!"
-description: "Discover the essentials of Bias & Variance in our latest classroom conversation.Good predictions need to be both accurate (hit the target) and consistent (hit the same spot)!"
+summary: "Discover the essentials of Bias & Variance in a classroom comic. Good predictions need to be both accurate (hit the target) and consistent (hit the same spot)!"
+description: "Discover the essentials of Bias & Variance in a classroom comic. Good predictions need to be both accurate (hit the target) and consistent (hit the same spot)!"
 date: 2025-08-16
 url: /concept-breakdown/what-is-bias-and-variance/
 aliases: [/ml-made-easy/what-is-bias-and-variance/]

@@ -8,16 +8,19 @@ The source for **https://blogsbykush.com** (GitHub Pages repo `kushbhatnagar.git
 personal blog by Kush Bhatnagar about Machine Learning, MLOps, AWS, and books.
 Positioning: **"Learn. Build. Explain."**. Kush is a Technical PM (17+ yrs, 5+ on AI/GenAI and cloud)
 writing for PMs, PM aspirants and non-technical folks in tech. Sections follow the loop:
-**Tech Digest** (learn, weekly), **Build Log** (build in public), **Concept Breakdown** (explain, comics;
-formerly "ML Made Easy"). Older series `mlops` and `bookshelf` stay live but are off the nav.
+**Tech Digest** (learn, weekly, Claude-curated) + **Learning Notes** (learn, Kush's own notes on sources),
+**Build Log** (build in public), **Concept Breakdown** (explain, comics; formerly "ML Made Easy").
+Learning Notes and Build Log entries start from `archetypes/` (templates from Sahayak `content/*-PLAN.md`). Older series `mlops` and `bookshelf` stay live but are off the nav.
 Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 ## ▶ Start here (new session)
 
 Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
 and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
-Snapshot (2026-09-30): Phases 0–3 merged into `hugo-migration`; **not live yet**; Phase 4 (newsletter
-provider + subscriber cleanup) parked by Kush; Kush wants a few more changes before go-live (PR #2).
+Snapshot (2026-10-03): Phases 0–3 merged into `hugo-migration`; **not live yet**. PR #5 (open) adds Phase 4
+(Kit: Thursday digest + Sunday weekly letter), Learning Notes, the three writing skills and the
+homepage/About refresh (no employer name, no consulting mention, projects kept generic until Kush names them). Kush's Kit/DNS
+setup (4c) pending; Kush wants a few more changes before go-live (PR #2).
 
 ## Current state: mid-migration Jekyll → Hugo
 
@@ -73,9 +76,18 @@ HUGO_ENVIRONMENT=production hugo --gc --minify   # production build → public/
 1. `python3 scripts/new_breakdown.py Comic.pdf --title "How LLMs Think" [--transcript convo.txt]`
    → page bundle `content/posts/<slug>/` (4:5 WebP slides, clean PDF, cover.jpg, `draft: true`).
 2. Run the **`/breakdown-post`** skill (`.claude/skills/breakdown-post/SKILL.md`) → collapsed transcript
-   (`transcript` shortcode), "The concept in plain words", SEO fields, slide alt text, `linkedin.txt`.
+   (`transcript` shortcode), "The concept in plain words", SEO fields, slide alt text.
    **Keep these pages lean** (Kush's call): comic + plain-words section only, no TOC/FAQ/extra sections.
-3. Kush reviews, sets `draft: false`. (`linkedin.txt` / `transcript.txt` are in `ignoreFiles`, never published.)
+3. Kush reviews, sets `draft: false`. (`transcript.txt` is in `ignoreFiles`, never published.)
+
+## Writing skills (Kush, 2026-10-03)
+
+Three skills, one per post type, all bound by **`.claude/BLOG_WRITING_RULES.md`**:
+`/breakdown-post` (comic PDF + conversation), `/learning-note` (Kush's notes + source link),
+`/build-log-entry` (Kush's build notes). They **assemble Kush's words into the template**; they never write
+his takeaway / "one thing", never invent numbers, treat Claude-written research files as reference only,
+leave `draft: true`, and run `scripts/check_links.py` + a build. **No LinkedIn copy anywhere**: LinkedIn
+posts are generated in Sahayak from the finished post.
 
 ## Tech Digest (Digital Dhaba) issues
 
@@ -86,6 +98,17 @@ generated `index.md` with `build.publishResources: false`). `layouts/tech-digest
 the HTML standalone with site bar / SEO / GA / fixed placeholders; `list.html` is the archive.
 Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TECH_DIGEST.md`.
 
+## Newsletter (Kit) — Phase 4
+
+Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form, ID `10000596` in
+`hugo.toml` → `params.kit.form`; empty → legacy Mailchimp form). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
+1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`).
+2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
+   every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
+No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
+`KIT_TEST_TAG_ID` = test mode). Setup: `docs/NEWSLETTER.md`. Mailchimp list: audited with
+`scripts/audit_subscribers.py` (subscriber data never in git), the real ~15 uploaded to Kit by Kush, then Mailchimp closed.
+
 ## Layout of the Hugo site
 
 ```
@@ -94,7 +117,7 @@ content/
   posts/*.md                      # older posts (section "posts")
   posts/<slug>/index.md           # page bundles: comic posts with slide-*.webp, <slug>.pdf, cover.jpg
   concept-breakdown.md            # category landings at custom URLs, backed by
-  build-log.md                    #   layouts/category-landing.html (grid: true → thumbnail cards)
+  build-log.md learning-notes.md  #   layouts/category-landing.html (grid: true → thumbnail cards)
   tech-digest/_index.md           # Tech Digest archive (layouts/tech-digest/list.html)
   tech-digest/<date>/             # one bundle per Digital Dhaba issue (layouts/tech-digest/single.html)
   mlops-playground.md my-bookshelf-chronicles.md   # live, off-nav
@@ -108,7 +131,7 @@ layouts/
   _partials/
     home_info.html                # homepage intro, CTAs, pillars, latest breakdown cards
     post_card.html thumbnail.html # thumbnail cards (WebP via Hugo image processing)
-    newsletter_form.html          # ONLY place with newsletter-provider markup
+    newsletter_form.html          # ONLY place with newsletter-provider markup (Kit forms per source)
     extend_head.html              # Fredoka font, GA gtag + AdSense loader (prod only)
     extend_post_content.html      # AdSense unit (prod) + newsletter — posts only
     comments.html                 # Disqus — posts only; honours disqus_identifier
@@ -117,9 +140,21 @@ static/assets/{images,cv}/        # assets (URLs preserved); mounted into assets
 static/ads.txt                    # AdSense authorised seller
 scripts/new_breakdown.py          # PDF → Concept Breakdown page bundle
 scripts/add_digest.py             # Digital Dhaba issue folder → content/tech-digest/<date>/
+scripts/kit_api.py                # Kit API v4 client (stdlib): dry run / test mode / dedupe
+scripts/kit_send_digest.py        # Digital Dhaba email, Thursday 07:00 IST
+scripts/kit_weekly_roundup.py     # Sunday weekly letter: all posts from the last 7 days
+.github/workflows/weekly-roundup.yml  # cron for the weekly letter (Sun 09:00 IST)
+layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest), read by the weekly letter
+archetypes/learning-note.md build-log.md  # `hugo new --kind learning-note content/posts/<slug>.md`
+docs/NEWSLETTER.md                # Kit setup, switches, moving the audited Mailchimp list
+docs/kit/email-template.html      # minimal Kit email template
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
 docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
-.claude/skills/breakdown-post/    # writes the post body + LinkedIn copy
+.claude/BLOG_WRITING_RULES.md      # shared rules for the three writing skills
+.claude/skills/breakdown-post/    # Concept Breakdown body (comic PDF + conversation)
+.claude/skills/learning-note/     # Learning Note from Kush's notes + source
+.claude/skills/build-log-entry/   # Build Log entry from Kush's build notes
+scripts/check_links.py            # link checker used by the skills
 .github/workflows/hugo.yml        # deploy to GitHub Pages via Actions (prod build)
 _migration/*.py                   # one-off converters (kept for audit)
 ```
@@ -129,7 +164,8 @@ _migration/*.py                   # one-off converters (kept for audit)
 - Google Analytics (gtag): `G-QWTLYBWXCL`
 - Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
 - Disqus shortname: `blogsbykush`
-- Mailchimp: `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
+- Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
+- Mailchimp (legacy, being retired): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
 ## Remaining steps to finish the migration
 

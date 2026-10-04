@@ -4,8 +4,8 @@ categories: ["concept-breakdown"]
 tags:
 - machine learning
 - classroom conversation
-summary: "Discover the essentials of Feature Engineering in our latest classroom conversation."
-description: "Discover the essentials of Feature Engineering in our latest classroom conversation. Learn how to convert raw data into meaningful features to boost your machine learning models' performance. Explore our detailed comic strip for a simplified and engaging explanation."
+summary: "Discover the essentials of Feature Engineering in a classroom comic."
+description: "Discover the essentials of Feature Engineering in a classroom comic. Learn how to convert raw data into meaningful features to boost your machine learning models' performance. Explore our detailed comic strip for a simplified and engaging explanation."
 date: 2024-06-09
 url: /concept-breakdown/what-is-feature-engineering/
 aliases: [/ml-made-easy/what-is-feature-engineering/]

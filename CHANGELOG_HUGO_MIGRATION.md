@@ -127,6 +127,91 @@ Format: `HH:MM [Phase N] change — detail`
 - Not live: go-live (PR #2) waits on Kush's extra pre-launch changes. Phase 4 parked.
 - "Where we left off" now lives at the top of `PLAN_SITE_REFRESH.md`; CLAUDE.md points new sessions there.
 
+## 2026-10-01 — Phase 4 kickoff (decisions only, nothing built yet)
+- Provider: **Kit Free Plan** replaces Mailchimp ("Built with Kit" badge accepted).
+- Email model: one automatic email per new blog post + the full Digital Dhaba HTML every Saturday.
+- Mailchimp list: re-permission via one final Mailchimp email → Kit double opt-in form; no bulk import
+  (imported contacts would count as confirmed). Subscriber audit script now optional.
+- Sending: GitHub Actions → Kit API v4 (not RSS-to-email); per-post detection excludes Tech Digest;
+  digest send added to the Digital-Dhaba workflow.
+- Kit Free facts recorded in `PLAN_SITE_REFRESH.md` (API v4, custom template required, double opt-in,
+  verified sending domain, no auto-tag-by-form → one form per source).
+- Build plan proposed in `PLAN_SITE_REFRESH.md` → Phase 4; awaiting approval.
+
+## 2026-10-01 — Phase 4 build (4a/4b)
+- Forms: `newsletter_form.html` posts to Kit (one form per source: blog / linkedin / mailchimp; IDs in
+  `hugo.toml` `params.kit.forms`, empty → legacy Mailchimp form). `/subscribe/` uses the LinkedIn form; new
+  `/stay-subscribed/` (noindex, not in sitemap) for the Mailchimp re-permission email.
+- `/posts.json` (posts only, no Tech Digest) via a `postsjson` output format.
+- New-post emails: `scripts/kit_notify_posts.py` (plan before deploy by diffing live vs new `/posts.json`, send
+  after deploy) + `notify` job in `hugo.yml`. Guards: no live `posts.json` → nothing sent (covers go-live),
+  ≤3 per deploy, ≤14 days old.
+- Digest emails: `scripts/kit_send_digest.py` (hero → hosted URL, placeholders → Kit tag / web URL / mailto,
+  scheduled Sat 08:00 IST, dedupe by subject) + email step in `docs/tech-digest/publish-to-blog.yml`.
+- `scripts/kit_api.py`: stdlib Kit API v4 client with dry run (`KIT_SEND`), test mode (`KIT_TEST_TAG_ID`).
+- Docs: `docs/NEWSLETTER.md` (setup, switches, re-permission email), `docs/kit/email-template.html`.
+- Tested against a mock Kit API; real Kit API details to confirm on Kush's first test send.
+
+## 2026-10-03 — Learning Notes, two-email model, Thursday digest
+- New **Learning Notes** section (`/learning-notes/`), separate from Build Log; in the menu, Archive moved to the
+  footer (with Subscribe and Terms). Placeholder note "Training an AI for one skill quietly changes its other
+  answers" (to be rewritten/verified by Kush). Archetypes for Learning Notes and Build Log entries.
+- Email model changed to **two emails**: Digital Dhaba (Thursday 07:00 IST) + weekly letter (Sunday 09:00 IST,
+  all posts from the last 7 days). Removed per-post emails (`kit_notify_posts.py`, `hugo.yml` notify job);
+  added `scripts/kit_weekly_roundup.py` + `.github/workflows/weekly-roundup.yml`.
+- Digest default send slot Saturday 08:00 → **Thursday 07:00 IST**; site copy and docs updated.
+- Tech Digest page copy now says Claude curates the issue.
+- `kit_api.py`: clear error when Kit can't be reached.
+
+### 2026-10-03 — Writing skills
+- New skills `/learning-note` and `/build-log-entry`; `/breakdown-post` now reads the same shared rules
+  (`.claude/BLOG_WRITING_RULES.md`): assemble Kush's own words into the templates, never write the core
+  takeaway, never invent numbers, research files only for metadata/links, `draft: true`, link check + build.
+- LinkedIn copy removed from `/breakdown-post`; `content/posts/how-llms-think/linkedin.txt` deleted;
+  `ignoreFiles` now only excludes `transcript.txt`. LinkedIn posts come from Sahayak.
+- `scripts/check_links.py`: link checker that distinguishes broken links from unreachable ones.
+
+### 2026-10-03 — Homepage, About page, photo, CV (brand review)
+- Photo: `kush-toon.jpg` (ToonMe watermark, ghost artefact) → `static/assets/images/kush-avatar.jpg`, made from
+  Kush's own `Kush.png` (white background swapped for light brand blue, square 400px). Used on homepage + About.
+- Homepage (`hugo.toml`): proof line no longer claims "5+ years building AI/GenAI & cloud"; intro leads with
+  "I lead an enterprise AI platform by day and build my own AI products after hours". Site description and
+  keywords drop MLOps/AWS (past skills). Employer not named, no consulting / "open to roles" (Kush's call).
+- `layouts/home.html` (copy of PaperMod `list.html`): "Recent posts" skips the 4 breakdowns already shown as cards.
+- About page rewritten (`content/about.md`, URL unchanged): who, what I work on (resume facts, no employer),
+  what I'm building (generic, no project names), how the blog works, the path, get in touch. One small
+  learning-loop image instead of two large ones; share bar off.
+- CV (`/assets/cv/KushBhatnagar_Resume.pdf`, URL unchanged): replaced the 2023 CV with Job-Hunting's
+  master resume, re-rendered without the phone number (Job-Hunting repo untouched).
+- Four old comic summaries: "in our latest classroom conversation." → "in a classroom comic.", missing spaces fixed.
+
+- Kush's feedback on About: description no longer repeated under the title (`hideDescription: true`, handled in
+  `extend_head.html`; meta description kept), "What I work on" is one paragraph, "The path here" removed (values
+  line moved into "How this blog works"), CV link removed, X and Medium added to "Get in touch".
+- Share buttons on posts: X and LinkedIn only (`ShareButtons` in `hugo.toml`).
+- Social icon Twitter bird → X logo (`x.com/bhatnagarkush`); About "Get in touch" shows the same icon row
+  via the new `{{< social-icons >}}` shortcode (`layouts/_shortcodes/social-icons.html`).
+
+### 2026-10-03 — Mailchimp subscriber audit
+- `scripts/audit_subscribers.py`: sorts a Mailchimp export into keep / review / junk (bot name fields,
+  throwaway domains, the late-2024 onward bot wave); prints counts only. Kush's list: 267 → 19 / 15 / 233.
+- `docs/NEWSLETTER.md`: re-permission email now goes only to the audited keep (+ approved review) segment.
+- `.gitignore`: Mailchimp exports and audit output can't be committed.
+
+- **Revised same day (Kush): direct upload instead of re-permission.** Kush uploads the audited real
+  subscribers (~15) to Kit with tag `from-mailchimp`, then closes Mailchimp after go-live. Removed
+  `/stay-subscribed/` and the `mailchimp` form slot; `docs/NEWSLETTER.md` rewritten for the upload.
+- `docs/tech-digest/publish-to-blog.yml`: `BLOG_BRANCH` back to `hugo-migration` (the copy said `main`, which
+  would have pushed issues to the live Jekyll site if copied before go-live).
+- Merged `hugo-migration` (auto-published Tech Digest 2026-10-03) into the feature branch.
+
+## 2026-10-04 — Kit connected
+- Kush set up Kit: account, verified sending domain (SPF/DKIM/DMARC), `kush@blogsbykush.com`, one form with
+  double opt-in, v4 API key as `KIT_API_KEY` secret in both repos.
+- Site: one Kit form (`params.kit.form = "10000596"`) for every signup box; per-source forms removed
+  (`newsletter_form.html`, `subscribe` shortcode, `/subscribe/`). No Mailchimp form left in the build.
+- `docs/NEWSLETTER.md` setup cut to what's done + the remaining test steps; template and test tag optional.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

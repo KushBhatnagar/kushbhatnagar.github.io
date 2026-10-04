@@ -366,3 +366,22 @@
     color: var(--brand-orange);
 }
 .home-digest-text { flex: 1 1 auto; font-size: 0.95rem; }
+.newsletter-note { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--secondary); }
+
+/* ---- About page ---- */
+.post-content img.about-photo {
+    float: right;
+    width: 180px;
+    height: 180px;
+    margin: 0 0 1rem 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--brand-orange);
+}
+.about-loop { max-width: 380px; margin: 1.5rem auto; text-align: center; }
+.about-loop figcaption { font-size: 0.85rem; }
+@media (max-width: 600px) {
+    .post-content img.about-photo { float: none; display: block; margin: 0 auto 1.25rem; width: 150px; height: 150px; }
+}
+.about-social .social-icons { padding: 0.25rem 0 0.5rem; }
+.about-social .social-icons a { box-shadow: none; }

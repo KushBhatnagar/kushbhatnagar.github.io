@@ -9,11 +9,19 @@ buildFuture = false
 buildExpired = false
 enableInlineShortcodes = true
 # Working files kept inside Concept Breakdown bundles, never published.
-ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
+ignoreFiles = ["transcript\\.txt$"]
 
 # Keep the Jekyll-era feed path (/feed.xml) so Feedburner and existing subscribers keep working.
 [outputFormats.rss]
   baseName = "feed"
+
+# /posts.json: blog posts only (no Tech Digest issues). The deploy workflow diffs it against the
+# live copy to detect newly published posts and email them via Kit (scripts/kit_notify_posts.py).
+[outputFormats.postsjson]
+  mediaType = "application/json"
+  baseName = "posts"
+  isPlainText = true
+  notAlternative = true
 
 # Post/page URLs are frozen via an explicit `url:` in each file's front matter,
 # so every live URL stays identical to the current Jekyll sitemap.
@@ -26,14 +34,15 @@ ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
 [params]
   env = "production"
   title = "Blogs by Kush"
-  description = "Simplifying the complexities of MLOps, AWS, Machine Learning, and a lot more"
-  keywords = ["Machine Learning", "MLOps", "AWS", "Blog"]
+  description = "Kush Bhatnagar, Technical PM, learns, builds and explains AI in plain words: a weekly AI digest, a build log and comic-style concept breakdowns."
+  keywords = ["AI product management", "Generative AI", "AI agents", "Machine Learning", "Product Management"]
   author = "Kush Bhatnagar"
   DateFormat = "January 2, 2006"
   defaultTheme = "auto"          # dark/light toggle
   disableThemeToggle = false
   ShowReadingTime = true
   ShowShareButtons = true
+  ShareButtons = ["x", "linkedin"]   # Kush: X and LinkedIn only
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
@@ -46,6 +55,15 @@ ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
   adsenseSlot = "5967806966"     # "blogsbykush-adunit" — same unit the Jekyll site used
   images = ["/assets/images/og-default.png"]   # default social-preview image
 
+  # Newsletter (Kit). One form for every signup box: its ID is the number in the form editor's URL
+  # (app.kit.com/forms/designers/<ID>/edit). If emptied, the boxes fall back to the legacy Mailchimp form.
+  [params.kit]
+    formAction = "https://app.kit.com/forms/%s/subscriptions"
+    form = "10000596"
+
+  [params.footer]
+    text = "[Archive](/year-archive/) · [Subscribe](/subscribe/) · [Terms](/terms/)"
+
   [params.assets]
     favicon = "/favicon.ico"
     favicon16x16 = "/favicon-16x16.png"
@@ -55,12 +73,12 @@ ignoreFiles = ["linkedin\\.txt$", "transcript\\.txt$"]
   # Homepage intro — rendered by layouts/_partials/home_info.html
   [params.homeInfoParams]
     Title = "Hi, I'm Kush 👋"
-    imageUrl = "/assets/images/kush-toon.jpg"
+    imageUrl = "/assets/images/kush-avatar.jpg"
     imageTitle = "Kush Bhatnagar"
     Tagline = "Learn. Build. Explain."
-    Proof = "Technical Product Manager · 17+ years in tech · 5+ years building AI/GenAI & cloud platforms"
+    Proof = "Technical Product Manager · 17+ years in tech · 5+ years in product · leading an enterprise AI platform"
     Content = """
-I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of simplicity. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI, cloud and product concepts without the jargon.
+I lead an enterprise AI platform by day and build my own AI products after hours. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI and product concepts without the jargon.
 """
     [[params.homeInfoParams.ctas]]
       name = "Subscribe"
@@ -74,7 +92,7 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
       step = "Learn"
       name = "Tech Digest"
       url = "/tech-digest/"
-      text = "A weekly, hand-picked digest of what's happening in AI and tech, and why it matters."
+      text = "Digital Dhaba every Thursday, plus Learning Notes: my own notes on what I read."
     [[params.homeInfoParams.pillars]]
       step = "Build"
       name = "Build Log"
@@ -87,8 +105,9 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
       text = "Comic-style breakdowns of ML, GenAI, cloud and product concepts. No jargon."
 
   [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/bhatnagarkush"
+    name = "x"
+    title = "X"
+    url = "https://x.com/bhatnagarkush"
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/KushBhatnagar"
@@ -109,6 +128,7 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
     SiteVerificationTag = "BKwv8d9RamS8UFYapYrQ8ppq348YsIXUDc9E2bWdaYM"
 
 # Top navigation — Learn (Tech Digest) · Build (Build Log) · Explain (Concept Breakdown).
+# Learning Notes sit with Learn. Archive lives in the footer (params.footer.text) to keep the menu short.
 # MLOps Playground, Bookshelf Chronicles and Tags are intentionally off the menu; their pages stay live.
 [[menu.main]]
   identifier = "concept-breakdown"
@@ -126,9 +146,9 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
   url = "/build-log/"
   weight = 30
 [[menu.main]]
-  identifier = "archive"
-  name = "Archive"
-  url = "/year-archive/"
+  identifier = "learning-notes"
+  name = "Learning Notes"
+  url = "/learning-notes/"
   weight = 40
 [[menu.main]]
   identifier = "search"
@@ -142,7 +162,7 @@ I'm a **nerdy**, **curious**, **lifelong learner** who believes in the power of 
   weight = 60
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]   # JSON drives the search index
+  home = ["HTML", "RSS", "JSON", "postsjson"]   # JSON drives the search index; postsjson → /posts.json
 
 [markup]
   [markup.highlight]

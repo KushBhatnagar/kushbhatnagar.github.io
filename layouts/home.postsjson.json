@@ -1,0 +1,15 @@
+{{- /* /posts.json — published blog posts only (section "posts"; Tech Digest issues excluded).
+       Read by scripts/kit_notify_posts.py to detect newly published posts. */ -}}
+{{- $items := slice }}
+{{- range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+  {{- $img := "" }}
+  {{- with partial "templates/_funcs/get-page-images" . }}{{ $img = (index . 0).Permalink }}{{ end }}
+  {{- $items = $items | append (dict
+      "url" .Permalink
+      "title" (.Title | plainify)
+      "summary" (.Description | default .Summary | plainify | htmlUnescape)
+      "image" $img
+      "date" (.Date.Format "2006-01-02")
+      "categories" (.Params.categories | default slice)) }}
+{{- end }}
+{{- dict "posts" $items | jsonify (dict "indent" "  ") }}

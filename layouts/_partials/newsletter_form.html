@@ -1,9 +1,21 @@
-{{- /* Newsletter signup form. Used on posts, /subscribe/ and the homepage.
-       Provider-specific markup lives only here — swapping providers is a one-file change. */ -}}
+{{- /* Newsletter signup form. Used on posts, /subscribe/, Build Log and Tech Digest.
+       Provider-specific markup lives only here.
+
+       Params (dict): heading, text. Every box posts to the one Kit form in hugo.toml → params.kit.form.
+       Kit's confirmation email (double opt-in) is the bot filter: an address only joins after its owner
+       clicks it. While params.kit.form is empty, the legacy Mailchimp form is shown instead. */ -}}
 {{- $heading := .heading | default "Be the first to hear about new posts" }}
+{{- $kitID := site.Params.kit.form | default "" }}
 <div class="newsletter-signup">
   {{- with $heading }}<h3>{{ . }}</h3>{{ end }}
   {{- with .text }}<p>{{ . }}</p>{{ end }}
+  {{- if $kitID }}
+  <form action="{{ printf site.Params.kit.formAction $kitID }}" method="post" target="_blank">
+    <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p class="newsletter-note">You'll get a confirmation email. Click it, and you're in.</p>
+  {{- else }}
   <form action="https://blogsbykush.us21.list-manage.com/subscribe/post?u=c937565c206ad87a847339f0f&amp;id=e0273fdf87&amp;f_id=0054aae1f0"
         method="post" target="_blank" novalidate>
     <input type="email" name="EMAIL" placeholder="Your email address" aria-label="Email address" required>
@@ -12,4 +24,5 @@
       <input type="text" name="b_c937565c206ad87a847339f0f_e0273fdf87" tabindex="-1" value="">
     </div>
   </form>
+  {{- end }}
 </div>

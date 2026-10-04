@@ -1,14 +1,19 @@
 ---
 name: breakdown-post
-description: Write the body, SEO fields, slide alt text and LinkedIn copy for a Concept Breakdown comic post on blogsbykush.com. Use after scripts/new_breakdown.py has created the page bundle (content/posts/<slug>/ with slide-*.webp), or when Kush asks to write up / backfill a Concept Breakdown post.
+description: Write the body, SEO fields and slide alt text for a Concept Breakdown comic post on blogsbykush.com from Kush's comic PDF and conversation text. Use after scripts/new_breakdown.py has created the page bundle (content/posts/<slug>/ with slide-*.webp), or when Kush asks to write up / backfill a Concept Breakdown post. No LinkedIn copy (Sahayak writes LinkedIn posts).
 ---
 
 # Concept Breakdown post writer
 
 Turns a comic (slides + conversation text) into a complete, SEO-friendly post, in Kush's voice.
 
-**Input:** a page bundle path, e.g. `content/posts/how-llms-think/`. If none is given, pick the newest
-bundle whose `index.md` still has `draft: true` and empty sections.
+**First read `.claude/BLOG_WRITING_RULES.md`.** Its rules win over this file (note the exception there for
+"The concept in plain words"). No LinkedIn copy: Sahayak writes the LinkedIn posts.
+
+**Input:** Kush's comic **PDF** and **conversation text**. If the page bundle doesn't exist yet, create it:
+`python3 scripts/new_breakdown.py <Comic.pdf> --title "<Title>" --transcript <conversation.txt>`. That gives a
+bundle path such as `content/posts/how-llms-think/`. If no bundle or PDF is given, pick the newest bundle whose
+`index.md` still has `draft: true` and empty sections. Optional: Kush's own notes on the concept.
 
 ## 1. Gather the source
 
@@ -81,28 +86,7 @@ the page gets most of its indexable text, so include all of the dialogue.
   key line (e.g. `"Teacher asks students to remember playing Antakshari at family functions"`).
 - Leave `draft: true`. Kush reviews the post and publishes it himself.
 
-## 5. LinkedIn copy
-
-Write `linkedin.txt` in the bundle (it isn't published; nothing on the site links to it):
-
-```
-POST
-<hook line: a question or surprising claim, max 12 words>
-
-<3–5 short lines: the idea in plain words, one line per thought>
-
-<one line inviting comments, e.g. "What analogy made LLMs click for you?">
-
-#ProductManagement #GenAI #<topic> (3–5 hashtags)
-
-FIRST COMMENT
-Full breakdown, transcript and PDF: https://blogsbykush.com/concept-breakdown/<slug>/
-Get one of these in your inbox every week: https://blogsbykush.com/subscribe/
-```
-
-LinkedIn shows posts with links in the body to fewer people, so links go only in the first comment.
-
-## 6. Verify
+## 5. Verify
 
 - Run `hugo --quiet --buildDrafts -d /tmp/bd-check` (Hugo may be at `~/bin/hugo`). It must build
   without errors.
