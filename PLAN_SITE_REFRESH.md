@@ -182,7 +182,8 @@ Decisions (2026-09-30):
 - [x] Sending domain blogsbykush.com verified (CNAMEs + DMARC); From `kush@blogsbykush.com`
 - [x] One form (ID `10000596`, double opt-in) → `hugo.toml` `params.kit.form` (simplified from 2–3 forms)
 - [x] v4 `KIT_API_KEY` secret + `KIT_FROM_EMAIL` variable in both repos (v3 key/secret that were pasted in chat replaced)
-- [ ] Copy `publish-to-blog.yml` into Digital-Dhaba; subscribe yourself; dry run → real test (`docs/NEWSLETTER.md`)
+- [x] PR #5 merged into `hugo-migration`; Kit email step pushed to Digital-Dhaba `publish-to-blog.yml` (2026-10-04, off until `KIT_DIGEST_ENABLED`)
+- [ ] Add yourself as a subscriber in Kit; after go-live: `KIT_DIGEST_ENABLED` + `KIT_SEND` = `true` in Digital-Dhaba, test send (`docs/NEWSLETTER.md`)
 - [ ] After go-live: weekly letter switches; upload the audited list (tag `from-mailchimp`), close Mailchimp
 - Skipped as optional: custom email template, test tag (test while Kush is the only subscriber), Postmaster Tools
 
