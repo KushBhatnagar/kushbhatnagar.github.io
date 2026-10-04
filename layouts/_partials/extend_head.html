@@ -1,0 +1,23 @@
+{{- /* Brand heading font (matches the comic lettering) */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap">
+
+{{- /* Analytics + AdSense — production builds only (HUGO_ENVIRONMENT=production) */ -}}
+{{- if eq hugo.Environment "production" }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWTLYBWXCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QWTLYBWXCL');
+</script>
+
+{{- if site.Params.adsense }}
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.Params.adsenseClient }}" crossorigin="anonymous"></script>
+{{- end }}
+{{- end }}
+{{- /* hideDescription: true keeps the meta description for search but hides it under the page title. */ -}}
+{{- if .Params.hideDescription }}<style>.post-header .post-description{display:none}</style>{{ end }}
