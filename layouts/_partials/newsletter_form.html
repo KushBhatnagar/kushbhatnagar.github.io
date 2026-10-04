@@ -1,21 +1,16 @@
 {{- /* Newsletter signup form. Used on posts, /subscribe/, Build Log and Tech Digest.
        Provider-specific markup lives only here.
 
-       Params (dict): heading, text, source ("blog" | "linkedin"; default "blog").
-       Each source posts to its own Kit form (IDs in hugo.toml → params.kit.forms), so signups per
-       source can be compared in Kit (auto-tagging by form is a paid feature). Kit's double opt-in
-       is the bot filter: an address only joins after its owner clicks the confirmation email.
-       While a source's form ID is empty, the legacy Mailchimp form is shown instead. */ -}}
+       Params (dict): heading, text. Every box posts to the one Kit form in hugo.toml → params.kit.form.
+       Kit's confirmation email (double opt-in) is the bot filter: an address only joins after its owner
+       clicks it. While params.kit.form is empty, the legacy Mailchimp form is shown instead. */ -}}
 {{- $heading := .heading | default "Be the first to hear about new posts" }}
-{{- $source := .source | default "blog" }}
-{{- $kitID := "" }}
-{{- with site.Params.kit.forms }}{{ $kitID = index . $source | default "" }}{{ end }}
+{{- $kitID := site.Params.kit.form | default "" }}
 <div class="newsletter-signup">
   {{- with $heading }}<h3>{{ . }}</h3>{{ end }}
   {{- with .text }}<p>{{ . }}</p>{{ end }}
   {{- if $kitID }}
-  <form action="{{ printf site.Params.kit.formAction $kitID }}" method="post" target="_blank"
-        data-source="{{ $source }}">
+  <form action="{{ printf site.Params.kit.formAction $kitID }}" method="post" target="_blank">
     <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
     <input type="submit" value="Subscribe">
   </form>

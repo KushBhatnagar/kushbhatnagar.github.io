@@ -1,2 +1,2 @@
-{{- /* {{< subscribe heading="..." text="..." source="linkedin" >}} — newsletter form inside page content */ -}}
-{{- partial "newsletter_form.html" (dict "heading" (.Get "heading") "text" (.Get "text") "source" (.Get "source")) }}
+{{- /* {{< subscribe heading="..." text="..." >}} — newsletter form inside page content */ -}}
+{{- partial "newsletter_form.html" (dict "heading" (.Get "heading") "text" (.Get "text")) }}

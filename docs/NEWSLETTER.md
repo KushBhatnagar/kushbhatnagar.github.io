@@ -10,15 +10,10 @@ Subscribers live in **Kit (Free Plan)**. Subscribers get **at most two emails a 
 There are no per-post emails. The weekly letter picks posts by their front-matter `date`, so when a draft
 finally goes live, set `date` to the publishing day.
 
-Signups come from the site's forms (all in `layouts/_partials/newsletter_form.html`), one Kit form per source
-so you can compare where subscribers come from:
+Signups: every signup box on the site (`layouts/_partials/newsletter_form.html`) posts to **one Kit form**,
+ID in `hugo.toml` → `params.kit.form` (`10000596`).
 
-| Kit form | Used on | `hugo.toml` key |
-|---|---|---|
-| **Blog** | end of every post, Build Log, Tech Digest | `params.kit.forms.blog` |
-| **LinkedIn** | `/subscribe/` (the link you share on LinkedIn) | `params.kit.forms.linkedin` |
-
-Every form uses **double opt-in**: nobody is added until they click the confirmation email, which also
+The form uses **double opt-in**: nobody is added until they click the confirmation email, which also
 keeps bots and fake addresses out.
 
 ## Safety switches (GitHub repository *variables*, no code changes)
@@ -27,8 +22,8 @@ keeps bots and fake addresses out.
 |---|---|
 | `KIT_ROUNDUP_ENABLED` (blog repo) / `KIT_DIGEST_ENABLED` (Digital-Dhaba) | `true` turns that email on. Unset = the step doesn't run |
 | `KIT_SEND` | `true` = really create broadcasts. Anything else = **dry run** (the workflow log shows the email it would send) |
-| `KIT_TEST_TAG_ID` | While set, emails go **only to subscribers with that tag** (just you) and subjects start with `[TEST]`. Delete it to send to everyone |
-| `KIT_EMAIL_TEMPLATE_ID` | The minimal template below |
+| `KIT_TEST_TAG_ID` | Optional. While set, emails go **only to subscribers with that tag** (just you) and subjects start with `[TEST]`. Delete it to send to everyone |
+| `KIT_EMAIL_TEMPLATE_ID` | Optional custom template (`docs/kit/email-template.html`); Kit's default is used if unset |
 | `KIT_FROM_EMAIL` | Optional sender, e.g. `kush@blogsbykush.com` (must be verified in Kit) |
 
 Built-in guards: duplicate subjects are skipped (safe to re-run); no new posts → no weekly letter; the digest
@@ -39,66 +34,32 @@ waits for its hero image to be live before an immediate send. The weekly letter'
 
 ## One-time setup (Kush)
 
-### 1. Kit account and settings
-1. Sign up at kit.com (Free plan).
-2. **Settings → General / Account**: your name and **postal address** (Kit puts it in every email footer;
-   a PO box or virtual mailbox address is fine).
-3. **Settings → Email → Confirmation email** (double opt-in): keep **Auto-confirm unchecked**. Confirmation line:
-   *"Confirm to get Digital Dhaba every Thursday, plus a short Sunday letter with my new posts."*
+### Done (2026-10-04)
+- Kit account (Free), postal address, unsubscribe survey.
+- Sending address `kush@blogsbykush.com`; domain `blogsbykush.com` verified (SPF/DKIM CNAMEs + `_dmarc` TXT).
+- One inline form (ID `10000596`) with the confirmation email (double opt-in) on; wired into the site.
+- v4 API key saved as secret `KIT_API_KEY` in both repos (old v3 key/secret replaced); variable
+  `KIT_FROM_EMAIL` = `kush@blogsbykush.com` in both repos.
 
-### 2. Sending domain and From address
-1. Kit → **Settings → Email → Sending domain** (wording may differ) → add `blogsbykush.com`.
-2. Kit shows a few **CNAME** records. Add them at the company where blogsbykush.com's DNS is managed
-   (your domain registrar or DNS host). Wait for Kit to show "Verified" (minutes to a few hours).
-3. Also add a **DMARC** record (Gmail/Yahoo expect one for newsletters):
-   `TXT` record, name `_dmarc`, value `v=DMARC1; p=none; rua=mailto:kush@blogsbykush.com`
-4. Set the From address to `kush@blogsbykush.com` (a separate step in Kit after the domain is verified).
-   Make sure that address can actually receive mail (replies go there).
-5. Optional but recommended: add the domain to **Google Postmaster Tools** to watch spam rates.
+### Still to do
+1. **Merge PR #5** into `hugo-migration`.
+2. **Copy** `docs/tech-digest/publish-to-blog.yml` into Digital-Dhaba (`.github/workflows/publish-to-blog.yml`).
+   Keep `BLOG_BRANCH: hugo-migration` until go-live.
+3. **Subscribe yourself** through the site's form and click the confirmation email, so you're the only
+   subscriber while testing (do this before uploading the Mailchimp list).
+4. **Dry run:** Digital-Dhaba variable `KIT_DIGEST_ENABLED` = `true` → Actions → "Publish issue to
+   blogsbykush.com" → Run workflow. The "Email the issue" step should log `DRY RUN` with subject and send time.
+5. **Real test, best right after go-live:** the email's header image is linked from
+   `blogsbykush.com/tech-digest/<date>/hero.jpg`, which only exists once the Hugo site is live (before that it
+   shows as a broken image). Variable `KIT_SEND` = `true` → run again. A broadcast appears in Kit → Broadcasts, scheduled
+   for Thursday 07:00 IST (to you only, since you're the only subscriber). Send yourself a preview from Kit
+   and check it in your inbox. Until `KIT_SEND` is `true`, nothing is created in Kit.
+6. **Weekly letter** (after go-live; it reads `/posts.json` from the live site): blog repo variables
+   `KIT_ROUNDUP_ENABLED` = `true`, `KIT_SEND` = `true`. It runs every Sunday 09:00 IST, or by hand from
+   Actions → "Weekly letter (Kit)".
+7. **Upload the audited Mailchimp list** (next section), then close Mailchimp.
 
-### 3. Email template
-Kit → **Send → Email Templates → New template** → choose the HTML/code option → paste
-`docs/kit/email-template.html` → save. Open it again and copy the **template ID** from the URL.
-
-### 4. Forms
-Create two forms (Kit → **Grow → Landing Pages & Forms → Create new → Form**, any style): **Blog** and
-**LinkedIn**. For each, open it → **Embed** → copy the number from the embed code
-(the form ID), then put the IDs into `hugo.toml`:
-```toml
-[params.kit.forms]
-  blog = "1234567"
-  linkedin = "2345678"
-```
-(Or send the IDs to Claude.) In each form's settings, set the **success redirect** to
-`https://blogsbykush.com/` or leave Kit's default "check your email" page.
-
-### 5. Test tag
-Kit → **Subscribers** → add yourself (confirm the email) → add a tag `test` to yourself. Copy the tag's
-ID (open the tag → number in the URL).
-
-### 6. API key and GitHub settings
-1. Kit → **Settings → Developer** → create a **v4 API key**. Copy it (don't paste it anywhere else).
-2. In **both** repos (blog `kushbhatnagar.github.io` and `Digital-Dhaba`): Settings → Secrets and variables →
-   Actions:
-   - **Secrets** tab → `KIT_API_KEY` = the key.
-   - **Variables** tab → `KIT_EMAIL_TEMPLATE_ID` = template ID, `KIT_TEST_TAG_ID` = test tag ID,
-     `KIT_FROM_EMAIL` = `kush@blogsbykush.com`.
-3. Blog repo variable `KIT_ROUNDUP_ENABLED` = `true`; Digital-Dhaba variable `KIT_DIGEST_ENABLED` = `true`.
-4. Copy the updated `docs/tech-digest/publish-to-blog.yml` into Digital-Dhaba
-   (`.github/workflows/publish-to-blog.yml`), keeping your `BLOG_BRANCH` value.
-
-### 7. Test (still safe: test mode + dry run)
-1. Re-run the Digital-Dhaba workflow (Actions → Run workflow). The "Email the issue" step should log
-   `DRY RUN (TEST (tag … only))` with the subject and send time.
-2. Set variable `KIT_SEND` = `true` in Digital-Dhaba and re-run: a `[TEST]` broadcast appears in Kit →
-   Broadcasts, scheduled for Thursday 07:00 IST. Open it in Kit and **send a preview to yourself** to check
-   it in Gmail. Delete the scheduled test broadcast if you don't want it to go out.
-3. Weekly letter: blog repo → Actions → "Weekly letter (Kit)" → Run workflow. With `KIT_SEND` unset it logs
-   the email (dry run); with `KIT_SEND` = `true` and the test tag set, it sends a `[TEST]` letter to you
-   (needs at least one post dated in the last 7 days on the live site).
-
-### 8. Go fully live
-Delete `KIT_TEST_TAG_ID` in both repos. From then on, emails go to all confirmed subscribers.
+Optional later: Google Postmaster Tools for blogsbykush.com; a custom email template (`KIT_EMAIL_TEMPLATE_ID`).
 
 ---
 

@@ -16,7 +16,7 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 | Phase 1 — structure, homepage, brand | ✅ Done, reviewed by Kush |
 | Phase 2 — Concept Breakdown system | ✅ Done (lean format). Pilot *How LLMs Think* is still `draft: true` |
 | Phase 3 — Tech Digest (Digital Dhaba) | ✅ Done. Auto-publish **verified**: Digital-Dhaba workflow pushed issue 2026-09-30 to `hugo-migration` |
-| Phase 4 — Subscribers / newsletter | 🔨 Code built (forms, `/posts.json`, Thursday digest email, Sunday weekly letter, docs) in PR #5. **Kush's Kit/DNS setup pending** |
+| Phase 4 — Subscribers / newsletter | 🔨 Code in PR #5. Kit account, domain, form `10000596`, API key done 2026-10-04; **test send pending** |
 | Learning Notes | ✅ Section built 2026-10-03 (PR #5) with one **placeholder** note that Kush must rewrite/verify before go-live |
 | Writing skills | ✅ `/learning-note`, `/build-log-entry`, `/breakdown-post` (2026-10-03, PR #5); no LinkedIn copy (Sahayak) |
 | Homepage + About + photo + CV | ✅ Brand review done 2026-10-03 (PR #5): real photo, new About page, current CV without phone |
@@ -178,14 +178,13 @@ Decisions (2026-09-30):
 - [x] Tested locally against a mock Kit API: request shape, test-mode filter, dry run, duplicate skip,
       Thursday scheduling, weekly-letter selection (7-day window, none → no email), email rendering
 **4c: Kush (accounts, DNS, content)**
-- [ ] Kit account; API key saved as `KIT_API_KEY` secret in **both** repos (never in chat)
-- [ ] Sending domain blogsbykush.com verified (Kit CNAMEs + DMARC TXT); From `kush@blogsbykush.com`
-- [ ] Minimal custom email template (paste `docs/kit/email-template.html`); 2 forms (Blog, LinkedIn)
-      → IDs into `hugo.toml`; a "test" tag with Kush only; repo variables per `docs/NEWSLETTER.md`
-- [ ] Postal address for Kit's footer; confirmation-email line (Thursday digest + Sunday letter)
-- [ ] After go-live + Kit form IDs in `hugo.toml`: upload the audited list to Kit (tag `from-mailchimp`), final
-      Mailchimp export kept locally, close Mailchimp (`docs/NEWSLETTER.md`)
-- [ ] Google Postmaster Tools for blogsbykush.com
+- [x] Kit account, postal address, unsubscribe survey (2026-10-04)
+- [x] Sending domain blogsbykush.com verified (CNAMEs + DMARC); From `kush@blogsbykush.com`
+- [x] One form (ID `10000596`, double opt-in) → `hugo.toml` `params.kit.form` (simplified from 2–3 forms)
+- [x] v4 `KIT_API_KEY` secret + `KIT_FROM_EMAIL` variable in both repos (v3 key/secret that were pasted in chat replaced)
+- [ ] Copy `publish-to-blog.yml` into Digital-Dhaba; subscribe yourself; dry run → real test (`docs/NEWSLETTER.md`)
+- [ ] After go-live: weekly letter switches; upload the audited list (tag `from-mailchimp`), close Mailchimp
+- Skipped as optional: custom email template, test tag (test while Kush is the only subscriber), Postmaster Tools
 
 ### To verify against Kit during Kush's first test (docs sites were blocked from the Claude cloud session)
 Assumptions in the code, each easy to adjust if Kit says otherwise:

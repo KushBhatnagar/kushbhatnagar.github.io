@@ -205,6 +205,13 @@ Format: `HH:MM [Phase N] change — detail`
   would have pushed issues to the live Jekyll site if copied before go-live).
 - Merged `hugo-migration` (auto-published Tech Digest 2026-10-03) into the feature branch.
 
+## 2026-10-04 — Kit connected
+- Kush set up Kit: account, verified sending domain (SPF/DKIM/DMARC), `kush@blogsbykush.com`, one form with
+  double opt-in, v4 API key as `KIT_API_KEY` secret in both repos.
+- Site: one Kit form (`params.kit.form = "10000596"`) for every signup box; per-source forms removed
+  (`newsletter_form.html`, `subscribe` shortcode, `/subscribe/`). No Mailchimp form left in the build.
+- `docs/NEWSLETTER.md` setup cut to what's done + the remaining test steps; template and test tag optional.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

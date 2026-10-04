@@ -100,9 +100,8 @@ Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TE
 
 ## Newsletter (Kit) — Phase 4
 
-Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form per
-source: blog / linkedin; IDs in `hugo.toml` → `params.kit.forms`; empty ID → legacy Mailchimp
-form). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
+Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form, ID `10000596` in
+`hugo.toml` → `params.kit.form`; empty → legacy Mailchimp form). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
 1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`).
 2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
    every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
@@ -122,7 +121,7 @@ content/
   tech-digest/_index.md           # Tech Digest archive (layouts/tech-digest/list.html)
   tech-digest/<date>/             # one bundle per Digital Dhaba issue (layouts/tech-digest/single.html)
   mlops-playground.md my-bookshelf-chronicles.md   # live, off-nav
-  subscribe.md                    # /subscribe/ — the link shared on LinkedIn (Kit "LinkedIn" form)
+  subscribe.md                    # /subscribe/ — the link shared on LinkedIn
   about.md terms.md year-archive.md archive.md search.md
 layouts/
   category-landing.html           # custom: lists/grids posts of one category, empty state
@@ -165,7 +164,7 @@ _migration/*.py                   # one-off converters (kept for audit)
 - Google Analytics (gtag): `G-QWTLYBWXCL`
 - Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
 - Disqus shortname: `blogsbykush`
-- Kit (newsletter, Phase 4): form IDs in `hugo.toml` `params.kit.forms`; API key = secret `KIT_API_KEY` in both repos
+- Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
 - Mailchimp (legacy, being retired): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
 ## Remaining steps to finish the migration
