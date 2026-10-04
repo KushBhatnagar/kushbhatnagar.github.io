@@ -20,6 +20,7 @@ Run by the Digital-Dhaba workflow right after the issue is published to the blog
 
 Env: see scripts/kit_api.py (dry run unless KIT_SEND=true; test mode while KIT_TEST_TAG_ID is set), plus
     DIGEST_SEND_WEEKDAY  0=Mon … 3=Thu … 6=Sun (default 3)   DIGEST_SEND_TIME  HH:MM in IST (default 07:00)
+    DIGEST_SEND_NOW      true = send right away instead of scheduling (manual runs, e.g. a test to yourself)
     KIT_UNSUBSCRIBE_TAG  default "{{ unsubscribe_url }}"   SITE_URL  default https://blogsbykush.com
 """
 import datetime, json, os, pathlib, re, sys, time, urllib.error, urllib.parse, urllib.request
@@ -33,6 +34,8 @@ IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 def next_slot(now=None):
     """Next send slot (aware datetime). If we're past today's slot on the send day, send now."""
+    if os.environ.get("DIGEST_SEND_NOW", "").strip().lower() == "true":
+        return None
     now = now or datetime.datetime.now(IST)
     weekday = int(os.environ.get("DIGEST_SEND_WEEKDAY", "3"))
     hh, mm = (int(x) for x in os.environ.get("DIGEST_SEND_TIME", "07:00").split(":"))
@@ -97,7 +100,7 @@ def main():
 
     slot = next_slot()
     if slot is None:
-        print("Past this week's send time: sending now (after the issue page is live).")
+        print("Sending now (after the issue page is live).")
         if kit_api.env_flag("KIT_SEND") and not wait_until_live(hero_url):
             sys.exit(f"{hero_url} is not live; not sending an email with a broken image. Re-run later.")
     else:

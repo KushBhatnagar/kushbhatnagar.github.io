@@ -218,6 +218,8 @@ Format: `HH:MM [Phase N] change — detail`
   They stay in Digital-Dhaba; the workflow only republishes issues whose files change.
 - Placeholder Learning Note set to `draft: true` for go-live (not Kush's words yet); Learning Notes shows its
   empty state until the first real note.
+- Digest email: manual runs of the Digital-Dhaba workflow get a `send_now` tick box (`DIGEST_SEND_NOW`) to email
+  right away instead of scheduling, for an inbox test while Kush is the only subscriber.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.

@@ -24,6 +24,10 @@ on:
       issue:
         description: "Issue folder to (re)publish, e.g. 2026-09-27 (blank = latest)"
         required: false
+      send_now:
+        description: "Email it right away instead of scheduling for Thursday 07:00 IST (e.g. a test while you're the only subscriber)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -104,6 +108,7 @@ jobs:
           KIT_TEST_TAG_ID: ${{ vars.KIT_TEST_TAG_ID }}
           KIT_FROM_EMAIL: ${{ vars.KIT_FROM_EMAIL }}
           KIT_SEND: ${{ vars.KIT_SEND }}
+          DIGEST_SEND_NOW: ${{ inputs.send_now }}
         run: |
           for dir in $LIST; do
             python3 blog/scripts/kit_send_digest.py "dhaba/$dir"

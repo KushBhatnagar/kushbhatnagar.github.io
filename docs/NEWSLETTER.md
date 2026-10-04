@@ -49,7 +49,9 @@ waits for its hero image to be live before an immediate send. The weekly letter'
    subscriber while testing (do this before uploading the Mailchimp list).
 4. **Dry run:** Digital-Dhaba variable `KIT_DIGEST_ENABLED` = `true` → Actions → "Publish issue to
    blogsbykush.com" → Run workflow. The "Email the issue" step should log `DRY RUN` with subject and send time.
-5. **Real test, best right after go-live:** the email's header image is linked from
+5. **Inbox test right after go-live:** Actions → "Publish issue to blogsbykush.com" → Run workflow → tick
+   **send_now**. The email arrives within minutes (do this while you're the only subscriber).
+   Background: the email's header image is linked from
    `blogsbykush.com/tech-digest/<date>/hero.jpg`, which only exists once the Hugo site is live (before that it
    shows as a broken image). Variable `KIT_SEND` = `true` → run again. A broadcast appears in Kit → Broadcasts, scheduled
    for Thursday 07:00 IST (to you only, since you're the only subscriber). Send yourself a preview from Kit
