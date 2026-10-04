@@ -88,12 +88,12 @@ def main():
     date = datetime.datetime.strptime(issue["date"], "%B %d, %Y").date().isoformat()
     name = issue.get("name", "Digital Dhaba")
     title = f"{name} — {issue['date']}"
-    top = digest.get("topStories", [])
 
     content, issue_url, hero_url = email_ready((src / "newsletter.html").read_text(encoding="utf-8"), date, title)
-    lead = top[0]["title"] if top else issue.get("dek", "")
-    subject = f"{name}: {lead}" if lead else title
-    preview = f"{issue.get('dek', '')}. " + "; ".join(s["title"] for s in top[1:3])
+    # Kush (2026-10-04): plain subject and preview, no story names. The subject is also the dedupe key,
+    # and the date makes it unique per issue.
+    subject = title                                     # "Digital Dhaba — October 3, 2026"
+    preview = issue.get("dek", "") or issue.get("tagline", "")   # "The last 7 days in tech, AI & LLMs"
 
     slot = next_slot()
     if slot is None:
