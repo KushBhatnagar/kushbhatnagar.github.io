@@ -1,6 +1,6 @@
 ---
 title: "Training an AI for one skill quietly changes its other answers"
-date: 2026-10-01
+date: 2026-10-04
 categories: ["learning-notes"]
 tags: ["generative ai", "large language models"]
 url: /learning-notes/training-an-ai-for-one-skill-changes-its-other-answers/
@@ -10,13 +10,7 @@ source: "Post-Training Leaves Behavioral Shadows on Unrelated Decisions"
 source_url: https://arxiv.org/abs/2609.29233
 source_type: paper
 ShowToc: false
-draft: true   # placeholder: hidden until Kush rewrites it (go-live 2026-10)
 ---
-
-<!-- PLACEHOLDER (2026-10-03): built from the example in Sahayak content/LEARNING-NOTES-PLAN.md (Kush's own
-     lines) plus source details from Digital-Dhaba research/2026-10-01/post-training-behavioral-shadows.md.
-     Before go-live, Kush: rewrite in your own words, check every claim against the paper, open every link,
-     then delete this comment. -->
 
 **TL;DR:** Training an AI model for one skill also shifts its choices slightly on unrelated questions, which makes me think hiding a model's reasoning is one layer of protection against copying, not the whole wall.
 

@@ -4,7 +4,13 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch and is merged into `hugo-migration` via PR; `hugo-migration`
 goes live when merged into `main`.
 
-## ▶ STATUS — where we left off (updated 2026-10-03)
+## ▶ STATUS — where we left off (updated 2026-10-04)
+
+**🚀 LIVE since 2026-10-04 17:00 UTC.** Pages source = GitHub Actions (Kush), PR #2 merged, deploy green,
+Digital-Dhaba `BLOG_BRANCH: main`. Next: Kush's browser checks; `KIT_DIGEST_ENABLED` = true + send_now inbox test;
+import the ~15 (tag `from-mailchimp`) + "moved" note; blog-repo `KIT_ROUNDUP_ENABLED`/`KIT_SEND`; first Build Log
+entry (Digital Dhaba) via `/build-log-entry`; then delete the Jekyll files; close Mailchimp.
+
 
 **Phases 0–3 are built and merged into `hugo-migration` (PRs #1, #3). Nothing is live yet:**
 `main` / blogsbykush.com is still the old Jekyll site. Go-live = PR #2 (`hugo-migration` → `main`).

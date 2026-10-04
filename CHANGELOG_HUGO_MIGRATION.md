@@ -221,6 +221,17 @@ Format: `HH:MM [Phase N] change — detail`
 - Digest email: manual runs of the Digital-Dhaba workflow get a `send_now` tick box (`DIGEST_SEND_NOW`) to email
   right away instead of scheduling, for an inbox test while Kush is the only subscriber.
 
+## 2026-10-04 — GO-LIVE
+- Kush switched Pages → GitHub Actions; PR #6, #7 merged into `hugo-migration`; **PR #2 merged into `main`**
+  (`4ef1146`); "Deploy Hugo site to Pages" build + deploy succeeded.
+- Digital-Dhaba `publish-to-blog.yml`: `BLOG_BRANCH: main`.
+
+## 2026-10-04 — After go-live
+- Build Log landing: empty-state text no longer mentions the AI content tool (Sahayak stays unannounced).
+- Published (Kush): *How LLMs Think* and the Learning Note (dates set to 2026-10-04 so the Sunday letter picks them up).
+- First Build Log entry drafted with `/build-log-entry` from Kush's notes:
+  `content/posts/digital-dhaba-ai-newsletter-that-cannot-make-up-news.md` (draft; CHECK items for Kush).
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
