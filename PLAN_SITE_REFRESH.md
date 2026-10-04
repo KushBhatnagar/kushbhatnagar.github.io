@@ -33,7 +33,8 @@ Kush previewed everything locally and wants **a few more changes before go-live*
 
 ## Go-live checklist (in this order)
 1. [ ] Kush's pre-launch changes merged into `hugo-migration`; local preview OK (`hugo server -D`)
-   - [ ] Placeholder Learning Note (`content/posts/training-an-ai-for-one-skill-changes-its-other-answers.md`)
+   - [x] Placeholder Learning Note set to `draft: true` for go-live (rewrite later, then `draft: false`)
+   - [ ] (later) Placeholder Learning Note (`content/posts/training-an-ai-for-one-skill-changes-its-other-answers.md`)
          rewritten in Kush's words and checked (claims vs the paper, every link opened); remove its PLACEHOLDER comment
    - [x] Digital-Dhaba: signoff now "Chai's on us next week." (seen 2026-10-03)
    - [ ] Sahayak docs: `LEARNING-NOTES-PLAN.md` says "Monday issue" → Thursday; `BUILD-IN-PUBLIC-PLAN.md`

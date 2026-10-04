@@ -216,6 +216,8 @@ Format: `HH:MM [Phase N] change — detail`
   (no story names). Hero image is broken until go-live (hosted on blogsbykush.com).
 - Tech Digest archive: removed issues 2026-09-27 and 2026-09-30 (Kush); the site starts with 2026-10-03.
   They stay in Digital-Dhaba; the workflow only republishes issues whose files change.
+- Placeholder Learning Note set to `draft: true` for go-live (not Kush's words yet); Learning Notes shows its
+  empty state until the first real note.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.

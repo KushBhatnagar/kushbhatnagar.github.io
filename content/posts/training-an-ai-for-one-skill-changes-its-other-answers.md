@@ -10,6 +10,7 @@ source: "Post-Training Leaves Behavioral Shadows on Unrelated Decisions"
 source_url: https://arxiv.org/abs/2609.29233
 source_type: paper
 ShowToc: false
+draft: true   # placeholder: hidden until Kush rewrites it (go-live 2026-10)
 ---
 
 <!-- PLACEHOLDER (2026-10-03): built from the example in Sahayak content/LEARNING-NOTES-PLAN.md (Kush's own
