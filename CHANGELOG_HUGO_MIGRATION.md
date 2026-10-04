@@ -214,6 +214,8 @@ Format: `HH:MM [Phase N] change — detail`
 - First real Kit run (Digital-Dhaba workflow, issue 2026-10-03): broadcast created and scheduled for Thu 07:00 IST.
   Kush's feedback: digest subject is now just "Digital Dhaba — <date>" and preview text just the issue's dek
   (no story names). Hero image is broken until go-live (hosted on blogsbykush.com).
+- Tech Digest archive: removed issues 2026-09-27 and 2026-09-30 (Kush); the site starts with 2026-10-03.
+  They stay in Digital-Dhaba; the workflow only republishes issues whose files change.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
