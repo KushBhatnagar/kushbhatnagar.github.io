@@ -17,7 +17,7 @@ Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: it has the current state, open items
 and the go-live checklist. Update that STATUS section (and the changelog) at the end of every session.
-Snapshot (2026-10-04): Phases 0–4 merged into `hugo-migration` (PR #5 merged); **not live yet**. PR #5 added Phase 4
+Snapshot (2026-10-04): **LIVE** — PR #2 merged, blogsbykush.com deploys from `main` via GitHub Actions; Digital-Dhaba publishes to `main`. PR #5 added Phase 4
 (Kit: Thursday digest + Sunday weekly letter), Learning Notes, the three writing skills and the
 homepage/About refresh (no employer name, no consulting mention, projects kept generic until Kush names them). Kit account/domain/form/API key done 2026-10-04 (email test after go-live); Kush wants a few more changes before go-live (PR #2).
 

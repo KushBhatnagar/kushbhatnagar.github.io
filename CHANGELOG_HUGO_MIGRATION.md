@@ -221,6 +221,11 @@ Format: `HH:MM [Phase N] change — detail`
 - Digest email: manual runs of the Digital-Dhaba workflow get a `send_now` tick box (`DIGEST_SEND_NOW`) to email
   right away instead of scheduling, for an inbox test while Kush is the only subscriber.
 
+## 2026-10-04 — GO-LIVE
+- Kush switched Pages → GitHub Actions; PR #6, #7 merged into `hugo-migration`; **PR #2 merged into `main`**
+  (`4ef1146`); "Deploy Hugo site to Pages" build + deploy succeeded.
+- Digital-Dhaba `publish-to-blog.yml`: `BLOG_BRANCH: main`.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
