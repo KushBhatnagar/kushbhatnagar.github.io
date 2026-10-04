@@ -82,9 +82,8 @@ def main():
         return
     week.sort(key=lambda p: p["date"])
     week_label = "Week of " + today.strftime("%-d %b %Y")
-    lead = week[-1]["title"]
-    more = f" (+{len(week) - 1} more)" if len(week) > 1 else ""
-    subject = f"This week on Blogs by Kush: {lead}{more}"
+    # Plain subject, like the digest's (Kush, 2026-10-04); the post titles go in the preview text.
+    subject = f"Blogs by Kush — week of {today.strftime('%-d %b %Y')}"
     print(f"{len(week)} post(s): " + ", ".join(p["url"] for p in week))
     kit_api.create_broadcast(
         subject=subject[:150], content=email_html(week, week_label),
