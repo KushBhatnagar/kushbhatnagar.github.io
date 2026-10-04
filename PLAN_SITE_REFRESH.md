@@ -6,10 +6,12 @@ goes live when merged into `main`.
 
 ## ▶ STATUS — where we left off (updated 2026-10-04)
 
-**🚀 LIVE since 2026-10-04 17:00 UTC.** Pages source = GitHub Actions (Kush), PR #2 merged, deploy green,
-Digital-Dhaba `BLOG_BRANCH: main`. Next: Kush's browser checks; `KIT_DIGEST_ENABLED` = true + send_now inbox test;
-import the ~15 (tag `from-mailchimp`) + "moved" note; blog-repo `KIT_ROUNDUP_ENABLED`/`KIT_SEND`; first Build Log
-entry (Digital Dhaba) via `/build-log-entry`; then delete the Jekyll files; close Mailchimp.
+**🚀 LIVE since 2026-10-04 17:00 UTC.** Both emails work end to end: Digital Dhaba (Thursday 07:00 IST, Digital-Dhaba
+workflow, test send done) and the weekly letter (Sunday 09:00 IST cron on `main`; first one sent manually 2026-10-04 with
+3 posts). Subscribers: Kush + audited keep list imported (tag `from-mailchimp`), "moved" note sent; review list asked to
+re-subscribe from Mailchimp. Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
+Open: Kush → Search Console (sitemap + request indexing); after a stable week delete the Jekyll files and close Mailchimp;
+rewrite PR #2-era docs that still describe `hugo-migration` as staging.
 
 
 **Phases 0–3 are built and merged into `hugo-migration` (PRs #1, #3). Nothing is live yet:**
