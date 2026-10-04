@@ -1,7 +1,6 @@
 ---
 title: "How LLMs Think"
-date: 2026-09-30
-draft: true
+date: 2026-10-04
 categories: ["concept-breakdown"]
 tags: ["generative ai", "large language models", "machine learning", "classroom conversation"]
 summary: "Hint: it's just Antakshari. How a large language model writes an answer, one token at a time."

@@ -5,7 +5,7 @@ layout: category-landing
 category_filter: build-log
 tagline: "Building in public: the decisions, the mistakes and the lessons."
 description: "Products Kush Bhatnagar is building in public, from idea to launch, told from a product manager's point of view."
-empty_message: "The first build, an **AI content-generation tool**, is being documented right now. Subscribe to get the first post in your inbox."
+empty_message: "The first entries are being written right now. Subscribe to get them in your inbox."
 ShowReadingTime: false
 ShowToc: false
 ---
