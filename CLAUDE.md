@@ -27,7 +27,7 @@ delete branch `hugo-migration`, Kush closes Mailchimp.
 - **`main`** = the live site. GitHub Pages builds from **GitHub Actions** (`.github/workflows/hugo.yml`) on every push
   to `main`. Work goes on a feature branch → PR into `main` → merge = deploy (~2 min).
 - **`hugo-migration`** = the old staging branch, fully merged; delete it in the planned cleanup after
-  a stable week). PRs #1–#9 hold the history.
+  a stable week (confirm with Kush first). PRs #1–#9 hold the history.
 - The Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`, Gemfile etc.)
   are still in the tree but ignored by Hugo; delete them in the cleanup PR (check nothing in `static/` or `content/`
   references them first).
