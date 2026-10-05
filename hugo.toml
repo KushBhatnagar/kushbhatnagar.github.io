@@ -15,8 +15,8 @@ ignoreFiles = ["transcript\\.txt$"]
 [outputFormats.rss]
   baseName = "feed"
 
-# /posts.json: blog posts only (no Tech Digest issues). The deploy workflow diffs it against the
-# live copy to detect newly published posts and email them via Kit (scripts/kit_notify_posts.py).
+# /posts.json: blog posts only (no Tech Digest issues). Read from the live site by the Sunday
+# weekly letter (scripts/kit_weekly_roundup.py).
 [outputFormats.postsjson]
   mediaType = "application/json"
   baseName = "posts"

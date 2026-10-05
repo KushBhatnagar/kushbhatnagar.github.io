@@ -2,9 +2,9 @@
 
 Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
-`hugo-migration`; that branch is kept as a frozen snapshot of the migration, nothing new goes into it.)
+`hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-05)
+## ▶ STATUS — where we left off (updated 2026-10-05, docs tidy + Jekyll cleanup)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#11 hold the history.
@@ -21,10 +21,9 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 **Open items**
 1. Kush: Google Search Console → submit `https://blogsbykush.com/sitemap.xml`, request indexing for `/`, `/about/`,
    section pages (Google still shows old titles). Don't use Removals.
-2. Cleanup PR (week of 2026-10-12): delete Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`,
-   `_includes/`, `_sass/`, `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`); first check nothing in
-   `content/` or `static/` references them. **Kush decided (2026-10-05): keep branch `hugo-migration`**; old
-   `claude/*` branches are deleted once merged (ask Kush first).
+2. Kush: delete branches `hugo-migration`, `claude/charming-rubin-bwkpi9` and (after its PR merges)
+   `claude/adoring-thompson-o24o0b` on GitHub → Branches (the Claude session can't delete other branches).
+   Jekyll files cleanup ✅ done 2026-10-05 (production build identical before/after).
 3. Kush: close Mailchimp (keep a final export on his machine).
 4. Optional: Kit welcome email/sequence; Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday, `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit).
 

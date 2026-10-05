@@ -1,5 +1,5 @@
 {{- /* /posts.json — published blog posts only (section "posts"; Tech Digest issues excluded).
-       Read by scripts/kit_notify_posts.py to detect newly published posts. */ -}}
+       Read by scripts/kit_weekly_roundup.py (Sunday weekly letter). */ -}}
 {{- $items := slice }}
 {{- range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
   {{- $img := "" }}
