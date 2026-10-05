@@ -24,7 +24,7 @@ preview image), Google Analytics (production only), and web-safe versions of the
 (`{{VIEW_IN_BROWSER_URL}}` and `{{UNSUBSCRIBE_URL}}` links removed, `{{FORWARD_URL}}` → email-a-friend
 link). The homepage shows a "New Tech Digest" strip for the latest issue.
 
-## One-time setup (≈10 minutes)
+## One-time setup (done 2026-09-30; kept for when the token expires or the repo moves)
 
 1. **Create a token** that can push to the blog repo only.
    GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** →
@@ -36,9 +36,7 @@ link). The homepage shows a "New Tech Digest" strip for the latest issue.
 2. **Save it in Digital-Dhaba**: repo → Settings → Secrets and variables → Actions →
    New repository secret → name `BLOG_REPO_TOKEN`, value = the token.
 3. **Add the workflow**: copy `docs/tech-digest/publish-to-blog.yml` from this repo to
-   `.github/workflows/publish-to-blog.yml` in Digital-Dhaba, and commit.
-   - Until the Hugo site is live on `main`, set `BLOG_BRANCH: hugo-migration` in the file;
-     switch it back to `main` after go-live.
+   `.github/workflows/publish-to-blog.yml` in Digital-Dhaba, and commit (`BLOG_BRANCH: main`).
 4. **Test**: Digital-Dhaba → Actions → "Publish issue to blogsbykush.com" → Run workflow
    (leave the issue blank to publish the latest).
 

@@ -20,15 +20,15 @@ Update that STATUS section (and the changelog) at the end of every session.
 Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
 Homepage shows 2 breakdown cards (PR #11). Open: Kush → Google Search Console (sitemap + request indexing);
-week of 2026-10-12: cleanup PR (Jekyll files), delete branch `hugo-migration` (ask first), Kush closes Mailchimp.
+week of 2026-10-12: cleanup PR (Jekyll files), Kush closes Mailchimp. Branch `hugo-migration` stays (Kush, 2026-10-05).
 Also read **"Kush's rules"** below before writing anything for the site.
 
 ## Current state: live on Hugo (since 2026-10-04)
 
 - **`main`** = the live site. GitHub Pages builds from **GitHub Actions** (`.github/workflows/hugo.yml`) on every push
   to `main`. Work goes on a feature branch → PR into `main` → merge = deploy (~2 min).
-- **`hugo-migration`** = the old staging branch, fully merged; delete it in the planned cleanup after
-  a stable week (confirm with Kush first). PRs #1–#9 hold the history.
+- **`hugo-migration`** = the old staging branch, kept as a frozen snapshot of the migration (Kush, 2026-10-05).
+  It is behind `main`; never base work on it or push to it. PRs #1–#9 hold the history.
 - The Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`, Gemfile etc.)
   are still in the tree but ignored by Hugo; delete them in the cleanup PR (check nothing in `static/` or `content/`
   references them first).
@@ -177,7 +177,7 @@ In the post's `.md` file, front matter at the top:
 
 ## Cleanup still to do (after ~1 stable week)
 
-Delete Jekyll files (one PR), delete branch `hugo-migration` (ask Kush first), Kush closes Mailchimp (keep a final
+Delete Jekyll files (one PR), Kush closes Mailchimp (keep a final
 export locally). Optional later: update the stale `Gemfile`/Jekyll mentions in docs.
 
 ## Brand
