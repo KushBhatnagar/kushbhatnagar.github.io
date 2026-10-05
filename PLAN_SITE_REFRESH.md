@@ -23,8 +23,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 **Open items**
 1. Watch the first automatic runs: Digital Dhaba email Thu 2026-10-08 07:00 IST, Sunday letter Sun 2026-10-11 09:00 IST.
 2. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
-3. Optional: Kit welcome email: draft in `docs/kit/welcome-email.md`; Kush edits and pastes into Kit (confirmation
-   email + "after confirming" redirect, or a 1-email sequence); Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
+3. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
    `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (AdSense serving, Disqus on moved posts).
 
 ## Brand direction
@@ -62,6 +61,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Digital Dhaba day (2026-10-03) | Published **Thursday early morning IST** by a GitHub Action in Digital-Dhaba |
 | Mailchimp list (2026-10-01, revised 2026-10-03) | **Direct upload of the audited list** (was: re-permission). Audit (`scripts/audit_subscribers.py`): 267 → keep 19 / review 15 / junk 233. Kush uploads the real ~15 to Kit (tag `from-mailchimp`), then closes Mailchimp after go-live. `/stay-subscribed/` and the Mailchimp-move form removed |
 | Sending mechanism (2026-10-01) | **GitHub Actions → Kit API v4** (not Kit RSS-to-email). Weekly letter: scheduled workflow reading the live posts-only `/posts.json`. Digest: extra step in Digital-Dhaba `publish-to-blog.yml` |
+| Welcome email (2026-10-05) | **None.** Kush edited Kit's confirmation email to welcome people; no extra welcome email/sequence (too many emails right after signup) |
 | Signup source tracking | Separate Kit forms per source (auto-tag-by-form is paid); compare form subscriber counts |
 | AdSense | Keep; verify it actually serves after launch |
 
