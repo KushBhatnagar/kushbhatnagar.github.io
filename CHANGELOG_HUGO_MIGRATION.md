@@ -234,6 +234,10 @@ Format: `HH:MM [Phase N] change — detail`
 - CLAUDE.md rewritten for the live state (branch workflow = PR into `main`; publishing checklist; cleanup list).
 - Weekly letter subject now plain: "Blogs by Kush — week of <date>"; first letter sent by a manual run (Kush's choice).
 
+## 2026-10-05
+- Homepage: "Latest Concept Breakdowns" shows 2 cards instead of 4 (Kush: too much scrolling on mobile before
+  "Recent posts"). Count is `homeInfoParams.breakdownCards` in `hugo.toml`, shared with the Recent-posts filter.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

@@ -76,6 +76,7 @@ ignoreFiles = ["transcript\\.txt$"]
     imageUrl = "/assets/images/kush-avatar.jpg"
     imageTitle = "Kush Bhatnagar"
     Tagline = "Learn. Build. Explain."
+    breakdownCards = 2   # "Latest Concept Breakdowns" cards on the homepage (also left out of "Recent posts")
     Proof = "Technical Product Manager · 17+ years in tech · 5+ years in product · leading an enterprise AI platform"
     Content = """
 I lead an enterprise AI platform by day and build my own AI products after hours. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI and product concepts without the jargon.
