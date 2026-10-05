@@ -1,10 +1,10 @@
 # Site Refresh Plan — "Learn. Build. Explain."
 
 Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
-Work happens on a feature branch and is merged into `hugo-migration` via PR; `hugo-migration`
-goes live when merged into `main`.
+Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
+`hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-05)
+## ▶ STATUS — where we left off (updated 2026-10-05, docs tidy + Jekyll cleanup)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#11 hold the history.
@@ -21,12 +21,11 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 **Open items**
 1. Kush: Google Search Console → submit `https://blogsbykush.com/sitemap.xml`, request indexing for `/`, `/about/`,
    section pages (Google still shows old titles). Don't use Removals.
-2. Cleanup PR (week of 2026-10-12): delete Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`,
-   `_includes/`, `_sass/`, `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`); first check nothing in
-   `content/` or `static/` references them. Then delete branches `hugo-migration` (and old `claude/*`) — **ask Kush first**.
+2. Kush: delete branches `hugo-migration`, `claude/charming-rubin-bwkpi9` and (after its PR merges)
+   `claude/adoring-thompson-o24o0b` on GitHub → Branches (the Claude session can't delete other branches).
+   Jekyll files cleanup ✅ done 2026-10-05 (production build identical before/after).
 3. Kush: close Mailchimp (keep a final export on his machine).
-4. Optional: Kit welcome email/sequence; tidy docs that still call `hugo-migration` "staging";
-   Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday, `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit).
+4. Optional: Kit welcome email/sequence; Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday, `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit).
 
 ## Brand direction
 
@@ -87,7 +86,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
       (LinkedIn copy removed 2026-10-03: Sahayak writes LinkedIn posts)
 - [x] Lean format after Kush's review: comic + "concept in plain words" only; transcript collapsed
       ("Read this comic as text"); no TOC / PM section / takeaways / FAQ
-- [x] Pilot: *How LLMs Think* — still `draft: true`; transcript read from slides, Kush to verify
+- [x] Pilot: *How LLMs Think* — published 2026-10-04
 - [ ] Ideas backlog: series numbering + prev/next, backfill transcripts for the old 20 posts (~2/week)
 
 ## Parked (Kush, 2026-09-30)
@@ -112,7 +111,7 @@ Decisions (2026-09-30):
 - [x] Auto-publish workflow for Digital-Dhaba: `docs/tech-digest/publish-to-blog.yml` (+ `docs/TECH_DIGEST.md`)
 - [x] Kush: created `BLOG_REPO_TOKEN`, added the workflow to Digital-Dhaba (`BLOG_BRANCH: hugo-migration`
       for now); first automatic publish worked (issue 2026-09-30, commit `9517175`)
-- [ ] Emailing the issue from the same workflow → Phase 4 (provider choice parked)
+- [x] Emailing the issue from the same workflow → done in Phase 4 (Kit)
 
 ## Phase 4 — Subscribers & email (Kit)  🔨 4a/4b BUILT 2026-10-01 (PR into `hugo-migration`); 4c = Kush's setup
 
@@ -166,8 +165,9 @@ Decisions (2026-09-30):
 - [x] One form (ID `10000596`, double opt-in) → `hugo.toml` `params.kit.form` (simplified from 2–3 forms)
 - [x] v4 `KIT_API_KEY` secret + `KIT_FROM_EMAIL` variable in both repos (v3 key/secret that were pasted in chat replaced)
 - [x] PR #5 merged into `hugo-migration`; Kit email step pushed to Digital-Dhaba `publish-to-blog.yml` (2026-10-04, off until `KIT_DIGEST_ENABLED`)
-- [ ] Add yourself as a subscriber in Kit; after go-live: `KIT_DIGEST_ENABLED` + `KIT_SEND` = `true` in Digital-Dhaba, test send (`docs/NEWSLETTER.md`)
-- [ ] After go-live: weekly letter switches; upload the audited list (tag `from-mailchimp`), close Mailchimp
+- [x] Kush subscribed in Kit; `KIT_DIGEST_ENABLED` + `KIT_SEND` = `true` in Digital-Dhaba, test send done (2026-10-04)
+- [x] Weekly letter switches on, first letter sent (2026-10-04); audited list uploaded (tag `from-mailchimp`)
+- [ ] Close Mailchimp (final export kept locally)
 - Skipped as optional: custom email template, test tag (test while Kush is the only subscriber), Postmaster Tools
 
 ### To verify against Kit during Kush's first test (docs sites were blocked from the Claude cloud session)

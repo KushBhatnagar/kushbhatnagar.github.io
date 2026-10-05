@@ -27,8 +27,8 @@ keeps bots and fake addresses out.
 | `KIT_FROM_EMAIL` | Optional sender, e.g. `kush@blogsbykush.com` (must be verified in Kit) |
 
 Built-in guards: duplicate subjects are skipped (safe to re-run); no new posts → no weekly letter; the digest
-waits for its hero image to be live before an immediate send. The weekly letter's schedule only runs from
-`main`, so it starts after go-live (or run it by hand: Actions → "Weekly letter (Kit)" → Run workflow).
+waits for its hero image to be live before an immediate send. The weekly letter can also be run by hand:
+Actions → "Weekly letter (Kit)" → Run workflow.
 
 ---
 
@@ -41,31 +41,22 @@ waits for its hero image to be live before an immediate send. The weekly letter'
 - v4 API key saved as secret `KIT_API_KEY` in both repos (old v3 key/secret replaced); variable
   `KIT_FROM_EMAIL` = `kush@blogsbykush.com` in both repos.
 
+### Done after go-live (2026-10-04)
+- Digital-Dhaba workflow copied with the Kit email step (`BLOG_BRANCH: main`); `KIT_DIGEST_ENABLED` and
+  `KIT_SEND` = `true`; inbox test sent (`send_now`). First scheduled send: Thursday 2026-10-08.
+- Weekly letter switches (`KIT_ROUNDUP_ENABLED`, `KIT_SEND`) on in the blog repo; first letter sent by hand.
+- Kush subscribed; audited Mailchimp list uploaded with tag `from-mailchimp`.
+
 ### Still to do
-1. **Merge PR #5** into `hugo-migration`.
-2. **Copy** `docs/tech-digest/publish-to-blog.yml` into Digital-Dhaba (`.github/workflows/publish-to-blog.yml`).
-   Keep `BLOG_BRANCH: hugo-migration` until go-live.
-3. **Subscribe yourself** through the site's form and click the confirmation email, so you're the only
-   subscriber while testing (do this before uploading the Mailchimp list).
-4. **Dry run:** Digital-Dhaba variable `KIT_DIGEST_ENABLED` = `true` → Actions → "Publish issue to
-   blogsbykush.com" → Run workflow. The "Email the issue" step should log `DRY RUN` with subject and send time.
-5. **Inbox test right after go-live:** Actions → "Publish issue to blogsbykush.com" → Run workflow → tick
-   **send_now**. The email arrives within minutes (do this while you're the only subscriber).
-   Background: the email's header image is linked from
-   `blogsbykush.com/tech-digest/<date>/hero.jpg`, which only exists once the Hugo site is live (before that it
-   shows as a broken image). Variable `KIT_SEND` = `true` → run again. A broadcast appears in Kit → Broadcasts, scheduled
-   for Thursday 07:00 IST (to you only, since you're the only subscriber). Send yourself a preview from Kit
-   and check it in your inbox. Until `KIT_SEND` is `true`, nothing is created in Kit.
-6. **Weekly letter** (after go-live; it reads `/posts.json` from the live site): blog repo variables
-   `KIT_ROUNDUP_ENABLED` = `true`, `KIT_SEND` = `true`. It runs every Sunday 09:00 IST, or by hand from
-   Actions → "Weekly letter (Kit)".
-7. **Upload the audited Mailchimp list** (next section), then close Mailchimp.
+1. **Close Mailchimp** (download a final full export first and keep it on your machine). Optional afterwards:
+   remove the legacy Mailchimp fallback form (`newsletter_form.html`, `hugo.toml` comment), which only shows
+   if `params.kit.form` is emptied.
 
 Optional later: Google Postmaster Tools for blogsbykush.com; a custom email template (`KIT_EMAIL_TEMPLATE_ID`).
 
 ---
 
-## Moving the Mailchimp list (direct upload of the audited list)
+## Moving the Mailchimp list (done 2026-10-04; kept as the record of how)
 
 Decision (Kush, 2026-10-03): upload only the audited real subscribers to Kit, then close Mailchimp. No
 re-permission email. The list is small (about 15 real people out of 267; the rest are bot signups), and these
@@ -85,6 +76,5 @@ people did sign up for this newsletter.
    `from-mailchimp` tag, or a short one-off broadcast to that tag:
    > Blogs by Kush has a new home and a new format: Digital Dhaba every Thursday and a short Sunday letter
    > with what I published. You signed up on the old list; if this isn't for you anymore, unsubscribe below.
-4. **Close Mailchimp only after go-live and after the Kit form IDs are in `hugo.toml`.** Until then the live
-   Jekyll site's form and the Hugo fallback form still post to Mailchimp. Before closing, download a final
+4. **Close Mailchimp** (safe now: the live site's forms all post to Kit). Before closing, download a final
    full export and keep it on your machine as the record of who signed up and when.

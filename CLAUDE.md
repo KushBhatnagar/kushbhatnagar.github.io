@@ -20,18 +20,17 @@ Update that STATUS section (and the changelog) at the end of every session.
 Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
 Homepage shows 2 breakdown cards (PR #11). Open: Kush → Google Search Console (sitemap + request indexing);
-week of 2026-10-12: cleanup PR (Jekyll files), delete branch `hugo-migration` (ask first), Kush closes Mailchimp.
+Kush closes Mailchimp. Jekyll files removed and branch `hugo-migration` retired (2026-10-05).
 Also read **"Kush's rules"** below before writing anything for the site.
 
 ## Current state: live on Hugo (since 2026-10-04)
 
 - **`main`** = the live site. GitHub Pages builds from **GitHub Actions** (`.github/workflows/hugo.yml`) on every push
   to `main`. Work goes on a feature branch → PR into `main` → merge = deploy (~2 min).
-- **`hugo-migration`** = the old staging branch, fully merged; delete it in the planned cleanup after
-  a stable week (confirm with Kush first). PRs #1–#9 hold the history.
-- The Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`, Gemfile etc.)
-  are still in the tree but ignored by Hugo; delete them in the cleanup PR (check nothing in `static/` or `content/`
-  references them first).
+- **`hugo-migration`** = the old staging branch, fully merged; deleted 2026-10-05 (Kush). PRs #1–#9 hold the history.
+- The Jekyll files (`_config.yml`, `_posts/`, `_pages/`, layouts, Gemfile, root favicons, the Jekyll copies in root
+  `assets/images|cv|js`) were removed on 2026-10-05; find them in git history if ever needed. Root `assets/` now holds
+  only Hugo's `css/extended/`. Live files are in `static/`.
 - Full record of every change: **`CHANGELOG_HUGO_MIGRATION.md`**. Original migration analysis:
   `git show 8c40350:MIGRATION_PLAN.md`.
 
@@ -156,7 +155,7 @@ docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
 .claude/skills/build-log-entry/   # Build Log entry from Kush's build notes
 scripts/check_links.py            # link checker used by the skills
 .github/workflows/hugo.yml        # deploy to GitHub Pages via Actions (prod build)
-_migration/*.py                   # one-off converters (kept for audit)
+_migration/*.py                   # one-off Jekyll→Hugo converters (kept for audit; their Jekyll inputs are gone)
 ```
 
 ## External integrations (IDs)
@@ -175,10 +174,9 @@ In the post's `.md` file, front matter at the top:
   the last 7 days; an old date means it's never emailed. The writing skills set this; re-set it if a draft waited.
 - Commit on a branch → PR into `main` → merge. Live in ~2 minutes; in the next Sunday letter automatically.
 
-## Cleanup still to do (after ~1 stable week)
+## Cleanup still to do
 
-Delete Jekyll files (one PR), delete branch `hugo-migration` (ask Kush first), Kush closes Mailchimp (keep a final
-export locally). Optional later: update the stale `Gemfile`/Jekyll mentions in docs.
+Kush closes Mailchimp (keep a final export locally); then optionally remove the legacy Mailchimp fallback form.
 
 ## Brand
 
@@ -206,7 +204,7 @@ Email (Kit):
 - Secrets: API keys only as repo secrets, never in chat or git. Subscriber data never in git (run audits locally).
 
 Git:
-- Ask Kush before deleting any branch. Never push straight to `main`: branch → PR → merge.
+- Ask Kush before deleting any branch. Merged `claude/*` session branches: delete after merge (Kush, 2026-10-05). Never push straight to `main`: branch → PR → merge.
 
 ## LinkedIn tracking (Google Analytics, UTM tags)
 

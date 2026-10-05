@@ -2,9 +2,9 @@
 
 Tracks every change made while migrating **blogsbykush.com** from Jekyll (Minimal Mistakes) to Hugo (PaperMod).
 
-- **Branch**: `hugo-migration` (Jekyll `main` stays intact until verified & merged)
+- **Branch**: built on `hugo-migration`; live on `main` since 2026-10-04 (`hugo-migration` retired 2026-10-05)
 - **Theme**: PaperMod
-- **Hugo**: Extended v0.140.0
+- **Hugo**: Extended v0.163.3 (started on v0.140.0)
 - **Key decision**: URLs preserved as `/:categories/:title/` (matches Jekyll `_config.yml:174`) to avoid SEO loss.
 
 Format: `HH:MM [Phase N] change — detail`
@@ -240,6 +240,16 @@ Format: `HH:MM [Phase N] change — detail`
 - Handoff docs for new chats: CLAUDE.md gets "Kush's rules" (brand, email, git decisions) and "Resuming in a new
   chat"; PLAN_SITE_REFRESH.md STATUS rewritten for the live site (stale pre-launch table and go-live checklist removed).
 - CLAUDE.md: "LinkedIn tracking" section (UTM tag format, where to read results in GA).
+- Docs tidy (Kush): `docs/tech-digest/publish-to-blog.yml` copy now says `BLOG_BRANCH: main` (matches the live
+  Digital-Dhaba workflow); `docs/NEWSLETTER.md` and `docs/TECH_DIGEST.md` setup steps marked done (only "close
+  Mailchimp" left); stale pre-go-live notes removed from PLAN and this changelog. Checked against the live
+  Digital-Dhaba workflow: it already pushes to `main` (only a comment differed), so publishing/emails are unaffected.
+- Jekyll cleanup (Kush OK'd): removed `_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`,
+  `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`, root `CNAME` and favicons (copies live in
+  `static/`), Jekyll copies in root `assets/` (`images/`, `cv/` (older CV), `js/`, `css/main.scss`, `jsconfig.json`),
+  `MIGRATION_PLAN.md` (in history: `git show 8c40350:MIGRATION_PLAN.md`); Jekyll lines in `.gitignore`; stale
+  `kit_notify_posts.py` comments in `hugo.toml` / `home.postsjson.json`. Production build before/after: identical.
+- Branches: Kush OK'd deleting `hugo-migration` (17 commits behind `main`, nothing unique) and merged `claude/*`.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
@@ -248,9 +258,6 @@ Format: `HH:MM [Phase N] change — detail`
 - **Linux install + Hugo 0.163.3** (plan assumed Windows winget + 0.140.0).
 - Migration script is **Python** (plan used PowerShell — not available on this Linux/WSL host).
 
-## Remaining manual steps (not yet done)
-1. Review the site locally: `~/bin/hugo server` → http://localhost:1313 (dev build excludes GA/AdSense/Disqus).
-2. In GitHub repo **Settings → Pages**, switch source from "Deploy from branch" to **GitHub Actions** (required before merging to `main`).
-3. Merge `hugo-migration` → `main` to trigger the deploy workflow.
-4. Post-merge: remove the now-unused Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`, `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`) and the `_migration/` helper.
-5. Verify Disqus threads still map (identifiers use `RelPermalink`, matching old paths).
+## Go-live steps (all done 2026-10-04)
+Review locally, switch Pages to GitHub Actions, merge into `main`. Jekyll files removed 2026-10-05 (`_migration/`
+kept for audit). Still open: Disqus check on moved posts (`PLAN_SITE_REFRESH.md` → Post-launch checks).
