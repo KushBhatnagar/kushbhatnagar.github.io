@@ -23,8 +23,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 **Open items**
 1. Watch the first automatic runs: Digital Dhaba email Thu 2026-10-08 07:00 IST, Sunday letter Sun 2026-10-11 09:00 IST.
 2. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
-3. Optional: remove the legacy Mailchimp fallback form (`newsletter_form.html`, `hugo.toml` comment; Mailchimp is
-   closed); Kit welcome email/sequence; Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
+3. Optional: Kit welcome email (Kush, in Kit: confirmation email text + "after confirming" redirect, or a 1-email sequence); Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
    `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (AdSense serving, Disqus on moved posts).
 
 ## Brand direction

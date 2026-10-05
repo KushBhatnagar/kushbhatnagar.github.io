@@ -3,26 +3,16 @@
 
        Params (dict): heading, text. Every box posts to the one Kit form in hugo.toml → params.kit.form.
        Kit's confirmation email (double opt-in) is the bot filter: an address only joins after its owner
-       clicks it. While params.kit.form is empty, the legacy Mailchimp form is shown instead. */ -}}
+       clicks it. If params.kit.form is empty, no signup box is shown. */ -}}
 {{- $heading := .heading | default "Be the first to hear about new posts" }}
-{{- $kitID := site.Params.kit.form | default "" }}
+{{- with site.Params.kit.form }}
 <div class="newsletter-signup">
   {{- with $heading }}<h3>{{ . }}</h3>{{ end }}
-  {{- with .text }}<p>{{ . }}</p>{{ end }}
-  {{- if $kitID }}
-  <form action="{{ printf site.Params.kit.formAction $kitID }}" method="post" target="_blank">
+  {{- with $.text }}<p>{{ . }}</p>{{ end }}
+  <form action="{{ printf site.Params.kit.formAction . }}" method="post" target="_blank">
     <input type="email" name="email_address" placeholder="Your email address" aria-label="Email address" required>
     <input type="submit" value="Subscribe">
   </form>
   <p class="newsletter-note">You'll get a confirmation email. Click it, and you're in.</p>
-  {{- else }}
-  <form action="https://blogsbykush.us21.list-manage.com/subscribe/post?u=c937565c206ad87a847339f0f&amp;id=e0273fdf87&amp;f_id=0054aae1f0"
-        method="post" target="_blank" novalidate>
-    <input type="email" name="EMAIL" placeholder="Your email address" aria-label="Email address" required>
-    <input type="submit" value="Subscribe">
-    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-      <input type="text" name="b_c937565c206ad87a847339f0f_e0273fdf87" tabindex="-1" value="">
-    </div>
-  </form>
-  {{- end }}
 </div>
+{{- end }}

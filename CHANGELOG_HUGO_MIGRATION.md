@@ -254,6 +254,8 @@ Format: `HH:MM [Phase N] change — detail`
 - Kush (after PR #14 merged): deleted branches `hugo-migration`, `claude/charming-rubin-bwkpi9`,
   `claude/adoring-thompson-o24o0b`; closed Mailchimp (final export kept locally); Search Console: sitemap submitted
   and indexing requested for all pages. Launch cleanup finished; STATUS/CLAUDE.md/NEWSLETTER.md updated.
+- Legacy Mailchimp fallback form removed from `newsletter_form.html` (empty `params.kit.form` now shows no box
+  instead of a dead Mailchimp form); comments in `hugo.toml` / `custom.css` updated. Production build unchanged.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.

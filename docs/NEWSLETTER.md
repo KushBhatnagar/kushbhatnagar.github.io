@@ -48,8 +48,7 @@ Actions → "Weekly letter (Kit)" → Run workflow.
 - Kush subscribed; audited Mailchimp list uploaded with tag `from-mailchimp`.
 
 ### Still to do
-1. ~~Close Mailchimp~~ done 2026-10-05 (final export kept locally). Optional: remove the legacy Mailchimp fallback form (`newsletter_form.html`, `hugo.toml` comment), which only shows
-   if `params.kit.form` is emptied.
+1. ~~Close Mailchimp~~ done 2026-10-05 (final export kept locally). ~~Remove the legacy Mailchimp fallback form~~ done 2026-10-05.
 
 Optional later: Google Postmaster Tools for blogsbykush.com; a custom email template (`KIT_EMAIL_TEMPLATE_ID`).
 

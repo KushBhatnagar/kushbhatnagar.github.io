@@ -101,7 +101,7 @@ Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TE
 ## Newsletter (Kit) — Phase 4
 
 Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form, ID `10000596` in
-`hugo.toml` → `params.kit.form`; empty → legacy Mailchimp form). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
+`hugo.toml` → `params.kit.form`; empty → no signup box). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
 1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`).
 2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
    every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
@@ -165,7 +165,7 @@ _migration/*.py                   # one-off Jekyll→Hugo converters (kept for a
 - Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
 - Disqus shortname: `blogsbykush`
 - Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
-- Mailchimp (closed 2026-10-05; only the unused fallback form remains in code): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
+- Mailchimp (closed 2026-10-05; fallback form removed from code): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
 ## Publishing a post (Kush's checklist)
 
@@ -174,10 +174,6 @@ In the post's `.md` file, front matter at the top:
 - `date: YYYY-MM-DD` = **the day you publish** (not the day you started). The Sunday letter emails every post dated in
   the last 7 days; an old date means it's never emailed. The writing skills set this; re-set it if a draft waited.
 - Commit on a branch → PR into `main` → merge. Live in ~2 minutes; in the next Sunday letter automatically.
-
-## Cleanup still to do
-
-Optional: remove the legacy Mailchimp fallback form (Mailchimp closed 2026-10-05).
 
 ## Brand
 
