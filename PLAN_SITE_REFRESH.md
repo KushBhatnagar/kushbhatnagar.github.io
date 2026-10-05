@@ -4,55 +4,29 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch and is merged into `hugo-migration` via PR; `hugo-migration`
 goes live when merged into `main`.
 
-## ▶ STATUS — where we left off (updated 2026-10-04)
+## ▶ STATUS — where we left off (updated 2026-10-05)
 
-**🚀 LIVE since 2026-10-04 17:00 UTC.** Both emails work end to end: Digital Dhaba (Thursday 07:00 IST, Digital-Dhaba
-workflow, test send done) and the weekly letter (Sunday 09:00 IST cron on `main`; first one sent manually 2026-10-04 with
-3 posts). Subscribers: Kush + audited keep list imported (tag `from-mailchimp`), "moved" note sent; review list asked to
-re-subscribe from Mailchimp. Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
-Open: Kush → Search Console (sitemap + request indexing); after a stable week delete the Jekyll files and close Mailchimp;
-rewrite PR #2-era docs that still describe `hugo-migration` as staging.
-
-
-**Phases 0–3 are built and merged into `hugo-migration` (PRs #1, #3). Nothing is live yet:**
-`main` / blogsbykush.com is still the old Jekyll site. Go-live = PR #2 (`hugo-migration` → `main`).
-Kush previewed everything locally and wants **a few more changes before go-live** (not yet specified).
+**🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#11 hold the history.
 
 | Area | State |
 |---|---|
-| Phase 0 — migration hygiene | ✅ Done |
-| Phase 1 — structure, homepage, brand | ✅ Done, reviewed by Kush |
-| Phase 2 — Concept Breakdown system | ✅ Done (lean format). Pilot *How LLMs Think* is still `draft: true` |
-| Phase 3 — Tech Digest (Digital Dhaba) | ✅ Done. Auto-publish **verified**: Digital-Dhaba workflow pushed issue 2026-09-30 to `hugo-migration` |
-| Phase 4 — Subscribers / newsletter | 🔨 Code in PR #5. Kit account, domain, form `10000596`, API key done 2026-10-04; **test send pending** |
-| Learning Notes | ✅ Section built 2026-10-03 (PR #5) with one **placeholder** note that Kush must rewrite/verify before go-live |
-| Writing skills | ✅ `/learning-note`, `/build-log-entry`, `/breakdown-post` (2026-10-03, PR #5); no LinkedIn copy (Sahayak) |
-| Homepage + About + photo + CV | ✅ Brand review done 2026-10-03 (PR #5): real photo, new About page, current CV without phone |
-| Go-live | ⏳ Waiting on Kush's extra changes, then the go-live checklist below |
+| Site (Hugo + PaperMod) | ✅ Live, all pages checked by Kush |
+| Digital Dhaba email (Thu 07:00 IST) | ✅ Works; test send done 2026-10-04; first scheduled run Thu 2026-10-08 |
+| Sunday letter (Sun 09:00 IST) | ✅ Works; first one sent manually 2026-10-04 (3 posts); cron runs on its own from now |
+| Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); review list asked to re-subscribe |
+| Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
+| Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards` in `hugo.toml`, PR #11, 2026-10-05) |
 
-**Open items for the next session**
-1. Ask Kush for the "few more changes" he wants before go-live; do them on a branch → PR into `hugo-migration`.
-2. *How LLMs Think*: Kush to verify transcript wording, then set `draft: false` (decide if it ships at launch).
-3. PR #2's description is outdated (mentions "ML Made Easy", wrongly says images moved to `/images/`) —
-   rewrite it if Kush agrees (it's his PR).
-4. Phase 4 + Learning Notes: code is in PR #5 into `hugo-migration` (review + merge). Kush does 4c (Kit account, DNS,
-   template, forms → IDs into `hugo.toml`, secrets/variables, test sends) following `docs/NEWSLETTER.md`;
-   the first test send verifies the Kit API assumptions listed in Phase 4.
-
-## Go-live checklist (in this order)
-1. [ ] Kush's pre-launch changes merged into `hugo-migration`; local preview OK (`hugo server -D`)
-   - [x] Placeholder Learning Note set to `draft: true` for go-live (rewrite later, then `draft: false`)
-   - [ ] (later) Placeholder Learning Note (`content/posts/training-an-ai-for-one-skill-changes-its-other-answers.md`)
-         rewritten in Kush's words and checked (claims vs the paper, every link opened); remove its PLACEHOLDER comment
-   - [x] Digital-Dhaba: signoff now "Chai's on us next week." (seen 2026-10-03)
-   - [ ] Sahayak docs: `LEARNING-NOTES-PLAN.md` says "Monday issue" → Thursday; `BUILD-IN-PUBLIC-PLAN.md`
-         says both forms feed Mailchimp → Kit
-2. [ ] Blog repo **Settings → Pages → Source → GitHub Actions** (must be BEFORE step 3)
-3. [ ] Merge PR #2 (`hugo-migration` → `main`); watch Actions → "Deploy Hugo site to Pages" goes green
-4. [ ] In Digital-Dhaba `.github/workflows/publish-to-blog.yml`: `BLOG_BRANCH: hugo-migration` → `main`
-5. [ ] Post-launch checks (bottom of this file)
-6. [ ] Delete old Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`,
-       `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`) in a follow-up PR
+**Open items**
+1. Kush: Google Search Console → submit `https://blogsbykush.com/sitemap.xml`, request indexing for `/`, `/about/`,
+   section pages (Google still shows old titles). Don't use Removals.
+2. Cleanup PR (week of 2026-10-12): delete Jekyll files (`_config.yml`, `_posts/`, `_pages/`, `_layouts/`,
+   `_includes/`, `_sass/`, `_data/`, `Gemfile*`, `index.md`, `feed.xml`, `archive.html`); first check nothing in
+   `content/` or `static/` references them. Then delete branches `hugo-migration` (and old `claude/*`) — **ask Kush first**.
+3. Kush: close Mailchimp (keep a final export on his machine).
+4. Optional: Kit welcome email/sequence; tidy docs that still call `hugo-migration` "staging";
+   Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday, `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit).
 
 ## Brand direction
 
