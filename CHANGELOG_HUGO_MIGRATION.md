@@ -239,6 +239,7 @@ Format: `HH:MM [Phase N] change — detail`
   "Recent posts"). Count is `homeInfoParams.breakdownCards` in `hugo.toml`, shared with the Recent-posts filter.
 - Handoff docs for new chats: CLAUDE.md gets "Kush's rules" (brand, email, git decisions) and "Resuming in a new
   chat"; PLAN_SITE_REFRESH.md STATUS rewritten for the live site (stale pre-launch table and go-live checklist removed).
+- CLAUDE.md: "LinkedIn tracking" section (UTM tag format, where to read results in GA).
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.

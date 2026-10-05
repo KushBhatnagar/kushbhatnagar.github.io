@@ -208,6 +208,23 @@ Email (Kit):
 Git:
 - Ask Kush before deleting any branch. Never push straight to `main`: branch → PR → merge.
 
+## LinkedIn tracking (Google Analytics, UTM tags)
+
+Nothing to set up in GA or on the site: GA reads the tags from the link automatically.
+Share links on LinkedIn with tags added:
+
+    https://blogsbykush.com/<page>/?utm_source=linkedin&utm_medium=social&utm_campaign=<post-name>
+
+- `utm_source=linkedin`, `utm_medium=social`: always the same, lowercase.
+- `utm_campaign`: one name per LinkedIn post, lowercase with hyphens (e.g. `site-launch`, `how-llms-think`).
+- Optional `utm_content=post` or `utm_content=comment` to compare link placement.
+- Before posting: run the tagged link through linkedin.com/post-inspector (refreshes the preview), and
+  check GA → Reports → Realtime shows `linkedin / social` (open the link with no ad blocker).
+- Results (after 24–48 h): GA → Reports → Acquisition → Traffic acquisition → switch the first column to
+  "Session source / medium" (LinkedIn traffic) or "Session campaign" (per post). Pages read:
+  Engagement → Pages and screens, filter Session source = linkedin.
+- Signups aren't in GA (the form posts to Kit): compare Kit → Subscribers with GA visits for the same day.
+
 ## Resuming in a new chat
 
 New sessions load this file automatically. Start with: *"Read CLAUDE.md and the STATUS in PLAN_SITE_REFRESH.md,
