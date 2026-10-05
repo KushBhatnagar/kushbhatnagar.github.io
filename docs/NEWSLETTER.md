@@ -61,7 +61,8 @@ re-permission email. The list is small (about 15 real people out of 267; the res
 people did sign up for this newsletter.
 
 1. **Audit** (on your machine; the CSVs never go into git):
-   `python3 scripts/audit_subscribers.py <mailchimp-export>.csv` → `keep.csv`, `review.csv`, `junk.csv`.
+   `python3 scripts/audit_subscribers.py <mailchimp-export>.csv` → `keep.csv`, `review.csv`, `junk.csv`
+   (script removed 2026-10-05: `git show 111f665:scripts/audit_subscribers.py`).
    - From `keep.csv`, remove your own and test addresses.
    - From `review.csv`, add only people you recognise. When in doubt, leave them out: Kit treats imported
      subscribers as confirmed, so a wrong address can't be filtered later.

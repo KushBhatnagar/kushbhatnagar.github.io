@@ -107,7 +107,7 @@ Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_fo
    every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
 No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
 `KIT_TEST_TAG_ID` = test mode). Setup: `docs/NEWSLETTER.md`. Mailchimp list: audited with
-`scripts/audit_subscribers.py` (subscriber data never in git), the real ~15 uploaded to Kit by Kush; Mailchimp closed 2026-10-05.
+a one-off script (removed 2026-10-05; in git history), the real ~15 uploaded to Kit by Kush; Mailchimp closed 2026-10-05.
 
 ## Layout of the Hugo site
 
@@ -148,6 +148,7 @@ layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest), re
 archetypes/learning-note.md build-log.md  # `hugo new --kind learning-note content/posts/<slug>.md`
 docs/NEWSLETTER.md                # Kit setup, switches, moving the audited Mailchimp list
 docs/kit/email-template.html      # minimal Kit email template
+docs/kit/welcome-email.md         # draft confirmation/welcome text, pasted into Kit by hand
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
 docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
 .claude/BLOG_WRITING_RULES.md      # shared rules for the three writing skills
