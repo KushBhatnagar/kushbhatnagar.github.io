@@ -17,10 +17,11 @@ Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: current state and open items.
 Update that STATUS section (and the changelog) at the end of every session.
-Snapshot (2026-10-04): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
+Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
-Open: Kush → Google Search Console (sitemap + request indexing); after ~1 stable week: delete Jekyll files,
-delete branch `hugo-migration`, Kush closes Mailchimp.
+Homepage shows 2 breakdown cards (PR #11). Open: Kush → Google Search Console (sitemap + request indexing);
+week of 2026-10-12: cleanup PR (Jekyll files), delete branch `hugo-migration` (ask first), Kush closes Mailchimp.
+Also read **"Kush's rules"** below before writing anything for the site.
 
 ## Current state: live on Hugo (since 2026-10-04)
 
@@ -38,8 +39,9 @@ delete branch `hugo-migration`, Kush closes Mailchimp.
 
 - **Theme:** PaperMod (git submodule at `themes/PaperMod`). It uses Hugo's new template system
   (`layouts/_partials/`, flat `layouts/`), which requires **Hugo Extended ≥ 0.146**.
-- **Hugo binary:** installed at `~/bin/hugo` (Extended **0.163.3**). Not on the default PATH —
-  run with `export PATH="$HOME/bin:$PATH"` or call `~/bin/hugo` directly. CI pins the same version.
+- **Hugo binary:** Extended **0.163.3** (CI pins the same version). Cloud sessions start without it: download
+  `hugo_extended_0.163.3_linux-amd64.tar.gz` from the gohugoio/hugo GitHub release into `~/bin` (or the scratchpad)
+  and run with `export PATH="$HOME/bin:$PATH"`.
 - **Config:** `hugo.toml`.
 
 ### Build & preview
@@ -182,6 +184,35 @@ export locally). Optional later: update the stale `Gemfile`/Jekyll mentions in d
 
 Palette from the comics: blue `#11a8cc` (links use darker `#0a7a96`), orange `#f4a33a`, cream `#fff6d1`,
 ink `#131313`. Headings/logo in **Fredoka**. Default social preview: `static/assets/images/og-default.png`.
+
+## Kush's rules (decided, don't re-ask)
+
+Content and brand:
+- Don't name his employer (HP) anywhere on the site. Say "an enterprise AI platform".
+- Don't mention consulting or "open to roles". Don't reveal Sahayak or other unreleased projects: keep projects
+  generic ("building AI products"). MLOps/AWS are past skills; the focus is AI + product management.
+- Old career: "software engineer", never "software tester"; keep it subtle, focus on product.
+- Socials shown: X (icon only), GitHub, LinkedIn, Medium, email, RSS. No Facebook/Reddit/Telegram/WhatsApp. No CV link.
+- About page: no repeated intro line under the heading (`hideDescription`), no share bar.
+- Concept Breakdown pages stay lean (comic + plain words only).
+
+Email (Kit):
+- Subjects plain, no prefixes: Digital Dhaba subject = issue title, preview = issue dek.
+  Sunday letter subject = "Blogs by Kush — week of <d Mon yyyy>".
+- Signups: every site signup box POSTs straight to Kit form `10000596` (Kush's inline form; its settings such as
+  double opt-in and confirmation email apply). Kit's JS embed (`cfe26ba09f`) is **not** used.
+  The Kit **API v4** key is used only by GitHub Actions to create/send the two broadcasts.
+- Link to share on LinkedIn: `https://blogsbykush.com/subscribe/`; for Digital Dhaba posts, the latest issue page.
+- Secrets: API keys only as repo secrets, never in chat or git. Subscriber data never in git (run audits locally).
+
+Git:
+- Ask Kush before deleting any branch. Never push straight to `main`: branch → PR → merge.
+
+## Resuming in a new chat
+
+New sessions load this file automatically. Start with: *"Read CLAUDE.md and the STATUS in PLAN_SITE_REFRESH.md,
+then <task>."* Full history of what changed and why: `CHANGELOG_HUGO_MIGRATION.md`. Older chat transcripts are not
+needed; if something isn't in these three files, it wasn't decided.
 
 ## Preferences observed
 
