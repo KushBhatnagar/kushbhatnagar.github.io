@@ -251,6 +251,14 @@ Format: `HH:MM [Phase N] change — detail`
   `kit_notify_posts.py` comments in `hugo.toml` / `home.postsjson.json`. Production build before/after: identical.
 - Branches: Kush OK'd deleting `hugo-migration` (17 commits behind `main`, nothing unique) and merged `claude/*`.
 
+- Kush (after PR #14 merged): deleted branches `hugo-migration`, `claude/charming-rubin-bwkpi9`,
+  `claude/adoring-thompson-o24o0b`; closed Mailchimp (final export kept locally); Search Console: sitemap submitted
+  and indexing requested for all pages. Launch cleanup finished; STATUS/CLAUDE.md/NEWSLETTER.md updated.
+- Legacy Mailchimp fallback form removed from `newsletter_form.html` (empty `params.kit.form` now shows no box
+  instead of a dead Mailchimp form); comments in `hugo.toml` / `custom.css` updated. Production build unchanged.
+- `scripts/audit_subscribers.py` removed (Mailchimp closed; in history at `111f665`). `.gitignore` rules for subscriber
+  CSVs kept. Draft Kit welcome/confirmation text: `docs/kit/welcome-email.md` (Kush pastes into Kit).
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

@@ -13,7 +13,7 @@ hugo_stats.json
 # Python
 __pycache__/
 
-# Subscriber data never goes into git (scripts/audit_subscribers.py output)
+# Subscriber data never goes into git (Mailchimp exports, audit output)
 *audience_export*.csv
 *_audit/
 keep.csv

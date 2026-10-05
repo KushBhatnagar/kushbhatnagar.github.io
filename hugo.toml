@@ -56,7 +56,7 @@ ignoreFiles = ["transcript\\.txt$"]
   images = ["/assets/images/og-default.png"]   # default social-preview image
 
   # Newsletter (Kit). One form for every signup box: its ID is the number in the form editor's URL
-  # (app.kit.com/forms/designers/<ID>/edit). If emptied, the boxes fall back to the legacy Mailchimp form.
+  # (app.kit.com/forms/designers/<ID>/edit). If emptied, no signup box is shown.
   [params.kit]
     formAction = "https://app.kit.com/forms/%s/subscriptions"
     form = "10000596"

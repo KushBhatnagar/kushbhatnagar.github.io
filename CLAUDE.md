@@ -19,8 +19,9 @@ Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: curren
 Update that STATUS section (and the changelog) at the end of every session.
 Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
-Homepage shows 2 breakdown cards (PR #11). Open: Kush → Google Search Console (sitemap + request indexing);
-Kush closes Mailchimp. Jekyll files removed and branch `hugo-migration` retired (2026-10-05).
+Homepage shows 2 breakdown cards (PR #11). Launch cleanup finished 2026-10-05: Jekyll files removed (PR #14),
+old branches deleted, Mailchimp closed, Search Console sitemap + indexing requested. Open: watch the first automatic
+emails (Thu 2026-10-08, Sun 2026-10-11).
 Also read **"Kush's rules"** below before writing anything for the site.
 
 ## Current state: live on Hugo (since 2026-10-04)
@@ -100,13 +101,13 @@ Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TE
 ## Newsletter (Kit) — Phase 4
 
 Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form, ID `10000596` in
-`hugo.toml` → `params.kit.form`; empty → legacy Mailchimp form). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
+`hugo.toml` → `params.kit.form`; empty → no signup box). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
 1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`).
 2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
    every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
 No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
 `KIT_TEST_TAG_ID` = test mode). Setup: `docs/NEWSLETTER.md`. Mailchimp list: audited with
-`scripts/audit_subscribers.py` (subscriber data never in git), the real ~15 uploaded to Kit by Kush, then Mailchimp closed.
+a one-off script (removed 2026-10-05; in git history), the real ~15 uploaded to Kit by Kush; Mailchimp closed 2026-10-05.
 
 ## Layout of the Hugo site
 
@@ -147,6 +148,7 @@ layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest), re
 archetypes/learning-note.md build-log.md  # `hugo new --kind learning-note content/posts/<slug>.md`
 docs/NEWSLETTER.md                # Kit setup, switches, moving the audited Mailchimp list
 docs/kit/email-template.html      # minimal Kit email template
+docs/kit/welcome-email.md         # draft confirmation/welcome text, pasted into Kit by hand
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
 docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
 .claude/BLOG_WRITING_RULES.md      # shared rules for the three writing skills
@@ -164,7 +166,7 @@ _migration/*.py                   # one-off Jekyll→Hugo converters (kept for a
 - Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
 - Disqus shortname: `blogsbykush`
 - Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
-- Mailchimp (legacy, being retired): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
+- Mailchimp (closed 2026-10-05; fallback form removed from code): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
 ## Publishing a post (Kush's checklist)
 
@@ -173,10 +175,6 @@ In the post's `.md` file, front matter at the top:
 - `date: YYYY-MM-DD` = **the day you publish** (not the day you started). The Sunday letter emails every post dated in
   the last 7 days; an old date means it's never emailed. The writing skills set this; re-set it if a draft waited.
 - Commit on a branch → PR into `main` → merge. Live in ~2 minutes; in the next Sunday letter automatically.
-
-## Cleanup still to do
-
-Kush closes Mailchimp (keep a final export locally); then optionally remove the legacy Mailchimp fallback form.
 
 ## Brand
 

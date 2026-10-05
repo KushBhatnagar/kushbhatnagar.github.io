@@ -4,10 +4,10 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-05, docs tidy + Jekyll cleanup)
+## ▶ STATUS — where we left off (updated 2026-10-05, launch cleanup finished)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#11 hold the history.
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#14 hold the history. Only branch: `main` (+ the current session branch).
 
 | Area | State |
 |---|---|
@@ -17,15 +17,15 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); review list asked to re-subscribe |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards` in `hugo.toml`, PR #11, 2026-10-05) |
+| Cleanup | ✅ Jekyll files removed (PR #14), old branches deleted, Mailchimp closed (2026-10-05) |
+| Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
-1. Kush: Google Search Console → submit `https://blogsbykush.com/sitemap.xml`, request indexing for `/`, `/about/`,
-   section pages (Google still shows old titles). Don't use Removals.
-2. Kush: delete branches `hugo-migration`, `claude/charming-rubin-bwkpi9` and (after its PR merges)
-   `claude/adoring-thompson-o24o0b` on GitHub → Branches (the Claude session can't delete other branches).
-   Jekyll files cleanup ✅ done 2026-10-05 (production build identical before/after).
-3. Kush: close Mailchimp (keep a final export on his machine).
-4. Optional: Kit welcome email/sequence; Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday, `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit).
+1. Watch the first automatic runs: Digital Dhaba email Thu 2026-10-08 07:00 IST, Sunday letter Sun 2026-10-11 09:00 IST.
+2. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
+3. Optional: Kit welcome email: draft in `docs/kit/welcome-email.md`; Kush edits and pastes into Kit (confirmation
+   email + "after confirming" redirect, or a 1-email sequence); Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
+   `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (AdSense serving, Disqus on moved posts).
 
 ## Brand direction
 
@@ -167,7 +167,7 @@ Decisions (2026-09-30):
 - [x] PR #5 merged into `hugo-migration`; Kit email step pushed to Digital-Dhaba `publish-to-blog.yml` (2026-10-04, off until `KIT_DIGEST_ENABLED`)
 - [x] Kush subscribed in Kit; `KIT_DIGEST_ENABLED` + `KIT_SEND` = `true` in Digital-Dhaba, test send done (2026-10-04)
 - [x] Weekly letter switches on, first letter sent (2026-10-04); audited list uploaded (tag `from-mailchimp`)
-- [ ] Close Mailchimp (final export kept locally)
+- [x] Mailchimp closed, final export kept locally (2026-10-05)
 - Skipped as optional: custom email template, test tag (test while Kush is the only subscriber), Postmaster Tools
 
 ### To verify against Kit during Kush's first test (docs sites were blocked from the Claude cloud session)
@@ -199,4 +199,4 @@ Assumptions in the code, each easy to adjust if Kit says otherwise:
 ## Post-launch checks
 - [ ] AdSense serving (site approved? `ads.txt` present? auto-ads enabled in AdSense console?)
 - [ ] Disqus threads resolve on moved Concept Breakdown posts
-- [ ] Search Console: submit new sitemap, watch redirected URLs get re-indexed
+- [x] Search Console: sitemap submitted, indexing requested (2026-10-05); [ ] watch redirected URLs get re-indexed
