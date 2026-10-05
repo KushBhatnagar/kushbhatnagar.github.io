@@ -62,7 +62,7 @@
         <a href="{{ "concept-breakdown/" | relURL }}">All breakdowns →</a>
     </div>
     <div class="card-grid card-grid--home">
-        {{- range first 4 .ByDate.Reverse }}
+        {{- range first (site.Params.homeInfoParams.breakdownCards | default 2) .ByDate.Reverse }}
         {{- partial "post_card.html" . }}
         {{- end }}
     </div>

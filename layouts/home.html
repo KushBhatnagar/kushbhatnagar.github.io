@@ -44,10 +44,10 @@
 {{- if .IsHome }}
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
-{{- /* blogsbykush: home_info.html already shows the 4 latest Concept Breakdowns as cards;
+{{- /* blogsbykush: home_info.html already shows the latest Concept Breakdowns as cards (homeInfoParams.breakdownCards);
        leave them out of "Recent posts" so the homepage doesn't list them twice. */}}
 {{- $breakdowns := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice "concept-breakdown") }}
-{{- $pages = $pages | complement (first 4 $breakdowns.ByDate.Reverse) }}
+{{- $pages = $pages | complement (first (site.Params.homeInfoParams.breakdownCards | default 2) $breakdowns.ByDate.Reverse) }}
 {{- end }}
 
 {{- $paginator := .Paginate $pages }}
