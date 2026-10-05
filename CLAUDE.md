@@ -19,8 +19,9 @@ Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: curren
 Update that STATUS section (and the changelog) at the end of every session.
 Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
-Homepage shows 2 breakdown cards (PR #11). Open: Kush → Google Search Console (sitemap + request indexing);
-Kush closes Mailchimp. Jekyll files removed and branch `hugo-migration` retired (2026-10-05).
+Homepage shows 2 breakdown cards (PR #11). Launch cleanup finished 2026-10-05: Jekyll files removed (PR #14),
+old branches deleted, Mailchimp closed, Search Console sitemap + indexing requested. Open: watch the first automatic
+emails (Thu 2026-10-08, Sun 2026-10-11).
 Also read **"Kush's rules"** below before writing anything for the site.
 
 ## Current state: live on Hugo (since 2026-10-04)
@@ -106,7 +107,7 @@ Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_fo
    every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
 No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
 `KIT_TEST_TAG_ID` = test mode). Setup: `docs/NEWSLETTER.md`. Mailchimp list: audited with
-`scripts/audit_subscribers.py` (subscriber data never in git), the real ~15 uploaded to Kit by Kush, then Mailchimp closed.
+`scripts/audit_subscribers.py` (subscriber data never in git), the real ~15 uploaded to Kit by Kush; Mailchimp closed 2026-10-05.
 
 ## Layout of the Hugo site
 
@@ -164,7 +165,7 @@ _migration/*.py                   # one-off Jekyll→Hugo converters (kept for a
 - Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
 - Disqus shortname: `blogsbykush`
 - Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
-- Mailchimp (legacy, being retired): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
+- Mailchimp (closed 2026-10-05; only the unused fallback form remains in code): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
 
 ## Publishing a post (Kush's checklist)
 
@@ -176,7 +177,7 @@ In the post's `.md` file, front matter at the top:
 
 ## Cleanup still to do
 
-Kush closes Mailchimp (keep a final export locally); then optionally remove the legacy Mailchimp fallback form.
+Optional: remove the legacy Mailchimp fallback form (Mailchimp closed 2026-10-05).
 
 ## Brand
 
