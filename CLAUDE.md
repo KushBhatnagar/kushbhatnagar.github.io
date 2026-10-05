@@ -148,7 +148,6 @@ layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest), re
 archetypes/learning-note.md build-log.md  # `hugo new --kind learning-note content/posts/<slug>.md`
 docs/NEWSLETTER.md                # Kit setup, switches, moving the audited Mailchimp list
 docs/kit/email-template.html      # minimal Kit email template
-docs/kit/welcome-email.md         # draft confirmation/welcome text, pasted into Kit by hand
 docs/TECH_DIGEST.md               # Tech Digest pipeline + one-time setup
 docs/tech-digest/publish-to-blog.yml  # workflow to copy into Digital-Dhaba
 .claude/BLOG_WRITING_RULES.md      # shared rules for the three writing skills
@@ -196,7 +195,8 @@ Email (Kit):
 - Subjects plain, no prefixes: Digital Dhaba subject = issue title, preview = issue dek.
   Sunday letter subject = "Blogs by Kush — week of <d Mon yyyy>".
 - Signups: every site signup box POSTs straight to Kit form `10000596` (Kush's inline form; its settings such as
-  double opt-in and confirmation email apply). Kit's JS embed (`cfe26ba09f`) is **not** used.
+  double opt-in and confirmation email apply). **No welcome email or sequence** (Kush, 2026-10-05: keep it light);
+  the confirmation email (edited by Kush in Kit) does the welcoming. Kit's JS embed (`cfe26ba09f`) is **not** used.
   The Kit **API v4** key is used only by GitHub Actions to create/send the two broadcasts.
 - Link to share on LinkedIn: `https://blogsbykush.com/subscribe/`; for Digital Dhaba posts, the latest issue page.
 - Secrets: API keys only as repo secrets, never in chat or git. Subscriber data never in git (run audits locally).

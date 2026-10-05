@@ -258,6 +258,8 @@ Format: `HH:MM [Phase N] change — detail`
   instead of a dead Mailchimp form); comments in `hugo.toml` / `custom.css` updated. Production build unchanged.
 - `scripts/audit_subscribers.py` removed (Mailchimp closed; in history at `111f665`). `.gitignore` rules for subscriber
   CSVs kept. Draft Kit welcome/confirmation text: `docs/kit/welcome-email.md` (Kush pastes into Kit).
+- Welcome email dropped (Kush): he edited Kit's confirmation email instead; no welcome email/sequence, to keep email
+  light right after signup. Draft `docs/kit/welcome-email.md` removed.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
