@@ -50,7 +50,10 @@
 {{- $pages = $pages | complement (first (site.Params.homeInfoParams.breakdownCards | default 2) $breakdowns.ByDate.Reverse) }}
 {{- end }}
 
-{{- $paginator := .Paginate $pages }}
+{{- /* blogsbykush: homepage "Recent posts" page size = homeInfoParams.recentPosts; other lists use pagerSize. */}}
+{{- $paginator := "" }}
+{{- with and .IsHome site.Params.homeInfoParams.recentPosts }}{{ $paginator = $.Paginate $pages . }}
+{{- else }}{{ $paginator = .Paginate $pages }}{{ end }}
 
 {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{- partial "home_info.html" . }}
