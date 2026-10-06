@@ -269,6 +269,12 @@ Format: `HH:MM [Phase N] change — detail`
   link to `/year-archive/` in the heading (same style as "All breakdowns →"). `/page/N/` homepage pages no longer
   exist (only since go-live, not in the sitemap). Other pages unchanged apart from the stylesheet hash.
 
+- `/tech-digest/` intro: added "Why Digital Dhaba?" (the roadside-dhaba story, from the Digital-Dhaba README) (Kush).
+- Session wrap (2026-10-05/06, branch `claude/adoring-thompson-o24o0b`): PRs #14 (docs tidy + Jekyll cleanup),
+  #15 (STATUS, Mailchimp form, audit script), #16 (welcome email dropped), #17 (2 recent posts), #18 ("All posts →")
+  all merged and deployed. STATUS in `PLAN_SITE_REFRESH.md` is current; next: watch the Thu 2026-10-08 and
+  Sun 2026-10-11 emails.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

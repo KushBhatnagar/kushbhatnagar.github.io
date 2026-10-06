@@ -9,3 +9,5 @@ ShowToc: false
 ---
 
 Every Thursday, Claude reads Hacker News, trending research papers, news sites and 20+ newsletters, ranks the stories by how much attention they got, and writes a short note on why each one matters. I built the pipeline; every story links to the original, so you can always check the source. It ends with **Worth Your Weekend**: a few essays, talks and papers worth slowing down for.
+
+**Why "Digital Dhaba"?** A dhaba is the roadside eatery on Indian highways where travellers pull over for a quick, simple meal and a cup of chai, and catch up on the news before getting back on the road. This is the digital version of that stop: the tech news highway never ends, so once a week you pull over here for one plain-language page on what happened.
