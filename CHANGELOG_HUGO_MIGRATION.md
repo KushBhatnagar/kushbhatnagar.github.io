@@ -261,6 +261,11 @@ Format: `HH:MM [Phase N] change — detail`
 - Welcome email dropped (Kush): he edited Kit's confirmation email instead; no welcome email/sequence, to keep email
   light right after signup. Draft `docs/kit/welcome-email.md` removed.
 
+## 2026-10-06
+- Homepage "Recent posts": 2 per page instead of 5 (Kush). New `homeInfoParams.recentPosts = 2` in `hugo.toml`, used
+  only by `layouts/home.html`; every other list (sections, tags, categories) keeps `pagerSize = 5`. Older posts stay
+  reachable via "Next »" (`/page/2/` …) and the Archive.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
