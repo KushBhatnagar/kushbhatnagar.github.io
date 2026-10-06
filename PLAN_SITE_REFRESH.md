@@ -7,17 +7,17 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-06)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#14 hold the history. Only branch: `main` (+ the current session branch).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#18 hold the history. Only branch: `main` (+ the current session branch, deleted after its last merge).
 
 | Area | State |
 |---|---|
 | Site (Hugo + PaperMod) | ✅ Live, all pages checked by Kush |
 | Digital Dhaba email (Thu 07:00 IST) | ✅ Works; test send done 2026-10-04; first scheduled run Thu 2026-10-08 |
 | Sunday letter (Sun 09:00 IST) | ✅ Works; first one sent manually 2026-10-04 (3 posts); cron runs on its own from now |
-| Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); review list asked to re-subscribe |
+| Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
-| Cleanup | ✅ Jekyll files removed (PR #14), old branches deleted, Mailchimp closed (2026-10-05) |
+| Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
