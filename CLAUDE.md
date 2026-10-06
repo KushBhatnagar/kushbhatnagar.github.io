@@ -19,7 +19,7 @@ Read **`PLAN_SITE_REFRESH.md` → "STATUS — where we left off"** first: curren
 Update that STATUS section (and the changelog) at the end of every session.
 Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails work (first Digital Dhaba test and
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
-Homepage shows 2 breakdown cards (PR #11) and 2 recent posts (`recentPosts`, 2026-10-06). Launch cleanup finished 2026-10-05: Jekyll files removed (PR #14),
+Homepage shows 2 breakdown cards (PR #11) and 2 recent posts + "All posts →" link (`recentPosts`, 2026-10-06). Launch cleanup finished 2026-10-05: Jekyll files removed (PR #14),
 old branches deleted, Mailchimp closed, Search Console sitemap + indexing requested. Open: watch the first automatic
 emails (Thu 2026-10-08, Sun 2026-10-11).
 Also read **"Kush's rules"** below before writing anything for the site.

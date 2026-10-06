@@ -137,6 +137,7 @@
 .home-section-head h2, .home-recent { font-size: 1.35rem; margin: 0; }
 .home-section-head a { color: var(--brand-link); font-size: 0.9rem; white-space: nowrap; }
 .home-recent { margin: 0 0 0.75rem; }
+.home-section-head .home-recent { margin: 0; }
 
 /* ---- Thumbnail cards (Concept Breakdown grid, homepage) ---- */
 .card-grid {
