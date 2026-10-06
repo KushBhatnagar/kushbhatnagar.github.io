@@ -50,22 +50,25 @@
 {{- $pages = $pages | complement (first (site.Params.homeInfoParams.breakdownCards | default 2) $breakdowns.ByDate.Reverse) }}
 {{- end }}
 
-{{- /* blogsbykush: homepage "Recent posts" page size = homeInfoParams.recentPosts; other lists use pagerSize. */}}
-{{- $paginator := "" }}
-{{- with and .IsHome site.Params.homeInfoParams.recentPosts }}{{ $paginator = $.Paginate $pages . }}
-{{- else }}{{ $paginator = .Paginate $pages }}{{ end }}
+{{- /* blogsbykush: the homepage shows only the latest homeInfoParams.recentPosts posts, no pagination
+       ("All posts →" in home_info.html links to the archive). Other lists keep pagerSize pagination. */}}
+{{- $paginator := false }}
+{{- $list := slice }}
+{{- with and .IsHome site.Params.homeInfoParams.recentPosts }}{{ $list = first . $pages }}
+{{- else }}{{ $paginator = $.Paginate $pages }}{{ $list = $paginator.Pages }}{{ end }}
+{{- $firstPage := or (not $paginator) (eq $paginator.PageNumber 1) }}
 
-{{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
+{{- if and .IsHome site.Params.homeInfoParams $firstPage }}
 {{- partial "home_info.html" . }}
 {{- end }}
 
 {{- $term := .Data.Term }}
-{{- range $index, $page := $paginator.Pages }}
+{{- range $index, $page := $list }}
 
 {{- $class := "post-entry" }}
 
 {{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
+{{- if (and $.IsHome $firstPage (eq $index 0) (not $user_preferred)) }}
 {{- $class = "first-entry" }}
 {{- else if $term }}
 {{- $class = "post-entry tag-entry" }}
@@ -101,7 +104,7 @@
 </article>
 {{- end }}
 
-{{- if gt $paginator.TotalPages 1 }}
+{{- if and $paginator (gt $paginator.TotalPages 1) }}
 <footer class="page-footer">
   <nav class="pagination">
     {{- if $paginator.HasPrev }}

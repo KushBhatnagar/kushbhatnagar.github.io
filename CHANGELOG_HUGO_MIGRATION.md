@@ -265,6 +265,9 @@ Format: `HH:MM [Phase N] change — detail`
 - Homepage "Recent posts": 2 per page instead of 5 (Kush). New `homeInfoParams.recentPosts = 2` in `hugo.toml`, used
   only by `layouts/home.html`; every other list (sections, tags, categories) keeps `pagerSize = 5`. Older posts stay
   reachable via "Next »" (`/page/2/` …) and the Archive.
+- Then (Kush): homepage pagination removed. "Recent posts" shows the latest `recentPosts` posts with an "All posts →"
+  link to `/year-archive/` in the heading (same style as "All breakdowns →"). `/page/N/` homepage pages no longer
+  exist (only since go-live, not in the sitemap). Other pages unchanged apart from the stylesheet hash.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
