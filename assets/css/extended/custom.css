@@ -386,3 +386,9 @@
 }
 .about-social .social-icons { padding: 0.25rem 0 0.5rem; }
 .about-social .social-icons a { box-shadow: none; }
+
+/* ---- AdSense unit after posts (extend_post_content.html) ---- */
+/* Breathing room around the ad; Google marks slots it can't fill with data-ad-status="unfilled".
+   Hide those, otherwise an empty (white in dark mode) box sits between the post and the signup form. */
+ins.adsbygoogle { margin: var(--gap) 0; }
+ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
