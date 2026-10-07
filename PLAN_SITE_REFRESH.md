@@ -7,7 +7,7 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-07)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#19 hold the history. Only branch: `main` (+ the current session branch, deleted after its last merge).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#21 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
 
 | Area | State |
 |---|---|
@@ -19,14 +19,16 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
 | Tech Digest page | `/tech-digest/` intro explains the name ("Why Digital Dhaba?", roadside dhaba story; PR #19, 2026-10-06) |
+| Ads after posts | Empty AdSense slot hidden when unfilled (PR #21, 2026-10-07); Kush checking AdSense site status |
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
 1. Watch the first automatic runs: Digital Dhaba email Thu 2026-10-08 07:00 IST, Sunday letter Sun 2026-10-11 09:00 IST.
 2. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
 3. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
-   `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (AdSense serving: the post ad slot was empty on 2026-10-07, now hidden when unfilled;
-   check AdSense → Sites shows blogsbykush.com "Ready"; Disqus on moved posts).
+   `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (Disqus on moved posts).
+4. Kush: AdSense → Sites status for blogsbykush.com ("Ready"?); the post ad slot was empty on 2026-10-07 (now hidden
+   when unfilled, PR #21). Waiting on Kush's update.
 
 ## Brand direction
 
