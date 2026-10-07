@@ -279,7 +279,8 @@ Format: `HH:MM [Phase N] change — detail`
 ## 2026-10-07
 - Empty white box after posts (dark mode, Kush's screenshot) = the AdSense unit with no ad. `custom.css`: hide
   `ins.adsbygoogle[data-ad-status="unfilled"]` (Google's documented way) and give the unit vertical margin.
-  Filled ads still show. Branch `claude/adoring-thompson-o24o0b` reused (session can't delete branches).
+  Filled ads still show. Merged as PR #21. Branch `claude/adoring-thompson-o24o0b` kept for more patch work (Kush).
+  Next: Kush checks AdSense → Sites status.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
