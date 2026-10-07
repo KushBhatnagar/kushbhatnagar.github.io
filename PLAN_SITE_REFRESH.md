@@ -4,7 +4,7 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-06)
+## ▶ STATUS — where we left off (updated 2026-10-07)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#19 hold the history. Only branch: `main` (+ the current session branch, deleted after its last merge).
@@ -25,7 +25,8 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 1. Watch the first automatic runs: Digital Dhaba email Thu 2026-10-08 07:00 IST, Sunday letter Sun 2026-10-11 09:00 IST.
 2. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
 3. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
-   `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (AdSense serving, Disqus on moved posts).
+   `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (AdSense serving: the post ad slot was empty on 2026-10-07, now hidden when unfilled;
+   check AdSense → Sites shows blogsbykush.com "Ready"; Disqus on moved posts).
 
 ## Brand direction
 
