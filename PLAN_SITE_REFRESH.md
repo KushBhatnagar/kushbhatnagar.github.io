@@ -7,7 +7,7 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-06)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#18 hold the history. Only branch: `main` (+ the current session branch, deleted after its last merge).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#19 hold the history. Only branch: `main` (+ the current session branch, deleted after its last merge).
 
 | Area | State |
 |---|---|
@@ -18,6 +18,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
+| Tech Digest page | `/tech-digest/` intro explains the name ("Why Digital Dhaba?", roadside dhaba story; PR #19, 2026-10-06) |
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
