@@ -331,6 +331,18 @@ Format: `HH:MM [Phase N] change — detail`
 - Merged as PR #24 (04:26 UTC) and deployed; first used by the Thu 2026-10-15 issue (the Digital-Dhaba workflow runs
   `scripts/kit_send_digest.py` from the blog's main). Kush shown before/after screenshots of the 2026-10-08 email.
 
+## 2026-10-08 — New Concept Breakdown (draft): The Tool Call
+- PR #25 (STATUS for the email fix) merged.
+- `scripts/new_breakdown.py` on Kush's ToolCall.pdf → `content/posts/tool-call/` (4 slides 1080×1350, `tool-call.pdf`,
+  `cover.jpg`). Kush's choices: title "What Turns an LLM into an Agent: The Tool Call", URL `/concept-breakdown/tool-call/`,
+  transcript typed from the slides (no conversation text; marked CHECK), keep as draft.
+- `/breakdown-post`: collapsed transcript (4 scenes), slide alt text, summary 121 chars, description 148 chars,
+  "The concept in plain words" 148 words (waiter analogy; no claims beyond the comic except that a separate tool
+  does the work), tags generative ai / large language models / ai agents / classroom conversation.
+- New tag title `content/tags/ai-agents/_index.md` ("AI Agents", not Hugo's "Ai Agents"), like `generative-ai`.
+- Checks: draft build OK (carousel, `<details class="transcript">`, plain words, no TOC); production build leaves the
+  draft out; no external links.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
