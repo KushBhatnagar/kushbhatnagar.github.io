@@ -328,6 +328,8 @@ Format: `HH:MM [Phase N] change — detail`
 - Tested on all 4 issues: no story (h3) lost, footer + unsubscribe intact; 2026-10-08 ≈84 KB (both left out), 2026-10-03
   ≈75 KB, 2026-09-30 ≈83 KB, 2026-09-27 ≈91 KB (older format, no Quick hits). Word-level diff vs the untrimmed email:
   only the two sections removed and the one line added.
+- Merged as PR #24 (04:26 UTC) and deployed; first used by the Thu 2026-10-15 issue (the Digital-Dhaba workflow runs
+  `scripts/kit_send_digest.py` from the blog's main). Kush shown before/after screenshots of the 2026-10-08 email.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
