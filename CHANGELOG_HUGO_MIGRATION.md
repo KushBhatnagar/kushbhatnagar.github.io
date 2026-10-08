@@ -342,6 +342,9 @@ Format: `HH:MM [Phase N] change — detail`
 - New tag title `content/tags/ai-agents/_index.md` ("AI Agents", not Hugo's "Ai Agents"), like `generative-ai`.
 - Checks: draft build OK (carousel, `<details class="transcript">`, plain words, no TOC); production build leaves the
   draft out; no external links.
+- Merged as PR #26 (draft). Published the same day (Kush): PR #27 sets `draft: false` (date 2026-10-08) and removes the
+  transcript CHECK comment (Kush approved by publishing; it would otherwise show in the page source). Production build:
+  page, homepage breakdown card, `posts.json` (Sunday letter 2026-10-11), sitemap and RSS all include it.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
