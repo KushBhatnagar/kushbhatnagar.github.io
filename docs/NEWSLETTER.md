@@ -16,6 +16,11 @@ ID in `hugo.toml` → `params.kit.form` (`10000596`).
 The form uses **double opt-in**: nobody is added until they click the confirmation email, which also
 keeps bots and fake addresses out.
 
+**Gmail size limit:** Gmail clips emails over ~102 KB ("[Message clipped]"), and Kit makes ours bigger (every link becomes
+a tracking link). `scripts/kit_send_digest.py` trims the Digital Dhaba email only: compact HTML, Hacker News discussion
+links as plain text, and when still too big it leaves out "From the newsletters", then "Quick hits", with a "Read the
+full issue →" link. The blog page always has everything. The workflow log shows "Email size ≈ … KB".
+
 ## Safety switches (GitHub repository *variables*, no code changes)
 
 | Variable | Effect |
