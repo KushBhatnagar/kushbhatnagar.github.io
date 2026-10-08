@@ -21,14 +21,15 @@ Snapshot (2026-10-05): **LIVE** on Hugo since 2026-10-04 (PR #2). Both emails wo
 first Sunday letter sent). Published: How LLMs Think, first Learning Note, first Build Log entry (Digital Dhaba).
 Homepage shows 2 breakdown cards (PR #11) and 2 recent posts + "All posts →" link (`recentPosts`, 2026-10-06).
 `/tech-digest/` explains the name "Digital Dhaba" (PR #19). Launch cleanup finished 2026-10-05: Jekyll files removed (PR #14),
-old branches deleted, Mailchimp closed, Search Console sitemap + indexing requested. Open: watch the first automatic
-emails (Thu 2026-10-08, Sun 2026-10-11).
+old branches deleted, Mailchimp closed, Search Console sitemap + indexing requested.
+2026-10-08 incident (stuck deploy + GitHub dropped the Digital Dhaba schedule): RCA and safeguards in the changelog;
+scheduled emails now have backup runs. Open: watch Sun 2026-10-11 letter (first scheduled run).
 Also read **"Kush's rules"** below before writing anything for the site.
 
 ## Current state: live on Hugo (since 2026-10-04)
 
 - **`main`** = the live site. GitHub Pages builds from **GitHub Actions** (`.github/workflows/hugo.yml`) on every push
-  to `main`. Work goes on a feature branch → PR into `main` → merge = deploy (~2 min).
+  to `main` (`cancel-in-progress: true`: a newer push replaces a stuck/older deploy). Work goes on a feature branch → PR into `main` → merge = deploy (~2 min).
 - **`hugo-migration`** = the old staging branch, fully merged; deleted 2026-10-05 (Kush). PRs #1–#9 hold the history.
 - The Jekyll files (`_config.yml`, `_posts/`, `_pages/`, layouts, Gemfile, root favicons, the Jekyll copies in root
   `assets/images|cv|js`) were removed on 2026-10-05; find them in git history if ever needed. Root `assets/` now holds
@@ -103,8 +104,9 @@ Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TE
 
 Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form, ID `10000596` in
 `hugo.toml` → `params.kit.form`; empty → no signup box). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
-1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`).
-2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
+1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`). Built 06:00 IST by
+   Digital-Dhaba `weekly-digest.yml`; backup builds 07:00/08:30 IST only if today's issue is missing.
+2. **Weekly letter**, Sunday 09:00 IST (backups 10:00/11:30, deduped by subject) → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
    every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
 No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
 `KIT_TEST_TAG_ID` = test mode). Setup: `docs/NEWSLETTER.md`. Mailchimp list: audited with
