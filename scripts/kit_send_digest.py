@@ -13,6 +13,8 @@ Run by the Digital-Dhaba workflow right after the issue is published to the blog
        - {{VIEW_IN_BROWSER_URL}} → the issue's page on the blog
        - {{FORWARD_URL}}         → a mailto: "forward to a friend" link with the issue URL
        - keeps the <style> block and the <body> contents (Kit's template provides the outer HTML)
+       - fits Gmail's ~102 KB limit (fit_for_gmail): Gmail clips longer emails ("[Message clipped]"), which
+         hid everything after "Worth your weekend" on 2026-10-08. Email only; the blog page is untouched.
   2. schedules the broadcast for the next send slot (default Thursday 07:00 IST). The issue is published
      early on Thursday, so normally it goes out at 07:00; if the run happens on Thursday after 07:00, it
      sends in ~2 minutes, after checking the hero image is live.
@@ -23,12 +25,20 @@ Env: see scripts/kit_api.py (dry run unless KIT_SEND=true; test mode while KIT_T
     DIGEST_SEND_NOW      true = send right away instead of scheduling (manual runs, e.g. a test to yourself)
     KIT_UNSUBSCRIBE_TAG  default "{{ unsubscribe_url }}"   SITE_URL  default https://blogsbykush.com
 """
-import datetime, json, os, pathlib, re, sys, time, urllib.error, urllib.parse, urllib.request
+import datetime, json, os, pathlib, quopri, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 sys.path.insert(0, os.path.dirname(__file__))
 import kit_api  # noqa: E402
 
 SITE = os.environ.get("SITE_URL", "https://blogsbykush.com").rstrip("/")
+
+# Gmail clips an email whose HTML is over ~102 KB. Kit adds to what we send: every link becomes a long
+# click-tracking link, plus its template. Calibrated on 2026-10-08 (clipped right after "Worth your
+# weekend"): ≈ quoted-printable size + 0.42 KB per link + 5 KB. Stay under 85 KB for headroom.
+GMAIL_BUDGET_KB = 85
+# Sections the email may leave out, in this order, when it's still too big; a "Read the full issue" row
+# replaces them (Kush, 2026-10-08: adaptive, so light weeks keep everything).
+OPTIONAL_SECTIONS = ("From the newsletters", "Quick hits")
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 
@@ -62,6 +72,48 @@ def wait_until_live(url, minutes=15):
         time.sleep(30)
 
 
+def estimated_gmail_kb(html):
+    """Rough size of the email as Gmail receives it from Kit (see GMAIL_BUDGET_KB)."""
+    return (len(quopri.encodestring(html.encode("utf-8"))) + html.count("href=") * 0.42 * 1024 + 5 * 1024) / 1024
+
+
+def compact(html):
+    """Same look, fewer bytes: no whitespace between tags, no <tbody>, no web-font names (the Google Fonts
+    link is in the issue's <head>, which the email drops, so they can't load in the email anyway)."""
+    html = re.sub(r">\s+<", "><", html).replace("<tbody>", "").replace("</tbody>", "")
+    for webfont in ("'IBM Plex Sans',", "'IBM Plex Mono',", "'Newsreader',"):
+        html = html.replace("font-family:" + webfont, "font-family:")
+    return html
+
+
+def unlink_discussions(html):
+    """Hacker News discussion links ("▲ 1999 HN · 1192 comments") stay as text but aren't links in the
+    email (one Kit tracking link fewer per story). The blog page keeps them."""
+    return re.sub(r'<a href="https://news\.ycombinator\.com/item\?id=\d+"[^>]*>(.*?)</a>', r"\1", html, flags=re.S)
+
+
+def fit_for_gmail(html, issue_url):
+    """Make the email fit GMAIL_BUDGET_KB; returns (html, names of sections left out)."""
+    html = unlink_discussions(compact(html))
+    dropped = []
+    for name in OPTIONAL_SECTIONS:
+        if estimated_gmail_kb(html) <= GMAIL_BUDGET_KB:
+            break
+        # Each section is one top-level row of the newsletter table: <tr><td …><h2 …>Name</h2> … </td></tr>
+        row = re.search(r"(?<=</td></tr>)<tr><td[^>]*><h2[^>]*>" + re.escape(name) + r"</h2>.*?</td></tr>(?=<tr><td)",
+                        html, flags=re.S)
+        if row:
+            html = html[:row.start()] + html[row.end():]
+            dropped.append(name)
+    if dropped:
+        note = ('<tr><td style="padding:22px 36px;border-bottom:1px solid #dcd7cd;font-family:Helvetica,Arial,sans-serif;'
+                'font-size:15px;line-height:1.6;color:#33312d">More in the full issue: ' + " · ".join(reversed(dropped)) +
+                '. <a href="' + issue_url + '" style="color:#1c1b19;font-weight:600">Read the full issue →</a></td></tr>')
+        footer = html.rfind('<tr><td align="center"')  # the sign-off row with the unsubscribe link
+        html = html[:footer] + note + html[footer:] if footer != -1 else html + note
+    return html, dropped
+
+
 def email_ready(html_text, date, title):
     issue_url = f"{SITE}/tech-digest/{date}/"
     hero_url = f"{SITE}/tech-digest/{date}/hero.jpg"
@@ -76,6 +128,12 @@ def email_ready(html_text, date, title):
     styles = "".join(re.findall(r"<style[^>]*>.*?</style>", html_text, flags=re.S | re.I))
     body = re.search(r"<body[^>]*>(.*)</body>", html_text, flags=re.S | re.I)
     content = styles + (body.group(1) if body else html_text)
+    content, dropped = fit_for_gmail(content, issue_url)
+    size = estimated_gmail_kb(content)
+    print(f"Email size ≈ {size:.0f} KB in Gmail (limit ~102)"
+          + (f"; left out (linked to the full issue): {', '.join(dropped)}" if dropped else ""))
+    if size > GMAIL_BUDGET_KB:
+        print(f"::warning::Email is still ≈{size:.0f} KB after trimming; Gmail may clip it (limit ~102 KB).")
     leftovers = re.findall(r"\{\{[A-Z_]+\}\}", content)
     if leftovers:
         sys.exit(f"Unmapped placeholders in newsletter.html: {sorted(set(leftovers))}")

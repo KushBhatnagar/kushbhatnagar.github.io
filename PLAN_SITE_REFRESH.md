@@ -12,7 +12,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Area | State |
 |---|---|
 | Site (Hugo + PaperMod) | ✅ Live, all pages checked by Kush |
-| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Open: email cut off after the "Worth your weekend" heading (see item 2) |
+| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming (this PR) |
 | Sunday letter (Sun 09:00 IST) | ✅ Works; first one sent manually 2026-10-04 (3 posts); first scheduled run Sun 2026-10-11; backups 10:00/11:30 IST live (PR #23) |
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
@@ -26,10 +26,10 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 **Open items**
 1. Safeguards all live (blog PR #23, Digital-Dhaba PR #1). Watch: Sunday letter Sun 2026-10-11 09:00 IST (first scheduled
    run; Actions should show one "schedule" run that sends, and backups that skip), Digital Dhaba Thu 2026-10-15 06:00 IST.
-2. Digital Dhaba email 2026-10-08 showed only the "Worth your weekend" heading; the rest (3 picks, "From the
-   newsletters", footer) missing. The content sent to Kit is complete (68 KB). Suspected: Gmail clips emails over 102 KB,
-   and Kit's click-tracking links + template add ~15–40 KB. Kush to confirm ("[Message clipped]" at the bottom in Gmail,
-   or Kit's preview shows it all); then trim the email HTML in `scripts/kit_send_digest.py`.
+2. Digital Dhaba email clipped by Gmail (confirmed by Kush: "[Message clipped]"; Kit preview complete). Fixed in
+   `scripts/kit_send_digest.py` (email only): compact HTML, HN discussion links as plain text, and, only when needed,
+   "From the newsletters" then "Quick hits" replaced by a "Read the full issue →" line. Check the Thu 2026-10-15 email
+   isn't clipped (Actions log prints "Email size ≈ … KB").
 3. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
 4. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
    `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (Disqus on moved posts).

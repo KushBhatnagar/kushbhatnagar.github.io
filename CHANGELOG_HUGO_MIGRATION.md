@@ -316,6 +316,18 @@ Format: `HH:MM [Phase N] change — detail`
   Rebuilt the email locally with `kit_send_digest.email_ready`: all sections are in what we send (68 KB raw, ~72 KB
   quoted-printable; the heading sits at ~60 KB). Suspected Gmail 102 KB clipping after Kit adds tracking links
   (104 links) and its template; to be confirmed by Kush before changing anything.
+- Confirmed by Kush: Gmail shows "[Message clipped] View entire message" (full issue behind it) and Kit's preview is
+  complete. Calibration from the clip point: Kit adds ≈0.42 KB per link + ≈5 KB template, so today's email was ≈121 KB.
+  Kit has no documented per-link tracking opt-out.
+- Fix (`scripts/kit_send_digest.py`, email only; the blog page is built from `newsletter.txt` and is unchanged, production
+  build identical): `fit_for_gmail` = `compact` (no whitespace between tags, no `<tbody>`, no web-font names: the Google
+  Fonts link is in `<head>`, which the email already drops) + `unlink_discussions` (HN "▲ … HN · … comments" stays as
+  text, not a link) + adaptive (Kush's choice): if still over 85 KB (estimate), leave out "From the newsletters", then
+  "Quick hits", replaced by one "More in the full issue: … Read the full issue →" row above the sign-off. Logs the
+  estimate; warns if still over budget.
+- Tested on all 4 issues: no story (h3) lost, footer + unsubscribe intact; 2026-10-08 ≈84 KB (both left out), 2026-10-03
+  ≈75 KB, 2026-09-30 ≈83 KB, 2026-09-27 ≈91 KB (older format, no Quick hits). Word-level diff vs the untrimmed email:
+  only the two sections removed and the one line added.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
