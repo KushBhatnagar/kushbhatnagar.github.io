@@ -309,6 +309,8 @@ Format: `HH:MM [Phase N] change — detail`
   subject check (same subject all day). `docs/NEWSLETTER.md` updated.
 - Known limit: if a build commits the issue but its "Publish to the blog" step fails, backups skip (issue exists);
   re-run "Publish issue to blogsbykush.com" by hand.
+- Status: blog PR #23 (deploy `cancel-in-progress`, Sunday backups, RCA docs) merged 04:10 UTC and deployed OK — the
+  first deploy under the new setting. Digital-Dhaba PR #1 (Digital Dhaba backup builds) still open at 04:15 UTC.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
