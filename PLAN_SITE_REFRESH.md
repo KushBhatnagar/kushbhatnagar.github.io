@@ -4,10 +4,10 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-08, incident + safeguards + new breakdown draft)
+## ▶ STATUS — where we left off (updated 2026-10-08, incident + safeguards + Tool Call published)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#26 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#27 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
 
 | Area | State |
 |---|---|
@@ -15,8 +15,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming live (PR #24) |
 | Sunday letter (Sun 09:00 IST) | ✅ Works; first one sent manually 2026-10-04 (3 posts); first scheduled run Sun 2026-10-11; backups 10:00/11:30 IST live (PR #23) |
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
-| Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
-| Drafts | **What Turns an LLM into an Agent: The Tool Call** (`content/posts/tool-call/`, `/concept-breakdown/tool-call/`, 4 slides, `draft: true`): Kush reviews, checks the transcript (read from the slides), then sets `draft: false` + publish date |
+| Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
 | Tech Digest page | `/tech-digest/` intro explains the name ("Why Digital Dhaba?", roadside dhaba story; PR #19, 2026-10-06) |
@@ -25,9 +24,8 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
-0. Kush: review the Tool Call draft (PR #26); publish by setting `draft: false` and `date:` = publish day (before
-   Sun 2026-10-11 09:00 IST to be in that letter).
-1. Safeguards all live (blog PR #23, Digital-Dhaba PR #1). Watch: Sunday letter Sun 2026-10-11 09:00 IST (first scheduled
+1. Safeguards all live (blog PR #23, Digital-Dhaba PR #1). Watch: Sunday letter Sun 2026-10-11 09:00 IST (should list
+   The Tool Call; first scheduled
    run; Actions should show one "schedule" run that sends, and backups that skip), Digital Dhaba Thu 2026-10-15 06:00 IST.
 2. Digital Dhaba email clipped by Gmail (confirmed by Kush: "[Message clipped]"; Kit preview complete). Fixed (PR #24, merged) in
    `scripts/kit_send_digest.py` (email only): compact HTML, HN discussion links as plain text, and, only when needed,

@@ -1,7 +1,7 @@
 ---
 title: "What Turns an LLM into an Agent: The Tool Call"
 date: 2026-10-08
-draft: true
+draft: false
 categories: ["concept-breakdown"]
 tags: ["generative ai", "large language models", "ai agents", "classroom conversation"]
 summary: "Hint: it's just a waiter. How a tool call lets an LLM check the real world before it answers, the first step to an agent."
@@ -18,7 +18,6 @@ slide_alt:
 
 {{< carousel >}}
 
-<!-- CHECK: transcript read from the slides (no conversation text was provided); please verify the wording. -->
 {{< transcript >}}
 **Slide 1: Send the waiter**
 
