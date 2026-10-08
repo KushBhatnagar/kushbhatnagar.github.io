@@ -50,8 +50,10 @@ dry run: `docs/NEWSLETTER.md`.
 
 ## Weekly routine
 
-Run `./run_digest.sh`, commit and push `issues/<date>/` to Digital-Dhaba. That's it: the Action
-imports the issue, pushes to the blog, and the site redeploys within a couple of minutes.
+Automatic: Digital-Dhaba `weekly-digest.yml` builds the issue every Thursday at 06:00 IST, commits it and starts
+`publish-to-blog.yml` (blog push → deploy → email). Backup runs at 07:00 and 08:30 IST build only if today's issue
+isn't on main yet (GitHub dropped the 06:00 run on 2026-10-08). If nothing ran, start "Weekly digest" by hand with
+`dry_run` off; after 07:00 IST the email goes out right away.
 
 ## Manual import (fallback)
 

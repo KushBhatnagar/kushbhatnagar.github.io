@@ -10,10 +10,12 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment, don't cancel in-progress runs.
+# One deployment at a time; a newer push cancels an older run still in the group. Every run builds the
+# whole site from main, so the newest one has everything. (2026-10-06: a deploy hung in "waiting" on
+# GitHub's side for 33 h and, with cancel-in-progress: false, blocked every later deploy.)
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 defaults:
   run:

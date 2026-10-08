@@ -282,6 +282,34 @@ Format: `HH:MM [Phase N] change — detail`
   Filled ads still show. Merged as PR #21. Branch `claude/adoring-thompson-o24o0b` kept for more patch work (Kush).
   Next: Kush checks AdSense → Sites status.
 
+## 2026-10-08 — Incident: deploys stuck + Digital Dhaba not sent at 06:00 IST
+**1. Deploys stuck (2026-10-06 17:47 UTC → 2026-10-08 03:24 UTC).**
+- What: the `deploy` job of the PR #19 run went to "waiting" 1 s after it was created and never got a runner.
+  The `github-pages` environment had no reviewers and no wait timer (pending_deployments API), and the deploys right
+  before (#18) and after (#22) went through in seconds, so the hold was on GitHub's side.
+- Impact: with `concurrency: pages` + `cancel-in-progress: false` it held the deploy slot; #20 and #21 were cancelled
+  while queued, #22 waited. PRs #19–#22 (Why Digital Dhaba, empty ad slot fix) weren't live for ~33 h.
+- Fix: cancelled the stuck run; #22 deployed (includes #19–#21). Safeguard: `hugo.yml` `cancel-in-progress: true`, so
+  the next push clears a stuck deploy (every run builds all of main). A job `timeout-minutes` would not help: the
+  timer only starts once a job is running, and this one never started.
+
+**2. Digital Dhaba not built/sent at 06:00 IST (2026-10-08).**
+- What: GitHub never created the scheduled run of Digital-Dhaba `weekly-digest.yml` (cron `30 0 * * 4`): zero
+  `schedule` runs exist for it, ever (not queued, failed or cancelled). Our side ruled out: workflow active, on the
+  default branch `main`, repo active, YAML parses, manual runs work. 2026-10-08 was its first scheduled slot.
+- Root cause: the scheduled event was dropped on GitHub's side (GitHub documents that scheduled runs can be delayed
+  or dropped under load; matching community reports: discussions #208473, #206028, #202034, #205984). Not confirmed
+  against githubstatus.com (blocked from the Claude session).
+- Fix: ran `weekly-digest.yml` by hand (Kush's go-ahead) 03:26 UTC → issue 2026-10-08 built, published to the blog,
+  emailed to ALL SUBSCRIBERS at 03:31 UTC / 09:01 IST (Kit broadcast 26301755).
+- Safeguards: Digital-Dhaba `weekly-digest.yml` backup crons 07:00 + 08:30 IST; a new `check` job skips a scheduled
+  run when `issues/<today>/newsletter.html` is already on main (one run at a time via the existing concurrency group),
+  so a backup only builds when the earlier run didn't. Blog `weekly-roundup.yml` (same risk, first scheduled run
+  2026-10-11): backups 10:00 + 11:30 IST; one-at-a-time concurrency; duplicates stopped by the existing Kit
+  subject check (same subject all day). `docs/NEWSLETTER.md` updated.
+- Known limit: if a build commits the issue but its "Publish to the blog" step fails, backups skip (issue exists);
+  re-run "Publish issue to blogsbykush.com" by hand.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
