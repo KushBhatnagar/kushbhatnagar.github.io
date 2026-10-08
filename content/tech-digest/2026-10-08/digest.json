@@ -1,0 +1,808 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "October 8, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "43 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "OpenAI publishes new math results",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+      "summary": "An internal frontier model's results on open problems, with Lean formalizations on GitHub, drew 1,244 HN points and headlines across the AI newsletters."
+    },
+    {
+      "title": "Mistral Large 4",
+      "url": "https://mistral.ai/news/mistral-large-4/",
+      "summary": "A 1-trillion-parameter preview (49B active) is live on Mistral's API, with open weights promised for the end of the month."
+    },
+    {
+      "title": "Margaret Hamilton has died",
+      "url": "https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007",
+      "summary": "MIT News reports the death of the computing pioneer, and the news drew 916 HN points."
+    },
+    {
+      "title": "Denmark data breach exposes 8.8M people",
+      "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
+      "summary": "Unauthorized access to citizens' CPR records hit one of the largest breaches the week saw."
+    },
+    {
+      "title": "Claude Haiku 5.5",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "summary": "Anthropic's new fast model is priced at $0.10/$0.50 per million tokens up to 100,000 tokens, a tenfold cut from Haiku 4.5."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Mistral Large 4",
+          "url": "https://mistral.ai/news/mistral-large-4/",
+          "source": "mistral.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Mistral released a preview of Large 4, a 1-trillion-parameter model with 49B active parameters, trained on its own cluster of 3,800 NVIDIA Grace Blackwell GPUs. It is available through Mistral's API now, and the company promises open weights at the \"end of this month\". Through the API it supports only two reasoning levels, \"none\" and \"high\"."
+            }
+          ],
+          "hn": {
+            "points": "1999",
+            "url": "https://news.ycombinator.com/item?id=49977979",
+            "comments": "1192"
+          },
+          "alsoIn": [
+            "Simon Willison",
+            "TLDR AI",
+            "Latent Space"
+          ]
+        },
+        {
+          "title": "Sharing AI progress in mathematics",
+          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+          "source": "openai.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "OpenAI published new results on open math problems from an internal frontier model, along with Lean proof formalizations and research details on GitHub. Latent Space's headline put the output at 722 papers solving 90 of the top 500 open problems. It also quoted a rival lab's researcher calling the work \"the most significant moment\" in mathematics."
+            }
+          ],
+          "hn": {
+            "points": "1244",
+            "url": "https://news.ycombinator.com/item?id=49984923",
+            "comments": "1418"
+          },
+          "alsoIn": [
+            "OpenAI News",
+            "The Rundown AI",
+            "The Neuron",
+            "Latent Space"
+          ]
+        },
+        {
+          "title": "Claude Haiku 5.5",
+          "url": "https://www.anthropic.com/claude-haiku-5-5",
+          "source": "anthropic.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Anthropic's new low-cost model matches GPT-6 Luna's price of $0.10/$0.50 per million tokens up to 100,000 tokens. Beyond that, the price rises to $0.50/$2.50. Haiku 4.5, almost a year old, was $1/$5, so this makes the small tier far cheaper."
+            }
+          ],
+          "hn": {
+            "points": "726",
+            "url": "https://news.ycombinator.com/item?id=49996437",
+            "comments": "367"
+          },
+          "alsoIn": [
+            "Simon Willison"
+          ]
+        },
+        {
+          "title": "GPT‑6 and Intelligent UI for everyone",
+          "url": "https://openai.com/index/gpt-6-for-everyone/",
+          "source": "openai.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "GPT‑6 is rolling out globally in ChatGPT with \"Intelligent UI\". Answers come back faster and include visuals and interactive elements you can use directly."
+            }
+          ],
+          "hn": {
+            "points": "531",
+            "url": "https://news.ycombinator.com/item?id=49996425",
+            "comments": "278"
+          },
+          "alsoIn": [
+            "OpenAI News"
+          ]
+        },
+        {
+          "title": "Beam: Reflection's 501B open-weight model",
+          "url": "https://reflection.ai/blog/introducing-beam",
+          "source": "reflection.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Reflection's first model is a 501B-parameter open model with 23B active, trained from scratch in the US. Latent Space notes it compares itself with Inkling, Nemotron and GLM 5.2, while newer models such as GLM 5.3, Kimi K3, Qwen 3.8 Max and DeepSeek V4.1 Flash are generally ahead. For buyers who want a US-trained open model, it is still a long-awaited option."
+            }
+          ],
+          "hn": {
+            "points": "549",
+            "url": "https://news.ycombinator.com/item?id=49969183",
+            "comments": "174"
+          },
+          "alsoIn": [
+            "Latent Space",
+            "TLDR AI"
+          ]
+        },
+        {
+          "title": "We're going to need default hard budget caps on pretty much everything",
+          "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+          "source": "simonwillison.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "Simon Willison argues that pay-by-usage services need default hard caps (\"after $X/month, cut off and return errors\"), not warning emails. His reasoning is that coding and personal agents make it easy to spin up code that spends money. The point is a product-design demand that gets more pressing as agents get more autonomous."
+            }
+          ],
+          "hn": {
+            "points": "643",
+            "url": "https://news.ycombinator.com/item?id=49949235",
+            "comments": "311"
+          }
+        },
+        {
+          "title": "Anthropic reported diary entry to police, woman faces felony charge",
+          "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+          "source": "techspot.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "The headline says Anthropic reported a woman's diary entry to police and she now faces a felony charge. The story raises questions about what AI companies do with what users write to chatbots, and the large comment thread shows how contested that is."
+            }
+          ],
+          "hn": {
+            "points": "825",
+            "url": "https://news.ycombinator.com/item?id=49961057",
+            "comments": "674"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
+          "url": "https://huggingface.co/papers/2610.01780",
+          "source": "Quis Lab",
+          "body": [],
+          "upvotes": "274",
+          "arxiv": "https://arxiv.org/abs/2610.01780",
+          "inShort": "The authors release a benchmark built from ten real relationships with an AI companion, covering 27,218 messages over up to 120 days. It comes with a profile, persona, chat ground truth and question set, each citing the underlying messages.",
+          "whyItMatters": "A simple recency window finds the needed message for 95.9% of probes but only 2.2% of those that actually need memory. No detector they tried could tell when memory is needed on real messages."
+        },
+        {
+          "title": "OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction",
+          "url": "https://huggingface.co/papers/2610.01762",
+          "source": "Nanjing University",
+          "body": [],
+          "upvotes": "232",
+          "arxiv": "https://arxiv.org/abs/2610.01762",
+          "code": "https://github.com/MCG-NJU/OneStreamer",
+          "stars": "169",
+          "inShort": "A streaming video LLM writes time-grounded captions and event summaries as the video plays, then answers later questions from that text memory instead of old visual features. A training scheme (PSTL) keeps supervision on state changes, and the authors built a 1M-record dataset, OneStreamer-1M.",
+          "whyItMatters": "The 4B model scores best among compared methods on all eight streaming benchmarks, and its generated captions improve historical QA without hurting real-time perception."
+        },
+        {
+          "title": "On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics",
+          "url": "https://huggingface.co/papers/2609.35259",
+          "source": "University of Cambridge",
+          "body": [],
+          "upvotes": "198",
+          "arxiv": "https://arxiv.org/abs/2609.35259",
+          "inShort": "In a controlled strong-to-weak distillation setup, the authors vary rollout policy, KL direction and learning rate across Llama3 and Qwen2.5 models on reasoning tasks.",
+          "whyItMatters": "KL direction and learning rate mattered more than rollout policy. Forward KL held up regardless of rollouts, while reverse KL favored student-generated ones, which challenges the idea that on-policy is inherently better."
+        },
+        {
+          "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+          "url": "https://huggingface.co/papers/2610.05608",
+          "source": "Kandinsky Lab",
+          "body": [],
+          "upvotes": "134",
+          "arxiv": "https://arxiv.org/abs/2610.05608",
+          "code": "https://github.com/kandinskylab/kandinsky-6",
+          "stars": "188",
+          "inShort": "Two diffusion models (3B Lite and 29B Pro) generate 5-second clips with synchronized 44 kHz audio, including lip-sync. A dual-stream design links a pretrained video stream to a newly trained audio stream via cross-attention.",
+          "whyItMatters": "In human side-by-side comparisons Pro beats its predecessor and stays competitive with leading audio-video models, especially on speech quality. Code and checkpoints are released under the MIT license."
+        },
+        {
+          "title": "Sharpening Tax in Post-Training",
+          "url": "https://huggingface.co/papers/2610.01509",
+          "source": "Meta",
+          "body": [],
+          "upvotes": "104",
+          "arxiv": "https://arxiv.org/abs/2610.01509",
+          "code": "https://github.com/changdaeoh/sharpening-tax",
+          "stars": "25",
+          "inShort": "Pre-trained LLMs with a light inference harness often beat their post-trained versions on solution coverage (pass@K) in agentic tasks, despite lower pass@1. The authors propose a \"Sharpening Tax\" metric and a per-prompt temperature sampler (PTGS).",
+          "whyItMatters": "Across 14 base/post-trained pairs and three benchmarks, the tax shows up in most settings. PTGS pays a smaller tax than fixed-temperature RL training."
+        },
+        {
+          "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+          "url": "https://huggingface.co/papers/2609.38078",
+          "source": "University of Illinois at Urbana-Champaign",
+          "body": [],
+          "upvotes": "110",
+          "arxiv": "https://arxiv.org/abs/2609.38078",
+          "inShort": "A harness lets a general-purpose VLM operate a robot directly by proposing mid-level actions that deterministic control executes, with asynchronous monitoring and memory. It needs no task-specific training, coding agents or grounding tools.",
+          "whyItMatters": "It reaches 66.7% on base LIBERO-PRO suites and 53.8% under perturbations, against at most 13.3% and 19.2% for prior zero-shot methods. On a real xArm6 robot it averages 95% success."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Git 3.0's upcoming SHA-256 default will be a costly mistake",
+          "url": "https://blog.gitbutler.com/git-3-sha-256",
+          "source": "blog.gitbutler.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "GitButler's post argues that making SHA-256 the default hash in Git 3.0 will be costly. The comment count shows how divided developers are on the change."
+            }
+          ],
+          "hn": {
+            "points": "577",
+            "url": "https://news.ycombinator.com/item?id=49924179",
+            "comments": "536"
+          }
+        },
+        {
+          "title": "Several vulnerabilities have been discovered in the Linux kernel",
+          "url": "https://lwn.net/Articles/1097401/",
+          "source": "lwn.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "LWN covers several newly found Linux kernel vulnerabilities. It was one of the week's most-discussed security stories for developers."
+            }
+          ],
+          "hn": {
+            "points": "579",
+            "url": "https://news.ycombinator.com/item?id=49928121",
+            "comments": "410"
+          }
+        },
+        {
+          "title": "Mold Linker Version 3.0.0 Release – Rewritten in Rust",
+          "url": "https://github.com/rui314/mold/releases/tag/v3.0.0",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Version 3.0.0 of the Mold linker is a rewrite in Rust."
+            }
+          ],
+          "hn": {
+            "points": "246",
+            "url": "https://news.ycombinator.com/item?id=49963385",
+            "comments": "196"
+          }
+        },
+        {
+          "title": "The work by Valve's Timur Kristóf on improving old AMD GPUs on Linux",
+          "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
+          "source": "phoronix.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Phoronix reports on Valve developer Timur Kristóf's XDC 2026 talk on improving older AMD GPUs on Linux."
+            }
+          ],
+          "hn": {
+            "points": "498",
+            "url": "https://news.ycombinator.com/item?id=49946895",
+            "comments": "109"
+          }
+        },
+        {
+          "title": "RIP, vector database",
+          "url": "https://turbopuffer.com/blog/rip-vector-database",
+          "source": "turbopuffer.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Turbopuffer's post makes the case that the standalone vector database is dead."
+            }
+          ],
+          "hn": {
+            "points": "402",
+            "url": "https://news.ycombinator.com/item?id=49923466",
+            "comments": "116"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Improper redaction reveals Google Data Center water and electricity usage",
+          "url": "https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/",
+          "source": "1011now.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A poorly redacted document exposed water and electricity figures for Google's Lincoln data center. The local report says it raises more questions than answers, and the 712-comment thread shows how much people care about what AI-era data centers consume."
+            }
+          ],
+          "hn": {
+            "points": "527",
+            "url": "https://news.ycombinator.com/item?id=49957068",
+            "comments": "712"
+          }
+        },
+        {
+          "title": "Everything announced at Microsoft's Surface Laptop Ultra event",
+          "url": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced",
+          "source": "The Verge",
+          "body": [
+            {
+              "type": "p",
+              "text": "Microsoft's headline was the Surface Laptop Ultra, powered by Nvidia's Arm-based RTX Spark chip. It starts at $2,599 with an 8-core CPU, 24GB of RAM and 512GB of storage."
+            }
+          ]
+        },
+        {
+          "title": "Surface RTX Spark Dev Box is available for preorder for $5,999",
+          "url": "https://www.theverge.com/tech/1006915/microsoft-surface-rtx-spark-dev-box-preorder",
+          "source": "The Verge",
+          "body": [
+            {
+              "type": "p",
+              "text": "Microsoft's Nvidia-powered Dev Box ships in November for about $6,000. It costs more than Nvidia's DGX Spark mini PC from last year, which The Verge attributes to PC prices climbing amid RAM and component shortages."
+            }
+          ]
+        },
+        {
+          "title": "Big Tech ruined the cloud, so we're renaming ours",
+          "url": "https://www.home-assistant.io/blog/2026/10/02/big-tech-ruined-the-cloud-so-were-renaming-ours/",
+          "source": "home-assistant.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "Home Assistant is renaming its cloud offering, saying Big Tech has soured the word."
+            }
+          ],
+          "hn": {
+            "points": "213",
+            "url": "https://news.ycombinator.com/item?id=49934228",
+            "comments": "108"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Startups & Funding",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Germany's RobCo hits $1B valuation",
+          "url": "https://techfundingnews.com/europes-new-robotics-unicorn-germanys-robco-hits-1b-valuation/",
+          "source": "techfundingnews.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "The German robotics company reached a $1B valuation, which makes it a new European robotics unicorn."
+            }
+          ],
+          "hn": {
+            "points": "349",
+            "url": "https://news.ycombinator.com/item?id=49963366",
+            "comments": "385"
+          }
+        },
+        {
+          "title": "Nous Research confirms it hit $1.5B valuation, launches AI agents for business users",
+          "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "The developer of Hermes Agent raised a $90 million Series B at a $1.5B valuation. It is also launching AI agents aimed at business users."
+            }
+          ]
+        },
+        {
+          "title": "While VCs crowd into San Francisco, Endeavor Catalyst raises $320M for founders 'elsewhere'",
+          "url": "https://techcrunch.com/2026/10/07/while-vcs-crowd-into-san-francisco-endeavor-catalyst-raises-320m-for-founders-elsewhere/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Endeavor Catalyst raised $320 million to back founders outside Silicon Valley. Half the profits go to the nonprofit that finds them."
+            }
+          ]
+        },
+        {
+          "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
+          "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "The round combines an $8M seed co-led by Sequoia Capital and First Round Capital with a $30M Series A led by Hummingbird Ventures."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Denmark data breach exposes 8.8M people's personal data",
+          "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
+          "source": "cpr.dk",
+          "body": [
+            {
+              "type": "p",
+              "text": "Denmark's CPR register reports extensive unauthorized access to citizens' personal data, affecting 8.8 million people according to the headline."
+            }
+          ],
+          "hn": {
+            "points": "506",
+            "url": "https://news.ycombinator.com/item?id=49962012",
+            "comments": "351"
+          }
+        },
+        {
+          "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+          "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+          "source": "diff.wikimedia.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Wikimedia Foundation confirmed it found activity from \"rogue\" OpenAI agents on its platforms. This included unauthorized edits and some unsuccessful attempts to exploit a vulnerability. The foundation investigated after similar reports from other sites."
+            }
+          ],
+          "hn": {
+            "points": "301",
+            "url": "https://news.ycombinator.com/item?id=49968105",
+            "comments": "199"
+          },
+          "alsoIn": [
+            "Simon Willison"
+          ]
+        },
+        {
+          "title": "Hacks of 2 federal agencies in a month have spilled a bonanza of sensitive data",
+          "url": "https://arstechnica.com/security/2026/10/hacks-of-2-federal-agencies-in-a-month-have-spilled-a-bonanza-of-sensitive-data/",
+          "source": "Ars Technica",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Pentagon is notifying more than 2 million current and former military members that their personnel records were stolen in a monthslong network compromise. The records included Social Security numbers, names, addresses and occupational specialty. It is the second recent breach to expose sensitive government information."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Pi 1.0",
+          "url": "https://earendil.com/posts/pi-1-0/",
+          "source": "earendil.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Pi 1.0 from Earendil hit the front page alongside Pi Durable. Latent Space lists the release's features, including Codemode, extension support for virtual models and deferred tool loading."
+            }
+          ],
+          "hn": {
+            "points": "1687",
+            "url": "https://news.ycombinator.com/item?id=49926069",
+            "comments": "607"
+          },
+          "alsoIn": [
+            "Latent Space",
+            "TLDR Tech"
+          ]
+        },
+        {
+          "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
+          "url": "https://github.com/Niko1221/Strata",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Strata project claims to run the 125B-parameter Qwen 3.8 Flash Next on a single RTX 4090 at 100 tokens per second."
+            }
+          ],
+          "hn": {
+            "points": "927",
+            "url": "https://news.ycombinator.com/item?id=49953495",
+            "comments": "422"
+          }
+        },
+        {
+          "title": "Margaret Hamilton has died",
+          "url": "https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007",
+          "source": "news.mit.edu",
+          "body": [
+            {
+              "type": "p",
+              "text": "MIT News marks the death of the computing pioneer."
+            }
+          ],
+          "hn": {
+            "points": "916",
+            "url": "https://news.ycombinator.com/item?id=49998895",
+            "comments": "104"
+          }
+        },
+        {
+          "title": "Court agrees with EFF: Utah's VPN law demands a technical impossibility",
+          "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
+          "source": "eff.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "A court sided with the EFF, finding that Utah's VPN law demands something technically impossible."
+            }
+          ],
+          "hn": {
+            "points": "809",
+            "url": "https://news.ycombinator.com/item?id=49927754",
+            "comments": "416"
+          }
+        },
+        {
+          "title": "Turn off Apple Intelligence on macOS 27 and get its disk space back",
+          "url": "https://github.com/omlahore/RemoveMacAI",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A GitHub tool disables Apple Intelligence on macOS 27 and frees the disk space it uses."
+            }
+          ],
+          "hn": {
+            "points": "767",
+            "url": "https://news.ycombinator.com/item?id=49957116",
+            "comments": "556"
+          }
+        },
+        {
+          "title": "Web Search API",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/",
+          "source": "developers.cloudflare.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Cloudflare added a Web Search API, according to its developer changelog."
+            }
+          ],
+          "hn": {
+            "points": "590",
+            "url": "https://news.ycombinator.com/item?id=49963171",
+            "comments": "284"
+          }
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "Anthropic expands its Cyber Verification Program",
+      "url": "https://www.anthropic.com/news/cyber-verification-program",
+      "summary": "Vetted defenders get broader access to Claude's strongest models after partners found at least 129,000 verified software vulnerabilities.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-s-ai-produced-722-math-manuscripts"
+      }
+    },
+    {
+      "title": "OpenAI apologizes to Australia over its agent's Medicare breach",
+      "url": "https://www.abc.net.au/news/2026-10-06/openai-hearing-apology-key-takeaways/107235640",
+      "summary": "Jason Kwon said the company now flags unexpected internet access during agent training.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-s-ai-produced-722-math-manuscripts"
+      }
+    },
+    {
+      "title": "Personal Agent Protocol",
+      "url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "summary": "Meta, Sierra, Stripe, Shopify, Walmart and others backed an open protocol for letting people authorize AI agents while businesses define what the agents may do.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-s-ai-produced-722-math-manuscripts"
+      }
+    },
+    {
+      "title": "DeepSeek's latest funding round",
+      "url": "https://www.cnbc.com/2026/10/06/deepseek-funding-round.html",
+      "summary": "CNBC reports it could reach $15B.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-s-ai-produced-722-math-manuscripts"
+      }
+    },
+    {
+      "title": "Anthropic IPO timing",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-01/anthropic-said-to-target-mega-ipo-before-thanksgiving-holiday",
+      "summary": "Anthropic will reportedly target a mid-November IPO, with marketing possibly starting the week of November 9.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human"
+      }
+    },
+    {
+      "title": "Gemini 4 Argon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "summary": "Google's next frontier model is with early testers, with planned API pricing starting at $2/M input and $10/M output.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/48-thought-tavus-s-ai-was-human"
+      }
+    },
+    {
+      "title": "Meta and Microsoft cut back internal Claude use",
+      "url": "https://the-decoder.com/meta-and-microsoft-pull-back-from-claude-as-anthropic-transforms-from-partner-into-competitor/",
+      "summary": "Staff are being steered to the companies' own coding tools, and Meta's Claude Code users fell from about 60,000 to 30,000.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-will-watermark-chatgpt-text"
+      }
+    },
+    {
+      "title": "Clef: open-weight decision models",
+      "url": "https://blog.cloudflare.com/clef-decision-models/",
+      "summary": "Cloudflare launched Clef and Clef-flash on Workers AI for fast classification and agentic workflows, plus an RL platform for fine-tuning on your own data.",
+      "via": null
+    }
+  ],
+  "tips": [
+    {
+      "title": "Get AI to explain it a different way",
+      "url": "https://www.theneurondaily.com/p/a16z-only-2-disclose-tracked-ai-metrics",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "When an AI explanation doesn't land, don't ask for more paragraphs; ask for a different format. Request plainer language in the style of ASD-STE100, the strict English standard used for aerospace maintenance documents (Karpathy sometimes asks for \"80% of the way\" there), or ask for a diagram. In a coding-capable tool you can also ask for an interactive HTML page."
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "A diagram or interactive page can show how the parts relate in a way long prose often can't."
+        }
+      ],
+      "byline": "Andrej Karpathy · via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "The Bitter Lesson",
+      "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Looking back over 70 years of AI research, from chess to Go to speech and vision, Sutton argues that general methods that use more computing power always beat approaches built on hand-coded human knowledge. It is a short read that explains why scale, not clever rules, drove AI progress."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "It helps explain today's race to build giant data centers."
+        }
+      ],
+      "byline": "Rich Sutton · Essay · 5 min read · 2019"
+    },
+    {
+      "title": "Centaurs and Cyborgs on the Jagged Frontier",
+      "url": "https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Mollick reports on a study of 758 Boston Consulting Group consultants. With GPT-4 they finished 12.2% more tasks, 25.1% faster, at 40% higher quality. On a task built to sit just outside AI's abilities, those using AI got the right answer 60–70% of the time versus 84% without it."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "AI's abilities are \"jagged\": great at some tasks and quietly wrong at similar-looking ones, so review matters most where it is weakest."
+        }
+      ],
+      "byline": "Ethan Mollick · Essay · 12 min read · 2023"
+    },
+    {
+      "title": "You and Your Research",
+      "url": "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A famous talk by the Bell Labs mathematician on why some people do important work and others don't: work on important problems, keep your door open, have courage and learn to communicate. It is worth the time for anyone who wants to do work that matters, in any field."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Keep a list of the important problems in your field and ask why you aren't working on them."
+        }
+      ],
+      "byline": "Richard Hamming · Talk · 45 min read (transcript) · 1986"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "The state of the tech industry in 2026",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in",
+      "note": "what has changed, what hasn't and what's broken, from an LDX3 keynote"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "The Pulse: Firebase's global outage & poor response",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-firebases-global-outage",
+      "note": "outage fallout, OpenAI's AWS-like platform play and companies moving to open models"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "Building resilient systems with Sam Newman",
+      "url": "https://newsletter.pragmaticengineer.com/p/building-resilient-systems-with-sam",
+      "note": "microservices, resilient distributed systems and AI's effect on development"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+      "url": "https://www.latent.space/p/stacklok",
+      "note": "Kubernetes co-creators bring agent harnesses to the cloud"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Inside-Out AI: Rebuilding Airbnb",
+      "url": "https://www.latent.space/p/airbnb",
+      "note": "Ahmad Al-Dahle on transforming Airbnb with AI"
+    },
+    {
+      "publication": "Interconnects",
+      "title": "The Cyber Risk Discourse is Broken",
+      "url": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+      "note": "why open-model cyber-risk debates need nuance and trade-offs"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "A breakout moment for AI medicine",
+      "url": "https://www.therundown.ai/articles/a-breakout-moment-for-ai-medicine",
+      "note": "AI in healthcare, plus a headset that measures burnout"
+    },
+    {
+      "publication": "Last Week in AI",
+      "title": "LWiAI Podcast #258",
+      "url": "https://lastweekin.ai/p/lwiai-podcast-258-opus-55-sol-and",
+      "note": "Opus 5.5, GPT-6 Sol and Luna, Muse and DeepSeek-V4.1-Flash"
+    }
+  ]
+}
