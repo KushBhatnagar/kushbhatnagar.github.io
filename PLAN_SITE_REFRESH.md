@@ -7,12 +7,12 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-08, incident + safeguards)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#23 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#24 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
 
 | Area | State |
 |---|---|
 | Site (Hugo + PaperMod) | ✅ Live, all pages checked by Kush |
-| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST: Digital-Dhaba PR #1 **open, not merged yet** (checked 2026-10-08 04:15 UTC) |
+| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Open: email cut off after the "Worth your weekend" heading (see item 2) |
 | Sunday letter (Sun 09:00 IST) | ✅ Works; first one sent manually 2026-10-04 (3 posts); first scheduled run Sun 2026-10-11; backups 10:00/11:30 IST live (PR #23) |
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba) |
@@ -24,12 +24,16 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
-1. Kush: merge Digital-Dhaba PR #1 (backup builds) before Thu 2026-10-15. Blog PR #23 is merged and deployed. Then watch: Sunday letter Sun 2026-10-11 09:00 IST (first scheduled
+1. Safeguards all live (blog PR #23, Digital-Dhaba PR #1). Watch: Sunday letter Sun 2026-10-11 09:00 IST (first scheduled
    run; Actions should show one "schedule" run that sends, and backups that skip), Digital Dhaba Thu 2026-10-15 06:00 IST.
-2. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
-3. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
+2. Digital Dhaba email 2026-10-08 showed only the "Worth your weekend" heading; the rest (3 picks, "From the
+   newsletters", footer) missing. The content sent to Kit is complete (68 KB). Suspected: Gmail clips emails over 102 KB,
+   and Kit's click-tracking links + template add ~15–40 KB. Kush to confirm ("[Message clipped]" at the bottom in Gmail,
+   or Kit's preview shows it all); then trim the email HTML in `scripts/kit_send_digest.py`.
+3. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
+4. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
    `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (Disqus on moved posts).
-4. Kush: AdSense → Sites status for blogsbykush.com ("Ready"?); the post ad slot was empty on 2026-10-07 (now hidden
+5. Kush: AdSense → Sites status for blogsbykush.com ("Ready"?); the post ad slot was empty on 2026-10-07 (now hidden
    when unfilled, PR #21). Waiting on Kush's update.
 
 ## Brand direction

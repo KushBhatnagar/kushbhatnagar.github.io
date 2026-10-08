@@ -310,7 +310,12 @@ Format: `HH:MM [Phase N] change — detail`
 - Known limit: if a build commits the issue but its "Publish to the blog" step fails, backups skip (issue exists);
   re-run "Publish issue to blogsbykush.com" by hand.
 - Status: blog PR #23 (deploy `cancel-in-progress`, Sunday backups, RCA docs) merged 04:10 UTC and deployed OK — the
-  first deploy under the new setting. Digital-Dhaba PR #1 (Digital Dhaba backup builds) still open at 04:15 UTC.
+  first deploy under the new setting. Digital-Dhaba PR #1 (Digital Dhaba backup builds) merged 04:12 UTC (an earlier
+  "still open" reading at 04:15 was stale); `main` now has the 3 crons + `check` job. All safeguards live.
+- Follow-up (Kush): the 2026-10-08 email stops after the "Worth your weekend" heading although the blog page is complete.
+  Rebuilt the email locally with `kit_send_digest.email_ready`: all sections are in what we send (68 KB raw, ~72 KB
+  quoted-printable; the heading sits at ~60 KB). Suspected Gmail 102 KB clipping after Kit adds tracking links
+  (104 links) and its template; to be confirmed by Kush before changing anything.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
