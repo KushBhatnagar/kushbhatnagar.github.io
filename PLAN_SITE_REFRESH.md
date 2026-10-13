@@ -4,7 +4,7 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-13, emails booked in Kit ahead of time)
+## ▶ STATUS — where we left off (updated 2026-10-13, motto reframed: learning under everything)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#29 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
@@ -17,6 +17,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
+| Motto | "Learn. Build. Explain." kept, reframed as not-a-sequence (Kush, 2026-10-13): sub-line "Always learning. Sometimes building. Often explaining."; homepage intro + 4 section cards (Learn / Learn + Build / Learn + Explain ×2, Learning Notes moved under Explain); About "How this blog works" + diagram replaces the learning-loop image |
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
 | Tech Digest page | `/tech-digest/` intro explains the name ("Why Digital Dhaba?", roadside dhaba story; PR #19, 2026-10-06) |
 | Deploys | 2026-10-06→08: deploy of #19 hung in "waiting" (GitHub side) and blocked #20–#22; cancelled 2026-10-08, #22 deployed. `hugo.yml` `cancel-in-progress: true` live (PR #23, deployed 2026-10-08) |
@@ -41,16 +42,18 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 
 - **Who:** Kush Bhatnagar — Technical Product Manager, 17+ years in tech, last 5+ on AI/GenAI
   platforms and cloud infrastructure.
-- **Idea:** the blog is a learning system in public — *I learn, I build, then I explain.*
+- **Idea:** the blog is learning in public. Not a sequence (Kush, 2026-10-13): learning is under everything; building and
+  explaining are two things that come out of it — *Always learning. Sometimes building. Often explaining.*
 - **Readers:** PM aspirants and product managers, and non-technical folks working in technical domains.
 - **Goal:** credibility now; possibly consulting later.
-- **Site map follows the loop:**
+- **Sections (what each one does):**
 
-  | Loop    | Section           | URL                   |
-  |---------|-------------------|-----------------------|
-  | Learn   | Tech Digest       | `/tech-digest/`       |
-  | Build   | Build Log         | `/build-log/`         |
-  | Explain | Concept Breakdown | `/concept-breakdown/` |
+  | Does              | Section           | URL                   |
+  |-------------------|-------------------|-----------------------|
+  | Learn             | Tech Digest       | `/tech-digest/`       |
+  | Learn + Build     | Build Log         | `/build-log/`         |
+  | Learn + Explain   | Concept Breakdown | `/concept-breakdown/` |
+  | Learn + Explain   | Learning Notes    | `/learning-notes/`    |
 
 - **Palette (from the comics):** blue `#11a8cc`, orange `#f4a33a`, cream `#fff6d1`, ink `#131313`.
   Headings in *Fredoka* (matches the comic lettering).

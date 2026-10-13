@@ -13,8 +13,8 @@ hideDescription: true   # the intro already says it; description stays as the se
 Hi, I'm Kush. I'm a **Technical Product Manager** in Bangalore, with 17+ years in tech and 5+ years in
 product management. I lead an enterprise AI platform by day and build my own AI products after hours.
 
-This blog is where I learn in public, show what I build and explain it in plain words, for product people
-and non-technical folks in tech.
+This blog is my learning, in public: some of it I build with, some of it I explain in plain words, for
+product people and non-technical folks in tech.
 
 ## What I work on
 
@@ -33,20 +33,21 @@ the [Build Log](/build-log/).
 
 ## How this blog works
 
-I believe learning is a continuous loop: to truly learn something, you have to experiment with it and
-transform it into something of your own. This site is that loop, in public, built on three things I value:
-**learning, writing and simplicity**.
+Everything here starts with learning. To truly learn something, you have to make it your own, and I do that
+in two ways: I **build** with it, or I **explain** it in plain words. Some topics I do both, many only one.
+It all rests on three things I value: **learning, writing and simplicity**.
 
-- **Learn:** [Tech Digest](/tech-digest/), Digital Dhaba, my weekly AI digest every Thursday, and
-  [Learning Notes](/learning-notes/), my own notes on what I read.
-- **Build:** [Build Log](/build-log/), products I'm building in public.
-- **Explain:** [Concept Breakdown](/concept-breakdown/), comic-style breakdowns of AI and product concepts.
-  No jargon.
+- **Learn:** [Tech Digest](/tech-digest/), Digital Dhaba, my weekly AI digest every Thursday.
+- **Learn + Build:** [Build Log](/build-log/), products I'm building in public.
+- **Learn + Explain:** [Concept Breakdown](/concept-breakdown/), comic-style breakdowns of AI and product
+  concepts, no jargon, and [Learning Notes](/learning-notes/), my own notes on what I read.
 
-<figure class="about-loop">
-    <img src="/assets/images/how-learning-actually-happens.png" alt="The learning loop: absorbing information, transformation, experimentation, feedback" loading="lazy">
-    <figcaption>The learning loop, from <a href="https://medium.com/accelerated-intelligence/memory-learning-breakthrough-it-turns-out-that-the-ancients-were-right-7bbd3090d9cc">Michael Simmons</a>.</figcaption>
-</figure>
+<div class="about-model" role="img" aria-label="Learning is the base; building and explaining are two things that come out of it">
+    <div class="model-box"><strong>Build</strong><span>Build Log</span></div>
+    <div class="model-box"><strong>Explain</strong><span>Concept Breakdown · Learning Notes</span></div>
+    <div class="model-arrows"><span>↑</span><span>↑</span></div>
+    <div class="model-box model-base"><strong>Learn</strong><span>Tech Digest, and under everything else</span></div>
+</div>
 
 ## Get in touch
 
