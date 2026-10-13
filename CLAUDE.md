@@ -104,10 +104,12 @@ Never edit `newsletter.txt` by hand; re-import instead. Setup and flow: `docs/TE
 
 Kit Free Plan replaces Mailchimp. Signup forms: `layouts/_partials/newsletter_form.html` (one Kit form, ID `10000596` in
 `hugo.toml` → `params.kit.form`; empty → no signup box). **Only two emails** (Kush, 2026-10-03), via Kit API v4 from GitHub Actions, never Kit RSS:
-1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`). Built 06:00 IST by
-   Digital-Dhaba `weekly-digest.yml`; backup builds 07:00/08:30 IST only if today's issue is missing.
-2. **Weekly letter**, Sunday 09:00 IST (backups 10:00/11:30, deduped by subject) → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`):
-   every post dated in the last 7 days (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email.
+1. **Digital Dhaba**, Thursday 07:00 IST → Digital-Dhaba workflow (`scripts/kit_send_digest.py`). Built 00:30 IST by
+   Digital-Dhaba `weekly-digest.yml` (backups 02:30/04:30 only if today's issue is missing); the email is booked in Kit for 07:00.
+2. **Weekly letter**, Sunday 09:00 IST → `.github/workflows/weekly-roundup.yml` (`scripts/kit_weekly_roundup.py`) runs 00:30 IST
+   (backups 02:30/04:30, deduped by subject) and books Kit for 09:00: every post dated the previous Sunday–Saturday
+   (Concept Breakdown, Build Log, Learning Notes) in one email; none → no email. Sunday's own posts go next week.
+   Why early: GitHub cron isn't exact (dropped 2026-10-08, 6.5 h late 2026-10-11); Kit's scheduled send is.
 No per-post emails. Switches are repo variables (`KIT_ROUNDUP_ENABLED`, `KIT_DIGEST_ENABLED`, `KIT_SEND`,
 `KIT_TEST_TAG_ID` = test mode). Setup: `docs/NEWSLETTER.md`. Mailchimp list: audited with
 a one-off script (removed 2026-10-05; in git history), the real ~15 uploaded to Kit by Kush; Mailchimp closed 2026-10-05.
@@ -145,8 +147,8 @@ scripts/new_breakdown.py          # PDF → Concept Breakdown page bundle
 scripts/add_digest.py             # Digital Dhaba issue folder → content/tech-digest/<date>/
 scripts/kit_api.py                # Kit API v4 client (stdlib): dry run / test mode / dedupe
 scripts/kit_send_digest.py        # Digital Dhaba email, Thursday 07:00 IST
-scripts/kit_weekly_roundup.py     # Sunday weekly letter: all posts from the last 7 days
-.github/workflows/weekly-roundup.yml  # cron for the weekly letter (Sun 09:00 IST)
+scripts/kit_weekly_roundup.py     # Sunday weekly letter: posts dated the previous Sun–Sat, booked for 09:00 IST
+.github/workflows/weekly-roundup.yml  # cron for the weekly letter (Sun 00:30 IST + backups; Kit sends 09:00)
 layouts/home.postsjson.json       # /posts.json (posts only, no Tech Digest), read by the weekly letter
 archetypes/learning-note.md build-log.md  # `hugo new --kind learning-note content/posts/<slug>.md`
 docs/NEWSLETTER.md                # Kit setup, switches, moving the audited Mailchimp list
@@ -175,7 +177,7 @@ _migration/*.py                   # one-off Jekyll→Hugo converters (kept for a
 In the post's `.md` file, front matter at the top:
 - `draft: true` → `draft: false` (or delete the line) when it's ready.
 - `date: YYYY-MM-DD` = **the day you publish** (not the day you started). The Sunday letter emails every post dated in
-  the last 7 days; an old date means it's never emailed. The writing skills set this; re-set it if a draft waited.
+  the previous Sunday–Saturday (a Sunday post goes in the next Sunday's letter); an old date means it's never emailed. The writing skills set this; re-set it if a draft waited.
 - Commit on a branch → PR into `main` → merge. Live in ~2 minutes; in the next Sunday letter automatically.
 
 ## Brand

@@ -50,10 +50,11 @@ dry run: `docs/NEWSLETTER.md`.
 
 ## Weekly routine
 
-Automatic: Digital-Dhaba `weekly-digest.yml` builds the issue every Thursday at 06:00 IST, commits it and starts
-`publish-to-blog.yml` (blog push → deploy → email). Backup runs at 07:00 and 08:30 IST build only if today's issue
-isn't on main yet (GitHub dropped the 06:00 run on 2026-10-08). If nothing ran, start "Weekly digest" by hand with
-`dry_run` off; after 07:00 IST the email goes out right away.
+Automatic: Digital-Dhaba `weekly-digest.yml` builds the issue every Thursday at 00:30 IST, commits it and starts
+`publish-to-blog.yml` (blog push → deploy → email booked in Kit for 07:00 IST). Backup runs at 02:30 and 04:30 IST
+build only if today's issue isn't on main yet. GitHub's schedule isn't exact (dropped a run on 2026-10-08, ran
+6.5 h late on 2026-10-11), hence the head start. If nothing ran, start "Weekly digest" by hand with `dry_run` off;
+after 07:00 IST the email goes out right away.
 
 ## Manual import (fallback)
 

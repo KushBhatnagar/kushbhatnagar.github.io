@@ -4,16 +4,16 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-08, incident + safeguards + Tool Call published)
+## ▶ STATUS — where we left off (updated 2026-10-13, emails booked in Kit ahead of time)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#27 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#28 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
 
 | Area | State |
 |---|---|
 | Site (Hugo + PaperMod) | ✅ Live, all pages checked by Kush |
-| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming live (PR #24) |
-| Sunday letter (Sun 09:00 IST) | ✅ Works; first one sent manually 2026-10-04 (3 posts); first scheduled run Sun 2026-10-11; backups 10:00/11:30 IST live (PR #23) |
+| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming live (PR #24). From 2026-10-15: built 00:30 IST (backups 02:30/04:30), email booked in Kit for 07:00 (Digital-Dhaba PR #2) |
+| Sunday letter (Sun 09:00 IST) | ⚠️ 2026-10-11: sent OK (The Tool Call) but at 15:45 IST: GitHub started all 3 runs ~6.5 h late; backups skipped correctly. From 2026-10-18: runs 00:30 IST (backups 02:30/04:30) and books Kit for 09:00; covers posts dated the previous Sun–Sat (PR #28) |
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
@@ -24,9 +24,9 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
-1. Safeguards all live (blog PR #23, Digital-Dhaba PR #1). Watch: Sunday letter Sun 2026-10-11 09:00 IST (should list
-   The Tool Call; first scheduled
-   run; Actions should show one "schedule" run that sends, and backups that skip), Digital Dhaba Thu 2026-10-15 06:00 IST.
+1. Kush: merge blog PR #28 and Digital-Dhaba PR #2 **before Wed 2026-10-14 19:00 UTC** (Thu 00:30 IST). Then watch: Digital Dhaba
+   Thu 2026-10-15 arrives 07:00 IST (Actions: build run around 00:30 IST, log "Scheduling for Thu … 07:00 IST"); Sunday letter
+   2026-10-18 arrives 09:00 IST (posts dated 11–17 Oct).
 2. Digital Dhaba email clipped by Gmail (confirmed by Kush: "[Message clipped]"; Kit preview complete). Fixed (PR #24, merged) in
    `scripts/kit_send_digest.py` (email only): compact HTML, HN discussion links as plain text, and, only when needed,
    "From the newsletters" then "Quick hits" replaced by a "Read the full issue →" line. Check the Thu 2026-10-15 email

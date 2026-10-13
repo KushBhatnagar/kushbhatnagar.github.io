@@ -4,11 +4,16 @@ Subscribers live in **Kit (Free Plan)**. Subscribers get **at most two emails a 
 
 | Email | When | Sent by |
 |---|---|---|
-| **Digital Dhaba** (the full newsletter) | **Thursday 07:00 IST**, after the issue is built at 06:00 IST (backup builds at 07:00 and 08:30 IST run only if today's issue is missing; a late build emails right away) | Digital-Dhaba workflow → `scripts/kit_send_digest.py` |
-| **Weekly letter**: every post from the last 7 days (Concept Breakdown, Build Log, Learning Notes) with image, summary and "Read it" button | **Sunday 09:00 IST** (backups 10:00 and 11:30 IST send only if 09:00 didn't), only if something was published | `.github/workflows/weekly-roundup.yml` → `scripts/kit_weekly_roundup.py` |
+| **Digital Dhaba** (the full newsletter) | **Thursday 07:00 IST**, booked in Kit by the build at 00:30 IST (backup builds 02:30 and 04:30 IST run only if today's issue is missing; a build that finishes after 07:00 emails right away) | Digital-Dhaba workflow → `scripts/kit_send_digest.py` |
+| **Weekly letter**: every post dated in the week that just ended, Sunday to Saturday (Concept Breakdown, Build Log, Learning Notes), with image, summary and "Read it" button | **Sunday 09:00 IST**, booked in Kit by the run at 00:30 IST (backups 02:30 and 04:30 IST book it only if no letter exists yet), only if something was published | `.github/workflows/weekly-roundup.yml` → `scripts/kit_weekly_roundup.py` |
 
 There are no per-post emails. The weekly letter picks posts by their front-matter `date`, so when a draft
-finally goes live, set `date` to the publishing day.
+finally goes live, set `date` to the publishing day. A post published on a Sunday goes in the *next* Sunday's
+letter (the letter is prepared just after midnight, before that day's posts exist).
+
+**Why the runs are hours early:** GitHub's scheduled runs aren't exact (one dropped on 2026-10-08, all started
+6.5 h late on 2026-10-11). Both workflows run early and book the email in Kit for the send time, and Kit sends
+on time.
 
 Signups: every signup box on the site (`layouts/_partials/newsletter_form.html`) posts to **one Kit form**,
 ID in `hugo.toml` → `params.kit.form` (`10000596`).

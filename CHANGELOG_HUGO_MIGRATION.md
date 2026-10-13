@@ -346,6 +346,23 @@ Format: `HH:MM [Phase N] change — detail`
   transcript CHECK comment (Kush approved by publishing; it would otherwise show in the page source). Production build:
   page, homepage breakdown card, `posts.json` (Sunday letter 2026-10-11), sitemap and RSS all include it.
 
+## 2026-10-13 — Sunday letter late (2026-10-11): emails now booked in Kit ahead of time
+- PR #27 (publish The Tool Call) merged 2026-10-08 and deployed.
+- What happened (Kush: the letter arrived in the afternoon): all three scheduled runs of `weekly-roundup.yml` started
+  ~6.5 h late (03:30/04:30/06:00 UTC → 10:13/10:57/12:21 UTC). Logs: the first run found 1 post (The Tool Call) and
+  created broadcast 26349622 (ALL SUBSCRIBERS, sent 10:15 UTC = 15:45 IST); both backups logged "SKIP: … already
+  exists". Code and safeguards worked; GitHub's scheduler was late (it dropped a run on 2026-10-08).
+- Fix: don't depend on GitHub starting on time; run hours early and book the send time in Kit (Kit's scheduled send is exact).
+  - Blog `weekly-roundup.yml`: crons Sat 19:00/21:00/23:00 UTC = Sun 00:30/02:30/04:30 IST.
+    `kit_weekly_roundup.py`: `send_slot` books the broadcast for 09:00 IST today (`ROUNDUP_SEND_TIME`), or sends now
+    if that has passed; `pick` now takes posts dated the 7 days *before* today (previous Sun–Sat), so a post published
+    on Sunday after the run goes in the next letter instead of being missed. Checked: no post is dated 2026-10-11, so
+    the 18 Oct letter (11–17 Oct) repeats nothing from the 11 Oct letter. Tested `pick` and `send_slot` on example dates.
+  - Digital-Dhaba `weekly-digest.yml` (Digital-Dhaba PR #2): crons Wed 19:00/21:00/23:00 UTC = Thu 00:30/02:30/04:30 IST;
+    the `check` job and the issue date use IST (Thursday). `kit_send_digest.next_slot` already books Thursday 07:00 IST
+    when run earlier that day (tested: a build finishing 00:35–06:59 IST books 07:00; after 07:00 it sends right away).
+  - Docs: `docs/NEWSLETTER.md`, `docs/TECH_DIGEST.md`, `CLAUDE.md`, Digital-Dhaba README. actionlint OK on both workflows.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

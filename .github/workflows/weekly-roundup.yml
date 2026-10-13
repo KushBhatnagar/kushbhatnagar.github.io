@@ -5,12 +5,13 @@ name: Weekly letter (Kit)
 
 on:
   schedule:
-    - cron: "30 3 * * 0"   # Sunday 03:30 UTC = 09:00 IST
-    # Backups at 10:00 and 11:30 IST: GitHub can drop a scheduled run without a trace (Digital Dhaba's
-    # was dropped on 2026-10-08). A backup only sends if no letter went out yet: the subject is the same
-    # all day ("week of <today IST>") and kit_api skips a subject Kit already has.
-    - cron: "30 4 * * 0"
-    - cron: "0 6 * * 0"
+    # Runs early on Sunday (IST) and books the letter in Kit for 09:00 IST, so it arrives on time even
+    # when GitHub starts a scheduled run hours late (6.5 h on 2026-10-11) or drops it (2026-10-08).
+    - cron: "0 19 * * 6"   # Saturday 19:00 UTC = Sunday 00:30 IST
+    # Backups at 02:30 and 04:30 IST. A backup only books a letter if none exists yet: the subject is
+    # the same all day ("week of <today IST>") and kit_api skips a subject Kit already has.
+    - cron: "0 21 * * 6"   # Sunday 02:30 IST
+    - cron: "0 23 * * 6"   # Sunday 04:30 IST
   workflow_dispatch:
 
 permissions:

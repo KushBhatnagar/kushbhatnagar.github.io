@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-The weekly letter: one Kit email with everything published on the blog in the last 7 days
-(Concept Breakdowns, Build Log, Learning Notes, …). Digital Dhaba issues are NOT included; they
+The weekly letter: one Kit email with everything published on the blog in the week that just ended,
+Sunday to Saturday (Concept Breakdowns, Build Log, Learning Notes, …). Digital Dhaba issues are NOT included; they
 go out separately on Thursdays (scripts/kit_send_digest.py).
 
     python3 scripts/kit_weekly_roundup.py            # run by .github/workflows/weekly-roundup.yml
 
 Reads the LIVE https://blogsbykush.com/posts.json (blog posts only, no Tech Digest issues) and picks
-posts whose `date` falls in the last 7 days. No new posts → no email. A re-run in the same week
-produces the same subject and is skipped as a duplicate.
+posts dated in the 7 days BEFORE today (today = the letter's Sunday, IST; today's own posts go in next
+week's letter). No new posts → no email. The letter is booked in Kit for 09:00 IST today (Kit sends on
+time even when GitHub starts the run hours late; it did on 2026-10-11), or sent right away if that time
+has passed. A re-run on the same day produces the same subject and is skipped as a duplicate.
 
 Note: a post is picked by its front-matter `date`. When you publish a post that sat in draft for a
 while, set `date` to the publishing day, or it may fall outside the 7-day window.
@@ -24,6 +26,7 @@ import kit_api  # noqa: E402
 SITE = os.environ.get("SITE_URL", "https://blogsbykush.com").rstrip("/")
 DAYS = int(os.environ.get("ROUNDUP_DAYS", "7"))
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+SEND_TIME = os.environ.get("ROUNDUP_SEND_TIME", "09:00")  # IST, on the letter's day
 LABELS = {
     "concept-breakdown": "Concept Breakdown",
     "build-log": "Build Log",
@@ -68,17 +71,27 @@ def email_html(posts, week_label):
 
 
 def pick(posts, today):
-    start = today - datetime.timedelta(days=DAYS - 1)
-    return [p for p in posts if start <= datetime.date.fromisoformat(p["date"]) <= today]
+    """Posts dated in the DAYS days before today (Sunday's letter: the previous Sunday to Saturday).
+    Today's posts are left for next week, so the run can happen early on Sunday without missing any."""
+    start, end = today - datetime.timedelta(days=DAYS), today - datetime.timedelta(days=1)
+    return [p for p in posts if start <= datetime.date.fromisoformat(p["date"]) <= end]
+
+
+def send_slot(now):
+    """Today at SEND_TIME (IST), or None (= send right away) if that has passed."""
+    hh, mm = (int(x) for x in SEND_TIME.split(":"))
+    slot = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+    return slot if slot > now else None
 
 
 def main():
     with urllib.request.urlopen(SITE + "/posts.json", timeout=30) as r:
         posts = json.load(r)["posts"]
-    today = datetime.datetime.now(IST).date()
+    now = datetime.datetime.now(IST)
+    today = now.date()
     week = pick(posts, today)
     if not week:
-        print(f"No posts dated in the last {DAYS} days; no weekly letter this week.")
+        print(f"No posts dated in the {DAYS} days before {today}; no weekly letter this week.")
         return
     week.sort(key=lambda p: p["date"])
     week_label = "Week of " + today.strftime("%-d %b %Y")
@@ -88,7 +101,7 @@ def main():
     kit_api.create_broadcast(
         subject=subject[:150], content=email_html(week, week_label),
         preview_text="; ".join(p["title"] for p in week)[:150],
-        description=f"Weekly letter, {week_label}")
+        description=f"Weekly letter, {week_label}", send_at=send_slot(now))
 
 
 if __name__ == "__main__":
