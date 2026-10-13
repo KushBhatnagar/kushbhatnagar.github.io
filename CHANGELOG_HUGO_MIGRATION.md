@@ -362,6 +362,9 @@ Format: `HH:MM [Phase N] change — detail`
     the `check` job and the issue date use IST (Thursday). `kit_send_digest.next_slot` already books Thursday 07:00 IST
     when run earlier that day (tested: a build finishing 00:35–06:59 IST books 07:00; after 07:00 it sends right away).
   - Docs: `docs/NEWSLETTER.md`, `docs/TECH_DIGEST.md`, `CLAUDE.md`, Digital-Dhaba README. actionlint OK on both workflows.
+- Merged 2026-10-13 06:48 UTC: blog PR #28 (deployed OK) and Digital-Dhaba PR #2; checked `main` in both repos has the
+  new crons. First runs: Digital Dhaba Wed 2026-10-14 19:00 UTC (email 07:00 IST Thu), Sunday letter Sat 2026-10-17
+  19:00 UTC (email 09:00 IST Sun).
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
