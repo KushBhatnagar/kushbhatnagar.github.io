@@ -7,7 +7,7 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-13, motto reframed: learning under everything)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#29 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#30 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
 
 | Area | State |
 |---|---|
@@ -17,7 +17,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
-| Motto | "Learn. Build. Explain." kept, reframed as not-a-sequence (Kush, 2026-10-13): sub-line "Always learning. Sometimes building. Often explaining."; homepage intro + 4 section cards (Learn / Learn + Build / Learn + Explain ×2, Learning Notes moved under Explain); About "How this blog works" + diagram replaces the learning-loop image |
+| Motto | ✅ Live (PR #29, merged + deployed 2026-10-13). "Learn. Build. Explain." kept, reframed as not-a-sequence (Kush, 2026-10-13): sub-line "Always learning. Sometimes building. Often explaining."; homepage intro + 4 section cards (Learn / Learn + Build / Learn + Explain ×2, Learning Notes moved under Explain); About "How this blog works" + diagram replaces the learning-loop image |
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
 | Tech Digest page | `/tech-digest/` intro explains the name ("Why Digital Dhaba?", roadside dhaba story; PR #19, 2026-10-06) |
 | Deploys | 2026-10-06→08: deploy of #19 hung in "waiting" (GitHub side) and blocked #20–#22; cancelled 2026-10-08, #22 deployed. `hugo.yml` `cancel-in-progress: true` live (PR #23, deployed 2026-10-08) |

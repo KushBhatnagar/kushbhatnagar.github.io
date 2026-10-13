@@ -380,6 +380,8 @@ Format: `HH:MM [Phase N] change — detail`
   replaced by a small HTML diagram (Learn at the base, Build and Explain on top). The image file
   `static/assets/images/how-learning-actually-happens.png` stays in the repo (no longer used on the page).
 - `CLAUDE.md` positioning and `PLAN_SITE_REFRESH.md` brand direction updated. Menu, URLs and email subjects unchanged.
+- PR #29 (this change + the STATUS/changelog update for PR #28 / Digital-Dhaba PR #2) merged 2026-10-13 10:01 UTC;
+  deploy succeeded (10:02 UTC).
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
