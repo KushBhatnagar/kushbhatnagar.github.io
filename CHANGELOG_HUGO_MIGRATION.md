@@ -362,6 +362,24 @@ Format: `HH:MM [Phase N] change — detail`
     the `check` job and the issue date use IST (Thursday). `kit_send_digest.next_slot` already books Thursday 07:00 IST
     when run earlier that day (tested: a build finishing 00:35–06:59 IST books 07:00; after 07:00 it sends right away).
   - Docs: `docs/NEWSLETTER.md`, `docs/TECH_DIGEST.md`, `CLAUDE.md`, Digital-Dhaba README. actionlint OK on both workflows.
+- Merged 2026-10-13 06:48 UTC: blog PR #28 (deployed OK) and Digital-Dhaba PR #2; checked `main` in both repos has the
+  new crons. First runs: Digital Dhaba Wed 2026-10-14 19:00 UTC (email 07:00 IST Thu), Sunday letter Sat 2026-10-17
+  19:00 UTC (email 09:00 IST Sun).
+
+## 2026-10-13 — Motto "Learn. Build. Explain." reframed: not a sequence
+- Why (Kush): the site read as a pipeline (learn → build → explain on every topic). In practice learning is under
+  everything and building and explaining are separate outcomes: Concept Breakdown and Learning Notes = learn + explain,
+  Build Log = learn + build, Digital Dhaba = learn.
+- Tagline unchanged (brand, LinkedIn, SEO). New sub-line under it: "Always learning. Sometimes building. Often
+  explaining." (`homeInfoParams.Subline`, `.home-subline` in `home_info.html` / `custom.css`).
+- Homepage intro: "I learn, I build, and then I explain" → "Everything starts with learning: some of it I build with,
+  some of it I explain in plain words".
+- Section cards: 3 → 4 (2×2) labelled Learn (Tech Digest), Learn + Build (Build Log), Learn + Explain (Concept
+  Breakdown, Learning Notes). Learning Notes moved from Learn to Explain.
+- About: intro line and "How this blog works" rewritten the same way; the learning-loop image (Michael Simmons) is
+  replaced by a small HTML diagram (Learn at the base, Build and Explain on top). The image file
+  `static/assets/images/how-learning-actually-happens.png` stays in the repo (no longer used on the page).
+- `CLAUDE.md` positioning and `PLAN_SITE_REFRESH.md` brand direction updated. Menu, URLs and email subjects unchanged.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.

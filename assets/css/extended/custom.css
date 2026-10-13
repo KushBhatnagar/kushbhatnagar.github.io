@@ -70,6 +70,12 @@
     font-weight: 600;
     letter-spacing: 0.02em;
 }
+.home-subline {
+    margin: 0 0 0.25rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+}
 .home-info-text .entry-header h1 { margin-bottom: 0.3rem; }
 .home-proof {
     margin: 0 0 0.75rem;
@@ -96,10 +102,10 @@
     .menu { flex-wrap: wrap; overflow-x: visible; white-space: normal; column-gap: 1rem; line-height: 2.2; padding-bottom: 0.5rem; }
 }
 
-/* Learn / Build / Explain pillars */
+/* Section cards (Learn / Learn + Build / Learn + Explain), 2×2 */
 .pillars {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     margin: 0 0 var(--gap);
 }
@@ -379,8 +385,14 @@
     object-fit: cover;
     border: 3px solid var(--brand-orange);
 }
-.about-loop { max-width: 380px; margin: 1.5rem auto; text-align: center; }
-.about-loop figcaption { font-size: 0.85rem; }
+/* About: learning underneath, building and explaining on top */
+.about-model { max-width: 520px; margin: 1.5rem auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; text-align: center; }
+.about-model .model-box { padding: 0.8rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--entry); }
+.about-model .model-base { grid-column: 1 / -1; border-color: var(--brand-blue); }
+.about-model .model-arrows { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; color: var(--brand-blue); font-weight: 700; line-height: 1; }
+.about-model strong { display: block; font-family: var(--font-display); font-size: 1.1rem; }
+.about-model span { font-size: 0.85rem; color: var(--secondary); }
+.about-model .model-arrows span { font-size: 1.4rem; color: var(--brand-blue); }
 @media (max-width: 600px) {
     .post-content img.about-photo { float: none; display: block; margin: 0 auto 1.25rem; width: 150px; height: 150px; }
 }

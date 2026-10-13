@@ -7,9 +7,10 @@ Context for Claude Code sessions on this repo.
 The source for **https://blogsbykush.com** (GitHub Pages repo `kushbhatnagar.github.io`), a
 personal blog by Kush Bhatnagar about AI, ML and product (older MLOps/AWS/book posts stay live).
 Positioning: **"Learn. Build. Explain."**. Kush is a Technical PM (17+ yrs, 5+ on AI/GenAI and cloud)
-writing for PMs, PM aspirants and non-technical folks in tech. Sections follow the loop:
-**Tech Digest** (learn, weekly, Claude-curated) + **Learning Notes** (learn, Kush's own notes on sources),
-**Build Log** (build in public), **Concept Breakdown** (explain, comics; formerly "ML Made Easy").
+writing for PMs, PM aspirants and non-technical folks in tech. Not a sequence (Kush, 2026-10-13): learning is
+under everything; building and explaining are two things that come out of it ("Always learning. Sometimes building.
+Often explaining."). **Tech Digest** (learn, weekly, Claude-curated), **Build Log** (learn + build, in public),
+**Concept Breakdown** (learn + explain, comics; formerly "ML Made Easy"), **Learning Notes** (learn + explain, Kush's own notes on sources).
 Learning Notes and Build Log entries start from `archetypes/` (templates from Sahayak `content/*-PLAN.md`). Older series `mlops` and `bookshelf` stay live but are off the nav.
 Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 

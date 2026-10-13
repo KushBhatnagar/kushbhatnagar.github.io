@@ -76,11 +76,12 @@ ignoreFiles = ["transcript\\.txt$"]
     imageUrl = "/assets/images/kush-avatar.jpg"
     imageTitle = "Kush Bhatnagar"
     Tagline = "Learn. Build. Explain."
+    Subline = "Always learning. Sometimes building. Often explaining."   # shown under the tagline
     breakdownCards = 2   # "Latest Concept Breakdowns" cards on the homepage (also left out of "Recent posts")
     recentPosts = 2      # homepage "Recent posts": latest N posts + "All posts →" (no pagination; other lists keep pagerSize)
     Proof = "Technical Product Manager · 17+ years in tech · 5+ years in product · leading an enterprise AI platform"
     Content = """
-I lead an enterprise AI platform by day and build my own AI products after hours. This blog is my learning system, in public: I **learn** something, I **build** with it, and then I **explain** it, so that product people and non-technical folks in tech can understand AI and product concepts without the jargon.
+I lead an enterprise AI platform by day and build my own AI products after hours. This blog is my learning, in public. Everything starts with **learning**: some of it I **build** with, some of it I **explain** in plain words, so product people and non-technical folks in tech can follow AI and product concepts without the jargon.
 """
     [[params.homeInfoParams.ctas]]
       name = "Subscribe"
@@ -90,21 +91,28 @@ I lead an enterprise AI platform by day and build my own AI products after hours
       name = "Connect on LinkedIn"
       url = "https://www.linkedin.com/in/kushbhatnagar/"
 
+    # Learning is under everything; building and explaining are two things that come out of it (not steps in order).
+    # `step` = what each section does. Four cards, 2×2: Learn and Build on top, the two Explain sections below.
     [[params.homeInfoParams.pillars]]
       step = "Learn"
       name = "Tech Digest"
       url = "/tech-digest/"
-      text = "Digital Dhaba every Thursday, plus Learning Notes: my own notes on what I read."
+      text = "Digital Dhaba every Thursday: what's happening in AI and tech, and why it matters."
     [[params.homeInfoParams.pillars]]
-      step = "Build"
+      step = "Learn + Build"
       name = "Build Log"
       url = "/build-log/"
       text = "Products I'm building in public: the decisions, the mistakes and the lessons."
     [[params.homeInfoParams.pillars]]
-      step = "Explain"
+      step = "Learn + Explain"
       name = "Concept Breakdown"
       url = "/concept-breakdown/"
       text = "Comic-style breakdowns of ML, GenAI, cloud and product concepts. No jargon."
+    [[params.homeInfoParams.pillars]]
+      step = "Learn + Explain"
+      name = "Learning Notes"
+      url = "/learning-notes/"
+      text = "My own notes on papers, essays and talks I've read, in plain words."
 
   [[params.socialIcons]]
     name = "x"
@@ -129,8 +137,8 @@ I lead an enterprise AI platform by day and build my own AI products after hours
   [params.analytics.google]
     SiteVerificationTag = "BKwv8d9RamS8UFYapYrQ8ppq348YsIXUDc9E2bWdaYM"
 
-# Top navigation — Learn (Tech Digest) · Build (Build Log) · Explain (Concept Breakdown).
-# Learning Notes sit with Learn. Archive lives in the footer (params.footer.text) to keep the menu short.
+# Top navigation — the four sections. Learning is under all of them; Build Log builds, Concept Breakdown and
+# Learning Notes explain (see homeInfoParams.pillars). Archive lives in the footer (params.footer.text) to keep the menu short.
 # MLOps Playground, Bookshelf Chronicles and Tags are intentionally off the menu; their pages stay live.
 [[menu.main]]
   identifier = "concept-breakdown"

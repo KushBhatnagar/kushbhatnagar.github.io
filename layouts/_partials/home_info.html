@@ -10,6 +10,7 @@
         {{- end }}
         <div class="home-info-text">
             {{- with .Tagline }}<p class="home-tagline">{{ . }}</p>{{ end }}
+            {{- with .Subline }}<p class="home-subline">{{ . }}</p>{{ end }}
             <header class="entry-header">
                 <h1>{{ .Title | markdownify }}</h1>
             </header>
@@ -34,7 +35,7 @@
 </article>
 
 {{- with .pillars }}
-<section class="pillars" aria-label="Learn, build, explain">
+<section class="pillars" aria-label="Sections: learn, build, explain">
     {{- range . }}
     <a class="pillar" href="{{ .url | relURL }}">
         <span class="pillar-step">{{ .step }}</span>
