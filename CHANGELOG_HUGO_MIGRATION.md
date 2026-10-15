@@ -383,6 +383,12 @@ Format: `HH:MM [Phase N] change — detail`
 - PR #29 (this change + the STATUS/changelog update for PR #28 / Digital-Dhaba PR #2) merged 2026-10-13 10:01 UTC;
   deploy succeeded (10:02 UTC).
 
+## 2026-10-15 — Concept Breakdown: How Does an Agent Remember? (draft)
+- New bundle `content/posts/agent-memory/` from Kush's `ContextWindow.pdf` (`scripts/new_breakdown.py`, 4 slides),
+  `url: /concept-breakdown/agent-memory/`, `date: 2026-10-15` (→ Sunday letter 2026-10-18), `draft: true`.
+- `/breakdown-post`: transcript read from the slides (no conversation text given; `CHECK` comment left), plain-words
+  section, SEO fields, slide alt text. Kush reviews and sets `draft: false`.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
