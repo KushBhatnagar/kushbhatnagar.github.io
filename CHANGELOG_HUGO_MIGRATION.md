@@ -388,6 +388,7 @@ Format: `HH:MM [Phase N] change — detail`
   `url: /concept-breakdown/agent-memory/`, `date: 2026-10-15` (→ Sunday letter 2026-10-18), `draft: true`.
 - `/breakdown-post`: transcript read from the slides (no conversation text given; `CHECK` comment left), plain-words
   section, SEO fields, slide alt text. Kush approved: `draft: false`, CHECK comment removed.
+- PR #30 merged 2026-10-15 11:01 UTC; deploy succeeded (11:02 UTC). Goes out in the Sunday letter 2026-10-18.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
