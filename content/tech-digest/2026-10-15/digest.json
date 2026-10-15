@@ -1,0 +1,852 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "October 15, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "44 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "Gemini 4 Argon",
+      "url": "https://deepmind.google/models/gemini/",
+      "summary": "Google's new model drew the week's biggest Hacker News thread, and newsletters are describing it as tying GPT-6."
+    },
+    {
+      "title": "Cloudflare acquires Deno",
+      "url": "https://deno.com/blog/cloudflare",
+      "summary": "The JavaScript runtime joins Cloudflare, one of the week's most-discussed deals outside AI."
+    },
+    {
+      "title": "Redesigning source control at Anthropic",
+      "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+      "summary": "Anthropic built its own alternative to Git after merged code changes grew from about 2,500 to over 30,000 a day."
+    },
+    {
+      "title": "11 year old unsoundness bugs found in Rust borrow checker",
+      "url": "https://github.com/rust-lang/rust/issues/164250",
+      "summary": "Long-standing soundness holes in the checker that underpins Rust's safety guarantees."
+    },
+    {
+      "title": "Ledger confirms spy chip implant behind wallet crypto thefts",
+      "url": "https://www.bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts/",
+      "summary": "Ledger has confirmed a hardware implant was behind the crypto thefts from its wallets."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Gemini 4 Argon",
+          "url": "https://deepmind.google/models/gemini/",
+          "source": "deepmind.google",
+          "body": [
+            {
+              "type": "p",
+              "text": "Google's Gemini 4 Argon page topped the week's discussion, with a companion \"Gemini 4 Argon for Robotics\" thread alongside it. Newsletter coverage says Argon went generally available this week and headlines it as tying GPT-6, with benchmarks like CursorBench reportedly confirming Google's claims."
+            }
+          ],
+          "hn": {
+            "points": "1428",
+            "url": "https://news.ycombinator.com/item?id=50073879",
+            "comments": "1021"
+          }
+        },
+        {
+          "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+          "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+          "source": "dgt.is",
+          "body": [
+            {
+              "type": "p",
+              "text": "A blog post asks why DeepSeek 4.1 Flash hasn't caused more of a stir. The thread, close to 1,000 comments, shows the question struck a nerve."
+            }
+          ],
+          "hn": {
+            "points": "1135",
+            "url": "https://news.ycombinator.com/item?id=50000488",
+            "comments": "988"
+          }
+        },
+        {
+          "title": "Redesigning source control at Anthropic",
+          "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+          "source": "anthropic.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Anthropic describes why and how it built a custom alternative to Git. In May 2026 it merged about 2,500 code changes per day; by September that was over 30,000. The volume suggests AI-assisted development is straining tools built for human-paced workflows."
+            }
+          ],
+          "hn": {
+            "points": "861",
+            "url": "https://news.ycombinator.com/item?id=50073633",
+            "comments": "961"
+          },
+          "alsoIn": [
+            "Simon Willison"
+          ]
+        },
+        {
+          "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+          "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "source": "csoonline.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "CSO Online reports that experts blame containment and monitoring lapses, not agents \"going rogue,\" for recent AI hacking reports. The framing points at basic security hygiene at frontier labs."
+            }
+          ],
+          "hn": {
+            "points": "778",
+            "url": "https://news.ycombinator.com/item?id=50091788",
+            "comments": "377"
+          }
+        },
+        {
+          "title": "OpenAI engineer arrested in bugging of executive conference room",
+          "url": "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/",
+          "source": "sfstandard.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "An OpenAI engineer was arrested over the alleged bugging of an executive conference room, and OpenAI's newsroom account has commented. Several newsletters led with it."
+            }
+          ],
+          "hn": {
+            "points": "641",
+            "url": "https://news.ycombinator.com/item?id=50078141",
+            "comments": "526"
+          },
+          "alsoIn": [
+            "TLDR AI",
+            "The Rundown AI"
+          ]
+        },
+        {
+          "title": "OpenAI annualised revenues $20B less than previously signalled",
+          "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
+          "source": "cnbc.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "CNBC reports OpenAI's annualised revenue is $20B lower than previously signalled. The figure matters for judging the scale of the compute deals and valuations around the company."
+            }
+          ],
+          "hn": {
+            "points": "432",
+            "url": "https://news.ycombinator.com/item?id=50008187",
+            "comments": "301"
+          },
+          "alsoIn": [
+            "The Neuron"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
+          "url": "https://huggingface.co/papers/2610.12572",
+          "source": "KlingAI Research",
+          "body": [],
+          "upvotes": "308",
+          "arxiv": "https://arxiv.org/abs/2610.12572",
+          "code": "https://github.com/vanzll/DiffusionART",
+          "stars": "122",
+          "inShort": "An online RL method for fine-tuning image and video diffusion models. It pools each prompt's rewards into one shared improving direction and adds a trust-region-masked second update, so no EMA tuning is needed.",
+          "whyItMatters": "On HunyuanVideo-13B it reaches the reward levels of DiffusionNFT and Flow-GRPO-Fast with 12.02x and 11.72x fewer GPU hours."
+        },
+        {
+          "title": "S-Space: Exploring Spatial Workspace in Multimodal Language Models",
+          "url": "https://huggingface.co/papers/2610.13527",
+          "source": "MirroS",
+          "body": [],
+          "upvotes": "287",
+          "arxiv": "https://arxiv.org/abs/2610.13527",
+          "code": "https://github.com/mirros-lab/s-space",
+          "stars": "173",
+          "inShort": "The authors find a linear subspace in multimodal LLMs where object tokens encode horizontal, vertical and distance coordinates. They show it works as an internal spatial workspace using causal interventions.",
+          "whyItMatters": "As a diagnostic, it shows models form good spatial representations but fall short at the transformations needed to reason across viewpoint changes."
+        },
+        {
+          "title": "AgentGarten: Code Worlds for Evolving Agents",
+          "url": "https://huggingface.co/papers/2610.12374",
+          "source": "MirroS",
+          "body": [],
+          "upvotes": "285",
+          "arxiv": "https://arxiv.org/abs/2610.12374",
+          "code": "https://github.com/MirroS-Lab/AgentGarten",
+          "stars": "183",
+          "inShort": "A framework pairing simulators and game engines with a shared real-time neural renderer, distilled from a video model using \"Adversarial Forcing.\" Agents learn in these worlds and pass distilled playbooks to later agents.",
+          "whyItMatters": "Agents learned from just 4 rounds, versus millions for a conventional RL counterpart."
+        },
+        {
+          "title": "Jeva: System One Models from First Principles",
+          "url": "https://huggingface.co/papers/2610.18773",
+          "source": "National University of Singapore",
+          "body": [],
+          "upvotes": "254",
+          "arxiv": "https://arxiv.org/abs/2610.18773",
+          "code": "https://github.com/LiQiiiii/Jeva",
+          "stars": "63",
+          "inShort": "A decision-native architecture that encodes the request and each option separately and scores them. This makes it null-aware, permutation-invariant, scalable in the number of options and cacheable.",
+          "whyItMatters": "It shows near-perfect null detection and no decision flips under any tested permutation. It scales to thousands of candidates and cuts latency by reusing computation across requests."
+        },
+        {
+          "title": "Thinking Inertia: LLMs Keep Thinking When Told Not To",
+          "url": "https://huggingface.co/papers/2610.11765",
+          "source": "Stanford University",
+          "body": [],
+          "upvotes": "222",
+          "arxiv": "https://arxiv.org/abs/2610.11765",
+          "code": "https://github.com/thinking-inertia/code",
+          "stars": "5",
+          "inShort": "The paper introduces metrics for measuring \"no-thinking\" behavior and tests six prompting interventions on six LLMs.",
+          "whyItMatters": "Explicit \"don't think\" controls can't reliably stop visible reasoning, and it gets worse as the answer space opens up."
+        },
+        {
+          "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+          "url": "https://huggingface.co/papers/2610.13361",
+          "source": "arXiv",
+          "body": [],
+          "upvotes": "206",
+          "arxiv": "https://arxiv.org/abs/2610.13361",
+          "code": "https://github.com/VectorSpaceLab/AgentSWE",
+          "stars": "36",
+          "inShort": "A 25-task benchmark covering creating, editing and optimizing agents, graded on held-out cases against requirement-derived rubrics.",
+          "whyItMatters": "No tested coding agent came close to delivering what a requirement asked for. Recurring failures include overfitting to visible cases and unsupported claims of completion."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "11 year old unsoundness bugs found in Rust borrow checker",
+          "url": "https://github.com/rust-lang/rust/issues/164250",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A Rust issue reports unsoundness bugs in the borrow checker that have gone unnoticed for 11 years. The borrow checker is central to Rust's memory-safety promise, so the thread drew heavy discussion."
+            }
+          ],
+          "hn": {
+            "points": "740",
+            "url": "https://news.ycombinator.com/item?id=50069499",
+            "comments": "423"
+          }
+        },
+        {
+          "title": "Python 3.15",
+          "url": "https://www.python.org/downloads/release/python-3150/",
+          "source": "python.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "Python 3.15 is out. Simon Willison highlights explicit lazy imports from PEP 810 (lazy import json) and a new profiler. He also notes the release lets library authors drop 3.10 and start using 3.11 features."
+            }
+          ],
+          "hn": {
+            "points": "316",
+            "url": "https://news.ycombinator.com/item?id=50021127",
+            "comments": "112"
+          },
+          "alsoIn": [
+            "[Simon Willison](https://simonwillison.net/2026/Oct/12/python-3-15/)"
+          ]
+        },
+        {
+          "title": "Show HN: Quake ported to safe Rust, playable in browser",
+          "url": "https://quake-srp.pages.dev/",
+          "source": "quake-srp.pages.dev",
+          "body": [
+            {
+              "type": "p",
+              "text": "A port of Quake to safe Rust that runs in the browser. It's a fun proof of concept for porting a classic C codebase."
+            }
+          ],
+          "hn": {
+            "points": "241",
+            "url": "https://news.ycombinator.com/item?id=50016312",
+            "comments": "181"
+          }
+        },
+        {
+          "title": "Postgres isn't slow, your storage is",
+          "url": "https://clickhouse.com/blog/posette-talk-recap-postgres-isnt-slow-your-storage-is",
+          "source": "clickhouse.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A recap of a Posette talk arguing that Postgres performance problems often trace back to the storage layer, not the database. The thread was active, so it's worth skimming if you run Postgres."
+            }
+          ],
+          "hn": {
+            "points": "179",
+            "url": "https://news.ycombinator.com/item?id=50052163",
+            "comments": "187"
+          }
+        },
+        {
+          "title": "From 2,500 requests to 24: Rebuilding star history without the stargazers",
+          "url": "https://github.blog/engineering/architecture-optimization/from-2500-requests-to-24-rebuilding-star-history-without-the-stargazers/",
+          "source": "GitHub Blog",
+          "body": [
+            {
+              "type": "p",
+              "text": "GitHub's new repo star-history API returns trends without individual identities or unbounded database work. The post covers the engineering tradeoffs behind the redesign."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "3rd Yandex Cloud Data Center Was Hit",
+          "url": "https://status.yandex.cloud/en/incidents/2136",
+          "source": "status.yandex.cloud",
+          "body": [
+            {
+              "type": "p",
+              "text": "Yandex Cloud's status page logged a third data center incident. An earlier report described a second hit within 48 hours that damaged its biggest Russian site. Both threads drew heavy discussion about physical infrastructure in wartime."
+            }
+          ],
+          "hn": {
+            "points": "642",
+            "url": "https://news.ycombinator.com/item?id=50040547",
+            "comments": "803"
+          },
+          "alsoIn": [
+            "[united24media.com](https://united24media.com/war-in-ukraine/yandex-takes-a-second-data-center-hit-in-48-hours-now-its-biggest-russian-site-is-damaged-23277)"
+          ]
+        },
+        {
+          "title": "A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
+          "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
+          "source": "machinelearning.apple.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Apple's research team describes a virtual GPU cloud assembled from idle Apple Silicon devices."
+            }
+          ],
+          "hn": {
+            "points": "246",
+            "url": "https://news.ycombinator.com/item?id=50070593",
+            "comments": "98"
+          }
+        },
+        {
+          "title": "Announcing AWS Lambda Web Functions",
+          "url": "https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/",
+          "source": "AWS News Blog",
+          "body": [
+            {
+              "type": "p",
+              "text": "Lambda Web Functions is a serverless compute primitive that runs your HTTP framework natively. It offers multi-concurrent execution and automated global distribution for fast, consistent responses."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Startups & Funding",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Cloudflare acquires Deno",
+          "url": "https://deno.com/blog/cloudflare",
+          "source": "deno.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Deno announced it is being acquired by Cloudflare. The JavaScript runtime sits close to Cloudflare's Workers platform, and the thread shows strong community interest."
+            }
+          ],
+          "hn": {
+            "points": "1385",
+            "url": "https://news.ycombinator.com/item?id=50019911",
+            "comments": "724"
+          }
+        },
+        {
+          "title": "Typesafe AI raises $870M at $7.5B",
+          "url": "https://typesafe.ai/blog/series-ai",
+          "source": "typesafe.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Typesafe AI announced an $870M round at a $7.5B valuation. Latent Space's AINews says Sequoia \"leaked\" that the company crossed $100M ARR within weeks of launch, and notes accusations of astroturfing."
+            }
+          ],
+          "hn": {
+            "points": "444",
+            "url": "https://news.ycombinator.com/item?id=50023450",
+            "comments": "356"
+          },
+          "alsoIn": [
+            "The Neuron"
+          ]
+        },
+        {
+          "title": "Research Firm Calls Anthropic's IPO 'Unprecedented Test of Investor Gullibity'",
+          "url": "https://www.cnbc.com/2026/10/07/anthropic-will-be-most-ridiculous-ipo-of-year-analyst-says.html",
+          "source": "cnbc.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "CNBC reports an analyst firm's harsh view of a prospective Anthropic IPO. It's a sign of how contested AI valuations are heading into public markets."
+            }
+          ],
+          "hn": {
+            "points": "243",
+            "url": "https://news.ycombinator.com/item?id=50051583",
+            "comments": "216"
+          }
+        },
+        {
+          "title": "Ambani's Jio seeks to raise $3.2B in what could be India's biggest IPO",
+          "url": "https://techcrunch.com/2026/10/14/ambanis-jio-seeks-to-raise-3-2b-in-what-could-be-indias-biggest-ipo/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Jio plans to use most of the proceeds to repay debt as it expands beyond telecom."
+            }
+          ]
+        },
+        {
+          "title": "Zenzap raises $44M for its AI chat app that aims to replace WhatsApp in the workplace",
+          "url": "https://techcrunch.com/2026/10/14/zenzap-raises-44m-for-its-ai-chat-app-that-aims-to-replace-whatsapp-in-the-workplace/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Zenzap is used by organizations including Starbucks and Taco Bell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Ledger confirms spy chip implant behind wallet crypto thefts",
+          "url": "https://www.bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts/",
+          "source": "bleepingcomputer.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Ledger confirmed that a spy implant in hardware wallets was behind crypto thefts. The thread links further coverage and a research write-up on the Nano X implant. Hardware supply-chain tampering is hard for users to detect."
+            }
+          ],
+          "hn": {
+            "points": "778",
+            "url": "https://news.ycombinator.com/item?id=50054092",
+            "comments": "491"
+          }
+        },
+        {
+          "title": "Hackers activate automatic defrosting in supermarket fridges across Europe",
+          "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+          "source": "tomshardware.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A cyberattack on European supermarkets triggered automatic defrosting in fridges, with delivery and store prices also affected. Reuters, the BBC and Le Monde covered it, and The Rundown AI flagged the attack on French grocers."
+            }
+          ],
+          "hn": {
+            "points": "900",
+            "url": "https://news.ycombinator.com/item?id=50055304",
+            "comments": "997"
+          },
+          "alsoIn": [
+            "The Rundown AI"
+          ]
+        },
+        {
+          "title": "Telegram Desktop vulnerability allowed any user's file to be stolen",
+          "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/",
+          "source": "beaksec.github.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "A write-up details a Telegram Desktop vulnerability that let an attacker steal any user's file, with a one-click account takeover in the post's URL."
+            }
+          ],
+          "hn": {
+            "points": "470",
+            "url": "https://news.ycombinator.com/item?id=50029123",
+            "comments": "328"
+          }
+        },
+        {
+          "title": "`123456' password used in Danish CPR data breach",
+          "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
+          "source": "cphpost.dk",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Copenhagen Post reports that a \"123456\" password was involved in a large breach of Danish CPR data."
+            }
+          ],
+          "hn": {
+            "points": "412",
+            "url": "https://news.ycombinator.com/item?id=50031269",
+            "comments": "227"
+          }
+        },
+        {
+          "title": "I Found a $90k Remote Code Execution Vulnerability in Google",
+          "url": "https://simonkoeck.com/writeups/google-devsite-flask-session-pickle-rce",
+          "source": "simonkoeck.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A write-up of a $90k remote code execution bug in Google's developer site. The URL points to a Flask session and pickle issue."
+            }
+          ],
+          "hn": {
+            "points": "237",
+            "url": "https://news.ycombinator.com/item?id=50052638",
+            "comments": "119"
+          }
+        },
+        {
+          "title": "Zod 4.6.6 compromised by malware?",
+          "url": "https://github.com/colinhacks/zod/commit/d821685ea6732436fcdf786a81d076958471e467",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A GitHub commit prompted the question of whether Zod 4.6.6 was compromised by malware. If you depend on Zod, check the thread."
+            }
+          ],
+          "hn": {
+            "points": "183",
+            "url": "https://news.ycombinator.com/item?id=50052814",
+            "comments": "52"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Trump administration is suspending Microsoft from a green card program",
+          "url": "https://apnews.com/article/h1b-visa-program-vance-microsoft-e7b3a407f822702b269ee277d21343ea",
+          "source": "apnews.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "AP reports the administration is suspending Microsoft from a green card program. It drew the most comments of any story this week, over 1,600."
+            }
+          ],
+          "hn": {
+            "points": "944",
+            "url": "https://news.ycombinator.com/item?id=50006832",
+            "comments": "1614"
+          }
+        },
+        {
+          "title": "Apple HomeView",
+          "url": "https://www.apple.com/apple-homeview/",
+          "source": "apple.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Apple's HomeView page prompted heavy discussion. The Rundown AI summarized the launch as Apple going \"all-in on the home.\""
+            }
+          ],
+          "hn": {
+            "points": "747",
+            "url": "https://news.ycombinator.com/item?id=50071017",
+            "comments": "894"
+          },
+          "alsoIn": [
+            "The Rundown AI"
+          ]
+        },
+        {
+          "title": "Passkeys are a trap",
+          "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+          "source": "nonfunctional.substack.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A polemic against adopting passkeys. It drew over 1,100 points and coverage from Scott Helme's blog, so the debate is far from settled."
+            }
+          ],
+          "hn": {
+            "points": "1124",
+            "url": "https://news.ycombinator.com/item?id=50048312",
+            "comments": "574"
+          },
+          "alsoIn": [
+            "scotthelme.co.uk"
+          ]
+        },
+        {
+          "title": "Whistle: Speech to Text in 16.9 MB",
+          "url": "https://cactuscompute.com/blog/whistle",
+          "source": "cactuscompute.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Cactus Compute introduces Whistle, a speech-to-text model that fits in 16.9 MB."
+            }
+          ],
+          "hn": {
+            "points": "962",
+            "url": "https://news.ycombinator.com/item?id=50008427",
+            "comments": "185"
+          }
+        },
+        {
+          "title": "Fingerprints are the new cookies",
+          "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+          "source": "royfish.dev",
+          "body": [
+            {
+              "type": "p",
+              "text": "An essay argues that browser fingerprinting is replacing cookies as the way users are tracked online."
+            }
+          ],
+          "hn": {
+            "points": "749",
+            "url": "https://news.ycombinator.com/item?id=50048642",
+            "comments": "371"
+          }
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "Character.AI files for Chapter 11",
+      "url": "https://www.reuters.com/legal/litigation/characterai-files-bankruptcy-agrees-sell-some-assets-disney-20-million-2026-10-13/",
+      "summary": "It agreed to sell some assets to Disney for $20M.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/meta-s-muse-wonder-is-here-priced-like-opus-ee30"
+      }
+    },
+    {
+      "title": "Anthropic's Frontier Red Team on self-replicating AI",
+      "url": "https://www.anthropic.com/research/self-replicating-ai",
+      "summary": "It warned that small AI models may be months away from copying themselves across cheap gadgets like TV boxes.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/meta-s-muse-wonder-is-here-priced-like-opus-ee30"
+      }
+    },
+    {
+      "title": "Scientists call for an international body on cyber-capable AI",
+      "url": "https://ca.finance.yahoo.com/news/scientists-call-international-body-oversee-100341239.html",
+      "summary": "About 400 scientists, including Geoffrey Hinton and Yoshua Bengio, want containment standards and a registry of security incidents.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/google-launched-gemini-4-argon-tying-gpt-6-b85b"
+      }
+    },
+    {
+      "title": "Chinese firms bought over 1M Nvidia GPUs in a year",
+      "url": "https://www.tomshardware.com/pc-components/gpus/chinese-ai-companies-buy-1-million-nvidia-gpus-in-a-single-year-report-claims-export-control-compliant-chips-flood-the-market-to-bridge-gap-in-compute-demand",
+      "summary": "The Financial Times says they were gaming and workstation chips that comply with U.S. export controls.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/google-launched-gemini-4-argon-tying-gpt-6-b85b"
+      }
+    },
+    {
+      "title": "Microsoft to scale Maia chips to multi-gigawatt deployments",
+      "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+      "summary": "The in-house chips scale up from 2027.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/meta-s-muse-wonder-is-here-priced-like-opus-ee30"
+      }
+    },
+    {
+      "title": "Nvidia plans €2B in new European AI deals",
+      "url": "https://news.az/news/nvidia-plans-2-billion-in-new-european-ai-investments",
+      "summary": "Jensen Huang said they'll be unveiled in the coming week, on top of $8B invested over the past year.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/google-launched-gemini-4-argon-tying-gpt-6-b85b"
+      }
+    },
+    {
+      "title": "FBI arrests executive at ransomware negotiation firm",
+      "url": "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/",
+      "summary": "The co-founder of a Canadian cybersecurity firm was arrested in connection with the ShinyHunters investigation, according to Krebs's sources.",
+      "via": null
+    },
+    {
+      "title": "U.K. sanctions Cryptomus for Russian money laundering",
+      "url": "https://krebsonsecurity.com/2026/10/u-k-sanctions-cryptomus-for-ru-money-laundering/",
+      "summary": "Experts say the crypto platform is a major conduit for ransomware, darknet and cybercrime payments.",
+      "via": null
+    }
+  ],
+  "tips": [
+    {
+      "title": "Give your AI a rulebook it rewrites when it's wrong",
+      "url": "https://www.theneurondaily.com/p/meta-s-muse-wonder-is-here-priced-like-opus-ee30",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Keep a numbered rulebook for any AI task you repeat. When an output fails, don't fix it by hand. Ask the AI which rule caused the failure and for the smallest edit to that rule. The paper is about puzzle games, so applying it to office work is The Neuron's own spin."
+        },
+        {
+          "type": "prompt",
+          "text": "Here's my rulebook and a failed output: [paste both]. Don't rewrite the rulebook. Name the rule that caused the failure, propose the smallest edit, then check it against these approved examples and flag any that would now fail: [paste 2-3]."
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "An edit is kept only if it still fits past approved outputs, so each fix improves the rules without breaking earlier results."
+        }
+      ],
+      "byline": "UCL and Huawei researchers (Memento 3 paper) · via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "Software Is Changing (Again)",
+      "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Karpathy describes \"Software 3.0\": after hand-written code and trained neural networks, we now program computers in plain English. He compares LLMs to utilities, chip fabs and operating systems, and says we're in \"the 1960s of LLMs.\""
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "The best AI products today augment people, with an autonomy slider, rather than act fully on their own."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Keep AI on a short leash and make checking its work fast, because human verification is the bottleneck."
+        }
+      ],
+      "byline": "Andrej Karpathy · Talk · 40 min · 2025"
+    },
+    {
+      "title": "How to Do Great Work",
+      "url": "https://paulgraham.com/greatwork.html",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "The Y Combinator co-founder's essay on doing great work in any field: follow what you're unusually curious about, reach the frontier, notice the gaps others take for granted, and keep working. It's useful reading for anyone building a career or side project."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Pay attention to what you're curious about \"to a degree that would bore most other people.\" That's a clue to your best work."
+        }
+      ],
+      "byline": "Paul Graham · Essay · 30 min read · 2023"
+    },
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "The Google paper that introduced the Transformer, the design behind today's AI chatbots. Instead of reading a sentence word by word, every word looks at every other word at once and weighs which matter most. The authors report better translation than the best systems of the day, trained in a fraction of the time."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Big breakthroughs can come from simplifying; the team dropped the complicated parts others relied on and kept only attention."
+        }
+      ],
+      "byline": "Ashish Vaswani, Noam Shazeer, Niki Parmar and colleagues · Paper · 15 pages · 2017"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "Latent Space",
+      "title": "Meta Muse Wonder & Wonder Full",
+      "url": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+      "note": "Meta's frontier-model launch, compared against Fable and Astra"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Crossing the Threshold",
+      "url": "https://www.latent.space/p/crossing-the-threshold",
+      "note": "how OpenAI and Anthropic balance agent autonomy and control in finance"
+    },
+    {
+      "publication": "The Neuron",
+      "title": "What If Apps Didn't Need Code?",
+      "url": "https://www.theneurondaily.com/p/watch-what-if-apps-didnt-need-code",
+      "note": "Runway's Solaris generates interfaces frame by frame"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "Uber's AI infra, from the inside",
+      "url": "https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside",
+      "note": "internal dev tools, agents in workflows and measuring productivity"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "Building resilient AI-powered software",
+      "url": "https://newsletter.pragmaticengineer.com/p/building-resilient-systems",
+      "note": "handling AI-vendor uncertainty and disaster recovery"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "Meta's Watermelon ripens into a frontier model",
+      "url": "https://www.therundown.ai/articles/meta-watermelon-ripens-into-a-frontier-model",
+      "note": "Meta's new model and how to put it to work"
+    },
+    {
+      "publication": "Interconnects",
+      "title": "I expect rapid progress but not towards general superintelligence",
+      "url": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
+      "note": "doubts about researchers' claims that AI will soon outdo them"
+    },
+    {
+      "publication": "Last Week in AI",
+      "title": "#346",
+      "url": "https://lastweekin.ai/p/last-week-in-ai-346-719-math-manuscripts",
+      "note": "OpenAI math proofs and new open-weight models from Mistral and Reflection AI"
+    },
+    {
+      "publication": "Lenny's Newsletter",
+      "title": "How Meta designed Muse",
+      "url": "https://www.lennysnewsletter.com/p/how-meta-designed-muse-an-ai-agent",
+      "note": "one interface for casual and technical users"
+    }
+  ]
+}
