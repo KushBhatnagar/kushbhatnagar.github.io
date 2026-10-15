@@ -1,7 +1,7 @@
 ---
 title: "How Does an Agent Remember? Context Window vs Memory"
 date: 2026-10-15
-draft: true
+draft: false
 categories: ["concept-breakdown"]
 tags: ["generative ai", "large language models", "ai agents", "classroom conversation"]
 summary: "Hint: it's just a WhatsApp scroll. Why an AI forgets yesterday's chat, and how real memory works: a notebook it reads next time."
@@ -18,7 +18,6 @@ slide_alt:
 
 {{< carousel >}}
 
-<!-- CHECK: transcript read from the slides -->
 {{< transcript >}}
 **Slide 1: Scroll up the WhatsApp group**
 
