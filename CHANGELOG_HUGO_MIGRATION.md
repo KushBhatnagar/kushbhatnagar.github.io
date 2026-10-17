@@ -395,6 +395,11 @@ Format: `HH:MM [Phase N] change — detail`
   `/learning-notes/training-an-ai-for-one-skill-changes-its-other-answers/`, after "The idea, in my words".
   File `static/assets/images/training-leaves-a-shadow.webp` (resized 1600→1200 px wide, 86 KB), with alt text.
 
+## 2026-10-17 — Learning Note: False Frontiers (draft)
+- New `content/posts/two-ais-grading-each-other-agree-on-wrong-answers.md` (`/learning-notes/two-ais-grading-each-other-agree-on-wrong-answers/`,
+  dated 2026-10-17, `draft: true`) from Kush's notes on arXiv 2609.39102 (found via Digital Dhaba 2026-10-03).
+  Diagram `static/assets/images/two-ais-mark-each-others-homework.webp` (2000→1200 px wide, 48 KB) after "The idea, in my words".
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
