@@ -22,6 +22,8 @@ A 2026 research paper (a preprint, not yet peer reviewed) by Ziyang Zhang and co
 
 When you take a public base model and post-train it for one skill, such as coding, the change doesn't stay inside that skill. The model's choices also shift slightly on questions that have nothing to do with it. The paper suggests those small shifts can be picked up by another model that starts from the same base, and that they carry part of the skill with them. The authors call it a low-bandwidth channel: it works between models that share a base, and the gains they report are modest.
 
+![Diagram: a public base model post-trained for coding improves at coding, but its choices on unrelated questions shift slightly too. Hiding reasoning and blocking on-topic questions help, yet small signals can still leak through off-topic answers between models that share a base.](/assets/images/training-leaves-a-shadow.webp)
+
 ## What I took from it
 
 Hiding a model's reasoning may be one layer of protection against copying, not the full boundary. Small signals may leak through off-topic answers, at least between models that share a base. For anyone building on the same few open models, that's a reminder that "what a model learned, and from whom" is harder to pin down than it looks.
