@@ -390,6 +390,11 @@ Format: `HH:MM [Phase N] change — detail`
   section, SEO fields, slide alt text. Kush approved: `draft: false`, CHECK comment removed.
 - PR #30 merged 2026-10-15 11:01 UTC; deploy succeeded (11:02 UTC). Goes out in the Sunday letter 2026-10-18.
 
+## 2026-10-17 — Learning Note diagram
+- Kush's diagram "Training leaves a shadow everywhere" added to the Learning Note
+  `/learning-notes/training-an-ai-for-one-skill-changes-its-other-answers/`, after "The idea, in my words".
+  File `static/assets/images/training-leaves-a-shadow.webp` (resized 1600→1200 px wide, 86 KB), with alt text.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
