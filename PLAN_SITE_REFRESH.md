@@ -7,7 +7,7 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-15, Concept Breakdown "How Does an Agent Remember?" live)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#30 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#32 hold the history. Only branch: `main` (+ standing temp branch `claude/adoring-thompson-o24o0b` for small changes: never delete, restart from `main` after each merge (Kush, 2026-10-17)).
 
 | Area | State |
 |---|---|
@@ -15,7 +15,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming live (PR #24). From 2026-10-15: built 00:30 IST (backups 02:30/04:30), email booked in Kit for 07:00 (Digital-Dhaba PR #2, merged 2026-10-13) |
 | Sunday letter (Sun 09:00 IST) | ⚠️ 2026-10-11: sent OK (The Tool Call) but at 15:45 IST: GitHub started all 3 runs ~6.5 h late; backups skipped correctly. From 2026-10-18: runs 00:30 IST (backups 02:30/04:30) and books Kit for 09:00; covers posts dated the previous Sun–Sat (PR #28, merged + deployed 2026-10-13) |
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
-| Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27). **How Does an Agent Remember? Context Window vs Memory** (comic, `/concept-breakdown/agent-memory/`, 2026-10-15, PR #30, deployed 2026-10-15 11:02 UTC) |
+| Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27). **How Does an Agent Remember? Context Window vs Memory** (comic, `/concept-breakdown/agent-memory/`, 2026-10-15, PR #30, deployed 2026-10-15 11:02 UTC), Learning Note **When two AIs grade each other, they can agree their way into wrong answers** (`/learning-notes/two-ais-grading-each-other-agree-on-wrong-answers/`, 2026-10-17) |
 | Homepage | 2 "Latest Concept Breakdowns" cards (`breakdownCards`, PR #11) + 2 "Recent posts" with "All posts →" to the archive (`recentPosts`, 2026-10-06), both in `hugo.toml` `homeInfoParams` |
 | Motto | ✅ Live (PR #29, merged + deployed 2026-10-13). "Learn. Build. Explain." kept, reframed as not-a-sequence (Kush, 2026-10-13): sub-line "Always learning. Sometimes building. Often explaining."; homepage intro + 4 section cards (Learn / Learn + Build / Learn + Explain ×2, Learning Notes moved under Explain); About "How this blog works" + diagram replaces the learning-loop image |
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
