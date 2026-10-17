@@ -7,7 +7,7 @@ Work happens on a feature branch → PR into `main` → merge = deploy. (Before 
 ## ▶ STATUS — where we left off (updated 2026-10-15, Concept Breakdown "How Does an Agent Remember?" live)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
-Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#30 hold the history. Only branch: `main` (+ session branch `claude/adoring-thompson-o24o0b`, kept for patch work; Kush deletes it when done).
+Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#32 hold the history. Only branch: `main` (+ standing temp branch `claude/adoring-thompson-o24o0b` for small changes: never delete, restart from `main` after each merge (Kush, 2026-10-17)).
 
 | Area | State |
 |---|---|

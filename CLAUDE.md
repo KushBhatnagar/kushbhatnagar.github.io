@@ -208,7 +208,7 @@ Email (Kit):
 - Secrets: API keys only as repo secrets, never in chat or git. Subscriber data never in git (run audits locally).
 
 Git:
-- Ask Kush before deleting any branch. Merged `claude/*` session branches: delete after merge (Kush, 2026-10-05). Never push straight to `main`: branch → PR → merge.
+- Ask Kush before deleting any branch. Merged `claude/*` session branches: delete after merge (Kush, 2026-10-05). Exception: **`claude/adoring-thompson-o24o0b` is the standing temp branch** for small changes (Kush, 2026-10-17): never delete it; after each merge, restart it from `main` (`git checkout -B claude/adoring-thompson-o24o0b origin/main`) and push the next change there. Never push straight to `main`: branch → PR → merge.
 
 ## LinkedIn tracking (Google Analytics, UTM tags)
 
