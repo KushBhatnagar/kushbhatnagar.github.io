@@ -1,7 +1,7 @@
 ---
 title: "When two AIs grade each other, they can agree their way into wrong answers"
 date: 2026-10-17
-draft: true
+draft: false
 ShowToc: false
 categories: ["learning-notes"]
 tags: ["generative ai", "large language models", "ai agents"]
@@ -13,7 +13,6 @@ source_url: https://arxiv.org/abs/2609.39102
 source_type: paper
 ---
 
-<!-- CHECK: TL;DR assembled from your notes -->
 **TL;DR:** If one AI writes the quiz and its twin takes it, and each is rewarded based on the other, their scores can keep looking healthy while they quietly agree on more and more wrong answers, and AI is increasingly trained and graded by AI.
 
 ## The source
@@ -42,7 +41,6 @@ My last Learning Note, on [Post-Training Leaves Behavioral Shadows](/learning-no
 
 ## What I'm still unsure about
 
-<!-- CHECK: unclear: "CrossFit", "both fixes" and "the two piles" aren't explained anywhere above; readers won't know what they are. Add a line on the paper's fix(es) in "The idea, in my words"? -->
 - **Small scale:** two small open models (Qwen3.5 at 4 and 9 billion parameters), three training rounds, and 1,325 test questions. Frontier models are far larger and train far longer. Whether the problem gets worse or better at scale is not shown.
 - **The examiner is also an AI.** The "ground truth" comes from GPT-6 Astra reading the sources. The paper does not report checking it against human judges, and the audit covered about 86% of cases.
 - **The fix costs more:** CrossFit adds roughly 72–79% to the computing bill in its main setting (about 36–40% in a lighter version). Using both fixes together costs about 2.6 times the baseline.
@@ -52,6 +50,7 @@ My last Learning Note, on [Post-Training Leaves Behavioral Shadows](/learning-no
 
 - [False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents](https://arxiv.org/abs/2609.39102): the paper itself.
 - [Post-Training Leaves Behavioral Shadows on Unrelated Decisions](https://arxiv.org/abs/2609.29233): the paper behind my last Learning Note, on models that share a base passing skills to each other.
+- [Concrete Problems in AI Safety](https://arxiv.org/abs/1606.06565): the 2016 paper co-written by Dario Amodei that listed reward hacking among the core AI safety problems.
 
 ---
 *Part of my [Learning Notes](/learning-notes/). Found via [Digital Dhaba](/tech-digest/).*
