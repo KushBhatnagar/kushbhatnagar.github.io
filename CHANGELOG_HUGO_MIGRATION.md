@@ -400,9 +400,9 @@ Format: `HH:MM [Phase N] change — detail`
   dated 2026-10-17, published) from Kush's notes on arXiv 2609.39102 (found via Digital Dhaba 2026-10-03).
   Diagram `static/assets/images/two-ais-mark-each-others-homework.webp` (2000→1200 px wide, 48 KB) after "The idea, in my words".
 
-## 2026-10-20 — Concept Breakdown: The Agent Loop (draft)
+## 2026-10-20 — Concept Breakdown: The Agent Loop
 - New bundle `content/posts/agent-loop/` from Kush's `AgentLoop.pdf` + conversation text (`scripts/new_breakdown.py`, 4 slides),
-  `url: /concept-breakdown/agent-loop/`, `date: 2026-10-20` (→ Sunday letter 2026-10-25), `draft: true`.
+  `url: /concept-breakdown/agent-loop/`, `date: 2026-10-20` (→ Sunday letter 2026-10-25), published (`draft: false`, Kush).
 - `/breakdown-post`: transcript from Kush's conversation text (em dashes → commas/colons; speakers per slide), plain-words section,
   SEO fields, slide alt text.
 

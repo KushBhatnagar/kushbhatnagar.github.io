@@ -1,7 +1,7 @@
 ---
 title: "What Makes an AI Agent Feel Autonomous? The Agent Loop"
 date: 2026-10-20
-draft: true
+draft: false
 categories: ["concept-breakdown"]
 tags: ["generative ai", "large language models", "ai agents", "classroom conversation"]
 summary: "Hint: it's just Mom's cooking. Plan, act, observe, repeat: the loop that makes an ordinary model feel like an agent."
