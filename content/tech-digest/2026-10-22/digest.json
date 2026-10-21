@@ -1,0 +1,561 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "publisherIcon": "https://blogsbykush.com/android-chrome-192x192.png",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "October 22, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "27 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "DeepSeek open-sources DeepInfer",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "summary": "the inference framework behind DeepSeek's production services is now Apache 2.0, though it ships without the pieces needed for a full serving stack."
+    },
+    {
+      "title": "Critical PHP flaws allow unauthenticated remote code execution",
+      "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+      "summary": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical holes, and updating is the only complete fix."
+    },
+    {
+      "title": "eMudhra intermediate CA keys compromised",
+      "url": "https://emudhra.we-have-a-problem.com/",
+      "summary": "eight intermediate CA private keys can be recovered by anyone, so software with bundled trust lists needs updating."
+    },
+    {
+      "title": "Claude reveals ECDSA curve origins",
+      "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "summary": "Claude traced the NIST curve seeds to a simple 1990s-style random number generator, ending years of backdoor speculation."
+    },
+    {
+      "title": "Muse Spark Open",
+      "url": "https://research.meta.ai/blog/muse-spark-open",
+      "summary": "Meta released the weights of an 816B-parameter multimodal model that two Mac Studios can run."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "DeepSeek open-sourced the inference framework behind its large-scale production services under Apache 2.0. It supports DeepSeek-V4.1-Flash on NVIDIA SM100 GPUs and Huawei Ascend 950 NPUs, with batch-invariant inference, deterministic sampling and structured outputs. The KV cache system and load balancing needed for a complete service are not included."
+            }
+          ],
+          "hn": {
+            "points": "2298",
+            "url": "https://news.ycombinator.com/item?id=50163277",
+            "comments": "881"
+          },
+          "alsoIn": [
+            "Latent Space",
+            "TLDR AI"
+          ]
+        },
+        {
+          "title": "Claude reveals ECDSA curve origins",
+          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+          "source": "anthropic.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Asked by an Anthropic employee, an internal research model found in under half an hour that the NIST P-192, P-224, P-256, P-384 and P-521 seeds came from the C library's lrand48 generator seeded with a Unix timestamp, not from hashing a phrase. It is not a cryptographic break. It makes a deliberate backdoor much less plausible."
+            }
+          ],
+          "hn": {
+            "points": "1065",
+            "url": "https://news.ycombinator.com/item?id=50122800",
+            "comments": "391"
+          }
+        },
+        {
+          "title": "Muse Spark Open",
+          "url": "https://research.meta.ai/blog/muse-spark-open",
+          "source": "research.meta.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Meta released weights for a natively multimodal model with 816B total parameters (42B active) and a 1M-token context window, aimed at coding and agentic work. It runs on two Apple M5 Ultra Mac Studios via MLX and is licensed under the Muse Model License with limited commercial terms."
+            }
+          ],
+          "hn": {
+            "points": "919",
+            "url": "https://news.ycombinator.com/item?id=50107379",
+            "comments": "478"
+          },
+          "alsoIn": [
+            "The Neuron"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "PremiseCheck: Efficient Fact-Checking of Human and AI Peer Reviews",
+          "url": "https://huggingface.co/papers/2610.21046",
+          "source": "arXiv",
+          "body": [],
+          "upvotes": "691",
+          "arxiv": "https://arxiv.org/abs/2610.21046",
+          "code": "https://github.com/OpenLAIR/PremiseCheck",
+          "stars": "5",
+          "inShort": "An LLM rewrites each review comment as explicit premises without reading the paper, and a cheap decision model then checks each premise against the paper. The authors also built ReviewFact, a benchmark of factual errors in review comments.",
+          "whyItMatters": "It reaches accuracy comparable to GPT-5.5 at about half the cost, and a quarter of the cost on NLP reviews."
+        },
+        {
+          "title": "LEV: Thinking Fast and Deep with Looped Decision Models",
+          "url": "https://huggingface.co/papers/2610.20951",
+          "source": "arXiv",
+          "body": [],
+          "upvotes": "602",
+          "arxiv": "https://arxiv.org/abs/2610.20951",
+          "code": "https://github.com/OpenLAIR/lev",
+          "stars": "7",
+          "inShort": "LEV reruns a model's layers in a loop to \"think deeper\" on hard questions, scoring the options after every loop step instead of generating tokens.",
+          "whyItMatters": "A 2.6B model goes from 63.2% to 76.2% on JevBench as depth rises from one to four. Choosing depth per question saves 15–24% of compute for under one point of accuracy."
+        },
+        {
+          "title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
+          "url": "https://huggingface.co/papers/2610.22276",
+          "source": "Mind Lab",
+          "body": [],
+          "upvotes": "560",
+          "arxiv": "https://arxiv.org/abs/2610.22276",
+          "code": "https://github.com/Fr0zenCrane/MJev-Spatial",
+          "stars": "17",
+          "inShort": "Instead of generating text answers, the model treats each candidate answer as a class and scores it in a single forward pass. It is built on Qwen3.5-4B and trained on 12.3M spatial question-answer pairs.",
+          "whyItMatters": "It scores 65.64% overall, beats its base model on all twelve benchmarks, and runs 2.5x faster than the fastest autoregressive baseline."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "eMudhra intermediate CA compromise",
+          "url": "https://emudhra.we-have-a-problem.com/",
+          "source": "emudhra.we-have-a-problem.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Private keys for eight eMudhra intermediate CAs were incorrectly generated, so anyone can recover them from the certificates. Firefox and Chrome have blocked them since October 17, Apple since the 19th and Microsoft since the 20th. Clients that don't check revocation, including many command-line tools, need software or trust-store updates."
+            }
+          ],
+          "hn": {
+            "points": "1188",
+            "url": "https://news.ycombinator.com/item?id=50166579",
+            "comments": "468"
+          },
+          "alsoIn": [
+            "Simon Willison"
+          ]
+        },
+        {
+          "title": "Tsrs: A Port of TypeScript to Rust",
+          "url": "https://blog.cloudflare.com/typescript-rust-port/",
+          "source": "blog.cloudflare.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Cloudflare and VoidZero are working with Max Schwenk of Owner.com on a faithful Rust port of the TypeScript compiler, developed with the TypeScript team and not a fork. Early benchmarks show it up to 8x faster and using about 70% less memory than TypeScript 7.0. It's available as npm install tsrs."
+            }
+          ],
+          "hn": {
+            "points": "427",
+            "url": "https://news.ycombinator.com/item?id=50165953",
+            "comments": "209"
+          },
+          "alsoIn": [
+            "Cloudflare Blog"
+          ]
+        },
+        {
+          "title": "Linux 7.3",
+          "url": "https://lwn.net/Articles/1101143/",
+          "source": "lwn.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "Linus Torvalds released Linux 7.3, a record release with 18,765 non-merge commits from 3,021 developers, 807 of them first-timers. Changes include the fchroot() system call, the failfs filesystem and completion of sched_ext subscheduler support. The 7.4 merge window opens next."
+            }
+          ],
+          "hn": {
+            "points": "631",
+            "url": "https://news.ycombinator.com/item?id=50149392",
+            "comments": "294"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Google Cloud outage affects almost all banking and other operations in Europe",
+          "url": "https://www.neowin.net/news/google-cloud-outage-takes-down-hsbc-revolut-bank-of-scotland-llyods-equifax-more/",
+          "source": "neowin.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "A Google Cloud outage disrupted banking and other services across Europe, with Neowin naming HSBC, Revolut, Bank of Scotland, Lloyds and Equifax among those hit."
+            }
+          ],
+          "hn": {
+            "points": "398",
+            "url": "https://news.ycombinator.com/item?id=50163961",
+            "comments": "203"
+          }
+        },
+        {
+          "title": "AWS Weekly Roundup: AWS Lambda Web Functions, Amazon S3 on the Vercel Marketplace, and more",
+          "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-lambda-web-functions-amazon-s3-on-the-vercel-marketplace-and-more-october-19-2026/",
+          "source": "AWS News Blog",
+          "body": [
+            {
+              "type": "p",
+              "text": "Lambda Web Functions runs a standard HTTP server (Express, Hono, Fastify, Next.js) with no adapter, and one aws lambda-web deploy command returns a live HTTPS URL. Each environment handles up to 128 concurrent requests and billing meters CPU time used. S3 buckets can also now be provisioned from the Vercel Marketplace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Startups & Funding",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO",
+          "url": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/",
+          "source": "Simon Willison",
+          "body": [
+            {
+              "type": "p",
+              "text": "Per an FT report on Anthropic's investor day, revenue was about $4.8bn in Q1, $11.5bn in Q2 and $16.8bn in Q3. Adjusted operating margin, excluding stock-based compensation, was 11%. The figures come from people with knowledge of the matter."
+            }
+          ]
+        },
+        {
+          "title": "Year-old AI lab Flapping Airplanes raises $1B at a $6B valuation",
+          "url": "https://techcrunch.com/2026/10/21/year-old-ai-lab-flapping-airplanes-raises-1b-at-a-6b-valuation/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Series A was co-led by Index and Lux, nine months after a $180M seed at a $1.5B valuation. The lab is trying to train large models with far less data, so that they cost less to train and run."
+            }
+          ]
+        },
+        {
+          "title": "Legal AI startup Legora raises $550M Series E at $8.8B valuation",
+          "url": "https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Atreides Management led the round. Legora's annual recurring revenue now exceeds $200M, up from $100M in April. Rival Harvey raised $550M at $15.5B a month ago."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Security advisory: Critical remote code execution vulnerabilities, update now",
+          "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+          "source": "php.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix CVE-2026-109618 and CVE-2026-109619, both able to give unauthenticated attackers remote code execution. Risk is highest for mod_php, with a demonstrated exploit. The PHP team says only updating is a complete fix, and workarounds such as disabling session.upload_progress only reduce exposure."
+            }
+          ],
+          "hn": {
+            "points": "1499",
+            "url": "https://news.ycombinator.com/item?id=50172041",
+            "comments": "648"
+          }
+        },
+        {
+          "title": "AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/",
+          "source": "citizenlab.ca",
+          "body": [
+            {
+              "type": "p",
+              "text": "Citizen Lab found Al Jazeera devices infected with Candiru spyware via ads bought by Israeli firm Discover-Tech, whose Controlium platform fingerprints and infects devices when an ad renders. Google, IAB Europe, Beeswax, Vungle and Eskimi have cut off Discover-Tech's access."
+            }
+          ],
+          "hn": {
+            "points": "534",
+            "url": "https://news.ycombinator.com/item?id=50101813",
+            "comments": "691"
+          }
+        },
+        {
+          "title": "Feds suspect ransom negotiator ran ShinyHunters extortion site",
+          "url": "https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/",
+          "source": "krebsonsecurity.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Investigators pursuing ShinyHunters, which recently stole sensitive FBI data, identified executives at two ransomware negotiation firms with unusually close ties to the group. Sources say one US executive helped operate a site that pressured victims into paying."
+            }
+          ],
+          "hn": {
+            "points": "262",
+            "url": "https://news.ycombinator.com/item?id=50173487",
+            "comments": "135"
+          },
+          "alsoIn": [
+            "Krebs on Security"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Neural networks are clean",
+          "url": "https://already-clean.goodfire.com/",
+          "source": "already-clean.goodfire.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Goodfire's Nick Cammarata argues that polysemantic neurons and superposition were misread, and that networks are already legible building blocks. With ordinary architectural fixes, 99–100% of InceptionV1's last-layer neurons became easily interpretable. If it holds, researchers can study networks directly instead of first untangling them."
+            }
+          ],
+          "hn": {
+            "points": "840",
+            "url": "https://news.ycombinator.com/item?id=50105647",
+            "comments": "341"
+          }
+        },
+        {
+          "title": "Solar surpasses nuclear power globally for first time",
+          "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+          "source": "pv-magazine.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "pv magazine reports that global solar generation has overtaken nuclear for the first time."
+            }
+          ],
+          "hn": {
+            "points": "697",
+            "url": "https://news.ycombinator.com/item?id=50131256",
+            "comments": "447"
+          }
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "DeepSeek-V4.1-Flash-1017",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "summary": "a minor MIT-licensed update that improves reasoning, coding, agentic and visual benchmarks while cutting task time and output length.",
+      "via": null
+    },
+    {
+      "title": "DeepSeek banned from U.S. federal civilian agencies",
+      "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/",
+      "summary": "Homeland Security ordered agencies to stop buying DeepSeek and remove it, including third-party tools built on it.",
+      "via": null
+    },
+    {
+      "title": "WhatsApp's help pages hid LLM instructions",
+      "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+      "summary": "redact.dev found invisible text on 80 help pages telling an AI not to recommend a regulator in some cases.",
+      "via": null
+    },
+    {
+      "title": "OpenCode hacked",
+      "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+      "summary": "a breach exposed API keys for about 1.4% of Console users, and some reported charges over $1,000.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/ai-hackers-left-the-door-open"
+      }
+    },
+    {
+      "title": "Ousted Savannah officer gave ICE agent husband Flock access",
+      "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+      "summary": "an audit flagged 983 license-plate searches on her account between January and July 2026.",
+      "via": null
+    },
+    {
+      "title": "Blacksmith hits unicorn valuation",
+      "url": "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/",
+      "summary": "the CI platform raised a $66M Series C led by Sequoia at a $1B valuation.",
+      "via": null
+    },
+    {
+      "title": "Tenstorrent raises $1.5B",
+      "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
+      "summary": "the Nvidia rival is valued at $6.2B as it scales its open-architecture AI chips.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/ai-hackers-left-the-door-open"
+      }
+    },
+    {
+      "title": "Zoom deepfake detection",
+      "url": "https://news.zoom.com/zoomtopia-2026-security/",
+      "summary": "Zoom announced live video and audio analysis that shows a confidence indicator, due in December.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/meta-s-muse-made-shared-chats-searchable"
+      }
+    }
+  ],
+  "tips": [
+    {
+      "title": "Make sense of a spreadsheet someone else left behind",
+      "url": "https://www.theneurondaily.com/p/meta-s-muse-made-shared-chats-searchable",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "When you inherit someone else's workbook, ask an AI to explain it and log problems before you let it change anything. Work on a copy, then verify each flagged issue yourself or with the previous owner."
+        },
+        {
+          "type": "prompt",
+          "text": "I inherited this spreadsheet and need to understand it before changing anything. Don't edit it. 1. Explain how the tabs connect and what each key formula does. 2. List anything undocumented, hidden, hardcoded where neighboring cells are formulas, or linked to outside files. 3. Give me an issue log: cell, what's wrong, which outputs it affects, and High, Medium, or Low risk."
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "Understanding the file first surfaces unwritten assumptions, like a floor that keeps a tax line from going negative, before any edits can break them."
+        }
+      ],
+      "byline": "Anthropic's walkthrough · via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "Intro to Large Language Models",
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A general-audience introduction to what large language models are, where they're heading, and the new security problems they bring. It's among the clearest non-technical explanations of what's inside a chatbot."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Thinking of an LLM as the core of a new \"operating system\" helps explain where AI products are going."
+        }
+      ],
+      "byline": "Andrej Karpathy · Video · 1 hr · 2023"
+    },
+    {
+      "title": "15 Times to use AI, and 5 Not to",
+      "url": "https://www.oneusefulthing.org/p/15-times-to-use-ai-and-5-not-to",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A practical guide to when AI helps and when it hurts. Use it when you need volume, can check the result yourself, or want to rewrite something for a different audience. Avoid it when the point is to learn or accuracy is critical."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Use AI where you can easily judge the quality of what it gives you, and not for thinking you need to do yourself in order to learn."
+        }
+      ],
+      "byline": "Ethan Mollick · Essay · 10 min read · 2024"
+    },
+    {
+      "title": "Steve Jobs' 2005 Stanford Commencement Address",
+      "url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Apple's co-founder tells three stories, about connecting the dots, love and loss, and death, and ends with \"Stay hungry. Stay foolish.\" It's short, and it holds up well for anyone building a career in tech."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "You can only connect the dots looking backward, so trust that following your curiosity will add up."
+        }
+      ],
+      "byline": "Steve Jobs · Talk · 15 min · 2005"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "What's the ROI of software engineers' spending on AI?",
+      "url": "https://newsletter.pragmaticengineer.com/p/whats-the-roi-of-software-engineers",
+      "note": "data from 27 companies on whether AI spend changed shipping velocity"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "The revised rules of engineering management with Will Larson",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-revised-rules-of-engineering",
+      "note": "how AI is reshaping management and career ladders"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Claude Mods: Flipping the Harness Inside Out",
+      "url": "https://www.latent.space/p/claude-mods",
+      "note": "agent harnesses that face the human instead of the machine"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Modal's $1B ARR, $16B Series D",
+      "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+      "note": "AI infrastructure's newest decacorn"
+    },
+    {
+      "publication": "Interconnects",
+      "title": "Latest open artifacts (#25)",
+      "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+      "note": "US and Chinese moves toward controls on open models"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "Sam Altman's three endings for the AI safety race",
+      "url": "https://www.therundown.ai/articles/sam-altman-three-endings-for-the-ai-safety-race",
+      "note": "Altman on how the safety race could end"
+    },
+    {
+      "publication": "The Neuron",
+      "title": "WATCH: Can Living Neurons Make AI 5x Faster?",
+      "url": "https://www.theneurondaily.com/p/watch-can-living-neurons-make-ai-5x-faster",
+      "note": "lab-grown brain cells studied to speed up video generation"
+    },
+    {
+      "publication": "TLDR Tech",
+      "title": "Anthropic S-1 leaks, Tesla SpaceX merger talks",
+      "url": "https://tldr.tech/tech/2026-10-21",
+      "note": "the day's top tech headlines"
+    }
+  ]
+}
