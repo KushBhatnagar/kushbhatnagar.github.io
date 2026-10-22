@@ -406,6 +406,15 @@ Format: `HH:MM [Phase N] change — detail`
 - `/breakdown-post`: transcript from Kush's conversation text (em dashes → commas/colons; speakers per slide), plain-words section,
   SEO fields, slide alt text.
 
+## 2026-10-22 — Digital Dhaba 2026-10-22 missing from the site: dates now mean IST
+- **What happened:** the issue was pushed at 22:10 UTC on 21 Oct (03:40 IST on the 22nd) and the deploy ran right away. Its
+  `date: 2026-10-22` has no time, so Hugo read it as midnight **UTC**, still ~2 h ahead; with `buildFuture = false` the page was
+  left out. No later push → no rebuild. The email (Kit) was unaffected. 2026-10-15 only worked because GitHub started that run late.
+- **Fix:** `hugo.toml` `timeZone = "Asia/Kolkata"`: date-only front matter now means midnight IST, before the 00:30 IST build.
+  Checked with `hugo --clock 2026-10-21T22:10:00Z`: issue page missing before, built after. Visible dates and `/posts.json`
+  (Sunday letter) unchanged; only machine timestamps (RSS `pubDate`, sitemap `lastmod`, JSON-LD) move from `+0000` to `+0530`.
+  Also covers posts published early in the IST morning. Needs one rebuild after merge (the merge itself deploys).
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
