@@ -4,7 +4,7 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-15, Concept Breakdown "How Does an Agent Remember?" live)
+## ▶ STATUS — where we left off (updated 2026-10-22, Tech Digest dates fixed to IST)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#33 hold the history. Only branch: `main` (+ standing temp branch `claude/adoring-thompson-o24o0b` for small changes: never delete, restart from `main` after each merge (Kush, 2026-10-17)).
@@ -12,7 +12,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Area | State |
 |---|---|
 | Site (Hugo + PaperMod) | ✅ Live, all pages checked by Kush |
-| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming live (PR #24). From 2026-10-15: built 00:30 IST (backups 02:30/04:30), email booked in Kit for 07:00 (Digital-Dhaba PR #2, merged 2026-10-13) |
+| Digital Dhaba email (Thu 07:00 IST) | ⚠️→✅ 2026-10-08: GitHub dropped the 06:00 IST scheduled build; run by hand, emailed to all at 09:01 IST (Kit broadcast 26301755). Backup builds 07:00/08:30 IST live (Digital-Dhaba PR #1, merged 2026-10-08 04:12 UTC). Email clipped by Gmail on 2026-10-08 → email-only trimming live (PR #24). From 2026-10-15: built 00:30 IST (backups 02:30/04:30), email booked in Kit for 07:00 (Digital-Dhaba PR #2, merged 2026-10-13). 2026-10-22: email OK but the issue was missing from the site (date read as UTC midnight → future); fixed with `timeZone = "Asia/Kolkata"` in `hugo.toml` (see changelog 2026-10-22) |
 | Sunday letter (Sun 09:00 IST) | ⚠️ 2026-10-11: sent OK (The Tool Call) but at 15:45 IST: GitHub started all 3 runs ~6.5 h late; backups skipped correctly. From 2026-10-18: runs 00:30 IST (backups 02:30/04:30) and books Kit for 09:00; covers posts dated the previous Sun–Sat (PR #28, merged + deployed 2026-10-13) |
 | Subscribers (Kit) | ✅ Kush + audited Mailchimp keep list imported (tag `from-mailchimp`); signup = Kit confirmation email only (no welcome email) |
 | Published | How LLMs Think (comic), first Learning Note, first Build Log entry (Digital Dhaba), **What Turns an LLM into an Agent: The Tool Call** (comic, `/concept-breakdown/tool-call/`, 2026-10-08, PR #27). **How Does an Agent Remember? Context Window vs Memory** (comic, `/concept-breakdown/agent-memory/`, 2026-10-15, PR #30, deployed 2026-10-15 11:02 UTC), Learning Note **When two AIs grade each other, they can agree their way into wrong answers** (`/learning-notes/two-ais-grading-each-other-agree-on-wrong-answers/`, 2026-10-17), **What Makes an AI Agent Feel Autonomous? The Agent Loop** (comic, `/concept-breakdown/agent-loop/`, 2026-10-20) |

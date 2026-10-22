@@ -6,6 +6,9 @@ pagination.pagerSize = 5
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
+# Dates without a time (date: 2026-10-22) mean midnight IST, not UTC. Digital Dhaba is pushed at ~00:30 IST,
+# which is still the day before in UTC: with UTC, buildFuture = false left the 2026-10-22 issue out of the site.
+timeZone = "Asia/Kolkata"
 buildExpired = false
 enableInlineShortcodes = true
 # Working files kept inside Concept Breakdown bundles, never published.
