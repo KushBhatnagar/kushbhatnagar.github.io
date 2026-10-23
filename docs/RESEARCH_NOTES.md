@@ -16,6 +16,9 @@ so a later session can build it.
 | How they're made | A **separate skill** (like `/breakdown-post`, `/build-log-entry`, `/learning-note`) that reads a research MD and converts it into a blog page |
 | Not this | No links to the MD files in GitHub (Digital-Dhaba is private; making it public would expose prompts/config, and readers would land on GitHub, not the blog) |
 | When | Later. Recorded today, built in a future session |
+| Theme fit | Under **Learn**, beside Tech Digest: Tech Digest is the quick weekly stop, a Research note is the long sit-down on one story. Both Claude-written and curated by Kush. **Not** under Explain (Explain = Kush's own words: Concept Breakdown, Learning Notes). A Research note can lead to a Learning Note or comic in his words. Motto "Learn. Build. Explain." unchanged |
+| Homepage | Keep the 4 section cards (2×2); extend the Tech Digest card text, e.g. "…every Thursday, plus Research notes on the biggest stories." No 5th card |
+| Top menu | No menu item at first; reach it from the Tech Digest page and each issue. Add a menu item later only if traffic justifies it |
 
 ## Proposed in the 2026-10-23 discussion (confirm when building)
 
@@ -38,10 +41,22 @@ skill is built.
 8. **Update `.claude/BLOG_WRITING_RULES.md`:** research prose may appear **only** in Research notes (labelled), never in
    Kush's own posts. Today rule 1 says research files are reference only.
 
+## Pages to update when building (decided 2026-10-23)
+
+| Where | Change |
+|---|---|
+| `hugo.toml` homepage pillars | Tech Digest card text gains "plus Research notes on the biggest stories" (wording at build time). Still 4 cards |
+| `hugo.toml` menu | No change at first |
+| `content/about.md` "How this blog works" | Learn bullet: "Tech Digest, plus Research notes: deeper dives into one story, researched with Claude". Diagram Learn box: "Tech Digest · Research notes" |
+| `content/subscribe.md` | Body + meta description: the Sunday letter also includes Research notes |
+| `content/tech-digest/_index.md` | One line + link: "Some stories get a full Research note →" |
+| `hugo.toml` site description | Optional: add "research notes" |
+| New `content/research-notes.md` | Landing page at `/research-notes/`, `layout: category-landing` like Learning Notes |
+| Behind the scenes | `scripts/kit_weekly_roundup.py` (new category in the Sunday letter), `CLAUDE.md` positioning line + layout, `.claude/BLOG_WRITING_RULES.md`, `docs/NEWSLETTER.md`, new skill under `.claude/skills/` |
+
 ## Open questions for the build session
 
-- URL and category: `/research-notes/<slug>/` with category `research-notes`? Nav menu entry, and where on the homepage
-  (if anywhere)?
+- URL and category: `/research-notes/<slug>/` with category `research-notes`? (Menu and homepage: decided above.)
 - Indexed by search engines (yes, given the search-traffic goal?) and AdSense on these pages (yes/no)?
 - Also link from the Thursday Digital Dhaba email, or only the Sunday letter?
 - How Kush marks a pick: run the skill with a path (`/research-note research/2026-10-22/<slug>.md`), or a
