@@ -12,6 +12,7 @@ under everything; building and explaining are two things that come out of it ("A
 Often explaining."). **Tech Digest** (learn, weekly, Claude-curated), **Build Log** (learn + build, in public),
 **Concept Breakdown** (learn + explain, comics; formerly "ML Made Easy"), **Learning Notes** (learn + explain, Kush's own notes on sources).
 Learning Notes and Build Log entries start from `archetypes/` (templates from Sahayak `content/*-PLAN.md`). Older series `mlops` and `bookshelf` stay live but are off the nav.
+Planned (decided 2026-10-23, not built): **Research notes**, selected Digital-Dhaba research explainers, see `docs/RESEARCH_NOTES.md`.
 Roadmap and checklist: **`PLAN_SITE_REFRESH.md`**.
 
 ## ▶ Start here (new session)

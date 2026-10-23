@@ -4,7 +4,7 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-10-22, Tech Digest dates fixed to IST)
+## ▶ STATUS — where we left off (updated 2026-10-23, Research notes planned)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#33 hold the history. Only branch: `main` (+ standing temp branch `claude/adoring-thompson-o24o0b` for small changes: never delete, restart from `main` after each merge (Kush, 2026-10-17)).
@@ -25,6 +25,8 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
+0. **Research notes (planned, not built):** publish selected Digital-Dhaba `research/` explainers as "Research notes",
+   via a new skill, in the Sunday letter. Decisions + open questions: `docs/RESEARCH_NOTES.md` (Kush, 2026-10-23).
 1. Blog PR #28 and Digital-Dhaba PR #2 merged 2026-10-13 (new times on main in both repos). Watch: Digital Dhaba
    Thu 2026-10-15 arrives 07:00 IST (Actions: build run around 00:30 IST, log "Scheduling for Thu … 07:00 IST"); Sunday letter
    2026-10-18 arrives 09:00 IST (posts dated 11–17 Oct).
