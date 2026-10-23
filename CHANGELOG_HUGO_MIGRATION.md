@@ -415,6 +415,12 @@ Format: `HH:MM [Phase N] change — detail`
   (Sunday letter) unchanged; only machine timestamps (RSS `pubDate`, sitemap `lastmod`, JSON-LD) move from `+0000` to `+0530`.
   Also covers posts published early in the IST morning. Needs one rebuild after merge (the merge itself deploys).
 
+## 2026-10-23 — Research notes: decided, not built
+- Kush decided to publish selected Digital-Dhaba `research/` explainers (Claude-written, refined with Kush) on the blog
+  as **Research notes**: goal = search traffic + more value for Digital Dhaba readers; Kush picks which; they go in the
+  Sunday letter; a separate skill will convert a research MD into a page. No links to the private repo's MD files.
+- Recorded in `docs/RESEARCH_NOTES.md` (decisions, proposals to confirm, open questions). Nothing built yet.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
