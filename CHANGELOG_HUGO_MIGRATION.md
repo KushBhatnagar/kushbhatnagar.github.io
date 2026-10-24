@@ -420,6 +420,8 @@ Format: `HH:MM [Phase N] change — detail`
   as **Research notes**: goal = search traffic + more value for Digital Dhaba readers; Kush picks which; they go in the
   Sunday letter; a separate skill will convert a research MD into a page. No links to the private repo's MD files.
 - Recorded in `docs/RESEARCH_NOTES.md` (decisions, proposals to confirm, open questions). Nothing built yet.
+- Theme fit decided (Kush, same day): under **Learn** beside Tech Digest, not Explain; homepage keeps 4 cards (Tech Digest
+  card mentions Research notes); no menu item at first. Pages to update listed in `docs/RESEARCH_NOTES.md`.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
