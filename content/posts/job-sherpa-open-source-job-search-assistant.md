@@ -1,7 +1,7 @@
 ---
 title: "Job Sherpa: an open-source job-search assistant that can't make up your resume"
 date: 2026-10-24
-draft: true
+draft: false
 ShowToc: false
 categories: ["build-log"]
 tags: ["generative ai", "ai agents", "job search"]
