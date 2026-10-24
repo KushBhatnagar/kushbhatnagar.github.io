@@ -423,6 +423,13 @@ Format: `HH:MM [Phase N] change — detail`
 - Theme fit decided (Kush, same day): under **Learn** beside Tech Digest, not Explain; homepage keeps 4 cards (Tech Digest
   card mentions Research notes); no menu item at first. Pages to update listed in `docs/RESEARCH_NOTES.md`.
 
+## 2026-10-24 — Build Log: Job Sherpa; session wrap-up
+- New Build Log entry `content/posts/job-sherpa-open-source-job-search-assistant.md`
+  (`/build-log/job-sherpa-open-source-job-search-assistant/`, dated 2026-10-24) + diagram `static/assets/images/job-sherpa-how-it-works.png`.
+  PR #38 merged 2026-10-24; deploy succeeded (06:31 UTC). Goes in the Sunday letter 2026-10-25 with The Agent Loop (PR #34).
+- PRs #36/#37: Research notes plan (`docs/RESEARCH_NOTES.md`), not built.
+- Standing temp branch `claude/adoring-thompson-o24o0b` reset to `main` after PR #38 (it still pointed at the Job Sherpa commits).
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
