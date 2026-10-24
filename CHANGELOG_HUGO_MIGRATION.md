@@ -430,6 +430,10 @@ Format: `HH:MM [Phase N] change — detail`
 - PRs #36/#37: Research notes plan (`docs/RESEARCH_NOTES.md`), not built.
 - Standing temp branch `claude/adoring-thompson-o24o0b` reset to `main` after PR #38 (it still pointed at the Job Sherpa commits).
 
+## 2026-10-24 — Repo visibility discussed (no change)
+- Kush asked about making the public repo private to stop others copying his work. Options A/B/C and notes recorded as
+  an open item in `PLAN_SITE_REFRESH.md` STATUS; to revisit. Nothing changed.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

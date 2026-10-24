@@ -25,6 +25,14 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
+000. **Repo visibility (revisit later, Kush 2026-10-24):** this repo is public; Kush's worry is others copying his work
+   (not the HP name). Options discussed: **A** GitHub Pro (~$4/month, check price) + make this repo private, nothing else
+   changes; **B** free: private source repo builds and pushes only the finished HTML to this public repo; **C** free: host on
+   Cloudflare Pages / Netlify from a private repo. Notes: posts and images are public on the website either way, so a
+   private repo doesn't stop copying of published content; it hides drafts before they go live, plans/notes, and the
+   pipeline (scripts, skills, workflows). No `LICENSE` file today (content is still copyrighted by default); a short
+   "content © Kush Bhatnagar, all rights reserved" notice is a cheap step. Making it private hides history from then on,
+   but existing clones/forks keep their copy. Claude's suggestion: A if paying is fine, else B.
 00. **Sunday letter Sun 2026-10-25 (09:00 IST):** should include The Agent Loop (20 Oct) and Job Sherpa (24 Oct). Check it arrives.
 0. **Research notes (planned, not built):** publish selected Digital-Dhaba `research/` explainers as "Research notes",
    via a new skill, in the Sunday letter. Decisions + open questions: `docs/RESEARCH_NOTES.md` (Kush, 2026-10-23).
