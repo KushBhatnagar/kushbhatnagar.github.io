@@ -1,0 +1,598 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "publisherIcon": "https://blogsbykush.com/android-chrome-192x192.png",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "October 29, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "29 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "Anthropic files its IPO prospectus",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+      "summary": "A 335-page S-1 pairs a first operating profit with long warnings about the risks of the technology the company is building."
+    },
+    {
+      "title": "OpenAI shares results on the Kakeya conjecture, the Exponential Time Hypothesis and QCD",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "summary": "The post shows how outside researchers can verify and build on its model's work in math, computer science and physics."
+    },
+    {
+      "title": "Gemini 4 Carbon takes #1 on the Artificial Analysis index",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "summary": "Google's new frontier model leads on cybersecurity benchmarks and starts with limited access for cyber defenders."
+    },
+    {
+      "title": "Apple's git, curl and python3 still trust the compromised eMudhra certificates",
+      "url": "https://emudhra.we-have-a-problem.com/apple.html",
+      "summary": "Anyone on the network path can intercept HTTPS traffic from macOS developer tools, and macOS 27.2 did not fix it."
+    },
+    {
+      "title": "Microsoft offers buyouts to roughly a quarter of its workforce",
+      "url": "https://www.seattletimes.com/business/microsoft/microsoft-offers-mass-buyouts-for-roughly-a-quarter-of-its-workforce/",
+      "summary": "About 60,000 eligible employees can take voluntary exits."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Three new discoveries in mathematics, computer science, and physics",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+          "source": "openai.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "OpenAI published model results on the Kakeya conjecture, the Exponential Time Hypothesis and quantum chromodynamics. The post also covers how researchers can verify and build on those results, which is what lets outsiders check claims of AI-made discoveries."
+            }
+          ],
+          "hn": {
+            "points": "1144",
+            "url": "https://news.ycombinator.com/item?id=50251344",
+            "comments": "691"
+          },
+          "alsoIn": [
+            "OpenAI News"
+          ]
+        },
+        {
+          "title": "Gemini 4 Carbon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "source": "blog.google",
+          "body": [
+            {
+              "type": "p",
+              "text": "Google's new frontier model ranks #1 on Artificial Analysis Intelligence Index v5.0 (59) and scores 88.2% on SEC-bench Pro, 54.8% on ExploitGym and 71.0% on CWE-bench. It costs $2 per million input tokens and $10 per million output tokens. Access starts with a subset of cyber defenders through the Fairwind Program before a wider launch."
+            }
+          ],
+          "hn": {
+            "points": "726",
+            "url": "https://news.ycombinator.com/item?id=50276792",
+            "comments": "593"
+          }
+        },
+        {
+          "title": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+          "source": "kimi.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Moonshot's open-weight 3T-class model has a 1M-token context window and scores 65.7% on Terminal-Bench 4.0. That is ahead of GPT-6 Astra (58.2%) and just behind Claude Opus 5.5 (66.4%). The Highspeed variant runs 2–3× faster, both are live on the Kimi API, and full weights are due by Nov 4."
+            }
+          ],
+          "hn": {
+            "points": "1095",
+            "url": "https://news.ycombinator.com/item?id=50212065",
+            "comments": "678"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "StreamEval: Evaluating Interactive Streaming Video Generation Models",
+          "url": "https://huggingface.co/papers/2610.28402",
+          "source": "arXiv",
+          "body": [],
+          "upvotes": "864",
+          "arxiv": "https://arxiv.org/abs/2610.28402",
+          "code": "https://github.com/StreamEval/StreamEval",
+          "stars": "497",
+          "inShort": "A benchmark of 300 scripted test cases across avatar dialogue, avatar performance, world generation, instruction editing and reference editing, scored on ten metrics. The authors ran 37 models through it.",
+          "whyItMatters": "Good visual quality and identity retention don't mean a model carries out requests reliably. The top Following score among avatar-performance models is only 36.90, and the best Edit Success for reference editing is 15.00."
+        },
+        {
+          "title": "Trajectory2Gym: Decision-Grounded Compositional Interaction Synthesis for Tool-Use Agents",
+          "url": "https://huggingface.co/papers/2610.33568",
+          "source": "ant-international",
+          "body": [],
+          "upvotes": "364",
+          "arxiv": "https://arxiv.org/abs/2610.33568",
+          "code": "https://github.com/yihaohu0118/Trajectory2Gym",
+          "stars": "6",
+          "inShort": "Instead of collecting successful tool-use runs, it builds interactions around multi-step dependencies the training data under-represents. It supervises only actions the agent could justify from what it had seen.",
+          "whyItMatters": "Across five Qwen3 sizes it improved Tau1, Tau2 and BFCL at every scale, lifting the three-benchmark mean by 16.9–29.8 points."
+        },
+        {
+          "title": "Trial by Trace: Benchmarking AI Agent Harnesses for Reliability and Failure Attribution",
+          "url": "https://huggingface.co/papers/2610.32285",
+          "source": "TraceLite AI",
+          "body": [],
+          "upvotes": "295",
+          "arxiv": "https://arxiv.org/abs/2610.32285",
+          "code": "https://github.com/TraceLite-AI/TraceTrial-Bench",
+          "stars": "21",
+          "inShort": "TraceTrial-Bench scores the software around an agent, not just the model. It uses 95 expert-level tasks across seven harness components, plus tracing and failure-attribution modules.",
+          "whyItMatters": "Over 3,420 runs, harness scores ranged from 59.8% to 72.0%, and 31.1% of runs succeeded despite failing at least one harness criterion."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Apple's git still trusts the compromised eMudhra certificates",
+          "url": "https://emudhra.we-have-a-problem.com/apple.html",
+          "source": "emudhra.we-have-a-problem.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Apple was notified on Oct 17, yet as of Oct 28 the git, curl and python3 shipped with macOS still trust the compromised certificates. macOS 27.2 undid users' manual workaround. Clones, pushes and tokens over HTTPS can be intercepted, and the site has check commands and a manual fix."
+            }
+          ],
+          "hn": {
+            "points": "997",
+            "url": "https://news.ycombinator.com/item?id=50271640",
+            "comments": "373"
+          }
+        },
+        {
+          "title": "Python's experimental JIT to be removed",
+          "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/",
+          "source": "lwn.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "After the steering council paused JIT work and asked for a standards-track PEP, the maintainers withdrew PEP 836 following months of discussion. The council had set a six-month deadline, after which the JIT code would have to come out of CPython's main branch. For now, development on the 3.13-era JIT appears to have stopped."
+            }
+          ],
+          "hn": {
+            "points": "562",
+            "url": "https://news.ycombinator.com/item?id=50257419",
+            "comments": "325"
+          }
+        },
+        {
+          "title": "Broccoli2Shell: Brotli decoder RCE in Node.js, Python and more",
+          "url": "https://broccoli2shell.com/",
+          "source": "broccoli2shell.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "An unchecked return value in Google's reference Brotli decoder lets a crafted stream write past an eight-byte buffer, which can lead to code execution. Node's fetch and zlib, Python's requests, urllib3 and aiohttp (with a Brotli package installed), and Express 5.0.0–5.3.0 body parsers are exposed paths. Fixed releases bundle Brotli 1.0.10, 1.1.1 or 1.2.1."
+            }
+          ],
+          "hn": {
+            "points": "405",
+            "url": "https://news.ycombinator.com/item?id=50219177",
+            "comments": "219"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Microsoft just shared Azure's actual revenue in dollars: $33.2 billion",
+          "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Azure brought in $33.2B in the July–September quarter, up 48% and about $850M above analyst expectations. Google Cloud reported $30.7B for the same period, growing roughly twice as fast. Reporting dollars for the first time lets investors compare Azure directly with AWS and Google Cloud."
+            }
+          ]
+        },
+        {
+          "title": "GPU-unlock: FP/BF16 instruction issue rate on Nvidia 3000's cards",
+          "url": "https://github.com/Zagitta/gpu-unlock",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "This Linux-only project lifts NVIDIA's half-rate cap on FP16, BF16 and TF32 tensor math with FP32 accumulation on GeForce cards. It does so at boot, with no patched driver or VBIOS flash. The author reports up to 2× tensor throughput and +25–55% LLM prefill, with outputs bit-identical. Blackwell isn't supported."
+            }
+          ],
+          "hn": {
+            "points": "349",
+            "url": "https://news.ycombinator.com/item?id=50219700",
+            "comments": "83"
+          }
+        },
+        {
+          "title": "Google illegally cut down 250K trees in Finland for data center",
+          "url": "https://nypost.com/2026/10/24/business/google-illegally-tore-down-250k-trees-for-finland-data-center-infuriating-locals-report/",
+          "source": "nypost.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Citing The Guardian, the report says Google cleared about 816 acres near Muhos before completing Finland's mandatory environmental impact assessment. Finnish officials suspended development at two of its data center sites. Residents report wildlife displacement and polluted streams. Google's Finland chief says the company believed it had approval."
+            }
+          ],
+          "hn": {
+            "points": "261",
+            "url": "https://news.ycombinator.com/item?id=50221676",
+            "comments": "212"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Startups & Funding",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Anthropic S-1",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+          "source": "sec.gov",
+          "body": [
+            {
+              "type": "p",
+              "text": "Anthropic's 335-page IPO prospectus devotes about 100 pages to risks, including that its technology could \"erode trust, harm society and destabilize the geopolitical order.\" According to TechCrunch, the company recorded an operating profit in Q2 and 900% net revenue retention."
+            }
+          ],
+          "hn": {
+            "points": "1700",
+            "url": "https://news.ycombinator.com/item?id=50242939",
+            "comments": "1673"
+          },
+          "alsoIn": [
+            "The Neuron"
+          ]
+        },
+        {
+          "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+          "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "New reports show managers what a team produced, what it cost and where workflows broke down, plus pooled group budgets for tokens. Anthropic says it won't train on this data by default. Jellyfish data cited in the story shows spending on agentic coding tools up 10× this year, now about 2% of engineering cost."
+            }
+          ]
+        },
+        {
+          "title": "US agency approves Amazon Leo's $11.5B acquisition of Globalstar",
+          "url": "https://www.reuters.com/business/media-telecom/us-agency-approves-amazon-leos-115-billion-acquisition-globalstar-2026-10-27/",
+          "source": "reuters.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A US agency approved Amazon Leo's $11.5B purchase of Globalstar, announced in April to expand Amazon's Leo satellite network. The approval is a step toward closing the deal."
+            }
+          ],
+          "hn": {
+            "points": "219",
+            "url": "https://news.ycombinator.com/item?id=50272145",
+            "comments": "100"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "There isn't an easy exploit for this PHP vulnerability",
+          "url": "https://eliastaylor.com/noexploit/",
+          "source": "eliastaylor.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Two critical PHP bugs (CVE-2026-109618 and CVE-2026-109619), in a language behind roughly 70% of websites, sent organizations scrambling to patch. The author argues that the many GitHub \"PoC\" exploits don't work against a vanilla PHP install. Several rely on a separate local-file-inclusion flaw. The advice is still to patch."
+            }
+          ],
+          "hn": {
+            "points": "636",
+            "url": "https://news.ycombinator.com/item?id=50188948",
+            "comments": "478"
+          }
+        },
+        {
+          "title": "Today, we hacked what we'd set out to hack: the iPhone",
+          "url": "https://blog.calif.io/p/iphone",
+          "source": "blog.calif.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "Security firm Calif says it achieved what it set out to do: hack the iPhone. The write-up has the details."
+            }
+          ],
+          "hn": {
+            "points": "1123",
+            "url": "https://news.ycombinator.com/item?id=50211474",
+            "comments": "732"
+          }
+        },
+        {
+          "title": "333 Tor exit nodes hijacked to intercept SSH traffic and retrieve plaintext email",
+          "url": "https://arstechnica.com/information-technology/2026/10/300-tor-exit-nodes-hijacked-to-intercept-ssh-traffic-and-retrieve-plaintext-email/",
+          "source": "Ars Technica",
+          "body": [
+            {
+              "type": "p",
+              "text": "For three days this month, 333 Tor exit nodes were hijacked in an attempt to steal sensitive data, including SSH traffic and plaintext email."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Quad9 to exit France",
+          "url": "https://quad9.net/news/blog/au-revoir-france/",
+          "source": "quad9.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "Quad9 will stop serving users in France on Nov 24 after a court ordered it to block DNS resolution for domains beIN says infringe its sports broadcast rights. The fine was cut from €580,000 to €1,000 per day, but Quad9 says compliance is technically unfeasible and conflicts with its mission."
+            }
+          ],
+          "hn": {
+            "points": "1375",
+            "url": "https://news.ycombinator.com/item?id=50195959",
+            "comments": "479"
+          }
+        },
+        {
+          "title": "Microsoft offers mass buyouts for roughly a quarter of its workforce",
+          "url": "https://www.seattletimes.com/business/microsoft/microsoft-offers-mass-buyouts-for-roughly-a-quarter-of-its-workforce/",
+          "source": "seattletimes.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Microsoft is offering voluntary exits to about 60,000 eligible workers, roughly 27% of staff by Reuters and AP's count. How many accept is up to them."
+            }
+          ],
+          "hn": {
+            "points": "1070",
+            "url": "https://news.ycombinator.com/item?id=50245524",
+            "comments": "1156"
+          }
+        },
+        {
+          "title": "Local Wikipedia: Wikipedia, but only for things a half hour walk from you",
+          "url": "https://edjefferson.com/localwiki/",
+          "source": "edjefferson.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "This unofficial site pulls geocoded Wikipedia pages near you, taking the 25 closest items (within about 6 miles if fewer are nearby) and capping at 500. Your location stays in the browser, and shared links don't include it."
+            }
+          ],
+          "hn": {
+            "points": "1718",
+            "url": "https://news.ycombinator.com/item?id=50202285",
+            "comments": "255"
+          }
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "Genie 4",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "summary": "Google DeepMind launched a new generation of its world-simulation model, which newsletters say now includes sound.",
+      "via": null
+    },
+    {
+      "title": "GPT-6.1 Terra",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "summary": "OpenAI's fast, efficient model emphasizes visual reasoning, precise computer use and clearer writing, and is a step up from GPT-5.6 Terra.",
+      "via": null
+    },
+    {
+      "title": "Ghostty 1.4",
+      "url": "https://ghostty.org/docs/install/release-notes/1-4-0",
+      "summary": "The terminal's release claims a complete Kitty graphics implementation and fixes several security advisories, after 7 months of work from 172 contributors.",
+      "via": null
+    },
+    {
+      "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+      "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+      "summary": "Eight coding videos (11 hours) implement evaluation, inference-time scaling, reinforcement learning and distillation on a small Qwen3 model in PyTorch.",
+      "via": null
+    },
+    {
+      "title": "Oracle and Google to bring TPUs to Oracle Cloud in 2027",
+      "url": "https://www.oracle.com/news/announcement/ai-world-oracle-brings-google-tpus-to-oracle-cloud-infrastructure-2026-10-27/",
+      "summary": "The two announced plans to offer Google's TPU chips on Oracle Cloud next year.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/google-launches-genie-4-with-sound"
+      }
+    },
+    {
+      "title": "SpaceX signs a roughly $40B GPU lease",
+      "url": "https://ir.spacex.com/updates/releases-details/2026/SPACEX-SECURES-40-BILLION-IN-THE-LARGEST-GPU-FINANCING-EVER-2026-EnDqGhTAB3/default.aspx",
+      "summary": "Led by Apollo, it is the largest GPU financing so far, with deliveries starting in the first half of 2027.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-s-big-day-brought-a-disproof-and-terra"
+      }
+    },
+    {
+      "title": "FTC demands testimony from Anthropic executives",
+      "url": "https://www.axios.com/2026/10/26/ftc-ai-safety-probe-anthropic-openai",
+      "summary": "The demand extends an AI safety probe that already includes document requests to Anthropic and OpenAI.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-s-big-day-brought-a-disproof-and-terra"
+      }
+    },
+    {
+      "title": "LiteLLM confirms a tampered version was live for two hours",
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+      "summary": "The popular tool for connecting apps to AI models was compromised on Oct 21, and SafeDep says the version stole credentials.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/new-claude-duet-works-while-your-phone-s-off"
+      }
+    }
+  ],
+  "tips": [
+    {
+      "title": "Forecast Your Real Launch Date With a Monte Carlo Simulation",
+      "url": "https://www.theneurondaily.com/p/microsoft-ai-scored-83-where-doctors-got-36",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "List each task in a sheet with best-case, most-likely and worst-case working days and what it depends on, then upload it to ChatGPT's data analysis tool and ask for a 10,000-run simulation of your finish date. It helps most when a plan's single date feels too optimistic, since you get odds for each date and a ranking of which tasks move it most."
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "Tasks overrun far more often than they finish early, so in The Neuron's test a plan that summed to 18 days met that date only about 10% of the time."
+        }
+      ],
+      "byline": "via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "Deep Dive into LLMs like ChatGPT",
+      "url": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A general-audience walk through how ChatGPT-style models are built, covering the full training process and mental models for what these systems are and aren't. It's a long watch, but it explains the whole pipeline in one sitting."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Knowing how a chatbot is trained helps you judge when to trust an answer and when to double-check it."
+        }
+      ],
+      "byline": "Andrej Karpathy · Video · 3 hr 30 min · 2025"
+    },
+    {
+      "title": "Machines of Loving Grace",
+      "url": "https://www.darioamodei.com/essay/machines-of-loving-grace",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Anthropic's CEO lays out an optimistic case for AI across health, mental health, poverty, democracy, and work and meaning. His central claim is that AI could compress 50–100 years of progress in biology and medicine into 5–10 years."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "It gives a concrete picture of \"AI going well,\" useful for weighing optimism against the risks in the news."
+        }
+      ],
+      "byline": "Dario Amodei · Essay · 50 min read · 2024"
+    },
+    {
+      "title": "Here's how I use LLMs to help me write code",
+      "url": "https://simonwillison.net/2025/Mar/11/using-llms-for-code/",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A veteran developer treats AI as \"an over-confident pair programming assistant\": give it context, say exactly what you want, test everything it writes, and be ready to take over. It's practical even if you only dabble in code."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "AI amplifies expertise, so the more you know, the more you get out of it."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "The biggest gain is attempting projects you'd never have had time for."
+        }
+      ],
+      "byline": "Simon Willison · Essay · 15 min read · 2025"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "Latent Space",
+      "title": "Why Agents Love Supabase",
+      "url": "https://latent.space/p/supabase/",
+      "note": "the founders on taking an open-source, fully remote company to a $10B valuation"
+    },
+    {
+      "publication": "Interconnects",
+      "title": "Artificial Analysis v5 and the benchmarker's dilemma",
+      "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+      "note": "why meaningful frontier benchmarks are harder to build than hill-climbing scores"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "AI SRE: what is it, how could it change on-call – and does it work?",
+      "url": "https://newsletter.pragmaticengineer.com/p/ai-sre",
+      "note": "separating vendor demos from real on-call use"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "The Pulse: Time to rethink software security because of AI?",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-do-we-need-to-rethink-software",
+      "note": "a month's worth of security breaches in one day"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "[AINews] Anthropic ends Coding Interviews: \"Hunger beats tenure\"",
+      "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/",
+      "note": "a hiring manager's case for a new path for junior engineers"
+    },
+    {
+      "publication": "TLDR AI",
+      "title": "Genie 4 worlds, Frontier Code 2, AI drug discovery",
+      "url": "https://tldr.tech/ai/2026-10-28",
+      "note": "the day's AI headlines"
+    },
+    {
+      "publication": "TLDR Tech",
+      "title": "M6 MacBook Pro, Amazon anti-tokenmaxxing, advice for junior SWEs",
+      "url": "https://tldr.tech/tech/2026-10-28",
+      "note": "hardware, token spend and early-career engineering"
+    },
+    {
+      "publication": "The Neuron",
+      "title": "WATCH: Robots That Learn Jobs by Watching You",
+      "url": "https://www.theneurondaily.com/p/watch-robots-that-learn-jobs-by-watching-you",
+      "note": "Standard Bots on teaching factory robots by demonstration"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Coding From the Himalayas With an Offline AI Agent",
+      "url": "https://latent.space/p/offline-coding/",
+      "note": "working with AI when network and power are unreliable"
+    }
+  ]
+}
