@@ -16,7 +16,7 @@ status: shipped
 
 ## The problem
 
-A lot of Indian professionals want a presence on LinkedIn but struggle to stay consistent. I'm one of them. For me, typing was never the hard part. The hard part was turning what I learned or did at work into something worth sharing, week after week, alongside a full-time job.
+I wasn't consistent on LinkedIn. There was no pattern: sometimes a post a week, sometimes one or two posts in a whole year. That's why I built Sahayak. And I'm not alone: a lot of Indian professionals want a presence on LinkedIn but struggle to stay consistent. For me, typing was never the hard part. The hard part was turning what I learned or did at work into something worth sharing, week after week, alongside a full-time job.
 
 ## What I built
 
@@ -42,7 +42,7 @@ All 14 posts I published over the past five weeks started as Sahayak drafts. Non
 
 ## How I built it
 
-I built Sahayak alongside my job, in evenings and weekends, from March to October 2026. As a PM, I started where I always do: the problem, the user and a plan, before any code. Then I built it with an AI coding assistant, which is how one person with a day job can ship a full product.
+I built Sahayak alongside my job, in evenings and weekends, between March and October 2026, though not continuously: from May to August, very little happened. As a PM, I started where I always do: the problem, the user and a plan, before any code. Then I built it with an AI coding assistant, which is how one person with a day job can ship a full product.
 
 It went through four stages, and each one changed it:
 
