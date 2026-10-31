@@ -191,8 +191,8 @@ ink `#131313`. Headings/logo in **Fredoka**. Default social preview: `static/ass
 
 Content and brand:
 - Don't name his employer (HP) anywhere on the site. Say "an enterprise AI platform".
-- Don't mention consulting or "open to roles". Don't reveal Sahayak or other unreleased projects: keep projects
-  generic ("building AI products"). MLOps/AWS are past skills; the focus is AI + product management.
+- Don't mention consulting or "open to roles". Don't reveal unreleased projects: keep them
+  generic ("building AI products"). **Sahayak is public** since its launch (Build Log 2026-11-01, postsahayak.com, Kush). MLOps/AWS are past skills; the focus is AI + product management.
 - Old career: "software engineer", never "software tester"; keep it subtle, focus on product.
 - Socials shown: X (icon only), GitHub, LinkedIn, Medium, email, RSS. No Facebook/Reddit/Telegram/WhatsApp. No CV link.
 - About page: no repeated intro line under the heading (`hideDescription`), no share bar.
