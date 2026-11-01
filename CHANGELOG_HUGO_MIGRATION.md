@@ -434,6 +434,13 @@ Format: `HH:MM [Phase N] change — detail`
 - Kush asked about making the public repo private to stop others copying his work. Options A/B/C and notes recorded as
   an open item in `PLAN_SITE_REFRESH.md` STATUS; to revisit. Nothing changed.
 
+## 2026-10-31 — Build Log: Sahayak (dated 2026-11-01)
+- New `content/posts/sahayak-ai-linkedin-drafts-not-finished-posts.md` (`/build-log/sahayak-ai-linkedin-drafts-not-finished-posts/`),
+  Kush's finished text as given; front matter added (tags, summary, description, `date: 2026-11-01`, `draft: false`).
+  Future-dated: Hugo leaves it out until a build on/after 1 Nov IST. In the Sunday letter of 2026-11-08.
+- `CLAUDE.md` rule updated: Sahayak is public since this launch; other unreleased projects stay generic.
+- STATUS: the 2026-10-25 Sunday letter arrived (broadcast 26589371).
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
