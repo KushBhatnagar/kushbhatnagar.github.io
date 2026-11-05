@@ -1,0 +1,538 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "publisherIcon": "https://blogsbykush.com/android-chrome-192x192.png",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "November 5, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "27 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "Astra can read and write weights to improve Qwen",
+      "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+      "summary": "A paper claims GPT-6 Astra can read raw network weights and edit them to fix a model, and it drew the week's biggest tech discussion alongside pushback on its framing."
+    },
+    {
+      "title": "Binance hit by a $6.3B hack",
+      "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
+      "summary": "Attackers drained wallets across ten-plus blockchains in about 20 minutes, and tracing firms point toward North Korea."
+    },
+    {
+      "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
+      "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+      "summary": "A remotely reachable Linux kernel bug going back to 4.4 is fixed upstream and in RHEL, but Ubuntu's LTS fixes were still in testing as of November 4."
+    },
+    {
+      "title": "We're releasing the weights of Mistral Large 4",
+      "url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "summary": "A 1-trillion-parameter multimodal model goes open-weight, with Mistral claiming the lead among open models for coding."
+    },
+    {
+      "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
+      "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+      "summary": "A compromised extension build planted a persistent SSH backdoor on developer machines before Cursor pulled it."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Astra can read and write weights to improve Qwen",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+          "source": "rikiyat.github.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "The authors report that GPT-6 Astra can tell what a network was trained to do from raw weights alone. They also say it cut Qwen3.5-0.8B's reasoning loops by editing 0.016% of its weights, lifting MATH-500 from 7.9% to 48.1%. Critics say the paper blurs no-tools weight reading with tool-assisted editing. Simon Willison got a similar no-tools result from Qwen 3.8 27B on a laptop."
+            }
+          ],
+          "hn": {
+            "points": "2944",
+            "url": "https://news.ycombinator.com/item?id=50341174",
+            "comments": "890"
+          },
+          "alsoIn": [
+            "honnibal.dev",
+            "The Neuron"
+          ]
+        },
+        {
+          "title": "We're releasing the weights of Mistral Large 4",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/",
+          "source": "mistral.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Mistral released the weights of its 1T-parameter multimodal model after three more weeks of reinforcement learning. It claims the open-weight lead on FrontierCode (19.7%) and Terminal-Bench 4.0 (41%), and a 48% Coding Agent Index score tied with GLM-5.3 at 47% fewer tokens. It also adds three reasoning modes to trade cost against quality."
+            }
+          ],
+          "hn": {
+            "points": "1731",
+            "url": "https://news.ycombinator.com/item?id=50289418",
+            "comments": "441"
+          }
+        },
+        {
+          "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
+          "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+          "source": "phorion.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "Phorion found that versions 2.1.312 and 2.1.313 of the Claude Code extension on Cursor's marketplace carried code that adds an attacker's SSH key and sets up persistence on macOS, Linux and Windows. It runs as soon as the file loads, with no user action. Cursor has removed both versions; anyone who ran them should treat the machine as compromised."
+            }
+          ],
+          "hn": {
+            "points": "1011",
+            "url": "https://news.ycombinator.com/item?id=50300683",
+            "comments": "553"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+          "url": "https://huggingface.co/papers/2611.00859",
+          "source": "DENG Lab @ SJTU",
+          "body": [],
+          "upvotes": "122",
+          "arxiv": "https://arxiv.org/abs/2611.00859",
+          "code": "https://github.com/SJTU-DENG-Lab/WaveForcing",
+          "stars": "115",
+          "inShort": "The method lets newer video chunks start denoising before earlier ones finish, staggering the stages across GPU replicas, and pairs this with a custom runtime and a three-stage training recipe.",
+          "whyItMatters": "On Wan2.1-T2V-1.3B, the 4-step version reaches 134.8 end-to-end FPS on eight H200s, 7.07x single-GPU throughput, while 5-step quality stays comparable to Rolling Forcing."
+        },
+        {
+          "title": "Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs",
+          "url": "https://huggingface.co/papers/2610.36671",
+          "source": "KAIST AI",
+          "body": [],
+          "upvotes": "115",
+          "arxiv": "https://arxiv.org/abs/2610.36671",
+          "code": "https://github.com/hyeon9698/LOWN",
+          "stars": "19",
+          "inShort": "LOWN predicts masked tokens without the image and only re-processes the image when that prediction disagrees with the last image-conditioned one. It needs no training.",
+          "whyItMatters": "Removing the image changed the output at only 22.8% of steps, so LOWN keeps 99.6% of LLaDA-V's score at 35.3% of the decoding compute."
+        },
+        {
+          "title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
+          "url": "https://huggingface.co/papers/2610.39302",
+          "source": "galilai-group",
+          "body": [],
+          "upvotes": "73",
+          "arxiv": "https://arxiv.org/abs/2610.39302",
+          "code": "https://github.com/galilai-group/prh-proof",
+          "stars": "151",
+          "inShort": "The authors prove that JEPAs trained separately on different modalities learn the same representation up to a rotation when their positive pairs are good views of one scene. They frame next-token prediction as a JEPA with \"bad views.\"",
+          "whyItMatters": "A 109M-parameter text JEPA aligns with DINOv2 and CLIP image encoders better than language models up to 72B, and needs 42x fewer samples than next-token prediction."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Postgres 19 is late because so many more bugs are being found now",
+          "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+          "source": "rhaas.blogspot.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "The post blames a surge in bug discovery for Postgres 19 shipping late, and its URL puts that surge down to AI. It is a notable data point on how AI-assisted bug-hunting is straining open-source release schedules."
+            }
+          ],
+          "hn": {
+            "points": "850",
+            "url": "https://news.ycombinator.com/item?id=50312408",
+            "comments": "517"
+          }
+        },
+        {
+          "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
+          "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+          "source": "mindstudio.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Linux runs on RTX Spark laptops, but when plugged in the GPU is held near 780 MHz instead of Windows' roughly 2.2 GHz. On GPT-OSS-120B that means 13.9 tokens/sec natively against 65.4 on Windows. The cause is a Windows-only power controller with an encrypted power table. WSL keeps full speed (65.1) as a workaround."
+            }
+          ],
+          "hn": {
+            "points": "592",
+            "url": "https://news.ycombinator.com/item?id=50362905",
+            "comments": "275"
+          }
+        },
+        {
+          "title": "Jepsen: ParticleDB 1.1.4",
+          "url": "https://jepsen.io/analyses/particledb-1.1.4",
+          "source": "jepsen.io",
+          "body": [
+            {
+              "type": "p",
+              "text": "Jepsen tested single-node ParticleDB, Orkes's Rust database that offers SQL, key-value and vector search over Postgres and Redis protocols. Its homepage touted \"formally proven\" and \"Full ACID,\" yet no TLA+ spec was available. SQL isolation-level statements were ignored or rejected in favor of a startup --txn-mode flag. Replication wasn't tested."
+            }
+          ],
+          "hn": {
+            "points": "360",
+            "url": "https://news.ycombinator.com/item?id=50316100",
+            "comments": "214"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "After the midterms, a bigger clash over data centers could be coming",
+          "url": "https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Data center opposition crossed party lines on Tuesday. An NBC exit poll found almost 80% oppose one in their neighborhood, and an Ohio county where Meta planned a facility passed a ban. With Democrats controlling Congress, expect more moratorium and grid-cost proposals, though any bill faces a possible veto."
+            }
+          ]
+        },
+        {
+          "title": "VMware releases vSphere Express for virtualization on up to 128 cores",
+          "url": "https://arstechnica.com/information-technology/2026/11/vmware-releases-vsphere-express-for-virtualization-on-up-to-128-cores/",
+          "source": "Ars Technica",
+          "body": [
+            {
+              "type": "p",
+              "text": "Broadcom's VMware is launching a cheaper entry tier after complaints that small customers were pushed toward VCF. TD Synnex lists it at $9,600 a year for up to 128 cores, with no discount for fewer cores. It includes vMotion and high availability but no central management."
+            }
+          ]
+        },
+        {
+          "title": "Alleged Chinese spy had 'close relationship' with Nvidia boss Jensen Huang",
+          "url": "https://nypost.com/2026/10/29/business/alleged-chinese-spy-had-close-relationship-with-nvidia-boss-jensen-huang-report/",
+          "source": "nypost.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Per the NYT, US intelligence concluded that Alice Huang, an executive at Nvidia customer Megaspeed, was passing information to Beijing. Jensen Huang was among her contacts, but the report offers no evidence he knew. US authorities are also investigating whether Megaspeed helped Chinese firms get around chip export limits."
+            }
+          ],
+          "hn": {
+            "points": "360",
+            "url": "https://news.ycombinator.com/item?id=50293047",
+            "comments": "248"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Startups & Funding",
+      "type": "articles",
+      "items": [
+        {
+          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
+          "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+          "source": "techpolicy.press",
+          "body": [
+            {
+              "type": "p",
+              "text": "This op-ed argues Anthropic's amended filing shows nearly $900B in spending commitments, including $582B in non-cancelable compute deals with five companies, against $96B in cash. It also says unaudited 2026 results show growth slowing over the summer. The author contends public investors would bear the risk if demand falls short."
+            }
+          ],
+          "hn": {
+            "points": "404",
+            "url": "https://news.ycombinator.com/item?id=50344919",
+            "comments": "321"
+          }
+        },
+        {
+          "title": "Meta acquires AI coding startup Conductor",
+          "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Conductor runs multiple coding agents in parallel workspaces, using agents from labs like Anthropic and OpenAI. Meta confirmed the deal without details. Conductor's cloud service shuts down November 20, and its founder promises \"something new\" by early next year."
+            }
+          ]
+        },
+        {
+          "title": "Revolut's valuation jumps 53% to $115B in new share sale as it prepares to launch US bank",
+          "url": "https://techcrunch.com/2026/11/04/revoluts-valuation-jumps-53-to-115b-in-new-share-sale-as-it-prepares-to-launch-us-bank/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "A secondary sale led by Glade Brook, Coatue and others brought no new money into the company. Revolut reported $6B in 2025 revenue at 38% margins and over 80 million retail customers. It plans a US national bank in the first half of 2027, pending final approval."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
+          "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+          "source": "atlasum.net",
+          "body": [
+            {
+              "type": "p",
+              "text": "A use-after-free in the IPv4 TCP handshake lets an unauthenticated remote peer reach vulnerable kernels, back to Linux 4.4. Upstream fixes shipped October 11 and 15, and Red Hat and AlmaLinux have patched. As of November 4, Ubuntu 22.04, 24.04 and 26.04 fixes were still in testing, which a separate post (Ubuntu LTS kernels still unfixed) criticized."
+            }
+          ],
+          "hn": {
+            "points": "750",
+            "url": "https://news.ycombinator.com/item?id=50319143",
+            "comments": "334"
+          }
+        },
+        {
+          "title": "The $6.3B Binance hack was pulled off in just 20 minutes",
+          "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
+          "source": "wired.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Attackers drained hot wallets across at least ten blockchains in about 20 minutes on October 29, after rehearsing on test wallets. Around half the funds have reportedly been frozen. TRM, Chainalysis and Elliptic see links to North Korea's TraderTraitor group, but Binance hasn't named a culprit and says it will cover all losses."
+            }
+          ],
+          "hn": {
+            "points": "600",
+            "url": "https://news.ycombinator.com/item?id=50303172",
+            "comments": "452"
+          }
+        },
+        {
+          "title": "Do the math: How we took over ChatGPT accounts",
+          "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+          "source": "parameter.ai",
+          "body": [
+            {
+              "type": "p",
+              "text": "Parameter Labs chained a MathLive message listener that accepted keyboard-layout HTML from any origin with ChatGPT's sandboxed HTML Preview. A shared conversation could then run script as the viewer on chatgpt.com. They showed it could read private chats; OpenAI fixed it October 26 and rated it P1."
+            }
+          ],
+          "hn": {
+            "points": "365",
+            "url": "https://news.ycombinator.com/item?id=50314699",
+            "comments": "177"
+          },
+          "alsoIn": [
+            "Simon Willison"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "HackerTube: YouTube built from videos recommended by HN",
+          "url": "https://karpathy.bearblog.dev/hacker-tube/",
+          "source": "karpathy.bearblog.dev",
+          "body": [
+            {
+              "type": "p",
+              "text": "Andrej Karpathy had Opus 5.5 filter all of HN's comments down to about 40K that recommend a YouTube video. The result is a site of 6,454 videos across 150 topics, with no-account recommendations. He says it took about two hours. A copycat, HackerBooks, did the same for books."
+            }
+          ],
+          "hn": {
+            "points": "2877",
+            "url": "https://news.ycombinator.com/item?id=50319510",
+            "comments": "637"
+          },
+          "alsoIn": [
+            "HackerBooks (▲ 1852)"
+          ]
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "Google will turn off search for schools that reject AI",
+      "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+      "summary": "The NYT reports Google plans to cut Search for schools that restrict AI.",
+      "via": null
+    },
+    {
+      "title": "Chained PHP2Shell exploit roots 25 servers, including US Government servers",
+      "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
+      "summary": "Dream researchers say an attacker chained PHP2Shell with a kernel exploit against exposed PAN-OS firewalls, then went after Active Directory.",
+      "via": null
+    },
+    {
+      "title": "AI is forcing us to pay off 40 years of technical debt",
+      "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+      "summary": "IEEE Spectrum says AI-assisted researchers turned a long-ignored PHP crash bug into the PHP2Shell remote-code flaw.",
+      "via": null
+    },
+    {
+      "title": "Hackers expose the identities of more than 40k DHS employees",
+      "url": "https://text.npr.org/nx-s1-6021497",
+      "summary": "A hacktivist group's stolen personnel data, including undercover staff, was published in a searchable database.",
+      "via": null
+    },
+    {
+      "title": "OpenAI raises less than half of $30B target",
+      "url": "https://www.wsj.com/tech/ai/openai-raises-less-than-half-of-30-billion-target-in-latest-round-91aecdc5",
+      "summary": "The WSJ reports the latest round fell well short of its goal.",
+      "via": null
+    },
+    {
+      "title": "Anthropic aims to double its computing capacity from 3.5GW to about 7GW next year",
+      "url": "https://www.investing.com/news/stock-market-news/anthropic-targets-doubling-computing-capacity-to-7-gigawatts-next-year-nyt-report-4994999",
+      "summary": "The NYT says that's enough electricity for every home in Chicago.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/november-4-wednesday"
+      }
+    },
+    {
+      "title": "Amazon said AWS sales rose 39% to $46B in Q3",
+      "url": "https://fourweekmba.com/ai-aws-sales-rise-39-to-46b-as-amazon-capex-hits-77-3b/",
+      "summary": "Quarterly equipment spending hit $77.3B, turning trailing free cash flow negative $42.4B.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/microsoft-s-binding-ai-school-deal"
+      }
+    },
+    {
+      "title": "Apple to bring Apple Intelligence to iPhones in China through iOS 27.3",
+      "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+      "summary": "It will use Alibaba's Qwen, with a developer beta on November 4 and a public release in December.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/microsoft-s-binding-ai-school-deal"
+      }
+    }
+  ],
+  "tips": [
+    {
+      "title": "Sort your agent's actions by what happens if it's wrong",
+      "url": "https://www.theneurondaily.com/p/november-4-wednesday",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Before letting an AI agent loose, split what it can do into safe, reversible actions it may take alone and hard-to-undo ones (sends, deletes, payments) that need your approval. Use it any time an agent has access to your email, files or money."
+        },
+        {
+          "type": "prompt",
+          "text": "1. Safe and reversible (reads, searches, drafts): let it run. 2. Hard to undo (sends, deletes, payments): require my approval. 3. Not sure: treat it as number 2. 4. Cap how many number 2 actions it can take per hour."
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "Gating by the cost of a mistake lets routine work flow while stopping the errors you can't take back."
+        }
+      ],
+      "byline": "Hassann · via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "Andrej Karpathy — AGI is still a decade away",
+      "url": "https://www.dwarkesh.com/p/andrej-karpathy",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Karpathy argues reliable AI agents are about a decade away, not a year, because today's models have real \"cognitive deficits\" that take a slow \"march of nines\" to fix. He expects AI to blend into normal economic growth rather than cause a sudden jump."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Demos are easy, but making AI reliable enough to trust takes years, as self-driving showed."
+        }
+      ],
+      "byline": "Dwarkesh Patel with Andrej Karpathy · Podcast · 2 hr 25 min · 2025"
+    },
+    {
+      "title": "Things we learned about LLMs in 2024",
+      "url": "https://simonwillison.net/2024/Dec/31/llms-in-2024/",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "A year-in-review covering how GPT-4-level models spread from one company to 18 organizations, prices fell roughly 100x, and capable models began running on laptops. It also covers \"slop,\" the energy debate, and why AI tools got harder to use well."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Knowing how to use AI well is \"incredibly unevenly distributed,\" which is an opportunity for anyone who learns it."
+        }
+      ],
+      "byline": "Simon Willison · Essay · 25 min read · 2024"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "The Neuron",
+      "title": "Proton's AI staff revolt",
+      "url": "https://www.theneurondaily.com/p/proton-s-ai-staff-revolt",
+      "note": "Microsoft's patent for rewriting a speaker's words live, plus staff pushback at Proton"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
+      "url": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/",
+      "note": "disputes over the weight-space paper, AI Engineer Shanghai, history of Latent Space"
+    },
+    {
+      "publication": "Interconnects",
+      "title": "How big is the open model economy today?",
+      "url": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+      "note": "imperfect data on open model adoption and performance"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "Apple cracks the door open to Siri AI",
+      "url": "https://www.therundown.ai/articles/apple-cracks-the-door-open-to-siri-ai",
+      "note": "Siri AI opens up, plus turning one product photo into studio shots"
+    },
+    {
+      "publication": "TLDR AI",
+      "title": "Siri AI developer, Gemini Notebook API, provable inference",
+      "url": "https://tldr.tech/ai/2026-11-04",
+      "note": "Apple's Siri AI developer access, Gemini notebook API"
+    },
+    {
+      "publication": "TLDR Tech",
+      "title": "Siri AI dev preview, ChatGPT races Google, engineering is changing",
+      "url": "https://tldr.tech/tech/2026-11-04",
+      "note": "Siri AI preview, ChatGPT versus Google search, shifting engineering work"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "How software engineering is changing: a tale of two eras",
+      "url": "https://newsletter.pragmaticengineer.com/p/how-software-engineering-is-changing",
+      "note": "winning reader essay on how building software changed"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "The Pulse: Anthropic kills the coding interview",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-anthropic-kills-the-coding",
+      "note": "AI makes Leetcode-style interviews pointless, plus Microsoft's exit offer to engineers"
+    }
+  ]
+}
