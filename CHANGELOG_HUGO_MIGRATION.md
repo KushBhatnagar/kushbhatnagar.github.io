@@ -452,6 +452,7 @@ Format: `HH:MM [Phase N] change — detail`
 - Sahayak launch post: "format(s)" → "framework(s)" in Kush's prose (13 places); the quoted LinkedIn draft/published texts
   stay verbatim.
 - Stealth-month post: "Insights & Learnings" → "Insights from Others" (2 places; the framework's real name in Sahayak, Kush).
+- Stealth-month post: added connections grew from 999 to 1,048 (Kush).
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
