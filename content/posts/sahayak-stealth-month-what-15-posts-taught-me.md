@@ -25,9 +25,9 @@ see whether it actually helps me stay consistent.
 ## What I did
 
 - **15 posts between 27 September and 1 November** (14 during the stealth month, plus the launch post), across five frameworks: Concept Breakdown, Hot Takes,
-  Build in Public, Story Post, and Insights & Learnings.
+  Build in Public, Story Post, and Insights from Others.
 - **Every draft came from Sahayak, and I edited every one.** When the context is ready, a draft takes me
-  around 1.5–2 minutes. Hot Takes and Insights & Learnings take longer, because I have to do the research first.
+  around 1.5–2 minutes. Hot Takes and Insights from Others take longer, because I have to do the research first.
 - **I tracked everything** in a spreadsheet: impressions, reactions, comments, profile views and
   followers.
 
