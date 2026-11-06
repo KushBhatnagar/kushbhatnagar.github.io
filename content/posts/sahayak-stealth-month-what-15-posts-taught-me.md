@@ -61,7 +61,7 @@ rate was low, but reactions were high. People see a post without necessarily rea
 LinkedIn. So I count high impressions as a win, to some extent, and I watch what people *do*: profile views,
 saves and follows.
 
-Overall, followers grew from 998 to 1,123. 41 of them came in the first week, after my first three posts.
+Overall, followers grew from 998 to 1,123. 41 of them came in the first week, after my first three posts. My connections also grew, from 999 to 1,048.
 
 ## What's still broken / next
 
