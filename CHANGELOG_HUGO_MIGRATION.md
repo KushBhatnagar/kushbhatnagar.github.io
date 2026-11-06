@@ -441,6 +441,12 @@ Format: `HH:MM [Phase N] change — detail`
 - `CLAUDE.md` rule updated: Sahayak is public since this launch; other unreleased projects stay generic.
 - STATUS: the 2026-10-25 Sunday letter arrived (broadcast 26589371).
 
+## 2026-11-06 — This week's drafts: Reasoning Models (comic) + Sahayak stealth-month Build Log
+- New bundle `content/posts/reasoning-models/` from Kush's `ReasoningMode.pdf` ("The Rough Sheet", 4 slides),
+  `url: /concept-breakdown/reasoning-models/`, `date: 2026-11-06`, `draft: true`. Transcript read from the slides (CHECK).
+- New `content/posts/sahayak-stealth-month-what-15-posts-taught-me.md` (Kush's text as given),
+  `url: /build-log/sahayak-stealth-month-what-15-posts-taught-me/`, `date: 2026-11-06`, `draft: true`.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.
