@@ -1,7 +1,7 @@
 ---
 title: "Why Does AI Feel Smarter Lately? Reasoning Models and the Rough Sheet"
 date: 2026-11-06
-draft: true
+draft: false
 categories: ["concept-breakdown"]
 tags: ["generative ai", "large language models", "reasoning models", "classroom conversation"]
 summary: "Hint: it's just board exams. Models don't learn from your chats; reasoning models just do rough work before the final answer."
@@ -18,7 +18,6 @@ slide_alt:
 
 {{< carousel >}}
 
-<!-- CHECK: transcript read from the slides -->
 {{< transcript >}}
 **Slide 1: The rough-sheet student**
 

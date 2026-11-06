@@ -20,9 +20,9 @@ I wasn't consistent on LinkedIn. There was no pattern: sometimes a post a week, 
 
 ## What I built
 
-Sahayak (सहायक, "helper") takes two things from you: a topic, and context in your own words, such as notes, an article or what happened. You pick one of five formats, and it writes a draft in that shape. You edit it, decide, and post it yourself. It never posts for you and never asks for your LinkedIn login. Every draft, and your edited version of it, is saved in your Post History.
+Sahayak (सहायक, "helper") takes two things from you: a topic, and context in your own words, such as notes, an article or what happened. You pick one of five frameworks, and it writes a draft in that shape. You edit it, decide, and post it yourself. It never posts for you and never asks for your LinkedIn login. Every draft, and your edited version of it, is saved in your Post History.
 
-The five formats:
+The five frameworks:
 
 - **Concept Breakdown:** a short teacher–student dialogue that explains one idea simply
 - **Insights from Others:** your angle on something you read, watched or listened to
@@ -36,7 +36,7 @@ All 14 posts I published over the past five weeks started as Sahayak drafts. Non
 
 - **App:** Next.js 14 with TypeScript, Tailwind CSS and shadcn/ui, hosted on Vercel
 - **Data and sign-in:** Supabase (Postgres, authentication, and row-level security so each user only ever sees their own drafts)
-- **Drafts:** Anthropic's Claude (Sonnet 5), with a separate set of rules for each format
+- **Drafts:** Anthropic's Claude (Sonnet 5), with a separate set of rules for each framework
 - **Payments:** Razorpay, in rupees, with UPI
 - **Analytics and bot protection:** PostHog and Cloudflare Turnstile
 
@@ -47,9 +47,9 @@ I built Sahayak alongside my job, in evenings and weekends, between March and Oc
 It went through four stages, and each one changed it:
 
 - **Building it for myself.** A working version I used for my own posts. Using it daily showed me the gap between a draft that looks fine and one I'd actually post.
-- **A few friends.** The feedback stung: "feels like ChatGPT" and "what makes this different?" Fair. That's when the formats became the centre of the product, and when I started treating made-up details as a bug, not a style issue.
-- **Fixing what they found.** The Hot Takes format was inventing statistics, so I rewrote its rules. The home screen now starts with the five formats instead of an empty box, and each format got a real example.
-- **A stealth month.** Five weeks of posting on LinkedIn with Sahayak, without telling anyone. Every post was a real test with real readers. When a draft needed the same fix twice, I fixed the format's rules instead of just the post, and added the case to my tests.
+- **A few friends.** The feedback stung: "feels like ChatGPT" and "what makes this different?" Fair. That's when the frameworks became the centre of the product, and when I started treating made-up details as a bug, not a style issue.
+- **Fixing what they found.** The Hot Takes framework was inventing statistics, so I rewrote its rules. The home screen now starts with the five frameworks instead of an empty box, and each framework got a real example.
+- **A stealth month.** Five weeks of posting on LinkedIn with Sahayak, without telling anyone. Every post was a real test with real readers. When a draft needed the same fix twice, I fixed the framework's rules instead of just the post, and added the case to my tests.
 
 What I'd tell anyone building on the side: keep using your own product. The friends' feedback told me *what* was wrong; daily use told me *where*.
 
@@ -57,13 +57,13 @@ What I'd tell anyone building on the side: keep using your own product. The frie
 
 The option I didn't pick was the obvious one: generate a polished post and publish it for you. I chose drafts, built from only what you give it.
 
-**The fastest way to lose trust is a made-up detail.** Your readers know you. If a post quotes an opinion nobody gave you, or a number you never shared, you're the one who looks bad. So each format's rules say: use only what the user gave, keep vague things vague, and write around a missing detail instead of filling it in.
+**The fastest way to lose trust is a made-up detail.** Your readers know you. If a post quotes an opinion nobody gave you, or a number you never shared, you're the one who looks bad. So each framework's rules say: use only what the user gave, keep vague things vague, and write around a missing detail instead of filling it in.
 
 I test this with sample inputs that deliberately leave numbers out, and a check fails any draft that adds one. It still slips sometimes. One of my own Hot Takes came back with "Everyone's timeline is calling this copying". Nobody had said that; I hadn't given it any such reaction. I cut it, and it became a test case. That's the other reason the edit step isn't optional.
 
-**Why not just use ChatGPT?** You can, and I did. But every time, I was re-explaining the format, the tone and the rules, and it was quick to fill gaps with plausible-sounding details. In Sahayak, each format's structure and rules are already built in, including the rule to stick to your facts. You bring the idea and the context; you don't write a prompt.
+**Why not just use ChatGPT?** You can, and I did. But every time, I was re-explaining the framework, the tone and the rules, and it was quick to fill gaps with plausible-sounding details. In Sahayak, each framework's structure and rules are already built in, including the rule to stick to your facts. You bring the idea and the context; you don't write a prompt.
 
-**Built around Indian professionals.** The drafts use Indian English. There's Hindi on Pro (in beta), written to avoid guessing your gender from the verbs, which Hindi otherwise forces. Payment is in rupees, with UPI. The formats fit the moments of an Indian tech professional's week: explaining something to a junior colleague, a talk that stuck with you, something you shipped or broke.
+**Built around Indian professionals.** The drafts use Indian English. There's Hindi on Pro (in beta), written to avoid guessing your gender from the verbs, which Hindi otherwise forces. Payment is in rupees, with UPI. The frameworks fit the moments of an Indian tech professional's week: explaining something to a junior colleague, a talk that stuck with you, something you shipped or broke.
 
 **The launch post shows why the edit matters.** Sahayak drafted it; I edited it. The three changes that mattered:
 
@@ -77,7 +77,7 @@ I also added the line that makes the rest believable: "14 posts in 5 weeks, alon
 
 ## Next
 
-For five weeks I posted without saying how the posts were made. Next week I'll share what that stealth month taught me: how Sahayak fit into my week, which formats worked, and what I changed along the way.
+For five weeks I posted without saying how the posts were made. Next week I'll share what that stealth month taught me: how Sahayak fit into my week, which frameworks worked, and what I changed along the way.
 
 And one open question, the same one from my launch post: what stops you posting more, finding something to say, or writing it? I'll share what people answer.
 

@@ -446,6 +446,11 @@ Format: `HH:MM [Phase N] change — detail`
   `url: /concept-breakdown/reasoning-models/`, `date: 2026-11-06`, `draft: true`. Transcript read from the slides (CHECK).
 - New `content/posts/sahayak-stealth-month-what-15-posts-taught-me.md` (Kush's text as given),
   `url: /build-log/sahayak-stealth-month-what-15-posts-taught-me/`, `date: 2026-11-06`, `draft: true`.
+- Kush's edits, then published (`draft: false`): cost of drafting removed (bullet, "token cost", "₹1 each" in summary);
+  "15 posts" clarified as 14 in the stealth month plus the launch post; links to the Sahayak launch post and Job Sherpa;
+  CHECK notes removed (both numbers verified: 44,563/52,367 = 85.1%). Comic transcript accepted, CHECK removed.
+- Sahayak launch post: "format(s)" → "framework(s)" in Kush's prose (13 places); the quoted LinkedIn draft/published texts
+  stay verbatim.
 
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
