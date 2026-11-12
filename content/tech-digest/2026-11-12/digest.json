@@ -1,0 +1,554 @@
+{
+  "issue": {
+    "name": "Digital Dhaba",
+    "subtitle": "Tech Digest",
+    "tagline": "Your quick roadside stop for the week in tech.",
+    "publisher": "Blogs by Kush",
+    "publisherUrl": "https://blogsbykush.com/",
+    "publisherIcon": "https://blogsbykush.com/android-chrome-192x192.png",
+    "heroImage": "assets/digital-dhaba-hero.jpg",
+    "heroAlt": "A kid in glasses reading the Digital Dhaba newspaper beside chai, samosas, tech books and a laptop",
+    "signoff": "That's the week. Chai's on us next week.",
+    "title": "Tech Digest",
+    "date": "November 12, 2026",
+    "dek": "The last 7 days in tech, AI & LLMs",
+    "count": "27 stories from 24 sources"
+  },
+  "topStories": [
+    {
+      "title": "sshole: OpenSSH password bypass",
+      "url": "https://sshhole.com",
+      "summary": "A one-connection login bypass hits Alpine and other musl-based systems, and Ars Technica reports it is under active exploitation; update and restart sshd."
+    },
+    {
+      "title": "Claude Fable 5.2 and Mythos 5.2",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "summary": "Anthropic's top models get faster and cheaper, with a new fast mode."
+    },
+    {
+      "title": "Nvidia is preparing to oust Jensen Huang",
+      "url": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad",
+      "summary": "WSJ reports the board is moving to dismiss the CEO after a second alleged affair, days after he admitted a separate one."
+    },
+    {
+      "title": "Claude Code sends your email address to websites",
+      "url": "https://github.com/anthropics/claude-code/issues/107757",
+      "summary": "A GitHub issue on this privacy behavior became the week's most-discussed AI story."
+    },
+    {
+      "title": "Tesla to wind down Cybertruck production",
+      "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+      "summary": "Musk says the Texas line gives way to the Cybercab around mid-2027."
+    }
+  ],
+  "sections": [
+    {
+      "title": "AI & LLMs",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Claude Fable 5.2 and Mythos 5.2",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "source": "anthropic.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Anthropic upgraded Fable and Mythos, which are the same underlying model. Fable has cyber and biology safeguards and is open to all users, while Mythos goes to vetted organizations. Output is up to 30% faster than 5.1 at $8/$40 per million input/output tokens, with an optional 2.5x fast mode at $16/$80."
+            }
+          ],
+          "hn": {
+            "points": "995",
+            "url": "https://news.ycombinator.com/item?id=50429906",
+            "comments": "8"
+          }
+        },
+        {
+          "title": "Claude Code sends your email address to websites",
+          "url": "https://github.com/anthropics/claude-code/issues/107757",
+          "source": "github.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "A GitHub issue on the Claude Code repo reports that the tool sends users' email addresses to websites. The thread drew one of the week's biggest Hacker News discussions. The issue itself has the details on when and where it happens."
+            }
+          ],
+          "hn": {
+            "points": "1,614",
+            "url": "https://news.ycombinator.com/item?id=50385272",
+            "comments": "535"
+          }
+        },
+        {
+          "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
+          "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+          "source": "thestateofai.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Internal guidance from October limits Claude Code and GitHub's tools to Goldman's engineers, cutting off traders and bankers who used them to track client flows and model markets. Strats keep access. The bank is also a lead underwriter on Anthropic's IPO."
+            }
+          ],
+          "hn": {
+            "points": "901",
+            "url": "https://news.ycombinator.com/item?id=50415628",
+            "comments": "496"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Research Papers",
+      "type": "papers",
+      "items": [
+        {
+          "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+          "url": "https://huggingface.co/papers/2611.08449",
+          "source": "NVIDIA",
+          "body": [],
+          "upvotes": "113",
+          "arxiv": "https://arxiv.org/abs/2611.08449",
+          "inShort": "Robot and driving models usually emit visual plans (points, boxes, trajectories) one coordinate token at a time. VFlash uses a lightweight drafter to predict a whole primitive in a single forward pass.",
+          "whyItMatters": "It cut prediction errors versus autoregressive decoding and was about 25x faster on 3D point forecasting in preliminary tests. A world action model using its plans reached 70.2% success versus 62.6% for the baseline."
+        },
+        {
+          "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
+          "url": "https://huggingface.co/papers/2611.06043",
+          "source": "Netease Youdao",
+          "body": [],
+          "upvotes": "91",
+          "arxiv": "https://arxiv.org/abs/2611.06043",
+          "code": "https://github.com/netease-youdao/Confucius4-R2T2",
+          "stars": "880",
+          "inShort": "The team post-trained Qwen3-ASR-1.7B on 1,500 hours of Chinese and English audio using \"Longest Stable Prefix\" labels. The result is a streaming speech recognizer that never revises text it has already emitted.",
+          "whyItMatters": "Translators and voice agents that act on each token no longer waste work on corrections. Accuracy stays close to the full-context base model with low lag, and the weights are open."
+        },
+        {
+          "title": "World In-Context Learning for Agentic Robot Manipulation",
+          "url": "https://huggingface.co/papers/2611.12885",
+          "source": "ArcheOne-AI",
+          "body": [],
+          "upvotes": "65",
+          "arxiv": "https://arxiv.org/abs/2611.12885",
+          "code": "https://github.com/ArcheOne-AI/RoboScript",
+          "stars": "65",
+          "inShort": "A frozen model starts from one demonstration, rehearses the task in a simulator, and saves the feedback as a \"Task Memory\" in its context instead of its weights.",
+          "whyItMatters": "On all 50 RoboTwin 2.0 tasks it reached 83.4% mean success with no gradient updates, over 20 points above the strongest trained policy. It also transferred to a physical dual-arm robot."
+        }
+      ]
+    },
+    {
+      "title": "Dev Tools & Engineering",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Tim Peters has died",
+          "url": "https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028",
+          "source": "discuss.python.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Python community is remembering Tim Peters (1952–2026), author of the Zen of Python. A memorial post recalls him as an early Python user and close design partner to Guido van Rossum, after earlier work on supercomputer compilers at Cray and speech recognition at Dragon Systems."
+            }
+          ],
+          "hn": {
+            "points": "931",
+            "url": "https://news.ycombinator.com/item?id=50450488",
+            "comments": "101"
+          }
+        },
+        {
+          "title": "Libghostty 1.0",
+          "url": "https://mitchellh.com/writing/libghostty-1-0",
+          "source": "mitchellh.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "libghostty-vt, the terminal-emulation C library extracted from Ghostty, now has a stable API and a CI-enforced ABI policy. JetBrains IDE terminals already run on it, and Neovim has an approved pull request to replace libvterm with it."
+            }
+          ],
+          "hn": {
+            "points": "1,092",
+            "url": "https://news.ycombinator.com/item?id=50399933",
+            "comments": "210"
+          }
+        },
+        {
+          "title": "Asahi Linux Progress Linux 7.3",
+          "url": "https://asahilinux.org/2026/11/progress-report-7-3/",
+          "source": "asahilinux.org",
+          "body": [
+            {
+              "type": "p",
+              "text": "M3 Macs are now generally available in the Asahi installer without the EXPERT flag, and display support now enables sleep. The macaudio and AVD video drivers (about 13,000 lines for AVD) went to the upstream list, along with initial device trees for M4 Pro/Max and M5."
+            }
+          ],
+          "hn": {
+            "points": "435",
+            "url": "https://news.ycombinator.com/item?id=50401867",
+            "comments": "418"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cloud & Infra",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Nvidia is preparing to oust Jensen Huang",
+          "url": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad",
+          "source": "wsj.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "WSJ reports Nvidia's board is preparing to dismiss Huang after a New York Times report of a second alleged affair. Days earlier he admitted an affair with a woman alleged to be a Chinese spy, and the board opened an independent investigation. TechCrunch reports the stock fell and House Republicans want a closed-door briefing."
+            }
+          ],
+          "hn": {
+            "points": "628",
+            "url": "https://news.ycombinator.com/item?id=50459703",
+            "comments": "883"
+          },
+          "alsoIn": [
+            "The Verge"
+          ]
+        },
+        {
+          "title": "ChatGPT Enterprise now available in AWS Marketplace",
+          "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+          "source": "OpenAI News",
+          "body": [
+            {
+              "type": "p",
+              "text": "Organizations can now buy ChatGPT Enterprise through AWS Marketplace, using their existing AWS purchasing and billing relationships. It's a procurement shortcut for AWS-centric companies."
+            }
+          ],
+          "alsoIn": [
+            "The Neuron"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Startups & Funding",
+      "type": "articles",
+      "items": [
+        {
+          "title": "OpenAI raises $11B at a $1.25T valuation",
+          "url": "https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/",
+          "source": "247wallst.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "The first $11B of a round priced at $1.25T pre-money has landed, below the $1.4T first reported and about 37% of the original target. SoftBank and MGX took part, and the total could reach $20B. CFO Sarah Friar said the business grew 70% quarter over quarter in Q3."
+            }
+          ],
+          "hn": {
+            "points": "190",
+            "url": "https://news.ycombinator.com/item?id=50413822",
+            "comments": "216"
+          }
+        },
+        {
+          "title": "Anthropic IPO buyers see valuation as low as $1.1T",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
+          "source": "bloomberg.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Bloomberg reports prospective buyers see Anthropic's valuation as low as $1.1T. Anthropic's roadshow video, per Simon Willison, says it trains and serves Claude on AWS Trainium, Google TPUs, NVIDIA and AMD GPUs. It says Mythos got Claude running on AMD in three days."
+            }
+          ],
+          "hn": {
+            "points": "322",
+            "url": "https://news.ycombinator.com/item?id=50394906",
+            "comments": "634"
+          }
+        },
+        {
+          "title": "OpenAI acquires Odessia, travel startup created by Sonder founder",
+          "url": "https://techcrunch.com/2026/11/10/openai-acquires-odessia-travel-startup-created-by-sonder-founder/",
+          "source": "TechCrunch",
+          "body": [
+            {
+              "type": "p",
+              "text": "Founder Francis Davidson is joining OpenAI, and Odessia's AI travel agent, backed by a $6M Sequoia-led pre-seed, has been shut down. Terms weren't disclosed and it looks like an acqui-hire. OpenAI hasn't announced any travel product."
+            }
+          ],
+          "alsoIn": [
+            "The Neuron"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security",
+      "type": "articles",
+      "items": [
+        {
+          "title": "sshole",
+          "url": "https://sshhole.com",
+          "source": "sshhole.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Sending a very long password (257–1024 bytes) lets an attacker log in to any no-password account (field *) when another account has a $5$/$6$ hash. It hits Alpine's openssh-server and musl-based systems, and Ars Technica reports active exploitation. Update OpenSSH to 10.6p2 or the patched Alpine package and restart sshd, or set PasswordAuthentication no."
+            }
+          ],
+          "hn": {
+            "points": "3,001",
+            "url": "https://news.ycombinator.com/item?id=50378228",
+            "comments": "752"
+          }
+        },
+        {
+          "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+          "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+          "source": "apiiro.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Apiiro found passwords exposed in 1,122 public GitHub files tied to Claude Code's \"Don't Ask Again\" permission option. It's a concrete example of coding agents leaking secrets into public repos."
+            }
+          ],
+          "hn": {
+            "points": "626",
+            "url": "https://news.ycombinator.com/item?id=50407882",
+            "comments": "428"
+          }
+        },
+        {
+          "title": "Fireworks AI security breach impacts Notion and their customers",
+          "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+          "source": "notion.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Notion says a breach at its third-party AI vendor Fireworks AI affected it and its customers. Fireworks says attackers accessed customer billing data (not card numbers) and, for some customers, incomplete model weights and datasets."
+            }
+          ],
+          "hn": {
+            "points": "164",
+            "url": "https://news.ycombinator.com/item?id=50437106",
+            "comments": "64"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Other Tech",
+      "type": "articles",
+      "items": [
+        {
+          "title": "Tesla to wind down Cybertruck production",
+          "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+          "source": "nbcnews.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "Musk says Cybertruck output at the Texas gigafactory ends around mid-2027 to make room for the Cybercab. Kelley Blue Book counted 20,237 US sales last year, down 48%, against Musk's early prediction of 250,000 a year."
+            }
+          ],
+          "hn": {
+            "points": "1,163",
+            "url": "https://news.ycombinator.com/item?id=50391456",
+            "comments": "2,116"
+          }
+        },
+        {
+          "title": "Smart home devices should work without the internet",
+          "url": "https://docodethatmatters.com/home-automation-overnight-success/",
+          "source": "docodethatmatters.com",
+          "body": [
+            {
+              "type": "p",
+              "text": "The author's rule one is that core home automation keeps working with the internet unplugged. Their setup is Tasmota on ESP boards, an MQTT broker, and Node-RED on a Raspberry Pi, with Alexa as just one more way in. Other rules include keeping the old wall switches and requiring cloud devices to have an API with logs."
+            }
+          ],
+          "hn": {
+            "points": "1,146",
+            "url": "https://news.ycombinator.com/item?id=50441707",
+            "comments": "434"
+          }
+        }
+      ]
+    }
+  ],
+  "quickHits": [
+    {
+      "title": "My AI agents found an unmapped Maya site?",
+      "url": "https://pietromiotti.com/latest/maya-site",
+      "summary": "An update says archaeologists had already mapped the lidar-detected site in 2025, so the agents rediscovered it.",
+      "via": null
+    },
+    {
+      "title": "AWS emulator",
+      "url": "https://github.com/aws/aws-emulator",
+      "summary": "AWS released an official local emulator of its APIs, written in Rust by agents, that needs Docker on macOS and Windows.",
+      "via": null
+    },
+    {
+      "title": "Google Gemini routes personal Drive files and emails to human annotators",
+      "url": "https://github.com/thisisme6598/gemini_files/",
+      "summary": "A GitHub repo makes this claim, which drew 733 points on Hacker News.",
+      "via": null
+    },
+    {
+      "title": "Oura to acquire Counsel Health",
+      "url": "https://ouraring.com/blog/oura-to-acquire-counsel-health/",
+      "summary": "The wearable maker agreed to buy the AI primary-care startup for a reported $625M.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/3-ai-labs-shipped-for-you"
+      }
+    },
+    {
+      "title": "OpenAI introduces Control Room",
+      "url": "https://openai.com/index/introducing-control-room/",
+      "summary": "A kill switch blocks a research model's output within 35 seconds after a person or monitor stops the job.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/anthropic-released-claude-fable-5-2"
+      }
+    },
+    {
+      "title": "Meta acquires Conductor",
+      "url": "https://www.axios.com/2026/11/04/meta-acquires-ai-coding-startup-conductor",
+      "summary": "The startup's interface directs several coding agents at once, and its hosted service shuts down November 20.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/openai-launched-images-2-6-with-gifs"
+      }
+    },
+    {
+      "title": "Cisco adds Claude Mythos to AI Defense",
+      "url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming",
+      "summary": "Select enterprises will be able to run adaptive red-team tests on their own AI apps.",
+      "via": {
+        "name": "The Neuron",
+        "url": "https://www.theneurondaily.com/p/anthropic-released-claude-fable-5-2"
+      }
+    },
+    {
+      "title": "Microsoft Fixes Nearly 1,100 Security Vulnerabilities",
+      "url": "https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities/",
+      "summary": "November's Patch Tuesday covers 63 critical flaws, including an Outlook zero-day.",
+      "via": null
+    }
+  ],
+  "tips": [
+    {
+      "title": "Make your AI try to fail its own work before you see it",
+      "url": "https://www.theneurondaily.com/p/anthropic-s-ai-cracks-a-puzzle",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Before a big task, have the AI turn your request into a pass/fail checklist and approve it yourself. After it finishes, open a fresh chat whose only job is to prove the work wrong against that checklist. It helps most when a result looks polished but you suspect a requirement slipped through."
+        },
+        {
+          "type": "prompt",
+          "text": "Before doing this task, turn my request into a numbered checklist of acceptance criteria. Each item must be something I could mark pass or fail, with no vague words like \"good\" or \"engaging.\" Show me the checklist and wait for my OK. Task: [paste your request]"
+        },
+        {
+          "type": "li",
+          "label": "Why it works",
+          "text": "A model told to break a draft hunts for failures harder than one asked to review it, and a written checklist stops a \"mostly done\" result from passing."
+        }
+      ],
+      "byline": "via The Neuron"
+    }
+  ],
+  "weekend": [
+    {
+      "title": "The Intelligence Age",
+      "url": "https://ia.samaltman.com/",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "OpenAI's CEO argues that \"deep learning worked,\" keeps improving with scale, and could lead to superintelligence \"in a few thousand days.\" He says making AI abundant takes huge investment in computing power and energy."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "It explains why AI companies talk so much about chips, data centers and energy."
+        }
+      ],
+      "byline": "Sam Altman · Essay · 7 min read · 2024"
+    },
+    {
+      "title": "Brian Chesky's new playbook",
+      "url": "https://www.lennysnewsletter.com/p/brian-cheskys-contrarian-approach",
+      "source": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Airbnb's co-founder and CEO explains how he rebuilt the way the company makes products. He changed the role of product managers, fought bureaucracy, kept leaders deep in the details and moved away from traditional growth channels."
+        },
+        {
+          "type": "li",
+          "label": "Takeaway",
+          "text": "Companies slow down because of bureaucracy, and leaders staying in the details is one fix."
+        }
+      ],
+      "byline": "Lenny Rachitsky with Brian Chesky · Podcast · 1 hr 13 min · 2023"
+    }
+  ],
+  "newsletters": [
+    {
+      "publication": "The Neuron",
+      "title": "WATCH: AI Changed More in 4 Years Than You Remember",
+      "url": "https://www.theneurondaily.com/p/watch-ai-changed-more-in-4-years-than-you-remember",
+      "note": "a walk back through four years of AI \"miracles\" that are now table stakes"
+    },
+    {
+      "publication": "Last Week in AI",
+      "title": "Last Week (Month) in AI #347",
+      "url": "https://lastweekin.ai/p/last-week-month-in-ai-347-nvidias",
+      "note": "Huang under investigation, lab valuations as spending stalls, recursive self-improvement warnings"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "OpenAI invites brands to set up shop in ChatGPT",
+      "url": "https://www.therundown.ai/articles/openai-invites-brands-to-set-up-shop-in-chatgpt",
+      "note": "brands moving into ChatGPT"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "Mercor $750m Series D at $20B valuation, $3B run rate",
+      "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
+      "note": "expert-data startup's fast revenue growth"
+    },
+    {
+      "publication": "Latent Space",
+      "title": "NaiveAI Promises 2,100 Tokens per Second. How Well Does It Code?",
+      "url": "https://latent.space/p/naiveai/",
+      "note": "a speed-first model tested against DeepSeek on coding"
+    },
+    {
+      "publication": "TLDR AI",
+      "title": "Gemini 4 Carbon, Claude Sheets, Antigravity Swarm",
+      "url": "https://tldr.tech/ai/2026-11-11",
+      "note": "new Google and Anthropic launches"
+    },
+    {
+      "publication": "TLDR Tech",
+      "title": "Amazon security robots, Anthropic IPO price, modern web guidance",
+      "url": "https://tldr.tech/tech/2026-11-11",
+      "note": "the day's tech roundup"
+    },
+    {
+      "publication": "The Pragmatic Engineer",
+      "title": "Software correctness & supply chain security, with Sean Allen",
+      "url": "https://newsletter.pragmaticengineer.com/p/software-correctness",
+      "note": "engineering fundamentals in the AI era"
+    },
+    {
+      "publication": "The Rundown AI",
+      "title": "Amazon builds its home robot team",
+      "url": "https://www.therundown.ai/articles/amazon-builds-its-home-robot-team",
+      "note": "Amazon's push into home robots"
+    }
+  ]
+}
