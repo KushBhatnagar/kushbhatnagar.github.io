@@ -53,9 +53,6 @@ ignoreFiles = ["transcript\\.txt$"]
   ShowToc = true
   TocOpen = false
   comments = true
-  adsense = true                 # gated to production in extend_head / extend_post_content
-  adsenseClient = "ca-pub-4896166132316701"
-  adsenseSlot = "5967806966"     # "blogsbykush-adunit" — same unit the Jekyll site used
   images = ["/assets/images/og-default.png"]   # default social-preview image
 
   # Newsletter (Kit). One form for every signup box: its ID is the number in the form editor's URL

@@ -56,7 +56,7 @@ hugo server                         # dev preview at http://localhost:1313
 HUGO_ENVIRONMENT=production hugo --gc --minify   # production build → public/
 ```
 
-> The **dev server intentionally excludes** Google Analytics, AdSense, and Disqus — those are
+> The **dev server intentionally excludes** Google Analytics and Disqus — those are
 > gated to `hugo.Environment == "production"`. They only appear in the CI/production build.
 
 ## Critical conventions — do not break these
@@ -139,12 +139,11 @@ layouts/
     home_info.html                # homepage intro, CTAs, pillars, latest breakdown cards
     post_card.html thumbnail.html # thumbnail cards (WebP via Hugo image processing)
     newsletter_form.html          # ONLY place with newsletter-provider markup (Kit forms per source)
-    extend_head.html              # Fredoka font, GA gtag + AdSense loader (prod only)
-    extend_post_content.html      # AdSense unit (prod) + newsletter — posts only
+    extend_head.html              # Fredoka font, GA gtag (prod only)
+    extend_post_content.html      # newsletter signup — posts only
     comments.html                 # Disqus — posts only; honours disqus_identifier
 assets/css/extended/custom.css    # brand layer (colours from the comics), cards, carousel
 static/assets/{images,cv}/        # assets (URLs preserved); mounted into assets/ for thumbnails
-static/ads.txt                    # AdSense authorised seller
 scripts/new_breakdown.py          # PDF → Concept Breakdown page bundle
 scripts/add_digest.py             # Digital Dhaba issue folder → content/tech-digest/<date>/
 scripts/kit_api.py                # Kit API v4 client (stdlib): dry run / test mode / dedupe
@@ -169,7 +168,7 @@ _migration/*.py                   # one-off Jekyll→Hugo converters (kept for a
 ## External integrations (IDs)
 
 - Google Analytics (gtag): `G-QWTLYBWXCL`
-- Google AdSense: `ca-pub-4896166132316701`, ad unit slot `5967806966`
+- Google AdSense: **removed 2026-11-19** (Kush: not integrating ads). Old IDs `ca-pub-4896166132316701`, slot `5967806966` in git history
 - Disqus shortname: `blogsbykush`
 - Kit (newsletter, Phase 4): form ID in `hugo.toml` `params.kit.form`; API key = secret `KIT_API_KEY` in both repos
 - Mailchimp (closed 2026-10-05; fallback form removed from code): `blogsbykush.us21.list-manage.com` (u=`c937565c206ad87a847339f0f`, id=`e0273fdf87`)
@@ -195,6 +194,8 @@ Content and brand:
   generic ("building AI products"). **Sahayak is public** since its launch (Build Log 2026-11-01, postsahayak.com, Kush). MLOps/AWS are past skills; the focus is AI + product management.
 - Old career: "software engineer", never "software tester"; keep it subtle, focus on product.
 - Socials shown: X (icon only), GitHub, LinkedIn, Medium, email, RSS. No Facebook/Reddit/Telegram/WhatsApp. No CV link.
+- No ads, no affiliate links (AdSense removed 2026-11-19). `/terms/` (privacy + terms) must match what the site really
+  uses: Kit, Google Analytics, Disqus, Google Fonts, GitHub Pages. Update it when a service is added or removed. Contact: kush@blogsbykush.com.
 - About page: no repeated intro line under the heading (`hideDescription`), no share bar.
 - Concept Breakdown pages stay lean (comic + plain words only).
 

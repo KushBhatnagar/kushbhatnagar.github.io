@@ -1,57 +1,72 @@
 ---
 title: "Terms and Privacy Policy"
 url: /terms/
-lastmod: 2023-04-05
+lastmod: 2026-11-19
+description: "How Blogs by Kush handles your data (newsletter, analytics, comments), how AI is used in the content, and the terms for using this site."
 ShowToc: true
 ShowReadingTime: false
 ---
 
-## Privacy Policy
+*Last updated: 19 November 2026*
 
-The privacy of my visitors is extremely important. This Privacy Policy outlines the types of personal information that is received and collected and how it is used.
+This page explains what happens to your data when you visit blogsbykush.com or subscribe to the newsletter, how I use AI in the content, and the terms for using the site. I've kept it short and plain. If anything is unclear, email me at [kush@blogsbykush.com](mailto:kush@blogsbykush.com).
 
-First and foremost, I will never share your email address or any other personal information to anyone without your direct consent.
+## Privacy
 
-### Log Files
+### What I collect
 
-Like many other websites, this site uses log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
+- **Your email address, only if you subscribe.** It's used to send you Digital Dhaba (Thursday) and a short Sunday letter with my new posts. Nothing else.
+- **Your comment, only if you leave one.** Comments are handled by Disqus (see below).
+- **Anonymous usage data.** Google Analytics tells me which pages are read and where visitors come from (for example, LinkedIn or Google search). I can't see who you are from it.
 
-* Internet Protocol addresses (IP)
-* Types of browser
-* Internet Service Provider (ISP)
-* Date and time stamp
-* Referring and exit pages
-* Number of clicks
+I never sell your data, and I don't share your email address with anyone except the service that sends the emails.
 
-All of this information is not linked to anything that is personally identifiable.
+### Services that see your data
 
-### Cookies and Web Beacons
+This site runs on a few third-party services. Each has its own privacy policy:
 
-When you visit this site "convenience" cookies are stored on your computer when you submit a comment to help you log in faster to [Disqus](http://disqus.com) the next time you leave a comment.
+| Service | What it does here | What it sees |
+|---|---|---|
+| [Kit](https://kit.com/privacy) | Stores the subscriber list and sends the emails | Your email address; whether an email was opened or a link clicked |
+| [Google Analytics](https://policies.google.com/privacy) | Visitor statistics | Pages visited, device and browser type, approximate location, referring site (uses cookies) |
+| [Disqus](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) | Comments on blog posts | Your comment and Disqus account, if you comment (uses cookies) |
+| [Google Fonts](https://developers.google.com/fonts/faq/privacy) | The heading font | Your IP address, when the font loads |
+| [GitHub Pages](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | Hosts the website | Your IP address in GitHub's server logs (I don't have access to these) |
 
-Third-party advertisers may also place and read cookies on your browser and/or use web beacons to collect information. This site has no access or control over these cookies. You should review the respective privacy policies on any and all third-party ad servers for more information regarding their practices and how to opt-out.
+The site shows no ads.
 
-If you wish to disable cookies, you may do so through your web browser options. Instructions for doing so can be found on the specific web browsers' websites.
+### Cookies
 
-#### Google Analytics
+Google Analytics and Disqus set cookies. You can block or delete cookies in your browser settings, or stop Google Analytics with Google's [opt-out browser add-on](https://tools.google.com/dlpage/gaoptout). The site works fine without them; only comments need Disqus.
 
-Google Analytics is a web analytics tool I use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. You can read [Google Analytics Privacy Policy](http://www.google.com/analytics/learn/privacy.html).
+### Your choices
 
-#### Google Adsense
+- **Unsubscribe** any time with the link at the bottom of every email.
+- **Delete your data:** email [kush@blogsbykush.com](mailto:kush@blogsbykush.com) and I'll remove your email address from the list. Comments can be deleted from your Disqus account, or ask me.
+- **Ask what I hold:** for a subscriber, that's your email address and when you signed up.
 
-Google Adsense, a third party affiliate marketing network, uses cookies to help make sure I get a commission when you buy a product after clicking on a link or ad banner that takes you to the site of one of their merchants. You can read [Google Adsense Privacy Policy](http://support.google.com/adsense/bin/answer.py?hl=en&answer=48182).
+### Children
 
-## Disclosure Policy
+This site is written for working professionals and isn't aimed at children.
 
-I make money on this website through affiliate programs. If you click an affiliate link or ad banner and buy the product, you help support this website because I'll get a percentage of that sale.
+## How I use AI
 
-Currently I'm an affiliate for Amazon and Google Adsense.
+- **Tech Digest (Digital Dhaba)** is curated with Claude, an AI model: it reads the week's news, ranks the stories and writes a short note on why each one matters. I built and run the pipeline, and every story links to its original source.
+- **Concept Breakdowns, Learning Notes and Build Logs** are mine: the comics, notes, opinions and takeaways are my own. I use AI to help put posts into shape and check facts; the short "concept in plain words" summary under each comic is drafted with AI from my comic, then checked by me.
+- Where a page was written with AI, it says so.
 
-What this means for you:
+## Disclosure
 
-* I became an affiliate to earn revenue towards the costs of running and maintaining this website. Where I have direct control over which ads are served on this website I offer only products that are directly related to the topic of this website and products that a reader/subscriber would have a genuine interest in or need of.
-* I do not and will not recommend a product just for the sake of making money.
-* I do not let the compensation I receive influence the content, topics, posts, or opinions expressed on this website.
-* I respect and value my readers too much to write anything other than my own genuine and objective opinions and advice.
+- **No ads, no affiliate links.** I don't earn money from links on this site.
+- **My own products.** Some posts, such as Build Log entries, link to products I built, like [Sahayak](https://postsahayak.com/). These are clearly mine, and some have paid plans.
+- **My views are my own,** not my employer's.
 
-Just like this website, my Disclosure Policy is a work in progress. As the revenue streams evolve, so will this page.
+## Terms of use
+
+- **Copyright.** The posts, comics and images on this site are © Kush Bhatnagar, all rights reserved. You're welcome to quote a short excerpt with a link back to the original post. Please ask before republishing a full post or comic.
+- **Not professional advice.** The content is for learning. It's written in good faith but may contain mistakes or go out of date, so check before you rely on it.
+- **External links.** I link to other sites for reference. I'm not responsible for their content or their privacy practices.
+- **Comments.** Be respectful. I may remove spam, abuse or off-topic comments.
+- **Changes.** I'll update this page when something changes and show the date at the top.
+
+Questions about any of this: [kush@blogsbykush.com](mailto:kush@blogsbykush.com).

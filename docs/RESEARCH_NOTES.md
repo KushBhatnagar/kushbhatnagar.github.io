@@ -34,8 +34,8 @@ skill is built.
 4. **Kush reads each one before publishing,** with extra care on claims about named companies or people (lawsuits,
    security incidents, criminal cases). The notes attribute claims carefully, but on the blog they're under Kush's name.
 5. **Anthropic/Claude stories** (written by Claude, about Anthropic): add a one-line disclosure, or skip them.
-6. **Pace:** a few at a time, not a batch. AdSense site review is pending, and a burst of long AI-written pages can read
-   as "scaled / low-value content".
+6. **Pace:** a few at a time, not a batch. A burst of long AI-written pages can read as "scaled / low-value content"
+   to search engines. (AdSense was removed 2026-11-19.)
 7. **Link both ways:** `/tech-digest/` and the matching Digital Dhaba issue → "Read the research note"; the research
    note → the issue it came from.
 8. **Update `.claude/BLOG_WRITING_RULES.md`:** research prose may appear **only** in Research notes (labelled), never in
@@ -57,7 +57,8 @@ skill is built.
 ## Open questions for the build session
 
 - URL and category: `/research-notes/<slug>/` with category `research-notes`? (Menu and homepage: decided above.)
-- Indexed by search engines (yes, given the search-traffic goal?) and AdSense on these pages (yes/no)?
+- Indexed by search engines (yes, given the search-traffic goal?). No ads on the site (AdSense removed 2026-11-19).
+- `/terms/` "How I use AI" already says AI-written pages are labelled; keep it true when Research notes ship.
 - Also link from the Thursday Digital Dhaba email, or only the Sunday letter?
 - How Kush marks a pick: run the skill with a path (`/research-note research/2026-10-22/<slug>.md`), or a
   `publish: true` flag in the note?
