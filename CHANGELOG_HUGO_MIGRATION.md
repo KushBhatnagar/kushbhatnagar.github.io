@@ -454,6 +454,17 @@ Format: `HH:MM [Phase N] change — detail`
 - Stealth-month post: "Insights & Learnings" → "Insights from Others" (2 places; the framework's real name in Sahayak, Kush).
 - Stealth-month post: added connections grew from 999 to 1,048 (Kush).
 
+## 2026-11-19 — AdSense removed; Terms & Privacy rewritten
+- Kush: not integrating AdSense. Removed the loader from `layouts/_partials/extend_head.html`, the post ad unit from
+  `extend_post_content.html` (newsletter box kept), its CSS in `assets/css/extended/custom.css`, `adsense*` params in
+  `hugo.toml`, and `static/ads.txt`.
+- `content/terms.md` (`/terms/`, URL unchanged) rewritten: it dated from 2023 and described AdSense as affiliate
+  commission, claimed an Amazon affiliation (no such links exist), never mentioned the Kit newsletter, and had dead links.
+  New sections: Privacy (what's collected; Kit, Google Analytics, Disqus, Google Fonts, GitHub Pages; cookies; your
+  choices), How I use AI, Disclosure (no ads/affiliates; own products like Sahayak), Terms of use (copyright, not advice,
+  external links, comments). Contact: kush@blogsbykush.com (Kush).
+- `CLAUDE.md`, STATUS and `docs/RESEARCH_NOTES.md` updated for no ads.
+
 ## Known deviations from the original MIGRATION_PLAN.md
 - **URLs preserved** as `/:categories/:title/` (plan proposed `/posts/:slug/`) — frozen to the live sitemap for zero SEO loss.
 - **Assets kept under `/assets/...`** (plan proposed `/images/...`) — avoids breaking indexed image/CV URLs.

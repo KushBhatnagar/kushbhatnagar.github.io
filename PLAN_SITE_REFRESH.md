@@ -4,7 +4,7 @@ Follow-on to the Jekyll → Hugo migration (see `CHANGELOG_HUGO_MIGRATION.md`).
 Work happens on a feature branch → PR into `main` → merge = deploy. (Before go-live on 2026-10-04 PRs went into
 `hugo-migration`; that branch was retired on 2026-10-05.)
 
-## ▶ STATUS — where we left off (updated 2026-11-06, Reasoning Models comic + Sahayak stealth-month Build Log live)
+## ▶ STATUS — where we left off (updated 2026-11-19, AdSense removed; Terms & Privacy rewritten)
 
 **🚀 LIVE on Hugo since 2026-10-04** (PR #2). Phases 0–4, Learning Notes and the three writing skills are all done.
 Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PRs #1–#42 hold the history. Only branch: `main` (+ standing temp branch `claude/adoring-thompson-o24o0b` for small changes: never delete, restart from `main` after each merge (Kush, 2026-10-17)).
@@ -21,7 +21,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 | Cleanup | ✅ Jekyll files + Mailchimp fallback form + audit script removed (PRs #14, #15), old branches deleted, Mailchimp closed (2026-10-05) |
 | Tech Digest page | `/tech-digest/` intro explains the name ("Why Digital Dhaba?", roadside dhaba story; PR #19, 2026-10-06) |
 | Deploys | 2026-10-06→08: deploy of #19 hung in "waiting" (GitHub side) and blocked #20–#22; cancelled 2026-10-08, #22 deployed. `hugo.yml` `cancel-in-progress: true` live (PR #23, deployed 2026-10-08) |
-| Ads after posts | Empty AdSense slot hidden when unfilled (PR #21, live since 2026-10-08); Kush checking AdSense site status |
+| Ads | ❌ AdSense removed 2026-11-19 (Kush: not integrating ads): script, post ad unit, CSS, `hugo.toml` IDs, `ads.txt`. `/terms/` rewritten to match |
 | Search Console | ✅ Sitemap submitted, indexing requested for all pages (2026-10-05); Google updates titles over days–weeks |
 
 **Open items**
@@ -49,8 +49,7 @@ Work flow now: feature branch → PR into `main` → merge = deploy (~2 min). PR
 3. Search Console, in 1–2 weeks: Pages report (indexed vs not) and whether old titles are gone. Don't use Removals.
 4. Optional: Sahayak docs (`LEARNING-NOTES-PLAN.md` "Monday issue" → Thursday,
    `BUILD-IN-PUBLIC-PLAN.md` Mailchimp → Kit); post-launch checks below (Disqus on moved posts).
-5. Kush: AdSense → Sites status for blogsbykush.com ("Ready"?); the post ad slot was empty on 2026-10-07 (now hidden
-   when unfilled, PR #21). Waiting on Kush's update.
+5. ~~AdSense site status~~: dropped, AdSense removed 2026-11-19.
 
 ## Brand direction
 
